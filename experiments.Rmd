@@ -1,0 +1,31 @@
+---
+title: "Experimental Methods in Political Science"
+author: "Instructor: Katie McCabe"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook:
+    dev: svglite
+    css: css/style.css
+    split_by: section
+    split_bib: true
+    number_sections: true
+---
+
+# Course Notes
+
+This document will include important links and course notes for Experimental Methods in Political Science.
+
+  - This site will be updated throughout the semester with new content. 
+  - The Canvas modules will provide links to the relevant sections to review for a given week of the course.
+  - The primary text for the course is [Field Experiments: Design, Analysis, and Interpretation](https://wwnorton.com/books/9780393979954) by Alan Gerber and Don Green. We will refer to this as FEDAI in the notes.
+  - This is a new and living document. If you spot errors or have questions or suggestions, please email me at k.mccabe@rutgers.edu or send a Slack message.
+
+
+<!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
+
+<!-- Instructions: https://ontheline.trincoll.edu/bookdown.html -->
+
+
+<!--chapter:end:index.Rmd-->
+

@@ -1,0 +1,7 @@
+output_dir: "docs"
+book_filename: "experiments"
+delete_merged_file: false
+language:
+  label:
+    fig: "Image "
+chapter_name: "Section "
