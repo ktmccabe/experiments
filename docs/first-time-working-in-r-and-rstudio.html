@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.2 First Time Working in R and RStudio | Experimental Methods in Political Science</title>
+  <meta name="description" content="1.2 First Time Working in R and RStudio | Experimental Methods in Political Science" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.2 First Time Working in R and RStudio | Experimental Methods in Political Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.2 First Time Working in R and RStudio | Experimental Methods in Political Science" />
+  
+  
+  
+
+<meta name="author" content="Instructor: Katie McCabe" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="rsetup.html"/>
+<link rel="next" href="r-markdown.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Notes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="rsetup.html"><a href="rsetup.html"><i class="fa fa-check"></i><b>1.1</b> Setup in R</a></li>
+<li class="chapter" data-level="1.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> First Time Working in R and RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#open-rstudio"><i class="fa fa-check"></i><b>1.2.1</b> Open RStudio</a></li>
+<li class="chapter" data-level="1.2.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#using-r-as-a-calculator"><i class="fa fa-check"></i><b>1.2.2</b> Using R as a Calculator</a></li>
+<li class="chapter" data-level="1.2.3" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#working-in-an-r-script"><i class="fa fa-check"></i><b>1.2.3</b> Working in an R Script</a></li>
+<li class="chapter" data-level="1.2.4" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#preparing-your-r-script"><i class="fa fa-check"></i><b>1.2.4</b> Preparing your R script</a></li>
+<li class="chapter" data-level="1.2.5" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#executing-commands-in-your-r-script"><i class="fa fa-check"></i><b>1.2.5</b> Executing Commands in your R script</a></li>
+<li class="chapter" data-level="1.2.6" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#objects"><i class="fa fa-check"></i><b>1.2.6</b> Objects</a></li>
+<li class="chapter" data-level="1.2.7" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#practice-with-r-scripts"><i class="fa fa-check"></i><b>1.2.7</b> Practice with R Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>1.3</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="r-markdown.html"><a href="r-markdown.html#how-to-get-setup-in-rmarkdown"><i class="fa fa-check"></i><b>1.3.1</b> How to get setup in RMarkdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="r-markdown.html"><a href="r-markdown.html#additional-rmarkdown-resources"><i class="fa fa-check"></i><b>1.3.2</b> Additional RMarkdown resources</a></li>
+<li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Experimental Methods in Political Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="first-time-working-in-r-and-rstudio" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> First Time Working in R and RStudio</h2>
+<p>This next section provides a few notes on using R and RStudio now that you have installed it. In this section, we cover the following materials:</p>
+<ul>
+<li>Using R as a calculator and assigning objects using <code>&lt;-</code></li>
+<li>Setting your working directory and the <code>setwd()</code> function.</li>
+<li>Creating and saving an R script</li>
+</ul>
+<div id="open-rstudio" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Open RStudio</h3>
+<p>RStudio is an open-source and free program that greatly facilitates the use of R, especially for users new to programming. Once you have downloaded and installed R and RStudio, to work in R, all you need to do now is <strong><em>open RStudio</em></strong> (it will open R). It should look like this, though your version numbers will be different:</p>
+<p><img src="images/rconsole1.png" /></p>
+<p><strong>Note:</strong> The first time you open RStudio, you likely only have the three windows above. We will want to create a fourth window by <strong>opening an R script</strong> to create the fourth window.</p>
+<ul>
+<li>To do this, in RStudio, click on File -&gt; New -&gt; R script in your computer’s toolbar. This will open a blank document for text editing in the upper left of the RStudio window. We will return to this window in a moment.
+<ul>
+<li>You can alternatively click on the green + sign indicator in the top-left corner of the RStudio window, which should give you the option to create a new R script document.</li>
+</ul></li>
+</ul>
+<p>Now you should have something that looks like this, similar to <a href="https://assets.press.princeton.edu/chapters/s11025.pdf">Figure 1.1. in QSS</a>:</p>
+<p><img src="images/rconsole2.png" /></p>
+<ul>
+<li>The upper-left window has our script document that will contain code.</li>
+<li>The lower-left window is the console. This will show the output of the code we run. We will also be able to type directly in the console.</li>
+<li>The upper-right window shows the environment (and other tabs, such as the history of commands). When we load and store data in RStudio, we will see a summary of that in the environment.</li>
+<li>The lower-right window will enable us to view plots and search help files, among other things.</li>
+</ul>
+</div>
+<div id="using-r-as-a-calculator" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Using R as a Calculator</h3>
+<p>The <em>bottom left</em> window in your RStudio is the Console. You can type in this window to use R as a calculator or to try out commands. It will show the raw output of any commands you type. For example, we can try to use R as a calculator. Type the following in the Console (the bottom left window) and hit “enter” or “return” on your keyboard:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="first-time-working-in-r-and-rstudio.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="first-time-working-in-r-and-rstudio.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">-</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="first-time-working-in-r-and-rstudio.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="first-time-working-in-r-and-rstudio.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="first-time-working-in-r-and-rstudio.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">/</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 1.666667</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="first-time-working-in-r-and-rstudio.html#cb11-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 16</code></pre>
+<p>In the other RStudio windows, the upper right will show a history of commands that you have sent from the text editor to the R console, along with other items. The lower right will show graphs, help documents and other features. These will be useful later in the course.</p>
+</div>
+<div id="working-in-an-r-script" class="section level3" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Working in an R Script</h3>
+<p>Earlier, I asked you to open an R script in the upper left window by doing File, then New File, then R Script. Let’s go back to working in that window.</p>
+<p><strong>Set your working directory <code>setwd()</code></strong></p>
+<p>(Almost) every time you work in RStudio, the first thing you will do is set your working directory. This is a designated folder in your computer where you will save your R scripts and datasets.</p>
+<p>There are many ways to do this.</p>
+<ul>
+<li>An easy way is to go to Session -&gt; Set Working Directory -&gt; Choose Directory. I suggest choosing a folder in your computer that you can easily find and that you will routinely use for this class. Go ahead and create/select it.</li>
+<li>Note: when you selected your directory, code came out in the bottom left Console window. This is the <code>setwd()</code> command which can also be used directly to set your working directory in the future.</li>
+<li>If you aren’t sure where your directory has been set, you can also type <code>getwd()</code> in your Console. Try it now</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="first-time-working-in-r-and-rstudio.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Example of where my directory was</span></span>
+<span id="cb13-2"><a href="first-time-working-in-r-and-rstudio.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<p>If I want to change the working directory, I can go to the top toolbar of my computer and use Session -&gt; Set Working Directory -&gt; Choose Directory or just type my file pathway using the <code>setwd()</code> below:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="first-time-working-in-r-and-rstudio.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Example of setting the working directory using setwd().</span></span>
+<span id="cb14-2"><a href="first-time-working-in-r-and-rstudio.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your computer will have your own file path.</span></span>
+<span id="cb14-3"><a href="first-time-working-in-r-and-rstudio.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/ktmccabe/Dropbox/Rutgers Teaching/&quot;</span>)</span></code></pre></div>
+<p><strong>Saving the R Script</strong></p>
+<p>Let’s now save our R script to our working directory and give it an informative name. To do so, go to File, then Save As, make sure you are in the same folder on your computer as the folder you chose for your working directory.</p>
+<p>Give the file an informative name, such as: “McCabeWeek1.R”. Note: all of your R scripts will have the .R extension.</p>
+</div>
+<div id="preparing-your-r-script" class="section level3" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Preparing your R script</h3>
+<p>Now that we have saved our R script, let’s work inside of it. Remember, we are in the top-left RStudio window now.</p>
+<ul>
+<li>Just like the beginning of a paper, you will want to title your R script. In R, any line that you start with a # will not be treated as a programming command. You can use this to your advantage to write titles/comments. Below is a screenshot example of a template R script.</li>
+<li>You can specify your working directory at the top, too. Add your own filepath inside <code>setwd()</code></li>
+</ul>
+<p><img src="images/templateR.png" /></p>
+<ul>
+<li>Then you can start answering problems in the rest of the script.</li>
+<li>Think of the R script as where you write the final draft of your paper. In the Console (the bottom-left window), you can mess around and try different things, like you might when you are taking notes or outlining an essay. Then, write the final programming steps that lead you to your answer in the R script. For example, if I wanted to add 5 + 3, I might try different ways of typing it in the Console, and then when I found out <code>5 + 3</code> is the right approach, I would type that into my script.</li>
+</ul>
+</div>
+<div id="executing-commands-in-your-r-script" class="section level3" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Executing Commands in your R script</h3>
+<p>The last thing we will note in this initial handout is how to execute commands in your R script.</p>
+<p>To run / execute a command in your R script (the upper left window), you can</p>
+<ol style="list-style-type: decimal">
+<li>Highlight the code you want to run, and then hold down “command + return” on a Mac or “control + enter” on Windows</li>
+<li>Place your cursor at the end of the line of code (far right), and hit “command + return” on a Mac or “control + return” on Windows, or</li>
+<li>Do 1 or 2, but instead of using the keyboard to execute the commands, click “Run” in the top right corner of the upper-left window.</li>
+</ol>
+<p>Try it: Type <code>5 + 3</code> in the R script. Then, try to execute <code>5 + 3</code>. It should look something like this:</p>
+<p><img src="images/rtemplate2.png" style="width:70.0%" /></p>
+<p>After you executed the code, you should see it pop out in your Console:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="first-time-working-in-r-and-rstudio.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<p><img src="images/runningcode.png" style="width:90.0%" /></p>
+<p>Note: The symbol # also allows for annotation behind commands or on a separate line. Everything that follows # will be ignored by R. You can annotate your own code so that you and others can understand what each part of the code is designed to do.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="first-time-working-in-r-and-rstudio.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Example</span></span>
+<span id="cb17-2"><a href="first-time-working-in-r-and-rstudio.html#cb17-2" aria-hidden="true" tabindex="-1"></a>sum53 <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span> <span class="co"># example of assigning an addition calculation</span></span></code></pre></div>
+</div>
+<div id="objects" class="section level3" number="1.2.6">
+<h3><span class="header-section-number">1.2.6</span> Objects</h3>
+<p>Sometimes we will want to store our calculations as “objects” in R. We use <code>&lt;-</code> to assign objects by placing it <a href="https://www.youtube.com/watch?v=vLZA67L7gIo&amp;ab_channel=BeyonceSasha1">to the left</a> of what we want to store. For example, let’s store the calculation <code>5 + 3</code> as an object named <code>sum53</code>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="first-time-working-in-r-and-rstudio.html#cb18-1" aria-hidden="true" tabindex="-1"></a>sum53 <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
+<p>After we execute this code, <code>sum53 now stores the calculation. This means, that if we execute a line of code that just has</code>sum53`, it will output 8. Try it:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="first-time-working-in-r-and-rstudio.html#cb19-1" aria-hidden="true" tabindex="-1"></a>sum53</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<p>Now we no longer have to type <code>5 + 3</code>, we can just type <code>sum53</code>. For example, let’s say we wanted to subtract 2 from this calculation. We could do:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="first-time-working-in-r-and-rstudio.html#cb21-1" aria-hidden="true" tabindex="-1"></a>sum53 <span class="sc">-</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<p>Let’s say we wanted to divide two stored calculations:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="first-time-working-in-r-and-rstudio.html#cb23-1" aria-hidden="true" tabindex="-1"></a>ten <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb23-2"><a href="first-time-working-in-r-and-rstudio.html#cb23-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb23-3"><a href="first-time-working-in-r-and-rstudio.html#cb23-3" aria-hidden="true" tabindex="-1"></a>ten <span class="sc">/</span> two</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>The information stored does not have to be numeric. For example, it can be a word, or what we would call a character string, in which case you need to use quotation marks.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="first-time-working-in-r-and-rstudio.html#cb25-1" aria-hidden="true" tabindex="-1"></a>mccabe <span class="ot">&lt;-</span> <span class="st">&quot;professor for this course&quot;</span></span>
+<span id="cb25-2"><a href="first-time-working-in-r-and-rstudio.html#cb25-2" aria-hidden="true" tabindex="-1"></a>mccabe</span></code></pre></div>
+<pre><code>## [1] &quot;professor for this course&quot;</code></pre>
+<p><em>Note:</em> Object names cannot begin with numbers and no spacing is allowed. Avoid using special characters such as % and $, which have specific meanings in R. Finally, use concise and intuitive object names.</p>
+<ul>
+<li>GOOD CODE: <code>practice.calc &lt;- 5 + 3</code></li>
+<li>BAD CODE: <code>meaningless.and.unnecessarily.long.name &lt;- 5 + 3</code></li>
+</ul>
+<p>While these are simple examples, we will use objects all the time for more complicated things to store (e.g., like full datasets!) throughout the course.</p>
+<p>We can also store an array or “vector” of information using <code>c()</code></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="first-time-working-in-r-and-rstudio.html#cb27-1" aria-hidden="true" tabindex="-1"></a>somenumbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>)</span>
+<span id="cb27-2"><a href="first-time-working-in-r-and-rstudio.html#cb27-2" aria-hidden="true" tabindex="-1"></a>somenumbers</span></code></pre></div>
+<pre><code>## [1] 3 6 8 9</code></pre>
+<p><strong>Importance of Clean Code</strong></p>
+<p>Ideally, when you are done with your R script, you should be able to highlight the entire script and execute it without generating any error messages. This means your code is clean. Code with typos in it may generate a red error message in the Console upon execution. This can happen when there are typos or commands are misused.</p>
+<p>For example, R is case sensitive. Let’s say we assigned our object like before:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="first-time-working-in-r-and-rstudio.html#cb29-1" aria-hidden="true" tabindex="-1"></a>sum53 <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
+<p>However, when we went to execute <code>sum53</code>, we accidentally typed <code>Sum53</code>:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="first-time-working-in-r-and-rstudio.html#cb30-1" aria-hidden="true" tabindex="-1"></a>Sum53</span></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;Sum53&#39; not found</code></pre>
+<p>Only certain types of objects can be used in mathematical calculations. Let’s say we tried to divide <code>mccabe</code> by 2:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="first-time-working-in-r-and-rstudio.html#cb32-1" aria-hidden="true" tabindex="-1"></a>mccabe <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## Error in mccabe/2: non-numeric argument to binary operator</code></pre>
+<p>A big part of learning to use R will be learning how to troubleshoot and detect typos in your code that generate error messages.</p>
+<p><img src="images/punctuation.png" style="width:80.0%" /></p>
+</div>
+<div id="practice-with-r-scripts" class="section level3" number="1.2.7">
+<h3><span class="header-section-number">1.2.7</span> Practice with R Scripts</h3>
+<p>Below is an exercise that will demonstrate you are able to use R as a calculator and create R scripts.</p>
+<ol style="list-style-type: decimal">
+<li>Create an R script saved as ``LastnameSetup1.R” (use your last name). Within the R script, follow the example from this handout and title the script.</li>
+<li>Set your working directory, and include the file pathway (within <code>setwd()</code>) at the top of your .R script.</li>
+<li>Do the calculation 8 + 3 - 2 in R. Store it as an object with an informative name. Report the answer.</li>
+<li>Do the calculation 5 x 3 in R. Store it as an object with an informative name. Report the answer.</li>
+<li>Add these two calculations together. Note: do this by adding together the objects you created, not the underlying raw calculations. Report the answer.</li>
+</ol>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rsetup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

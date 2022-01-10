@@ -1,1 +1,14 @@
 course-notes
+rsetup
+first-time-working-in-r-and-rstudio
+open-rstudio
+using-r-as-a-calculator
+working-in-an-r-script
+preparing-your-r-script
+executing-commands-in-your-r-script
+objects
+practice-with-r-scripts
+r-markdown
+how-to-get-setup-in-rmarkdown
+additional-rmarkdown-resources
+practice-with-r-markdown
