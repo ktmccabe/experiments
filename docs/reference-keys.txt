@@ -12,3 +12,4 @@ r-markdown
 how-to-get-setup-in-rmarkdown
 additional-rmarkdown-resources
 practice-with-r-markdown
+what-are-experiments

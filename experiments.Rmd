@@ -364,6 +364,68 @@ Below is an exercise that will demonstrate you are able to use R as a calculator
 
   
 
+## What are experiments?
+
+Our first discussion will be focused on elaborating on what we see as the goals of social science and how experiments fit into these goals.
+
+We draw on the following readings
+
+  - Gerber, A. and D.P. Green. 2012. *Field Experiments: Design, Analysis, and Interpretation.* W.W. Norton. Chapter 1.
+  - Angrist, Joshua D. and Jorn-Steffen Pischke. Mostly Harmless Econometrics. Part One: Preliminaries: “Questions about Questions.” Available online [here](https://assets.press.princeton.edu/chapters/s8769.pdf) 
+  - Kinder, Donald R. and Thomas R. Palfrey. 1993. “On Behalf of an Experimental Political Science.” In *Experimental Foundations of Political Science.* 
+  - Sen, Maya and Omar Wasow. 2016. “Race as a Bundle of Sticks: Designs that Estimate Effects of Seemingly Immutable Characteristics.” Annual Review of Political Science doi: 10.1146/annurev-polisci-032015-010015.
+
+We will sketch out the answers to these questions as a group. Along the way, we will try to build a research design for a research question we come up with as a class.
+
+
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+
+
+
+***What are the goals of social science? What are examples of research questions that can be addressed with each goal?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
+
+***What makes an experiment an experiment? What are the goals of experimentation?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+***What are some advantages of experimentation over other methods in political science?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+***What are examples of different types of experiments?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
+***What are limitations of experiments? Can we experiment on everything?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
 
 <!--chapter:end:index.Rmd-->
 
