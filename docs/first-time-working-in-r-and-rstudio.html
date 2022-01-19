@@ -146,6 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.5" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#executing-commands-in-your-r-script"><i class="fa fa-check"></i><b>1.2.5</b> Executing Commands in your R script</a></li>
 <li class="chapter" data-level="1.2.6" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#objects"><i class="fa fa-check"></i><b>1.2.6</b> Objects</a></li>
 <li class="chapter" data-level="1.2.7" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#practice-with-r-scripts"><i class="fa fa-check"></i><b>1.2.7</b> Practice with R Scripts</a></li>
+<li class="chapter" data-level="1.2.8" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#loading-data-into-r"><i class="fa fa-check"></i><b>1.2.8</b> Loading data into R</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>1.3</b> R Markdown</a>
 <ul>
@@ -322,6 +323,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Do the calculation 5 x 3 in R. Store it as an object with an informative name. Report the answer.</li>
 <li>Add these two calculations together. Note: do this by adding together the objects you created, not the underlying raw calculations. Report the answer.</li>
 </ol>
+</div>
+<div id="loading-data-into-r" class="section level3" number="1.2.8">
+<h3><span class="header-section-number">1.2.8</span> Loading data into R</h3>
+<p>Often the variables we care about are stored inside of rectangular datasets, like the dataset on turnout below from QSS Chapter 1.</p>
+<p><img src="images/turnoutframe.png" style="width:80.0%" /></p>
+<ul>
+<li>These have a number of rows <code>nrow()</code> and columns <code>ncol()</code></li>
+<li>Each row is an “observation,” representing the information collected from an individual or entity</li>
+<li>Each column is a variable, representing a changing characteristic across multiple observations</li>
+</ul>
+<p>When we import a dataset into R, we have a few options. This highlights key elements of <a href="https://assets.press.princeton.edu/chapters/s11025.pdf">QSS section 1.3.5</a>, which provides an overview of loading data into R with an example using UN population data.</p>
+<p>Option 1: Download dataset to your computer</p>
+<ul>
+<li>Move the dataset to your working directory</li>
+<li>Identify the file type (e.g., csv, dta, RData, txt)</li>
+<li>Pick the appropriate R function to match the type (e.g., <code>read.csv(), read.dta(), load(), read.table()</code>)</li>
+<li>Assign the dataset to an object. This object will now be <code>class()</code> of <code>data.frame</code></li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="first-time-working-in-r-and-rstudio.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The turnout dataset is available in the week 2 Canvas module</span></span>
+<span id="cb34-2"><a href="first-time-working-in-r-and-rstudio.html#cb34-2" aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;turnout.csv&quot;</span>)</span></code></pre></div>
+<p>With a recent update to R, many people now add an argument to their code when loading in .csv files, which makes it easier to work with categorical variables.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="first-time-working-in-r-and-rstudio.html#cb35-1" aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;turnout.csv&quot;</span>, <span class="at">stringsAsFactors =</span> T)</span></code></pre></div>
+<p>There are also packages that exist, which simplify loading different types of data. Example:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="first-time-working-in-r-and-rstudio.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rio&quot;</span>, <span class="at">dependencies =</span> T)</span></code></pre></div>
+<p>Once you’ve installed it, you can load the package with <code>library()</code>. While you only need to install the package once, you need to use <code>library()</code> in each script where you use <code>import</code>.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="first-time-working-in-r-and-rstudio.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb37-2"><a href="first-time-working-in-r-and-rstudio.html#cb37-2" aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">&quot;turnout.csv&quot;</span>)</span></code></pre></div>
+<p>Option 2: Read file from a url provided</p>
+<ul>
+<li>Need an active internet connection for this to work</li>
+<li>Need friendly file type</li>
+<li>URL generally must be public</li>
+<li>Include the url inside the function used to read the data</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="first-time-working-in-r-and-rstudio.html#cb38-1" aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/ktmccabe/teachingdata/main/turnout.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="first-time-working-in-r-and-rstudio.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(turnout)</span></code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<p>You can also open up a window to view the data:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="first-time-working-in-r-and-rstudio.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(turnout)</span></code></pre></div>
+<p>And you can view the first few rows with <code>head()</code></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="first-time-working-in-r-and-rstudio.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(turnout)</span></code></pre></div>
+<pre><code>##   year    VEP    VAP total ANES felons noncit overseas osvoters
+## 1 1980 159635 164445 86515   71    802   5756     1803       NA
+## 2 1982 160467 166028 67616   60    960   6641     1982       NA
+## 3 1984 167702 173995 92653   74   1165   7482     2361       NA
+## 4 1986 170396 177922 64991   53   1367   8362     2216       NA
+## 5 1988 173579 181955 91595   70   1594   9280     2257       NA
+## 6 1990 176629 186159 67859   47   1901  10239     2659       NA</code></pre>
+<p>Note that the columns are the variables, and each row contains the values corresponding to the variables for different units in the data. Here, each row is an election year. In many datasets we will work with, each row will be an experimental subject.</p>
+<p>We can access specific columns in the data using the $ attached to the dataframe name. For example, the code below displays all of the values from the <code>year</code> variable in the <code>turnout</code> dataframe:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="first-time-working-in-r-and-rstudio.html#cb44-1" aria-hidden="true" tabindex="-1"></a>turnout<span class="sc">$</span>year</span></code></pre></div>
+<pre><code>##  [1] 1980 1982 1984 1986 1988 1990 1992 1994 1996 1998 2000 2002 2004 2008</code></pre>
+<p>This will be useful when we want to summarize particular variables, such as by finding the median.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="first-time-working-in-r-and-rstudio.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(turnout<span class="sc">$</span>year)</span></code></pre></div>
+<pre><code>## [1] 1993</code></pre>
 </div>
 </div>
             </section>

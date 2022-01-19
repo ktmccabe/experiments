@@ -8,6 +8,7 @@ preparing-your-r-script
 executing-commands-in-your-r-script
 objects
 practice-with-r-scripts
+loading-data-into-r
 r-markdown
 how-to-get-setup-in-rmarkdown
 additional-rmarkdown-resources
