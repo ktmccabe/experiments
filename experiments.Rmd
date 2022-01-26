@@ -1053,5 +1053,15 @@ fit$coefficients["conditionSocial Approval"]
 
 </details>
 
+
+***Additional Review Questions***
+
+  - What is this quantity $E[Y_i (1) − Y_i (0)]$ conceptually?
+  - What is the fundamental problem of causal inference?
+  - How can we find out if our estimates are unbiased? (What process do we need to do?)
+  - With randomization, why is $E[Y_i (1)] = E [Y_i (1)|D_i = 1]$?
+  - What other assumptions do we need to estimate the ATE in an unbiased way using differences in means?
+
+
 <!--chapter:end:02-causaleffects.Rmd-->
 
