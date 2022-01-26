@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Experimental Methods in Political Science</title>
-  <meta name="description" content="Page not found | Experimental Methods in Political Science" />
+  <title>2.1 Potential Outcomes Framework | Experimental Methods in Political Science</title>
+  <meta name="description" content="2.1 Potential Outcomes Framework | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Experimental Methods in Political Science" />
+  <meta property="og:title" content="2.1 Potential Outcomes Framework | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="2.1 Potential Outcomes Framework | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="causaleffects.html"/>
+<link rel="next" href="fundamental-problem-of-causal-inference.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -194,19 +194,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="potential-outcomes-framework" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Potential Outcomes Framework</h2>
+<p>To make causal claims, we compare two states of the world and their potential outcomes:</p>
+<p><span class="math inline">\(Y_i(d)\)</span></p>
+<ul>
+<li>What is <span class="math inline">\(Y_i(0)\)</span>?</li>
+<li>What is <span class="math inline">\(Y_i(1)\)</span>?
+<ul>
+<li><span class="math inline">\(i\)</span> refers to individual subjects from <span class="math inline">\(i = 1\)</span> to N.</li>
+<li><span class="math inline">\(d\)</span> is the treatment indicator</li>
+<li><span class="math inline">\(d_i\)</span> refers to whether the subject is treated: <span class="math inline">\(d_i = 1\)</span> or <span class="math inline">\(d_i = 0\)</span></li>
+<li><span class="math inline">\(D_i\)</span> refers to a hypothetical treatment allocation</li>
+</ul></li>
+</ul>
+<p>A causal “treatment effect” is then the difference in these potential outcomes:</p>
+<ul>
+<li><span class="math inline">\(\tau_i\)</span> = <span class="math inline">\(Y_i(1)\)</span> - <span class="math inline">\(Y_i(0)\)</span></li>
+</ul>
+<p><img src="images/ggt2.png" />
+<em>FEDAI Table 2.1</em></p>
+<p>The treatment effect is the difference between two states of the world: one which a unit receives treatment, and another in which it does not.</p>
+<div id="average-treatment-effect" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Average Treatment Effect</h3>
+<p>The <strong><em>average treatment effect</em></strong> then is the mean of these individual treatment effects:</p>
+<ul>
+<li>Estimand: On average, how much outcomes would change if all units go from untreated to treated.</li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+ATE &amp;= \frac{1}{N} \sum_{i=1}^N \tau_i \\
+&amp;= \mu_{Y(1)} -\mu_{Y(0)} \\
+&amp;= \frac{1}{N} \sum_{i=1}^N Y_i (1) - \frac{1}{N} \sum_{i=1}^N Y_i (0) \\
+&amp;= \frac{1}{N} \sum_{i=1}^N (Y_i (1)-Y_i (0))\\
+&amp;= E[Y_i(1) - Y_i(0)]\\
+\end{align*}\]</span></p>
+<p>ATE <span class="math inline">\(= \frac{1}{N} \sum_{i=1}^N \tau_i\)</span> is what we want to describe a causal effect, but in real life, we have problems. What are they?</p>
+<details>
+<summary>
+Try on your own, then expand for the answer.
+</summary>
+<p>We only observe one potential outcome.</p>
+<ul>
+<li><span class="math inline">\(Y_i = d_iY_i(1) + (1-d_i)Y_i(0)\)</span></li>
+</ul>
+<p>(Unless we are in <a href="https://www.youtube.com/watch?v=5E0M6Rh9qpg">Groundhog Day</a>)</p>
+</details>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="causaleffects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fundamental-problem-of-causal-inference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,40 +1,3 @@
----
-title: "Experimental Methods in Political Science"
-author: "Instructor: Katie McCabe"
-site: bookdown::bookdown_site
-documentclass: book
-output:
-  bookdown::gitbook:
-    dev: svglite
-    css: css/style.css
-    split_by: section
-    split_bib: true
-    number_sections: true
----
-
-# Course Notes
-
-Placeholder
-
-
-## Setup in R {#rsetup}
-## First Time Working in R and RStudio
-### Open RStudio
-### Using R as a Calculator
-### Working in an R Script
-### Preparing your R script
-### Executing Commands in your R script
-### Objects
-### Practice with R Scripts
-### Loading data into R
-## R Markdown
-### How to get setup in RMarkdown
-### Additional RMarkdown resources
-### Practice with R Markdown
-## What are experiments?
-
-<!--chapter:end:index.Rmd-->
-
 # Causal Effects {#causaleffects}
 
 In this section, we discuss causal effects. It builds on Gerber and Green FEDAI Chapter 2.
@@ -573,6 +536,3 @@ fit$coefficients["conditionSocial Approval"]
 ```
 
 </details>
-
-<!--chapter:end:02-causaleffects.Rmd-->
-

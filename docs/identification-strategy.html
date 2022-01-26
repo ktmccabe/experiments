@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Experimental Methods in Political Science</title>
-  <meta name="description" content="Page not found | Experimental Methods in Political Science" />
+  <title>2.3 Identification strategy | Experimental Methods in Political Science</title>
+  <meta name="description" content="2.3 Identification strategy | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Experimental Methods in Political Science" />
+  <meta property="og:title" content="2.3 Identification strategy | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="2.3 Identification strategy | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="fundamental-problem-of-causal-inference.html"/>
+<link rel="next" href="difference-in-means-estimator.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -194,19 +194,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="identification-strategy" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Identification strategy</h2>
+<p>We cannot observe the ideal actual causal effect. Instead, we will frame our exercise on the premise that we are randomly <em>sampling</em> our <span class="math inline">\(i&#39;s\)</span> from a population. We then will create an identification strategy.</p>
+<ul>
+<li>“Ideas that enable researchers to use observable quantities (e.g., sample averages) to reveal parameters of interest (e.g., average treatment effects)” (Gerber and Green 2012, 34)</li>
+<li>Instead of observing the actual individual causal treatment effect and actual ATE, we develop an estimator for this quantity using the sample averages.</li>
+</ul>
+<p>A few definitions:</p>
+<ul>
+<li>The sample average is a random variable, a quantity that varies from sample to sample.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li>Expected value is the average outcome of a random variable weighted by its probability of occurrence.</li>
+<li>Good news: Under random sampling, the expected value of a sample average is the population average.</li>
+<li>Similarly, the expectation of a randomly selected observation from the population is the population mean.</li>
+<li>Even though we have a sample, under random sampling, our sample will be unbiased. On average, it’s true.
+<ul>
+<li>When the expected value of a sample estimate is equal to the population parameter <span class="math inline">\(E[\hat{\theta}] = \theta\)</span>, this means our estimator is “unbiased.”</li>
+</ul></li>
+</ul>
+<p><strong><em>Expectation</em></strong></p>
+<p><span class="math display">\[\begin{align*}
+E[X]=\sum x Pr[X=x]
+\end{align*}\]</span></p>
+<ul>
+<li>where <span class="math inline">\(Pr[X=x]\)</span> denotes the probability that <span class="math inline">\(X\)</span> takes on the value <span class="math inline">\(x\)</span>, and where the summation is taken over all possible values of <span class="math inline">\(x\)</span>. Think of this like a weighted average.</li>
+</ul>
+<p>Example: <span class="math inline">\(E[Y_i(1)]\)</span> is the expected value of the treated potential outcome of a subject who is randomly sampled.(It will equal the average value of all possible values.)</p>
+<ul>
+<li>What is the value of <span class="math inline">\(E[Y_i(1)]\)</span> in this example?</li>
+</ul>
+<p><img src="images/ggt2.png" />
+<em>FEDAI Table 2.1</em></p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Note: other books may approach this slightly differently by defining a Sample ATE, taking <span class="math inline">\(D_i\)</span> (treatment status) to be the random variable, and <span class="math inline">\(Y_i(1)\)</span> as fixed within a sample. <a href="identification-strategy.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="fundamental-problem-of-causal-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="difference-in-means-estimator.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
