@@ -156,6 +156,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
 </ul></li>
+<li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html"><i class="fa fa-check"></i><b>2.1</b> Potential Outcomes Framework</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html#average-treatment-effect"><i class="fa fa-check"></i><b>2.1.1</b> Average Treatment Effect</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fundamental-problem-of-causal-inference.html"><a href="fundamental-problem-of-causal-inference.html"><i class="fa fa-check"></i><b>2.2</b> Fundamental Problem of Causal Inference</a></li>
+<li class="chapter" data-level="2.3" data-path="identification-strategy.html"><a href="identification-strategy.html"><i class="fa fa-check"></i><b>2.3</b> Identification strategy</a></li>
+<li class="chapter" data-level="2.4" data-path="difference-in-means-estimator.html"><a href="difference-in-means-estimator.html"><i class="fa fa-check"></i><b>2.4</b> Difference in Means Estimator</a></li>
+<li class="chapter" data-level="2.5" data-path="overview-of-identification-assumptions.html"><a href="overview-of-identification-assumptions.html"><i class="fa fa-check"></i><b>2.5</b> Overview of identification assumptions</a></li>
+<li class="chapter" data-level="2.6" data-path="application-in-r.html"><a href="application-in-r.html"><i class="fa fa-check"></i><b>2.6</b> Application in R</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="application-in-r.html"><a href="application-in-r.html#loading-the-data"><i class="fa fa-check"></i><b>2.6.1</b> Loading the data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="application-in-r.html"><a href="application-in-r.html#variable-classes"><i class="fa fa-check"></i><b>2.6.2</b> Variable classes</a></li>
+<li class="chapter" data-level="2.6.3" data-path="application-in-r.html"><a href="application-in-r.html#exploring-treatment-and-control-groups"><i class="fa fa-check"></i><b>2.6.3</b> Exploring Treatment and Control Groups</a></li>
+<li class="chapter" data-level="2.6.4" data-path="application-in-r.html"><a href="application-in-r.html#means-with-relational-operators"><i class="fa fa-check"></i><b>2.6.4</b> Means with Relational Operators</a></li>
+<li class="chapter" data-level="2.6.5" data-path="application-in-r.html"><a href="application-in-r.html#means-with-tidyverse"><i class="fa fa-check"></i><b>2.6.5</b> Means with <code>tidyverse</code></a></li>
+<li class="chapter" data-level="2.6.6" data-path="application-in-r.html"><a href="application-in-r.html#ate-with-linear-regression"><i class="fa fa-check"></i><b>2.6.6</b> ATE with linear regression</a></li>
+<li class="chapter" data-level="2.6.7" data-path="application-in-r.html"><a href="application-in-r.html#subsetting-data-in-r"><i class="fa fa-check"></i><b>2.6.7</b> Subsetting data in R</a></li>
+<li class="chapter" data-level="2.6.8" data-path="application-in-r.html"><a href="application-in-r.html#additional-practice"><i class="fa fa-check"></i><b>2.6.8</b> Additional Practice</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -322,6 +344,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

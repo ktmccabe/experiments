@@ -20,13 +20,11 @@ average-treatment-effect
 fundamental-problem-of-causal-inference
 identification-strategy
 difference-in-means-estimator
-what-if-we-cant-guarantee-random-assignment
 overview-of-identification-assumptions
 application-in-r
 loading-the-data
 variable-classes
 exploring-treatment-and-control-groups
-comparing-groups-with-table
 means-with-relational-operators
 means-with-tidyverse
 ate-with-linear-regression
