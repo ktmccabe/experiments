@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.2 Using Qualtrics | Experimental Methods in Political Science</title>
+  <meta name="description" content="3.2 Using Qualtrics | Experimental Methods in Political Science" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.2 Using Qualtrics | Experimental Methods in Political Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.2 Using Qualtrics | Experimental Methods in Political Science" />
+  
+  
+  
+
+<meta name="author" content="Instructor: Katie McCabe" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="designing-an-experiment.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Notes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="rsetup.html"><a href="rsetup.html"><i class="fa fa-check"></i><b>1.1</b> Setup in R</a></li>
+<li class="chapter" data-level="1.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> First Time Working in R and RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#open-rstudio"><i class="fa fa-check"></i><b>1.2.1</b> Open RStudio</a></li>
+<li class="chapter" data-level="1.2.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#using-r-as-a-calculator"><i class="fa fa-check"></i><b>1.2.2</b> Using R as a Calculator</a></li>
+<li class="chapter" data-level="1.2.3" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#working-in-an-r-script"><i class="fa fa-check"></i><b>1.2.3</b> Working in an R Script</a></li>
+<li class="chapter" data-level="1.2.4" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#preparing-your-r-script"><i class="fa fa-check"></i><b>1.2.4</b> Preparing your R script</a></li>
+<li class="chapter" data-level="1.2.5" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#executing-commands-in-your-r-script"><i class="fa fa-check"></i><b>1.2.5</b> Executing Commands in your R script</a></li>
+<li class="chapter" data-level="1.2.6" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#objects"><i class="fa fa-check"></i><b>1.2.6</b> Objects</a></li>
+<li class="chapter" data-level="1.2.7" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#practice-with-r-scripts"><i class="fa fa-check"></i><b>1.2.7</b> Practice with R Scripts</a></li>
+<li class="chapter" data-level="1.2.8" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#loading-data-into-r"><i class="fa fa-check"></i><b>1.2.8</b> Loading data into R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>1.3</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="r-markdown.html"><a href="r-markdown.html#how-to-get-setup-in-rmarkdown"><i class="fa fa-check"></i><b>1.3.1</b> How to get setup in RMarkdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="r-markdown.html"><a href="r-markdown.html#additional-rmarkdown-resources"><i class="fa fa-check"></i><b>1.3.2</b> Additional RMarkdown resources</a></li>
+<li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html"><i class="fa fa-check"></i><b>2.1</b> Potential Outcomes Framework</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html#average-treatment-effect"><i class="fa fa-check"></i><b>2.1.1</b> Average Treatment Effect</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fundamental-problem-of-causal-inference.html"><a href="fundamental-problem-of-causal-inference.html"><i class="fa fa-check"></i><b>2.2</b> Fundamental Problem of Causal Inference</a></li>
+<li class="chapter" data-level="2.3" data-path="identification-strategy.html"><a href="identification-strategy.html"><i class="fa fa-check"></i><b>2.3</b> Identification strategy</a></li>
+<li class="chapter" data-level="2.4" data-path="difference-in-means-estimator.html"><a href="difference-in-means-estimator.html"><i class="fa fa-check"></i><b>2.4</b> Difference in Means Estimator</a></li>
+<li class="chapter" data-level="2.5" data-path="overview-of-identification-assumptions.html"><a href="overview-of-identification-assumptions.html"><i class="fa fa-check"></i><b>2.5</b> Overview of identification assumptions</a></li>
+<li class="chapter" data-level="2.6" data-path="application-in-r.html"><a href="application-in-r.html"><i class="fa fa-check"></i><b>2.6</b> Application in R</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="application-in-r.html"><a href="application-in-r.html#loading-the-data"><i class="fa fa-check"></i><b>2.6.1</b> Loading the data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="application-in-r.html"><a href="application-in-r.html#variable-classes"><i class="fa fa-check"></i><b>2.6.2</b> Variable classes</a></li>
+<li class="chapter" data-level="2.6.3" data-path="application-in-r.html"><a href="application-in-r.html#exploring-treatment-and-control-groups"><i class="fa fa-check"></i><b>2.6.3</b> Exploring Treatment and Control Groups</a></li>
+<li class="chapter" data-level="2.6.4" data-path="application-in-r.html"><a href="application-in-r.html#means-with-relational-operators"><i class="fa fa-check"></i><b>2.6.4</b> Means with Relational Operators</a></li>
+<li class="chapter" data-level="2.6.5" data-path="application-in-r.html"><a href="application-in-r.html#means-with-tidyverse"><i class="fa fa-check"></i><b>2.6.5</b> Means with <code>tidyverse</code></a></li>
+<li class="chapter" data-level="2.6.6" data-path="application-in-r.html"><a href="application-in-r.html#ate-with-linear-regression"><i class="fa fa-check"></i><b>2.6.6</b> ATE with linear regression</a></li>
+<li class="chapter" data-level="2.6.7" data-path="application-in-r.html"><a href="application-in-r.html#subsetting-data-in-r"><i class="fa fa-check"></i><b>2.6.7</b> Subsetting data in R</a></li>
+<li class="chapter" data-level="2.6.8" data-path="application-in-r.html"><a href="application-in-r.html#additional-practice"><i class="fa fa-check"></i><b>2.6.8</b> Additional Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="design.html"><a href="design.html"><i class="fa fa-check"></i><b>3</b> Experimental Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html"><i class="fa fa-check"></i><b>3.1</b> Designing an Experiment</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#validity"><i class="fa fa-check"></i><b>3.1.1</b> Validity</a></li>
+<li class="chapter" data-level="3.1.2" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#design-space-for-experiments"><i class="fa fa-check"></i><b>3.1.2</b> Design Space for Experiments</a></li>
+<li class="chapter" data-level="3.1.3" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#types-of-designs"><i class="fa fa-check"></i><b>3.1.3</b> Types of Designs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="using-qualtrics.html"><a href="using-qualtrics.html"><i class="fa fa-check"></i><b>3.2</b> Using Qualtrics</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="using-qualtrics.html"><a href="using-qualtrics.html#experimental-design-with-vignette-experiment"><i class="fa fa-check"></i><b>3.2.1</b> Experimental Design with Vignette Experiment</a></li>
+<li class="chapter" data-level="3.2.2" data-path="using-qualtrics.html"><a href="using-qualtrics.html#unique-blocks-per-experimental-condition"><i class="fa fa-check"></i><b>3.2.2</b> Unique blocks per experimental condition</a></li>
+<li class="chapter" data-level="3.2.3" data-path="using-qualtrics.html"><a href="using-qualtrics.html#adding-a-randomizer-in-the-survey-flow"><i class="fa fa-check"></i><b>3.2.3</b> Adding a randomizer in the survey flow</a></li>
+<li class="chapter" data-level="3.2.4" data-path="using-qualtrics.html"><a href="using-qualtrics.html#using-piped-text-in-randomization"><i class="fa fa-check"></i><b>3.2.4</b> Using Piped Text in Randomization</a></li>
+<li class="chapter" data-level="3.2.5" data-path="using-qualtrics.html"><a href="using-qualtrics.html#data-and-analysis"><i class="fa fa-check"></i><b>3.2.5</b> Data and Analysis</a></li>
+<li class="chapter" data-level="3.2.6" data-path="using-qualtrics.html"><a href="using-qualtrics.html#additional-bells-and-whistles"><i class="fa fa-check"></i><b>3.2.6</b> Additional Bells and Whistles</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Experimental Methods in Political Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="using-qualtrics" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Using Qualtrics</h2>
+<p>Everyone at Rutgers gets a free Qualtrics account. Qualtrics provides a user-friendly interface for designing online surveys and survey experiments.</p>
+<p>We will walk through how to design a simple survey experiment on the platform.</p>
+<ol style="list-style-type: decimal">
+<li>Go to the <a href="https://rutgers.qualtrics.com/">Rutgers Qualtrics site</a>. The first time you use this you might have to initialize your account.</li>
+<li>Click on “Create a new project” and select “Survey” from scratch and get started.</li>
+<li>Give the project an informative name like “Experimental methods demo.” We will start with a blank survey project.</li>
+</ol>
+<p>This should take you to a landing page that looks something like this:</p>
+<p><img src="images/surveylanding.png" style="width:80.0%" /></p>
+<p>When running an academic survey, generally, the first survey question should be a consent form.</p>
+<ul>
+<li>Rutgers has template consent forms <a href="https://research.rutgers.edu/researcher-support/research-compliance/human-subjects-protection-program-toolkit">here</a>. For a survey, you may want the <a href="https://research.rutgers.edu/sites/default/files/2022-01/rcr_online_survey-questionnaire_adult_consent_template_1.11.22.docx">Online survey questionnaire consent form</a>. The text of the consent form has to be approved by the IRB.</li>
+</ul>
+<p>After the consent form, you might ask respondents a set of “pre-treatment” questions, such as demographics, attention checks, etc. These are things you want to know about respondents prior to when they enter your experiment.</p>
+<ul>
+<li>You can organize these questions into different “blocks.” Blocks make it easier to move groups of questions up and down the survey, randomize the order of questions people see within a given block, or branch people to see only one of a set of blocks. We will get to this later.</li>
+</ul>
+<p>Now we are ready to program an experiment. There are many ways to do this, but we will choose a couple of common approaches.</p>
+<ul>
+<li>In general, programming the experiment will involve 1) entering experimental treatments and questions into the survey interface we are currently working in; and 2) building a randomizer in the survey flow.</li>
+<li>To prepare to program your experiment, you should have a sense of how many unique experimental conditions you have.
+<ul>
+<li>If you have a relatively small number of experimental conditions (e.g., 2-4), an easy way to program the experiment is to manually create a unique block for each condition.</li>
+<li>If you have a larger number of experimental conditions (e.g., if you are manipulating several things at once across conditions), you might consider integrating piped text or another approach to avoid the need to manually create all of your experimental conditions.</li>
+<li>If you have a very large number of conditions or need to adjust the randomization in a more complex way (e.g., control the specific probabilities that certain conditions appear), you may need to integrate JavaScript code to help with randomization.</li>
+</ul></li>
+</ul>
+<div id="experimental-design-with-vignette-experiment" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Experimental Design with Vignette Experiment</h3>
+<p>For this example, we will use the experimental design from “Public Opinion and Foreign Electoral Intervention” by Michael Tomz and Jessica Weeks, published in the <em>American Political Science Review</em> in 2020. The article is <a href="https://www.cambridge.org/core/journals/american-political-science-review/article/abs/public-opinion-and-foreign-electoral-intervention/AC34B6090EACF336D08713AF69BF7904">here</a>.</p>
+<p>They “hypothesize that American tolerance of foreign intervention should depend on the type of intervention and the intended beneficiary. We distinguish three modes of interference: verbal endorsements, threats, and operations.”</p>
+<ul>
+<li>Endorsements occur when foreign countries express their opinions about candidates.</li>
+<li>Threats combine an endorsement with a promise of future reward or threat of future punishment, such as threatening to downgrade future relations if the preferred candidate loses.</li>
+<li>Operations [are] when foreign powers undertake efforts such as spreading embarrassing information about a candidate, hacking into voting systems, or donating money to an election campaign</li>
+</ul>
+<p>These are contrasted with a comparison of staying out of the election.</p>
+<p><strong><em>Hypotheses</em></strong></p>
+<ul>
+<li>“We predict that citizens will be most concerned about operations such as hacking into voting systems or donating money, as these directly advantage the favored candidate and involve behavior the U.N. has classified as impermissible interference in the internal affairs of another nation. Americans should be more tolerant of threats and most tolerant of endorsements, which could be seen
+as legitimate and harmless expressions of opinion that do not intrude on American sovereignty.”</li>
+<li>“We also hypothesize that revelations of foreign intervention will generate polarized partisan responses. . . we anticipate that American voters will disapprove more strongly of foreign meddling on behalf of political opponents, than of foreign meddling to assist their own party.”</li>
+</ul>
+<p>Table 1 in the paper displays the experimental design used to test the hypotheses. We will program the primary manipulation, which varies the endorsement, threat, operation, or stay out conditions. For now, we will fix the country to be China, the candidate to be the Democratic candidate, and the operation to be donating money and 100% certainty it was China.</p>
+</div>
+<div id="unique-blocks-per-experimental-condition" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Unique blocks per experimental condition</h3>
+<p>In this approach, we will create a separate block for each unique experimental vignette. In our case, we will create a block with a Text/Graphic question type. We paste in our experimental text and give the block and question informative labels. The question name will be the name of the variable for the question when you eventually load the data.</p>
+<ul>
+<li>For each condition, create a new block.</li>
+<li>See the four blocks below, one for each condition</li>
+</ul>
+<p><img src="images/endorsement.png" style="width:40.0%" /> <img src="images/threat.png" style="width:40.0%" />
+<img src="images/operation.png" style="width:40.0%" /> <img src="images/stayout.png" style="width:40.0%" /></p>
+<p>After creating each experimental block, we can then add a new block with our outcome questions. Go ahead and add 1-2 outcome questions so that you have an example.If your outcome condition text is specific to each treatment condition, you can create outcome questions within the experimental blocks.</p>
+<p>Finally, after that, you may have some last demographic questions. You can put those in yet another last block.</p>
+<p>Once you have created all your blocks, you can now go to the survey flow. To do that, click on the icon in the left side of the survey landing page.</p>
+<p><img src="images/surveyflowicon.png" style="width:40.0%" /></p>
+<p>Your survey flow should look something like this. We are now ready to add randomization so that each respondent only sees one of our experimental blocks, randomly assigned.</p>
+<p><img src="images/surveyflow.png" style="width:70.0%" /></p>
+</div>
+<div id="adding-a-randomizer-in-the-survey-flow" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Adding a randomizer in the survey flow</h3>
+<p>Within the survey flow, add a randomizer underneath the consent form.</p>
+<ul>
+<li>Under the randomizer, add an embedded data field with an informative label for your treatment (e.g., “treat”)
+<ul>
+<li>Create a unique value for each of your treatment conditions</li>
+<li>Make sure the randomizer is set to show just one of these values.</li>
+</ul></li>
+</ul>
+<p><img src="images/randomizer.png" style="width:90.0%" /></p>
+<p>As people go through the survey, under the hood of qualtrics, they will be assigned one of your experimental condition values. This embedded data field will show up as a variable in the data you download. However, we need one more step to make sure people only see the experimental block that corresponds to their embedded data field. This works through branching.</p>
+<ul>
+<li>Above each experimental block, add a “Branch” object</li>
+<li>Branch people using embedded data. Set the condition to match each embedded data value, and then move the experimental blocks underneath the appropriate branch.
+<ul>
+<li>You can also duplicate the outcome block and put them underneath the corresponding treatment blocks.</li>
+</ul></li>
+<li>Hit apply to make sure the survey flow saves.</li>
+</ul>
+<p><img src="images/branchcond2.png" style="width:90.0%" /></p>
+<p>A last thing we often want to do is add a branch underneath the consent form to end the survey for anyone who does not consent to take the survey. The specific end-of-survey message you provide may be different depending on which company you use to recruit respondents. For now, we will use a default end-of-survey message.</p>
+<p><img src="images/endofsurv.png" style="width:60.0%" /></p>
+<p>You are now ready to “Preview” your survey!</p>
+</div>
+<div id="using-piped-text-in-randomization" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Using Piped Text in Randomization</h3>
+<p>We could complicate the randomization more so than we have done so far. For example, in Tomz and Weeks (2020), they do not fix the country to be China. Instead, they randomly vary this to be China, Pakistan, or Turkey for each respondent. We could build this added treatment arm into our design through “piped text.”</p>
+<ul>
+<li>Go back into your survey data flow. Create a second randomizer towards the top of the survey. Create a new embedded data field with an informative label, like country. Create unique fields for each of our country names. Hit apply.</li>
+</ul>
+<p><img src="images/piped1.png" style="width:70.0%" /></p>
+<ul>
+<li>Now, in addition to being assigned a treatment condition, everyone is also independently randomly assigned a country. We now need to make sure the text they see reflects both their treatment condition and country.
+<ul>
+<li>We could create 4 X 3 experimental blocks to reflect these dual randomizations.</li>
+<li>Instead, we are going to integrate the second treatment into the four blocks we have already programmed– just to save us time.</li>
+</ul></li>
+<li>Back in the survey landing page, click on every single block of text or question that includes the word “China.” In place of “China” click on the “piped text” option. Set the piped text to be the “country” embedded data field. Here is an example. Note: you need to do this for every single mention of country.</li>
+</ul>
+<p><img src="images/piped2.png" style="width:70.0%" /></p>
+<p>We could complicate our design even further by adding additional piped text randomization to vary whether it is the Democratic vs. Republican candidate, the percent certainty about the country involved, and the type of operation. This would all involve adding additional randomizers and/or branching in the survey flow, along with piped text in the experimental blocks.</p>
+</div>
+<div id="data-and-analysis" class="section level3" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Data and Analysis</h3>
+<p>Once you have a draft of your survey programmed, you will want to “preview” the survey from the perspective of a respondent by clicking “preview” in the survey landing page.</p>
+<p><img src="images/surveypreview.png" style="width:70.0%" /></p>
+<p>Repeat this a few times to see if things seem to be working properly. After that, you can do a few more steps to test your survey.</p>
+<ul>
+<li>Option 1: Fake Data. In the survey landing, go to Tools -&gt; Generate test responses. This will automatically generate fake/simulated responses to your survey. This can allow you to check how the data will download, see if you can load it into your preferred statistical software and access the variables in the way you imagined, and check if the randomization appears to work properly.</li>
+<li>Option 2: Get a distribution link for your survey, and send the link to your friends and colleagues to help you test the survey from a respondent’s perspective.
+<ul>
+<li>Go to Distributions -&gt; Get a single reusable link</li>
+<li>Note: once you click this, your survey is now published and “active.” To make any future changes to your survey, on the survey landing you will have to click “Publish.”</li>
+</ul></li>
+</ul>
+<p>With both of these options, your survey will start to populate responses in the Data and Analysis section of Qualtrics. Click on this now that you have done one or both of these steps.</p>
+<p>This will give you an overview of the responses and number of recorded responses.</p>
+<p>This is also where we can download the data. Go to Export and Import - &gt; Export Data.</p>
+<ul>
+<li>Download the data as a csv file if you plan to work in R.</li>
+<li>If you click on “More options,” you can export randomized viewing order as well as other features you may want to toggle on or off.</li>
+</ul>
+<p>If you open up your .csv file in a spreadsheet software like Excel, you will notice that the first row contains your question names as variables. The next two rows are more information about the questions, including the question wording. The actual responses start in row 3.</p>
+<ul>
+<li>If you load the csv file into R as is, you would want to delete the first two rows from your dataframe (the first row will automatically be treated as a header in R)</li>
+<li>Alternatively, you can delete rows 2-3 from the spreadsheet software before loading it into R.</li>
+<li>Save the .csv file with an informative name in the working directory where you store files to work on in R.</li>
+</ul>
+<p>Load the data into R.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="using-qualtrics.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="do">## my data are in a /data/ subfolder of my working directory</span></span>
+<span id="cb103-2"><a href="using-qualtrics.html#cb103-2" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/expdemo.csv&quot;</span>)</span>
+<span id="cb103-3"><a href="using-qualtrics.html#cb103-3" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> expdemo[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>),] <span class="co"># remove first two rows</span></span></code></pre></div>
+<p>Let’s limit the sample to those who agreed to our consent form. Locate your consent variable and subset on those who agree.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="using-qualtrics.html#cb104-1" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> <span class="fu">subset</span>(expdemo, QID1 <span class="sc">==</span> <span class="st">&quot;I Agree&quot;</span>)</span></code></pre></div>
+<p>At this stage, we just have fake/test respondents. However, we can still see if the randomization works properly and if the outcome questions are populating in the way we want.</p>
+<p>For example, we want about a quarter of respondents assigned to each of the experimental conditions.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="using-qualtrics.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(expdemo<span class="sc">$</span>treat)</span></code></pre></div>
+<pre><code>## 
+## endorsement   operation     stayout      threat 
+##          71          58          57          56</code></pre>
+<p>And let’s make sure our outcomes are populating correctly. Note how people from each condition have populated the outcomes. This gives us confidence that the survey logic is working correctly. If, for example, no one from the endorsement condition had answered the outcome, this might mean we had a typo or other error in our survey logic.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="using-qualtrics.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(expdemo<span class="sc">$</span>approval)</span></code></pre></div>
+<pre><code>## 
+##               Approve somewhat               Approve strongly 
+##                             51                             46 
+##            Disapprove somewhat            Disapprove strongly 
+##                             49                             43 
+## Neither approve nor disapprove 
+##                             53</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="using-qualtrics.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">condition=</span>expdemo<span class="sc">$</span>treat,</span>
+<span id="cb109-2"><a href="using-qualtrics.html#cb109-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">outcome =</span> expdemo<span class="sc">$</span>approval)</span></code></pre></div>
+<pre><code>##              outcome
+## condition     Approve somewhat Approve strongly Disapprove somewhat
+##   endorsement               13               15                  19
+##   operation                 13                9                   9
+##   stayout                   15               11                   7
+##   threat                    10               11                  14
+##              outcome
+## condition     Disapprove strongly Neither approve nor disapprove
+##   endorsement                  13                             11
+##   operation                     9                             18
+##   stayout                      11                             13
+##   threat                       10                             11</code></pre>
+<p>If our survey programming was all set, at this point, you could actually set up your entire R code and analysis based on the fake data. That would mean that all you have to do after you run the survey with real respondents is switch the dataset you load into the software. That would be the ultimate “pre-analysis plan.”</p>
+<p>Once you are done testing in Qualtrics, back in the Data and Analysis page, you can delete all responses using Tools -&gt; Delete data.</p>
+<p>Once you are done testing and revising the survey, you are now ready to integrate it with your preferred survey firm/recruiting platform. The specific steps from here going forward vary across platforms.</p>
+</div>
+<div id="additional-bells-and-whistles" class="section level3" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Additional Bells and Whistles</h3>
+<p>Qualtrics has a number of other features you can use, including different question types, the ability to randomize the order of response options, features to require/request responses.You can continue to explore these as you develop your own surveys.</p>
+<ul>
+<li>Their help pages are pretty useful. Here is one on <a href="https://www.qualtrics.com/support/survey-platform/survey-module/editing-questions/question-types-guide/question-types-overview/">question types</a>.</li>
+</ul>
+<p>For those familiar with “conjoint experiments” that have a lot of randomization, Anton Strezhnev has developed a tool for programming these in Qualtrics. See information <a href="https://github.com/astrezhnev/conjointsdt">here</a>.</p>
+<p>It is also possible to download data from Qualtrics directly into R using an R package <a href="https://github.com/ropensci/qualtRics">here</a>.</p>
+
+</div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="designing-an-experiment.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

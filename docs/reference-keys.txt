@@ -30,3 +30,15 @@ means-with-tidyverse
 ate-with-linear-regression
 subsetting-data-in-r
 additional-practice
+design
+designing-an-experiment
+validity
+design-space-for-experiments
+types-of-designs
+using-qualtrics
+experimental-design-with-vignette-experiment
+unique-blocks-per-experimental-condition
+adding-a-randomizer-in-the-survey-flow
+using-piped-text-in-randomization
+data-and-analysis
+additional-bells-and-whistles

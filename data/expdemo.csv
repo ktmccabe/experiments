@@ -1,0 +1,503 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,QID1,manipcheck_year,manipcheck_candpref,manipcheck_whowon,approval,treat
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Paste IRB-approved text here,In which year did the campaign take place?,Which candidate did China prefer?,Who won the U.S. Presidential election?,Do you approve or disapprove of how China behaved in this situation?,treat
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID1""}","{""ImportId"":""QID4""}","{""ImportId"":""QID6""}","{""ImportId"":""QID7""}","{""ImportId"":""QID13""}","{""ImportId"":""treat""}"
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bxaZS4ADtSY2kxo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3ELAl3ACpX92OwK,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,No information given,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2t6TRVpehJjfqhU,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,Neither candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3n6NZtAF5peYkOa,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Democratic candidate,The Republican candidate,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0iHvplMIs79LfM2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3KTS05uJ0IfLrSu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_50ZMpzkoxv3UWdU,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_ebAsFbFMvSszxVs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_02Kt0AGM0DSvQEe,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cwIXqVKYW9Bf834,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5vtl6LvEzESZnPE,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3NLC5PT32XsEqvc,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_72NchiSKqvBY8Rg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3DYSkcdnOiZK8se,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,1,TRUE,2/2/22 5:46,R_0uEeosKFEYWFJFs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8Bn9oC0rxyPEg9U,,,,,40.48800659,-74.45439911,test,,I Agree,2020,The Democratic candidate,The Republican candidate,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_e9cQIeiSSoYf0Cq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cGFEdKHaCG4C8M6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2cvVOUJjcSwNHWC,,,,,40.48800659,-74.45439911,test,,I Agree,2016,No information given,The Democratic candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bDdBtJT2XFTiCVM,,,,,40.48800659,-74.45439911,test,,I Agree,2028,No information given,The Republican candidate,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_41NUhvgaWxAmJyS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eeLIvzawYb7L9GK,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6VxksFFVQk1tKC2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_71CMxJZLIat2ICO,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4IUUYkodgTEPEF0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0P7OkQLWzvep846,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0e61Q0xGdi3qfLo,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dbZyrqXWRK3K82W,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cIn1z4VHO2tP74a,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1zdClEBdRjunQbk,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_aW2L8J37TTo6alE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bD61pZiL5nzu6IS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dgrbdTEyLO7C0dM,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cAv9uNj06wmgli6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3yDbGALJTjHCVfM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9EVt4HGdeY3UEqW,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3OxBMqwPM7OvRae,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2lUpqBNEcdSlaZg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bqq1XX8cGq18VxA,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3BKs9Z2joD88gsK,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_410GJIEypQy3qJ0,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2hn4toxrkoeX9Xw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_da6Ie6aSfhWvgY6,,,,,40.48800659,-74.45439911,test,,I Agree,2016,Neither candidate,Neither candidate,Disapprove strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5BDlwZqVLMKjWM6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6l0Fu4I3U5LyHno,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0vX9woO5g70MV8y,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0iTmakmUL9iDXM2,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Republican candidate,The Democratic candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dhyG3zViJr1i92m,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_djyiD5GRUJMomQ6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_e4myWQ5LRgEiLQi,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3w5cWAPtbk2J7Lw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5dK3JVPfLwMmuJE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_e5qDWeqvxUJ03uS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2bPFlVkO7R21lPM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bsxX5pRTwxL3VwW,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9smy6g3VCNeC5Po,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,Neither candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bqqIPNlFHaWoiF0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6FEk1hoAfuLfEZU,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5cdcCTwZeN9t0eG,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6nyVLU0sqGirSfk,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3pGkJz6BBEJdjHU,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_ezgdY3emPI6D22G,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_09v0tN3iLIsNtps,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_74B6mF216qWP0q2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cGrBZ7jzlGLwJF4,,,,,40.48800659,-74.45439911,test,,I Agree,2020,The Democratic candidate,The Republican candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6KEfQlV6BEyzKFE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3madq68RuMBA1wy,,,,,40.48800659,-74.45439911,test,,I Agree,2028,The Republican candidate,The Republican candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6EXMzT45mYzWPTo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4Ji8mHQDLvFTrmu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cMZJRCNeieGst4G,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cYD7HGuVO6Vv9JQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3LdxEDSBHuFddWK,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Democratic candidate,The Democratic candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1R3kf3yk67v27Lo,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Republican candidate,The Republican candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9yPYfdnLE2EosUm,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2gbYNGWpBdZZuaG,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bswOBB7hHqNGUqG,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_ebRQLTJHjCo2xHU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3QRZqYhSQ8Hp8xg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_50ipnE36aEV5TCu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2lWM4G1F3vWxq74,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dcbHo1RGf9P5G7k,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1LgNYtLzsMmTZFc,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_73gkDlXHi0O0Sl8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_b46YtvGZv7lXigm,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_400PO9yCeSOTI9g,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0TiwfHqnb438wwC,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_d5qYcrTe6hpQCd8,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2c2Ik62uf4QWTLE,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_d0YpOGmrQxqYo6y,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9Yc2QidGOaH80mi,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eJQI1u0ZjsxBFjM,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6GuIHMUzdXjjhfU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_b7bI8gCx4Wk2qGi,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1NXPyQYHDBffBqu,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0Ba2XaLxZ28ieCW,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_86W3xdkqUgyCNuu,,,,,40.48800659,-74.45439911,test,,I Agree,2020,Neither candidate,The Democratic candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0kaMVRFPVIiElDM,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Republican candidate,The Democratic candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_beX1hpJCqV3DB0G,,,,,40.48800659,-74.45439911,test,,I Agree,2016,Neither candidate,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eXpXGhmwqbUS6NM,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_201DnF9QoDa0AfA,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_aY6aKbYsm7j0WXk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9FB0auegU6WCEIu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_24Op1nTfG61KaBo,,,,,40.48800659,-74.45439911,test,,I Agree,2028,The Republican candidate,Neither candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2a6Pguz6JkOBkRU,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5aTNz5lqDIm4Zvw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_00xXTexxNBeRbvg,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bfk8zgJTaRR2N2S,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1OgcyhkYjVgyAZM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bd2UGY4Oy45D142,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6SD5JNUN8GAapDg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,1,TRUE,2/2/22 5:46,R_38AcKeJNa7DDaPY,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0H4f3IYt8YZ93v0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_beGJyq1bdnmT2zc,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4UszXkVQZbXFAy2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dh648QiD5IjREUu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_e2uQEAnXKKwPI7c,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4V353QkT3nfWNMO,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_23MbpReZVS9PuM6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3OeGgi39DC7aKYS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_b71nt0bgT4eoQVo,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_ddwFNhviu17FaL4,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8DnDSszAp6RqsM6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bIwRpM3sUCmdd6S,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bdq83ygDgW4glIq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8e76hgNrnQ2VAa2,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_79bjKyHftoukhZc,,,,,40.48800659,-74.45439911,test,,I Agree,2028,The Democratic candidate,No information given,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_390q1O16j1WPNUq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6flOIhGPMvWRcua,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4UEDyMfXLH9M2pg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5nd8yDGXL6qLiFU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4YLhlCjrIs5fqse,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_89fDZ39kjWaJnkG,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8qcMQhngS9klmw6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,1,TRUE,2/2/22 5:46,R_eJ51Va82sX0FvCe,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5gQ8fv1pGSBb1si,,,,,40.48800659,-74.45439911,test,,I Agree,2028,The Republican candidate,The Republican candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bvYt56NBfEpgfv8,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6sVHLFJCvaEx5kO,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6Wh97UeIbReQyBU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3rPbTToY3BhaW5o,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bawbYms0ZRfhHCK,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9ugcvnmHyI0WJUy,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6SF04zBOM6gVIsC,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,The Democratic candidate,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bEGG4ejV1voKGLs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4Z2hgqj5RxXdU9w,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bKkES6XgbxIynPg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_42EPbEyXaFfhASG,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_06UaexJ8YnbH4eG,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3wIxIM9ZlYDSfbM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9zwaiXcrDoPkGHQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0DMNjKwfThGVOhU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8AGj54x2KFGlouq,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_a3PKxzlJFuGwnBA,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0PnmUKIkLpeZMnI,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0pK9snVy8I4Nkay,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9G2dt264dqMj12K,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2n6X0hzIkz3K7n8,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_72qPMr51skDG0Rw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1OmkWARrPVJEvJ4,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bKrYCP9I0d2LvHE,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8pOToXa9zQduQrs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_7X8vMNvtWG25epo,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8wug0GTSGKNVETs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9MIWOJGz8oZz2wm,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9zwH10C176KCaIm,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Democratic candidate,The Republican candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eeXuJjD17sgbwG2,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2h3RzBU40SNe3Oe,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1AH8goeFSOep3WC,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_d3WRP4YOINEGgw6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3gXXNsIXi1fVaN8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5iKntrfFBrtVYjA,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3qsgASksYtiAZnM,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Republican candidate,Neither candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9XBTIOofZXqEfS6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6ybzh0AOs3yq2xw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bpgPGTAS6IFajau,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3IzoKfbkekDvwO2,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8l9tLWfnJAHfsBU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cMkNw8vcbhWC8Rg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_a9seVD93XBkqpUi,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6mo1nrzTsRA3uvk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_br44Moi3hdNApHU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0Mt2cSYCp08t5FY,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0OPGFxwrE5N0ITA,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cMZl3gPVI2kBsX4,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eWI9HSB8nQkktrU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bQPhFjfvJry6pGS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bJTyUL3nis8JJIy,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0psA6ezFJBaI8Ye,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4OPXZMbFzBzs902,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eRlCznZABO8INxQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bCQL8u1tNO15GkK,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_aXfGr6ZlXokBw58,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_ewW1rfKePPC4WHA,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8IFb1fJ8jV0AeCG,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5budpUwjAJ0OExE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8CSZpQj4p3Wg3xc,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Republican candidate,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3eBpIa3CF2c4uFg,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_26oaxt6vDNnQTCm,,,,,40.48800659,-74.45439911,test,,I Agree,2020,The Republican candidate,The Republican candidate,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3gZY9yE1UPOR5yK,,,,,40.48800659,-74.45439911,test,,I Agree,2016,Neither candidate,Neither candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6W21lSZ1V2PraJM,,,,,40.48800659,-74.45439911,test,,I Agree,2016,No information given,No information given,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6lHyqxhVgnecNdc,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4N2LGLTGeZKlHhQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cLShLcvpbAti4t0,,,,,40.48800659,-74.45439911,test,,I Agree,2016,Neither candidate,No information given,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3QJY9eMspG2mPR4,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bvkz3CPcMc4KvlQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_ePOk1MHlgbo0OMe,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,No information given,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,1,TRUE,2/2/22 5:46,R_4JltmTn3NlV1gKa,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6XqF7vIB3WfiMZM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0fiGkv4ako3ge90,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eL6bNu2vVdcvtMq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8dMHTyRdWM9mYCi,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9ojkSFHdTgybDPo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bORvDH9Ctpn1CNo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8odhZsIwJ8aEk4K,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9sjJnGPHcW4PiwC,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6GsrB2jPEhnXOGG,,,,,40.48800659,-74.45439911,test,,I Agree,2024,No information given,The Republican candidate,Disapprove strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bPDCN6pgktY7sfs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dbxwhJoIzvk4Y0C,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_b7UsKeVMGxuadkq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5hbWDsy6hLUaWDI,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bx7TpZZEYojvkr4,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8ueOxgcfzXZY50O,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dmLlAiEEsOBI6ua,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6QNbFH9O86sGlp4,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bBntlAyeAoNOduu,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Republican candidate,The Republican candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_d3YfmVzAYwy3o6W,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_08TVwHQ3o0kGxts,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9n4WZMefmgvUnv8,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9sqcfzxd57mnrts,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2bqFYJIx79Y0UhU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_egJRRoUWDHdKFYG,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_88GD3iW8HnQgM74,,,,,40.48800659,-74.45439911,test,,I Agree,2024,No information given,The Democratic candidate,Disapprove strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0HXELcUxF7b5AFM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bkBirPepj8GXITc,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6JRktgFnT1VAAB0,,,,,40.48800659,-74.45439911,test,,I Agree,2024,No information given,No information given,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1GRae6tsigyuuge,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_37S9VAgMeHcM3Qi,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0dHNHFhqFKXVCS2,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9SPyxulpIhdHtnU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0cbBRWqY4FDyB14,,,,,40.48800659,-74.45439911,test,,I Agree,2016,No information given,The Republican candidate,Disapprove strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_eyWsI1bicqqmwg6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3eq2RraU3HZWhim,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_42hCCIqemY9Wfxs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_efzA05crroaQEdg,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_7U4n1VXsTk81858,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cOdOEBCRK08ALky,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6LQ9ZwGvW63Ekvk,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Republican candidate,The Democratic candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5BdedcO28yMTviS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9o6gfyNKQ49ej4O,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_enRdS0seRqMT7zU,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6Va4n0aaE68Pebc,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5pgM4SSaGNLNAA6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_1Yr4QpYNtXqAb0a,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9sFLGdQsye60Qtw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0wxHT1mJ1kFwkF8,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_8vsWxBR5e1ulMGi,,,,,40.48800659,-74.45439911,test,,I Agree,2028,The Republican candidate,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9SSWn0VbPAMdk5U,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Republican candidate,No information given,Disapprove strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9z2MzuJbipWkNee,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_cI2jYh1GRR8OXvo,,,,,40.48800659,-74.45439911,test,,I Agree,2020,Neither candidate,The Democratic candidate,Approve strongly,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_elYDipw2iTY9RWu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6xjkduRJ9kdYDhI,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_07ordaykrIgMgWa,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_d4IqU8fbrR25Aou,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2slOn8r1RAcDKzs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5Ao49XLYEGvmX8W,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_56gHXrv9tGSB51c,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,1,TRUE,2/2/22 5:46,R_elFF4KlgkmwawM6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4U5xxii7Eg7zi86,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6nxDC9pe44q9cW2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bPFu19kjqd0JmEm,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_4ImO9RSTMSKHPRI,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3K4J23flQ20oAx8,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3C9hgKkuErIZyl0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9tRlkPGiV0SQx2m,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_0xf2aDyy0H1Lsmq,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_e8JbWq8hr2bUjAy,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_egj1dNEr2yCVsq2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,1,TRUE,2/2/22 5:46,R_54kfPYVimLUPXro,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_emuvWfeanbe5d3g,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Democratic candidate,Neither candidate,Approve somewhat,endorsement
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_2iq13D4eIAx7tdA,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_dmtQRUVjdgo48jY,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_9Mu7N5EhVAD7DJs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3EKaMlGuBQqbxDo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_5jBwBejV0JfXqfk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_3DGloYcQpny0B02,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_6tBxIOLf1sCQiMK,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:46,R_bfO4F1iuWofLdsy,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:46,2/2/22 5:46,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3EmKSJc7qApa25o,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dhAv7FCoyPUMkrs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3ZNP2gESTx4m5wi,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bNwnp9X3u41LYNM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4PnXkPI6FJAI4Hs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_7af92XyX6fOJT9Q,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eEZ1m3VRC1IpXq6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bdpzow6qbrf5n6u,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4Uuq8RQU9r6qTZ4,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_25oMmUzkdxmsugu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,1,TRUE,2/2/22 5:47,R_3fSxfBlLlsErXSK,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_a5WewfdoNDMKmbA,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bmjTSUO8PEAalW6,,,,,40.48800659,-74.45439911,test,,I Agree,2024,No information given,No information given,Approve somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5b6uaCvZxAPr9P0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dcyE9Or55sWQxKK,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4PjKO72vxoMKM4e,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_38hJeqFsPHrxwzk,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,The Republican candidate,Approve somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5vi1qYNi7F3sArc,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3kQ5ePOyNnQfBdQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cSW6Q7j6T3SlAmq,,,,,40.48800659,-74.45439911,test,,I Agree,2020,The Democratic candidate,Neither candidate,Approve somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_41p4DXVLKp7cpw2,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0reb2cg4Nj2QF4q,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_02iJkSHeXyvl0hM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9RflOb1CcMfkpXo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5bgAJY0w0BrC0C2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8ifdxwk049pF4N0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3WZED3dJSk6NABU,,,,,40.48800659,-74.45439911,test,,I Agree,2028,Neither candidate,Neither candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bedQ7qeIYxSmjWK,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8GRQtzye3mK9IV0,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Republican candidate,The Democratic candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bHQCEJd5it1Yx02,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8IBcO4qUYUWAtts,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6YcpJiFtfjtrVT8,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1SMh9hThMSQMb9Y,,,,,40.48800659,-74.45439911,test,,I Agree,2020,The Democratic candidate,No information given,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9KxYM0qw3dOgAbs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3Esw1SO7vS7VeMm,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,The Republican candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cNE7YVYkdIp4HWK,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_37Rj9VMwSkIZQmq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8GM8CQTnkaQzhTo,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_09rLzQzYMpZpsrQ,,,,,40.48800659,-74.45439911,test,,I Agree,2028,The Democratic candidate,No information given,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_e3Ups2jyuGnRvr8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_82oH8Z2wUxMAVLg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_40cIMyvAV2PMpZY,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3VkSZgpguWMzwqy,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_24xYYFi5wdRw1Vk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6ziiYFvQf62vPts,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_ebKlbZLWQtlnwvs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0DPRG6qJbH6Akrs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_57nvXx7Dydaz4FM,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6Rye8PwVhLGVC3c,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bC2qjmHKWXxtvq6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9EOFDFHsKOTUO9M,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3KK3RgPIJhqd7vw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dhAkwwYFkc3hjO6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_e8w6AKhh0YANoVM,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_djoQFWaeiKdyAJw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0IX9D4P9obEk3Bk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2aTKq2jr4N3DFcO,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bJDE2RoVvA40sUm,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5o1kqz1T0AN9b4G,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eet8kCIMbUuSyHQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_7Pbijfi6uLcJ48u,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4UUSghYH3ycEEoC,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8bIgPBFzvyLRydw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5pYF8E72t79uNT0,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6glsA8zVTUjoPeS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8f8jGMV37m7hDNQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_73qyS0VcEkrf2yq,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9uiXtHqyjB3DHGC,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dm7hlKIdurlQH0q,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Democratic candidate,Neither candidate,Approve somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4OeahB0JgnS38Fw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6J8QxsB22lIJ1oa,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2nIKP4LoSKia0Dk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3OGg9TqXWL7ESVw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5gAguhokbEhawp8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_enBNLEUOGAxuUFE,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2nHOlO5WY2M9hdQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cBztYP6JENmtgVM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eR5Y9p6sHk6uGQC,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6ioyKxO6Ug5bDLw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6YiPt8FRXRIKGqO,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9YaIGQb7IVa9t3M,,,,,40.48800659,-74.45439911,test,,I Agree,2016,No information given,The Republican candidate,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_86sK0EBJpeVCDWe,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6X3qi238TYuu63k,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_afRfPKuTL5v95nE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0MTyzQxsV4RLEIS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bkAEEIh5CstI3BA,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3rqWbq0Zjiwa3Xg,,,,,40.48800659,-74.45439911,test,,I Agree,2020,Neither candidate,No information given,Disapprove somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dgwgAvTC9RwalXE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6EcKepKERPnrxcO,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Republican candidate,The Republican candidate,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3g9YnSDo93qwQAe,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eL4ydsRjyoiBNdQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4153dSaHNq2pLTM,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2r7xjGHR9T5a2d8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cwrR1QBLgL3jlv8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3jTT4pLFdeIypoO,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bpvzdVFdmKseeSW,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5pO7t3b4SwYnGwC,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1Zzsq8HTpNs3iHs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eaFclcMn2IBlhMa,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8CSbQK7Azl9F5rg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_es3NChjx8EBRRWe,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_77IwyGqQwHv7Cd0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eb7noaT76AMRex8,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_agiCtGiyV5eeXNY,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_b3nTjHM2dkSx67Q,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_aXfva7lmiJgsIuy,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Republican candidate,Neither candidate,Neither approve nor disapprove,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6l1v55g0eVbhqK2,,,,,40.48800659,-74.45439911,test,,I Agree,2024,No information given,Neither candidate,Disapprove somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4JfzaGTm489L5wG,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0TYwXnqaJczxfkq,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cvhKVAsdWqlS2b4,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9tR1jXVTgRFU05M,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_aYoGBOGUxjntsKq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8qVPf3ArIoo6noq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8BPWj1LF86pWtxA,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bqqbTrRwIzZfJTo,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_br1afFgyXr4htzg,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_ekuGx8QvCzZB2US,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0iamgVW0b9WD0Fw,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3aaM4USHtLeLLcG,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Republican candidate,No information given,Neither approve nor disapprove,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_73YextxZailHybI,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6YElr8hWclvYPAy,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9FAuZa2aEAk75Lo,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6hRkrPOUX2RgQku,,,,,40.48800659,-74.45439911,test,,I Agree,2028,Neither candidate,Neither candidate,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dbxwVun9Ux2BxC6,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Republican candidate,The Democratic candidate,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0e0nsG2sOsgD2Ky,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2cslXzIyL7CLbO6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3W1a5FisXBRXN30,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8rmag2c3SSbkNoO,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6XbKV2VEtXBHnIW,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8pHNK15lN0bL9ZQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3Xio8nJg3OlUTOe,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4NIdlvLdb3l59J4,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_d5rODUwv1p4sbAO,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_54rPQFHmSnVqn1s,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_agz5NidQhBP8IAu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_aVqSS3RsIEpmubk,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,Neither candidate,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_aWdUJ7clvc5riHI,,,,,40.48800659,-74.45439911,test,,I Agree,2020,Neither candidate,No information given,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_72PX8Uym4ZItn26,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cZ1JyVZMtvnCSvs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eFNGKI8qHCWxsNM,,,,,40.48800659,-74.45439911,test,,I Agree,2024,The Democratic candidate,The Republican candidate,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6JVk82pKOw2TPuu,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_51p2wBpfiYRB4ma,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3Uw9EB83w8sjo4m,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6WFG49paju1yZcW,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,Neither candidate,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_aaEFq8ohb8UJNky,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,No information given,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0HOUtlkyTu7clzU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,1,TRUE,2/2/22 5:47,R_0iTbIJUEw8Z8ltI,,,,,40.48800659,-74.45439911,test,,I Agree,2028,Neither candidate,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bNQiq3w50vPSC5E,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_erZLfHQvbuJdBzw,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_exPGRgX2qq8i4fQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5oHf3KkAf2GPKR0,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1TVxtrnFQCgqHae,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9G2wXyjuYsuAm22,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6lHcNEiPDJfzkSW,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2ujuGqV4Fzd0ado,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,1,TRUE,2/2/22 5:47,R_1NtOs8ugSsL0bZQ,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_diBmSL5ccmHKJsq,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cIuaopUKAcwmc4u,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Republican candidate,Neither candidate,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bJd88jydktc68Dk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1QSD5pjYwtphIsS,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9tSqPRsyNGglxhs,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_29VUCGjTo6ASWR8,,,,,40.48800659,-74.45439911,test,,I Agree,2018,Neither candidate,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bJeCo8Jsy25UEzI,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,No information given,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9SugHD5HfKA0lVQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bpB9UYQS0A9EFf0,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0fHzd1h98MdGG1M,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6PFbn8Z41z7ELu6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cN0V5oZADOhTkge,,,,,40.48800659,-74.45439911,test,,I Agree,2016,The Republican candidate,The Republican candidate,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_7OnDq2tHkqCiJq6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3jTD23oDb3DBBXg,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9KymLony0iZZoW2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0cUNJMUcGx9IGk6,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cOTQaH716HMIV3U,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1zCvTf2pFv0vY10,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3yYY9j1cHEimdIa,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5vdm8JudISyUuHk,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5yBaRcLCbPQh1Fc,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Neither approve nor disapprove,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_5yU0QqPJKKTIpdY,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_86u84hQ96RG7n82,,,,,40.48800659,-74.45439911,test,,I Agree,2018,The Republican candidate,Neither candidate,Disapprove somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_aVOdSLKg6WmF72C,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_efwETfwDXGapvrU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3gXJSSFGQHOjiDQ,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_ehREPUnz21wZhbM,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4NMh6aTvDIbBCpE,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eXyQYcFvAR05xAy,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eUN3pdHsprIOo6O,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eA03AXmmIBagce2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_baeD3ZrT6F6G0xE,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_01EJIJ99n1zO2q2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_9S2rSDN63TokzZ4,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_b3ARBnFPo1mOFGm,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1ZzbqspaONN2emG,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_a9HYxZ1ZoyIPVs2,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8dMdnKoGRESL6bI,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6A7J22XDMr39J1s,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3I9UbI6xJaSY8oC,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_cGxMvfLEULqRGOW,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3fVsWB0G1Tbln1k,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_2lu2RQJtYiks65E,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_0HTrVuklWowuwXY,,,,,40.48800659,-74.45439911,test,,I Agree,2020,No information given,The Republican candidate,Disapprove strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_agu7IUHdmiFJ4JU,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dcyygE5u3DbPKXs,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve strongly,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_3PrrLfB6haJ2Ebc,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_e5PvONwu9TeZL4a,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_8omK0MmOJpjy2Eu,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_1RYspDPdmLCdvqS,,,,,40.48800659,-74.45439911,test,,I Agree,2016,No information given,Neither candidate,Approve somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,1,TRUE,2/2/22 5:47,R_5zfUDAHiGukhI7Y,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Approve somewhat,stayout
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_dcBj3VgNs1UVYBo,,,,,40.48800659,-74.45439911,test,,I Agree,2024,Neither candidate,The Republican candidate,Disapprove somewhat,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_eX7jpahMrRNs0MC,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove somewhat,threat
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bq2MMUNVqIvQyrQ,,,,,40.48800659,-74.45439911,test,,I Agree,2018,No information given,The Democratic candidate,Approve strongly,endorsement
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_6QDi3AnfX3FfWdg,,,,,40.48800659,-74.45439911,test,,I Agree,,,,Disapprove strongly,operation
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_d69XHTXdDZeSk3Y,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_4VeD8qzuIiyjD94,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
+2/2/22 5:47,2/2/22 5:47,Survey Test,,100,0,TRUE,2/2/22 5:47,R_bQIIQiGOWAa8Sk6,,,,,40.48800659,-74.45439911,test,,I Disagree,,,,,
