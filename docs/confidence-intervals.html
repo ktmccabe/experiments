@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Difference in Means Estimator | Experimental Methods in Political Science</title>
-  <meta name="description" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <title>4.2 Confidence Intervals | Experimental Methods in Political Science</title>
+  <meta name="description" content="4.2 Confidence Intervals | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta property="og:title" content="4.2 Confidence Intervals | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="4.2 Confidence Intervals | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="identification-strategy.html"/>
-<link rel="next" href="overview-of-identification-assumptions.html"/>
+<link rel="prev" href="standard-errors.html"/>
+<link rel="next" href="hypothesis-tests.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -238,77 +238,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="difference-in-means-estimator" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Difference in Means Estimator</h2>
-<p>In the real world, we follow this process for causal identification:</p>
-<ul>
-<li>Our motivation: Find quantities that represent the population parameters (<span class="math inline">\(\theta\)</span>)</li>
-<li>Our problem: We often only get a sample of the population and can only observe one potential outcome for any unit in our sample</li>
-<li>Goal: Get unbiased estimators for the population</li>
-<li>Definition of unbiasedness: <span class="math inline">\(E[\hat{\theta}] = \theta\)</span></li>
-</ul>
-<p>Suppose <span class="math inline">\(D_i\)</span> were randomly assigned such that <span class="math inline">\(m\)</span> subjects assigned to treatment and <span class="math inline">\(N-m\)</span> subjects assigned to control.</p>
-<p><span class="math display">\[\begin{align*}
-\widehat{ATE} &amp;= \frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i \\
-\end{align*}\]</span></p>
-<p>Is the difference in means estimator an unbiased estimate for the ATE? How can we find out?</p>
-<p>We take the expected value:</p>
-<p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= \frac{E(Y_1) + E(Y_2) +...+E(Y_m)}{m} -  \frac{E(Y_{m+1}) + E(Y_{m+2}) +...+E(Y_N)}{N-m}\\
-&amp;= \frac{m * E[Y_i(1 | D_i = 1)]}{m} - \frac{(N-m)* E[Y_i(0) | D_i = 0]}{N-m}\\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-%&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]=ATE
-\end{align*}\]</span></p>
-<p>Is the final statement equivalent to the ATE?</p>
-<ul>
-<li>We want our final statement to be <span class="math inline">\(E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\)</span>=ATE</li>
-<li>Our final statement is: <span class="math inline">\(E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0]=E[\widehat{ATE}]\)</span></li>
-</ul>
-<p>Under what conditions can we get those two statements to look the same?</p>
-<details>
-<summary>
-Well, let’s look into some rules of expectation.
-</summary>
-<p><span class="math inline">\(E[Y|X] = E[Y]\)</span> if Y and X are independent.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-</details>
-<p>Our final statement can be simplified when treatment assignment is independent of potential outcomes:</p>
-<ul>
-<li><span class="math inline">\(E[Y_i(1) |D_i = 1] = E[Y_i(1) |D_i = 0] = E[Y_i(1)]\)</span></li>
-<li><span class="math inline">\(E[Y_i(0) |D_i = 0] = E[Y_i(0) |D_i = 1] = E[Y_i(0)]\)</span></li>
-</ul>
-<p>When does this occur? Random assignment of treatment!!</p>
-<p>Putting this together, under random assignment:</p>
-<p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\\
-E[\widehat{ATE}] &amp;= ATE
-\end{align*}\]</span></p>
-<p><strong><em>Why Experiments</em></strong></p>
-<p>One approach for addressing the fundamental problem of causal inference is to simulate two potential states of the world through random assignment: Randomized Controlled Trials / Experiments</p>
-<p>Experiments approximate factual vs. counterfactual comparison</p>
-<ul>
-<li>We randomly assign one group to receive a “treatment” and another not to receive a treatment (the control)</li>
-<li>Using what we learned above, when treatment assignment is <strong>randomized</strong>, the only thing that distinguishes the treatment group from the control group in expectation, besides the treatment itself, is chance.</li>
-<li>This allows us to use a simple differences in means estimator in experiments to estimate our average treatment effects.</li>
-</ul>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>See <a href="https://www.youtube.com/watch?v=Ki2HpTCPwhM">video</a> for help on law of iterated expectations<a href="difference-in-means-estimator.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<div id="confidence-intervals" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Confidence Intervals</h2>
+<ol style="list-style-type: decimal">
+<li><p>Take a sample statistic (e.g.,<span class="math inline">\(\bar{Y}\)</span>)</p></li>
+<li><p>Set a test value. A common one is <span class="math inline">\(\alpha = 0.05\)</span></p></li>
+<li><p>Find the critical value associated with the test level. Example:</p></li>
 </ol>
+<p><span class="math display">\[\begin{align*}
+z_{crit (1-\alpha/2)} &amp;= 1.96\\
+\end{align*}\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Multiply the critical value by the standard error of your statistic, and add and subtract from the statistic</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+CI &amp;= \bar{Y} +/- crit.value*\widehat{SE}_{\bar{Y}}\\
+\end{align*}\]</span></p>
+<p>Careful when interpreting CI’s: note that the interval may vary from experiment to experiment, while the parameter stays fixed.</p>
+<p><strong><em>Example computing confidence intervals</em></strong></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="confidence-intervals.html#cb121-1" aria-hidden="true" tabindex="-1"></a>m.fts <span class="ot">&lt;-</span> <span class="fu">mean</span>(fts)</span>
+<span id="cb121-2"><a href="confidence-intervals.html#cb121-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-3"><a href="confidence-intervals.html#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="do">## What&#39;s our test level? .05</span></span>
+<span id="cb121-4"><a href="confidence-intervals.html#cb121-4" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> .<span class="dv">05</span></span>
+<span id="cb121-5"><a href="confidence-intervals.html#cb121-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-6"><a href="confidence-intervals.html#cb121-6" aria-hidden="true" tabindex="-1"></a><span class="do">## critical value for normal distribution</span></span>
+<span id="cb121-7"><a href="confidence-intervals.html#cb121-7" aria-hidden="true" tabindex="-1"></a>crit.z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb121-8"><a href="confidence-intervals.html#cb121-8" aria-hidden="true" tabindex="-1"></a><span class="do">## critical value for t-distribution</span></span>
+<span id="cb121-9"><a href="confidence-intervals.html#cb121-9" aria-hidden="true" tabindex="-1"></a>crit.t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> (<span class="fu">length</span>(fts)<span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb121-10"><a href="confidence-intervals.html#cb121-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-11"><a href="confidence-intervals.html#cb121-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence interval using t-distribution</span></span>
+<span id="cb121-12"><a href="confidence-intervals.html#cb121-12" aria-hidden="true" tabindex="-1"></a>ci.ub <span class="ot">&lt;-</span> m.fts <span class="sc">+</span> crit.t<span class="sc">*</span>se.fts</span>
+<span id="cb121-13"><a href="confidence-intervals.html#cb121-13" aria-hidden="true" tabindex="-1"></a>ci.lb <span class="ot">&lt;-</span> m.fts <span class="sc">-</span> crit.t<span class="sc">*</span>se.fts</span>
+<span id="cb121-14"><a href="confidence-intervals.html#cb121-14" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(ci.lb, ci.ub) </span></code></pre></div>
+<pre><code>## [1] 44.17565 91.42435</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="confidence-intervals.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alternative using the R t.test function</span></span>
+<span id="cb123-2"><a href="confidence-intervals.html#cb123-2" aria-hidden="true" tabindex="-1"></a>t.testfts <span class="ot">&lt;-</span> <span class="fu">t.test</span>(fts)</span>
+<span id="cb123-3"><a href="confidence-intervals.html#cb123-3" aria-hidden="true" tabindex="-1"></a>t.testfts<span class="sc">$</span>conf.int[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 44.17565 91.42435</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="identification-strategy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-identification-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="standard-errors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypothesis-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

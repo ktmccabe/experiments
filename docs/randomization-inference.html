@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Difference in Means Estimator | Experimental Methods in Political Science</title>
-  <meta name="description" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <title>4.5 Randomization Inference | Experimental Methods in Political Science</title>
+  <meta name="description" content="4.5 Randomization Inference | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta property="og:title" content="4.5 Randomization Inference | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="4.5 Randomization Inference | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="identification-strategy.html"/>
-<link rel="next" href="overview-of-identification-assumptions.html"/>
+<link rel="prev" href="empirical-application.html"/>
+<link rel="next" href="a-note-on-expectations-and-variance.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -238,77 +238,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="difference-in-means-estimator" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Difference in Means Estimator</h2>
-<p>In the real world, we follow this process for causal identification:</p>
+<div id="randomization-inference" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Randomization Inference</h2>
+<p>Null Hypothesis of No Average Effect vs. Sharp Null Hypothesis of No Effect (pg. 62)</p>
 <ul>
-<li>Our motivation: Find quantities that represent the population parameters (<span class="math inline">\(\theta\)</span>)</li>
-<li>Our problem: We often only get a sample of the population and can only observe one potential outcome for any unit in our sample</li>
-<li>Goal: Get unbiased estimators for the population</li>
-<li>Definition of unbiasedness: <span class="math inline">\(E[\hat{\theta}] = \theta\)</span></li>
+<li><span class="math inline">\(\mu_{Y(1)} = \mu_{Y(0)}\)</span> vs.</li>
+<li><span class="math inline">\(Y_i(1) = Y_i(0)\)</span> for all i</li>
 </ul>
-<p>Suppose <span class="math inline">\(D_i\)</span> were randomly assigned such that <span class="math inline">\(m\)</span> subjects assigned to treatment and <span class="math inline">\(N-m\)</span> subjects assigned to control.</p>
-<p><span class="math display">\[\begin{align*}
-\widehat{ATE} &amp;= \frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i \\
-\end{align*}\]</span></p>
-<p>Is the difference in means estimator an unbiased estimate for the ATE? How can we find out?</p>
-<p>We take the expected value:</p>
-<p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= \frac{E(Y_1) + E(Y_2) +...+E(Y_m)}{m} -  \frac{E(Y_{m+1}) + E(Y_{m+2}) +...+E(Y_N)}{N-m}\\
-&amp;= \frac{m * E[Y_i(1 | D_i = 1)]}{m} - \frac{(N-m)* E[Y_i(0) | D_i = 0]}{N-m}\\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-%&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]=ATE
-\end{align*}\]</span></p>
-<p>Is the final statement equivalent to the ATE?</p>
+<p>What are the key differences here?</p>
 <ul>
-<li>We want our final statement to be <span class="math inline">\(E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\)</span>=ATE</li>
-<li>Our final statement is: <span class="math inline">\(E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0]=E[\widehat{ATE}]\)</span></li>
+<li>The treatment has no effect: <span class="math inline">\(Y_i(1) = Y_i(0)\)</span> for all <span class="math inline">\(i\)</span>.</li>
+<li>Suppose we are in the world where the sharp null is true.</li>
+<li>Let’s simulate what the sampling distribution under that null distribution looks like.</li>
+<li>We assess the distribution relative to the ATE we observe under the assignment in our sample</li>
+<li>How likely is it we would observe our ATE, given the null distribution?</li>
 </ul>
-<p>Under what conditions can we get those two statements to look the same?</p>
-<details>
-<summary>
-Well, let’s look into some rules of expectation.
-</summary>
-<p><span class="math inline">\(E[Y|X] = E[Y]\)</span> if Y and X are independent.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-</details>
-<p>Our final statement can be simplified when treatment assignment is independent of potential outcomes:</p>
-<ul>
-<li><span class="math inline">\(E[Y_i(1) |D_i = 1] = E[Y_i(1) |D_i = 0] = E[Y_i(1)]\)</span></li>
-<li><span class="math inline">\(E[Y_i(0) |D_i = 0] = E[Y_i(0) |D_i = 1] = E[Y_i(0)]\)</span></li>
-</ul>
-<p>When does this occur? Random assignment of treatment!!</p>
-<p>Putting this together, under random assignment:</p>
-<p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\\
-E[\widehat{ATE}] &amp;= ATE
-\end{align*}\]</span></p>
-<p><strong><em>Why Experiments</em></strong></p>
-<p>One approach for addressing the fundamental problem of causal inference is to simulate two potential states of the world through random assignment: Randomized Controlled Trials / Experiments</p>
-<p>Experiments approximate factual vs. counterfactual comparison</p>
-<ul>
-<li>We randomly assign one group to receive a “treatment” and another not to receive a treatment (the control)</li>
-<li>Using what we learned above, when treatment assignment is <strong>randomized</strong>, the only thing that distinguishes the treatment group from the control group in expectation, besides the treatment itself, is chance.</li>
-<li>This allows us to use a simple differences in means estimator in experiments to estimate our average treatment effects.</li>
-</ul>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>See <a href="https://www.youtube.com/watch?v=Ki2HpTCPwhM">video</a> for help on law of iterated expectations<a href="difference-in-means-estimator.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
+<p><strong><em>Example</em></strong>
+Here is our data for 7 observations, where 4 are assigned to treatment, 3 to control.</p>
+<p><img src="images/ri1.png" /></p>
+<p>Our estimate for the average treatment effect is <span class="math inline">\(6-3 = 3.\)</span></p>
+<p>Suppose the sharp null is true: <span class="math inline">\(Y_i(1) = Y_i(0)\)</span>. This means <span class="math inline">\(\tau_i\)</span> = 0 for all <span class="math inline">\(i.\)</span></p>
+<p><img src="images/ri2.png" /></p>
+<p>In our null world, if we know <span class="math inline">\(Y_i\)</span> for each <span class="math inline">\(i\)</span> and <span class="math inline">\(\tau_i\)</span> for each <span class="math inline">\(i\)</span>, we can solve for the missing potential outcome.</p>
+<p><img src="images/ri3.png" /></p>
+<p>For randomization inference, what we do now is simulate possible randomizations– what if a different set of observations were treated each time?</p>
+<p><img src="images/ri4.png" /></p>
+<p>What is our average treatment effect for ? 18/4 - 15/3 = -.5</p>
+<p>Repeat for all (or a lot of) possible permutations of d. This gives us an implied null distribution of the average treatment effect under the sharp null. Note: it won’t always be zero. It will be a distribution around zero. We will compare how extreme our observed estimate of the average treatment effect is compared to this distribution under the null.</p>
+<p><strong><em>Empirical example with social exclusion experiment</em></strong></p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="randomization-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri&quot;)</span></span>
+<span id="cb149-2"><a href="randomization-inference.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri)</span></code></pre></div>
+<pre><code>## Warning: package &#39;ri&#39; was built under R version 4.0.2</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="randomization-inference.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb151-2"><a href="randomization-inference.html#cb151-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-3"><a href="randomization-inference.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
+<span id="cb151-4"><a href="randomization-inference.html#cb151-4" aria-hidden="true" tabindex="-1"></a>probs <span class="ot">&lt;-</span> <span class="fu">genprobexact</span>(asians<span class="sc">$</span>treatment_cit)</span>
+<span id="cb151-5"><a href="randomization-inference.html#cb151-5" aria-hidden="true" tabindex="-1"></a>ate <span class="ot">&lt;-</span> <span class="fu">estate</span>(asians<span class="sc">$</span>study2_avg,asians<span class="sc">$</span>treatment_cit,<span class="at">prob=</span>probs)</span>
+<span id="cb151-6"><a href="randomization-inference.html#cb151-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-7"><a href="randomization-inference.html#cb151-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Generate permutations of random assignments</span></span>
+<span id="cb151-8"><a href="randomization-inference.html#cb151-8" aria-hidden="true" tabindex="-1"></a>perms <span class="ot">&lt;-</span> <span class="fu">genperms</span>(asians<span class="sc">$</span>treatment_cit,<span class="at">maxiter=</span><span class="dv">1000</span>) </span></code></pre></div>
+<pre><code>## Too many permutations to use exact method.
+## Defaulting to approximate method.
+## Increase maxiter to at least 218169540588403552 to perform exact estimation.</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="randomization-inference.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Generate Potential Outcomes. When null ate = 0, this will just be your Y</span></span>
+<span id="cb153-2"><a href="randomization-inference.html#cb153-2" aria-hidden="true" tabindex="-1"></a>Ys <span class="ot">&lt;-</span> <span class="fu">genouts</span>(asians<span class="sc">$</span>study2_avg,asians<span class="sc">$</span>treatment_cit,<span class="at">ate=</span><span class="dv">0</span>)</span>
+<span id="cb153-3"><a href="randomization-inference.html#cb153-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-4"><a href="randomization-inference.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Simulate the implied distribution of ates</span></span>
+<span id="cb153-5"><a href="randomization-inference.html#cb153-5" aria-hidden="true" tabindex="-1"></a>distout <span class="ot">&lt;-</span> <span class="fu">gendist</span>(Ys,perms,<span class="at">prob=</span>probs)</span></code></pre></div>
+<p>Plot and compare distribution to observed ATE</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="randomization-inference.html#cb154-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">dispdist</span>(distout, ate)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-72-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="randomization-inference.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
+<span id="cb155-2"><a href="randomization-inference.html#cb155-2" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>two.tailed.p.value</span></code></pre></div>
+<pre><code>## [1] 0.036</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="randomization-inference.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(distout[distout <span class="sc">&gt;=</span> ate])<span class="sc">/</span><span class="fu">length</span>(distout)</span></code></pre></div>
+<pre><code>## [1] 0.036</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="randomization-inference.html#cb159-1" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>two.tailed.p.value.abs</span></code></pre></div>
+<pre><code>## [1] 0.034</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="randomization-inference.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(distout[<span class="fu">abs</span>(distout) <span class="sc">&gt;=</span> ate])<span class="sc">/</span><span class="fu">length</span>(distout)</span></code></pre></div>
+<pre><code>## [1] 0.034</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="identification-strategy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-identification-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="empirical-application.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-note-on-expectations-and-variance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

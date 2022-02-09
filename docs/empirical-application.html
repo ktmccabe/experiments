@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.4 Empirical Application | Experimental Methods in Political Science</title>
+  <meta name="description" content="4.4 Empirical Application | Experimental Methods in Political Science" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.4 Empirical Application | Experimental Methods in Political Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.4 Empirical Application | Experimental Methods in Political Science" />
+  
+  
+  
+
+<meta name="author" content="Instructor: Katie McCabe" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hypothesis-tests.html"/>
+<link rel="next" href="randomization-inference.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Notes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="rsetup.html"><a href="rsetup.html"><i class="fa fa-check"></i><b>1.1</b> Setup in R</a></li>
+<li class="chapter" data-level="1.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> First Time Working in R and RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#open-rstudio"><i class="fa fa-check"></i><b>1.2.1</b> Open RStudio</a></li>
+<li class="chapter" data-level="1.2.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#using-r-as-a-calculator"><i class="fa fa-check"></i><b>1.2.2</b> Using R as a Calculator</a></li>
+<li class="chapter" data-level="1.2.3" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#working-in-an-r-script"><i class="fa fa-check"></i><b>1.2.3</b> Working in an R Script</a></li>
+<li class="chapter" data-level="1.2.4" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#preparing-your-r-script"><i class="fa fa-check"></i><b>1.2.4</b> Preparing your R script</a></li>
+<li class="chapter" data-level="1.2.5" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#executing-commands-in-your-r-script"><i class="fa fa-check"></i><b>1.2.5</b> Executing Commands in your R script</a></li>
+<li class="chapter" data-level="1.2.6" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#objects"><i class="fa fa-check"></i><b>1.2.6</b> Objects</a></li>
+<li class="chapter" data-level="1.2.7" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#practice-with-r-scripts"><i class="fa fa-check"></i><b>1.2.7</b> Practice with R Scripts</a></li>
+<li class="chapter" data-level="1.2.8" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#loading-data-into-r"><i class="fa fa-check"></i><b>1.2.8</b> Loading data into R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>1.3</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="r-markdown.html"><a href="r-markdown.html#how-to-get-setup-in-rmarkdown"><i class="fa fa-check"></i><b>1.3.1</b> How to get setup in RMarkdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="r-markdown.html"><a href="r-markdown.html#additional-rmarkdown-resources"><i class="fa fa-check"></i><b>1.3.2</b> Additional RMarkdown resources</a></li>
+<li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html"><i class="fa fa-check"></i><b>2.1</b> Potential Outcomes Framework</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html#average-treatment-effect"><i class="fa fa-check"></i><b>2.1.1</b> Average Treatment Effect</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fundamental-problem-of-causal-inference.html"><a href="fundamental-problem-of-causal-inference.html"><i class="fa fa-check"></i><b>2.2</b> Fundamental Problem of Causal Inference</a></li>
+<li class="chapter" data-level="2.3" data-path="identification-strategy.html"><a href="identification-strategy.html"><i class="fa fa-check"></i><b>2.3</b> Identification strategy</a></li>
+<li class="chapter" data-level="2.4" data-path="difference-in-means-estimator.html"><a href="difference-in-means-estimator.html"><i class="fa fa-check"></i><b>2.4</b> Difference in Means Estimator</a></li>
+<li class="chapter" data-level="2.5" data-path="overview-of-identification-assumptions.html"><a href="overview-of-identification-assumptions.html"><i class="fa fa-check"></i><b>2.5</b> Overview of identification assumptions</a></li>
+<li class="chapter" data-level="2.6" data-path="application-in-r.html"><a href="application-in-r.html"><i class="fa fa-check"></i><b>2.6</b> Application in R</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="application-in-r.html"><a href="application-in-r.html#loading-the-data"><i class="fa fa-check"></i><b>2.6.1</b> Loading the data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="application-in-r.html"><a href="application-in-r.html#variable-classes"><i class="fa fa-check"></i><b>2.6.2</b> Variable classes</a></li>
+<li class="chapter" data-level="2.6.3" data-path="application-in-r.html"><a href="application-in-r.html#exploring-treatment-and-control-groups"><i class="fa fa-check"></i><b>2.6.3</b> Exploring Treatment and Control Groups</a></li>
+<li class="chapter" data-level="2.6.4" data-path="application-in-r.html"><a href="application-in-r.html#means-with-relational-operators"><i class="fa fa-check"></i><b>2.6.4</b> Means with Relational Operators</a></li>
+<li class="chapter" data-level="2.6.5" data-path="application-in-r.html"><a href="application-in-r.html#means-with-tidyverse"><i class="fa fa-check"></i><b>2.6.5</b> Means with <code>tidyverse</code></a></li>
+<li class="chapter" data-level="2.6.6" data-path="application-in-r.html"><a href="application-in-r.html#ate-with-linear-regression"><i class="fa fa-check"></i><b>2.6.6</b> ATE with linear regression</a></li>
+<li class="chapter" data-level="2.6.7" data-path="application-in-r.html"><a href="application-in-r.html#subsetting-data-in-r"><i class="fa fa-check"></i><b>2.6.7</b> Subsetting data in R</a></li>
+<li class="chapter" data-level="2.6.8" data-path="application-in-r.html"><a href="application-in-r.html#additional-practice"><i class="fa fa-check"></i><b>2.6.8</b> Additional Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="design.html"><a href="design.html"><i class="fa fa-check"></i><b>3</b> Experimental Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html"><i class="fa fa-check"></i><b>3.1</b> Designing an Experiment</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#validity"><i class="fa fa-check"></i><b>3.1.1</b> Validity</a></li>
+<li class="chapter" data-level="3.1.2" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#design-space-for-experiments"><i class="fa fa-check"></i><b>3.1.2</b> Design Space for Experiments</a></li>
+<li class="chapter" data-level="3.1.3" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#types-of-designs"><i class="fa fa-check"></i><b>3.1.3</b> Types of Designs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="using-qualtrics.html"><a href="using-qualtrics.html"><i class="fa fa-check"></i><b>3.2</b> Using Qualtrics</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="using-qualtrics.html"><a href="using-qualtrics.html#experimental-design-with-vignette-experiment"><i class="fa fa-check"></i><b>3.2.1</b> Experimental Design with Vignette Experiment</a></li>
+<li class="chapter" data-level="3.2.2" data-path="using-qualtrics.html"><a href="using-qualtrics.html#unique-blocks-per-experimental-condition"><i class="fa fa-check"></i><b>3.2.2</b> Unique blocks per experimental condition</a></li>
+<li class="chapter" data-level="3.2.3" data-path="using-qualtrics.html"><a href="using-qualtrics.html#adding-a-randomizer-in-the-survey-flow"><i class="fa fa-check"></i><b>3.2.3</b> Adding a randomizer in the survey flow</a></li>
+<li class="chapter" data-level="3.2.4" data-path="using-qualtrics.html"><a href="using-qualtrics.html#using-piped-text-in-randomization"><i class="fa fa-check"></i><b>3.2.4</b> Using Piped Text in Randomization</a></li>
+<li class="chapter" data-level="3.2.5" data-path="using-qualtrics.html"><a href="using-qualtrics.html#data-and-analysis"><i class="fa fa-check"></i><b>3.2.5</b> Data and Analysis</a></li>
+<li class="chapter" data-level="3.2.6" data-path="using-qualtrics.html"><a href="using-qualtrics.html#additional-bells-and-whistles"><i class="fa fa-check"></i><b>3.2.6</b> Additional Bells and Whistles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="uncertainty.html"><a href="uncertainty.html"><i class="fa fa-check"></i><b>4</b> Uncertainty</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="standard-errors.html"><a href="standard-errors.html"><i class="fa fa-check"></i><b>4.1</b> Standard Errors</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="standard-errors.html"><a href="standard-errors.html#standard-error-of-the-mean"><i class="fa fa-check"></i><b>4.1.1</b> Standard Error of the Mean</a></li>
+<li class="chapter" data-level="4.1.2" data-path="standard-errors.html"><a href="standard-errors.html#standard-error-for-a-difference-in-means"><i class="fa fa-check"></i><b>4.1.2</b> Standard error for a difference in means</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>4.2</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="4.3" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html"><i class="fa fa-check"></i><b>4.3</b> Hypothesis Tests</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#t-tests"><i class="fa fa-check"></i><b>4.3.1</b> t-tests</a></li>
+<li class="chapter" data-level="4.3.2" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#p-values"><i class="fa fa-check"></i><b>4.3.2</b> p-values</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="empirical-application.html"><a href="empirical-application.html"><i class="fa fa-check"></i><b>4.4</b> Empirical Application</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="empirical-application.html"><a href="empirical-application.html#treatment"><i class="fa fa-check"></i><b>4.4.1</b> Treatment</a></li>
+<li class="chapter" data-level="4.4.2" data-path="empirical-application.html"><a href="empirical-application.html#analysis"><i class="fa fa-check"></i><b>4.4.2</b> Analysis</a></li>
+<li class="chapter" data-level="4.4.3" data-path="empirical-application.html"><a href="empirical-application.html#heterogeneous-treatment-effects"><i class="fa fa-check"></i><b>4.4.3</b> Heterogeneous Treatment Effects</a></li>
+<li class="chapter" data-level="4.4.4" data-path="empirical-application.html"><a href="empirical-application.html#difference-in-proportions"><i class="fa fa-check"></i><b>4.4.4</b> Difference in Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
+<li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
+<li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
+<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Experimental Methods in Political Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="empirical-application" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Empirical Application</h2>
+<p>We will use data from the following experiment: “Social Exclusion and Political Identity: The Case of Asian American Partisanship” by Alexander Kuo, Neil Malhotra, and Cecilia Mo (2016). The data set based on authors’ replication file <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GMWOY6">here</a></p>
+<ul>
+<li>Research Question: Do feelings of social exclusion lead Asians to develop more negative feelings toward the Republican Party?
+<ul>
+<li>Sample: 114: 61 self-reported Asian, 53 self-reported white</li>
+<li>Treatment: Manipulate feelings of social exclusion.</li>
+<li>Outcome: Difference in views toward Democratic vs. Republican Party
+<ul>
+<li>Close-mindedness, ignorance, represent interests, likes/dislikes, feeling thermometer, party ID, and the average of these six</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Let’s put this in the potential outcomes framework.</p>
+<ul>
+<li>For a given unit <span class="math inline">\(i\)</span> what are the potential outcomes we are interested in?</li>
+<li>What is the <span class="math inline">\(\tau_i\)</span> we are interested in?</li>
+<li>How are we going to estimate it?</li>
+</ul>
+<div id="treatment" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Treatment</h3>
+<p>For those in the treatment group, a white female assistant to the research team says, “I’m sorry; I forgot that this study is only for US citizens. Are you a US citizen? I cannot tell.” If the subject was a US citizen, the assistant was instructed to say “OK, go ahead” and have the respondent start the survey; if the subject was not a US citizen, the assistant was instructed to pause and then say “it’s OK, go ahead.” Subjects then completed an online survey of their political attitudes.</p>
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+<p><strong><em>Is this treatment a good treatment?</em></strong> Use the principles we discussed last section to evaluate this implementation.</p>
+<p class="comment">
+Your ideas …
+</p>
+</div>
+<div id="analysis" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Analysis</h3>
+<p>Let’s load the data.</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="empirical-application.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb125-2"><a href="empirical-application.html#cb125-2" aria-hidden="true" tabindex="-1"></a>exclusion <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">&quot;data/exclusion.dta&quot;</span>)</span>
+<span id="cb125-3"><a href="empirical-application.html#cb125-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-4"><a href="empirical-application.html#cb125-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Explore data</span></span>
+<span id="cb125-5"><a href="empirical-application.html#cb125-5" aria-hidden="true" tabindex="-1"></a><span class="do">## How many subjects?</span></span>
+<span id="cb125-6"><a href="empirical-application.html#cb125-6" aria-hidden="true" tabindex="-1"></a><span class="do">## How many Asian vs. White subjects</span></span>
+<span id="cb125-7"><a href="empirical-application.html#cb125-7" aria-hidden="true" tabindex="-1"></a><span class="do">## What proportion of subjects were treated?</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="empirical-application.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s relabel the names to something sensible</span></span>
+<span id="cb126-2"><a href="empirical-application.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)</span></code></pre></div>
+<pre><code>## [1] &quot;v1&quot;            &quot;v2&quot;            &quot;v3&quot;            &quot;v4&quot;           
+## [5] &quot;v5&quot;            &quot;v6&quot;            &quot;study2_avg&quot;    &quot;treatment_cit&quot;
+## [9] &quot;asiant&quot;</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="empirical-application.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="do">## v1 is difference between dem - rep in closed mindedness</span></span>
+<span id="cb128-2"><a href="empirical-application.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;clmindeddr&quot;</span></span>
+<span id="cb128-3"><a href="empirical-application.html#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="do">## v2 is difference between dem - rep in ignorance</span></span>
+<span id="cb128-4"><a href="empirical-application.html#cb128-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;ingnorantdr&quot;</span></span>
+<span id="cb128-5"><a href="empirical-application.html#cb128-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-6"><a href="empirical-application.html#cb128-6" aria-hidden="true" tabindex="-1"></a><span class="do">## What if you don&#39;t want to have to find the number?</span></span>
+<span id="cb128-7"><a href="empirical-application.html#cb128-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)[<span class="fu">names</span>(exclusion) <span class="sc">==</span> <span class="st">&quot;v3&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;netlikesdr&quot;</span></span>
+<span id="cb128-8"><a href="empirical-application.html#cb128-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-9"><a href="empirical-application.html#cb128-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="st">&quot;piddr&quot;</span> <span class="co"># pid</span></span>
+<span id="cb128-10"><a href="empirical-application.html#cb128-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)[<span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="st">&quot;ftdr&quot;</span> <span class="co"># feeling thermometer</span></span>
+<span id="cb128-11"><a href="empirical-application.html#cb128-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(exclusion)[<span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="st">&quot;repdr&quot;</span> <span class="co"># represents interests</span></span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="empirical-application.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Difference in means for the average</span></span>
+<span id="cb129-2"><a href="empirical-application.html#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Overall</span></span>
+<span id="cb129-3"><a href="empirical-application.html#cb129-3" aria-hidden="true" tabindex="-1"></a>d.i.m <span class="ot">&lt;-</span> <span class="fu">mean</span>(exclusion<span class="sc">$</span>study2_avg[exclusion<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span>  </span>
+<span id="cb129-4"><a href="empirical-application.html#cb129-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">mean</span>(exclusion<span class="sc">$</span>study2_avg[exclusion<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb129-5"><a href="empirical-application.html#cb129-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-6"><a href="empirical-application.html#cb129-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Among whites</span></span>
+<span id="cb129-7"><a href="empirical-application.html#cb129-7" aria-hidden="true" tabindex="-1"></a>diff.whites <span class="ot">&lt;-</span> <span class="fu">mean</span>(exclusion<span class="sc">$</span>study2_avg[exclusion<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span></span>
+<span id="cb129-8"><a href="empirical-application.html#cb129-8" aria-hidden="true" tabindex="-1"></a>                                     exclusion<span class="sc">$</span>asiant <span class="sc">==</span> <span class="dv">0</span>]) <span class="sc">-</span>  </span>
+<span id="cb129-9"><a href="empirical-application.html#cb129-9" aria-hidden="true" tabindex="-1"></a>               <span class="fu">mean</span>(exclusion<span class="sc">$</span>study2_avg[exclusion<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
+<span id="cb129-10"><a href="empirical-application.html#cb129-10" aria-hidden="true" tabindex="-1"></a>                                          exclusion<span class="sc">$</span>asiant <span class="sc">==</span> <span class="dv">0</span> ])</span>
+<span id="cb129-11"><a href="empirical-application.html#cb129-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Among asians</span></span>
+<span id="cb129-12"><a href="empirical-application.html#cb129-12" aria-hidden="true" tabindex="-1"></a>diff.asians <span class="ot">&lt;-</span> <span class="fu">mean</span>(exclusion<span class="sc">$</span>study2_avg[exclusion<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span></span>
+<span id="cb129-13"><a href="empirical-application.html#cb129-13" aria-hidden="true" tabindex="-1"></a>                                     exclusion<span class="sc">$</span>asiant <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span>  </span>
+<span id="cb129-14"><a href="empirical-application.html#cb129-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">mean</span>(exclusion<span class="sc">$</span>study2_avg[exclusion<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span></span>
+<span id="cb129-15"><a href="empirical-application.html#cb129-15" aria-hidden="true" tabindex="-1"></a>                                          exclusion<span class="sc">$</span>asiant <span class="sc">==</span> <span class="dv">1</span> ])</span></code></pre></div>
+<p>We could also subset the data by race/ethnicity group. Let’s do that and then calculate our t-test and uncertainty by hand and using the R functions.</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="empirical-application.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Subset data for only Asian respondents</span></span>
+<span id="cb130-2"><a href="empirical-application.html#cb130-2" aria-hidden="true" tabindex="-1"></a>asians <span class="ot">&lt;-</span> <span class="fu">subset</span>(exclusion, asiant <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb130-3"><a href="empirical-application.html#cb130-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-4"><a href="empirical-application.html#cb130-4" aria-hidden="true" tabindex="-1"></a><span class="do">## t-test by hand for sample of Asian Respondents</span></span>
+<span id="cb130-5"><a href="empirical-application.html#cb130-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculating Standard error</span></span>
+<span id="cb130-6"><a href="empirical-application.html#cb130-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-7"><a href="empirical-application.html#cb130-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Get N for each group</span></span>
+<span id="cb130-8"><a href="empirical-application.html#cb130-8" aria-hidden="true" tabindex="-1"></a>n.asianst1 <span class="ot">&lt;-</span> <span class="fu">length</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>])</span>
+<span id="cb130-9"><a href="empirical-application.html#cb130-9" aria-hidden="true" tabindex="-1"></a>n.asianst0 <span class="ot">&lt;-</span> <span class="fu">length</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb130-10"><a href="empirical-application.html#cb130-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-11"><a href="empirical-application.html#cb130-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Get variance for each group</span></span>
+<span id="cb130-12"><a href="empirical-application.html#cb130-12" aria-hidden="true" tabindex="-1"></a>v.asianst1 <span class="ot">&lt;-</span> <span class="fu">var</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>])</span>
+<span id="cb130-13"><a href="empirical-application.html#cb130-13" aria-hidden="true" tabindex="-1"></a>v.asianst0 <span class="ot">&lt;-</span> <span class="fu">var</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb130-14"><a href="empirical-application.html#cb130-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-15"><a href="empirical-application.html#cb130-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Standard error</span></span>
+<span id="cb130-16"><a href="empirical-application.html#cb130-16" aria-hidden="true" tabindex="-1"></a>se.diffasians <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(v.asianst1<span class="sc">/</span>n.asianst1 <span class="sc">+</span> v.asianst0<span class="sc">/</span>n.asianst0)</span>
+<span id="cb130-17"><a href="empirical-application.html#cb130-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-18"><a href="empirical-application.html#cb130-18" aria-hidden="true" tabindex="-1"></a><span class="do">## t-statistic</span></span>
+<span id="cb130-19"><a href="empirical-application.html#cb130-19" aria-hidden="true" tabindex="-1"></a>t.diffasians <span class="ot">&lt;-</span> diff.asians<span class="sc">/</span>se.diffasians</span>
+<span id="cb130-20"><a href="empirical-application.html#cb130-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-21"><a href="empirical-application.html#cb130-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Degrees of freedom</span></span>
+<span id="cb130-22"><a href="empirical-application.html#cb130-22" aria-hidden="true" tabindex="-1"></a>t.df <span class="ot">&lt;-</span> (se.diffasians)<span class="sc">^</span><span class="dv">4</span><span class="sc">/</span></span>
+<span id="cb130-23"><a href="empirical-application.html#cb130-23" aria-hidden="true" tabindex="-1"></a>  (v.asianst1<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(n.asianst1<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(n.asianst1 <span class="sc">-</span> <span class="dv">1</span>)) </span>
+<span id="cb130-24"><a href="empirical-application.html#cb130-24" aria-hidden="true" tabindex="-1"></a>   <span class="sc">+</span> v.asianst0<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(n.asianst0<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(n.asianst0 <span class="sc">-</span> <span class="dv">1</span>)))</span>
+<span id="cb130-25"><a href="empirical-application.html#cb130-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-26"><a href="empirical-application.html#cb130-26" aria-hidden="true" tabindex="-1"></a><span class="do">## p-value for two-sided test</span></span>
+<span id="cb130-27"><a href="empirical-application.html#cb130-27" aria-hidden="true" tabindex="-1"></a>p.asians <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t.diffasians), t.df))<span class="sc">*</span><span class="dv">2</span></span></code></pre></div>
+<p>When learning a new function, you can access the help files in R by typing <code>?FUN</code> into the console. Example: <code>t.test</code>.</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="empirical-application.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="do">## t-test the quick way!</span></span>
+<span id="cb131-2"><a href="empirical-application.html#cb131-2" aria-hidden="true" tabindex="-1"></a>asians.t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
+<span id="cb131-3"><a href="empirical-application.html#cb131-3" aria-hidden="true" tabindex="-1"></a>                   asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb131-4"><a href="empirical-application.html#cb131-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-5"><a href="empirical-application.html#cb131-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-6"><a href="empirical-application.html#cb131-6" aria-hidden="true" tabindex="-1"></a>whites <span class="ot">&lt;-</span> <span class="fu">subset</span>(exclusion, asiant <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb131-7"><a href="empirical-application.html#cb131-7" aria-hidden="true" tabindex="-1"></a>whites.t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(whites<span class="sc">$</span>study2_avg[whites<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
+<span id="cb131-8"><a href="empirical-application.html#cb131-8" aria-hidden="true" tabindex="-1"></a>                   whites<span class="sc">$</span>study2_avg[whites<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span></code></pre></div>
+<p>What are our conclusions about the hypothesis tests?</p>
+</div>
+<div id="heterogeneous-treatment-effects" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Heterogeneous Treatment Effects</h3>
+<p>The researchers believe that the size of the treatment effects will be different depending on the race/ethnicity of the participant.</p>
+<ul>
+<li>Should we compare the treatment effects among Asians vs. whites?
+<ul>
+<li>If we do, can we say that being Asian caused a different reaction to microaggressions than being white?</li>
+<li>Overall, what are the limits of studying heterogeneity?</li>
+</ul></li>
+</ul>
+<p>One approach to detecting a heterogeneous treatment effect is to use an interaction in a linear regression model.</p>
+<p>As we discussed in the second section, when you have a treatment categorical variable, the regression coefficient <span class="math inline">\(\hat \beta\)</span> represents the difference in means.</p>
+<ul>
+<li>When we interact this treatment indicator with a second variable, it will tell us how much the treatment effect varies according to the levels of that second variable.</li>
+</ul>
+<p>Let’s start by calculating our treatment effects with the regression approach.</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="empirical-application.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear regression lm(y ~ x, data = nameofyourdataframe)</span></span>
+<span id="cb132-2"><a href="empirical-application.html#cb132-2" aria-hidden="true" tabindex="-1"></a>asians.r <span class="ot">&lt;-</span> <span class="fu">lm</span>(study2_avg <span class="sc">~</span> treatment_cit, <span class="at">data =</span> asians)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="empirical-application.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(asians.r)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="empirical-application.html#cb134-1" aria-hidden="true" tabindex="-1"></a>whites.r <span class="ot">&lt;-</span> <span class="fu">lm</span>(study2_avg <span class="sc">~</span> treatment_cit, <span class="at">data =</span> whites)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="empirical-application.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(whites.r)</span></code></pre></div>
+<p>Why is the p-value slightly different here?</p>
+<details>
+<summary>
+Try on your own, then expand for the answer.
+</summary>
+<p>We do not assume our groups have equal variances when we do the t-test, but regression relies on a pooled variance estimator, which differs slightly. We can recover the p-value in two ways.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="empirical-application.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Indicate var.equal=T</span></span>
+<span id="cb136-2"><a href="empirical-application.html#cb136-2" aria-hidden="true" tabindex="-1"></a>asians.t.p <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
+<span id="cb136-3"><a href="empirical-application.html#cb136-3" aria-hidden="true" tabindex="-1"></a>                   asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>], <span class="at">var.equal =</span> T)</span>
+<span id="cb136-4"><a href="empirical-application.html#cb136-4" aria-hidden="true" tabindex="-1"></a>asians.t.p<span class="sc">$</span>p.value</span></code></pre></div>
+<pre><code>## [1] 0.02951252</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="empirical-application.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="do">## By hand, use pooled estimator for variance/standard error/degrees of freedom</span></span>
+<span id="cb138-2"><a href="empirical-application.html#cb138-2" aria-hidden="true" tabindex="-1"></a>pooled.var <span class="ot">&lt;-</span> ((n.asianst1 <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> v.asianst1 <span class="sc">+</span> </span>
+<span id="cb138-3"><a href="empirical-application.html#cb138-3" aria-hidden="true" tabindex="-1"></a>                 (n.asianst0 <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">*</span>v.asianst0)<span class="sc">/</span> (n.asianst0 <span class="sc">+</span> n.asianst1 <span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb138-4"><a href="empirical-application.html#cb138-4" aria-hidden="true" tabindex="-1"></a>pooled.se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(pooled.var) <span class="sc">*</span> <span class="fu">sqrt</span>( <span class="dv">1</span><span class="sc">/</span>n.asianst0 <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>n.asianst1)</span>
+<span id="cb138-5"><a href="empirical-application.html#cb138-5" aria-hidden="true" tabindex="-1"></a>pooled.t <span class="ot">&lt;-</span> diff.asians<span class="sc">/</span>pooled.se</span>
+<span id="cb138-6"><a href="empirical-application.html#cb138-6" aria-hidden="true" tabindex="-1"></a>pooled.p <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(pooled.t), (n.asianst0 <span class="sc">+</span> n.asianst1 <span class="sc">-</span><span class="dv">2</span>)))<span class="sc">*</span><span class="dv">2</span></span>
+<span id="cb138-7"><a href="empirical-application.html#cb138-7" aria-hidden="true" tabindex="-1"></a>pooled.p</span></code></pre></div>
+<pre><code>## [1] 0.02951252</code></pre>
+</details>
+<p>Let’s now add the interaction term using the asterisk symbol:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="empirical-application.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Using an interaction</span></span>
+<span id="cb140-2"><a href="empirical-application.html#cb140-2" aria-hidden="true" tabindex="-1"></a>het.r <span class="ot">&lt;-</span> <span class="fu">lm</span>(study2_avg <span class="sc">~</span> treatment_cit <span class="sc">+</span> asiant </span>
+<span id="cb140-3"><a href="empirical-application.html#cb140-3" aria-hidden="true" tabindex="-1"></a>            <span class="sc">+</span> treatment_cit<span class="sc">*</span>asiant, <span class="at">data =</span> exclusion)</span>
+<span id="cb140-4"><a href="empirical-application.html#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(het.r)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = study2_avg ~ treatment_cit + asiant + treatment_cit * 
+##     asiant, data = exclusion)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.52680 -0.07572  0.02925  0.09661  0.32821 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)           0.67267    0.02976  22.606   &lt;2e-16 ***
+## treatment_cit        -0.03200    0.04517  -0.708   0.4802    
+## asiant               -0.07654    0.04244  -1.803   0.0741 .  
+## treatment_cit:asiant  0.12517    0.06153   2.034   0.0443 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.163 on 110 degrees of freedom
+## Multiple R-squared:  0.04907,    Adjusted R-squared:  0.02314 
+## F-statistic: 1.892 on 3 and 110 DF,  p-value: 0.1351</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="empirical-application.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="do">## How do we interpret each coefficient?</span></span></code></pre></div>
+<p>We now have a t-test for the interaction term, specifically. Be mindful that when you include an interaction term in a regression model, it changes the way we interpret the two other “main effects.”</p>
+</div>
+<div id="difference-in-proportions" class="section level3" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> Difference in Proportions</h3>
+<p>If we have a proportion as an average outcome instead of a mean, we may wish to adjust how we calculate uncertainty to better reflect the nature of a dichotomous outcome variable.</p>
+<p>When we are comparing two proportions, we can use the <code>prop.test</code> function in R, which will adjust this calculation for us.</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="empirical-application.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a proportion variable where 1=dem, 0=rep</span></span>
+<span id="cb143-2"><a href="empirical-application.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(exclusion<span class="sc">$</span>piddr)</span></code></pre></div>
+<pre><code>## 
+##                 0 0.200000002980232 0.400000005960464 0.600000023841858 
+##                 2                 7                12                28 
+## 0.800000011920929                 1 
+##                35                30</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="empirical-application.html#cb145-1" aria-hidden="true" tabindex="-1"></a>asians<span class="sc">$</span>dem <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(asians<span class="sc">$</span>piddr <span class="sc">&gt;</span> .<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb145-2"><a href="empirical-application.html#cb145-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb145-3"><a href="empirical-application.html#cb145-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate difference in proportions by hand</span></span>
+<span id="cb145-4"><a href="empirical-application.html#cb145-4" aria-hidden="true" tabindex="-1"></a>m1.asians <span class="ot">&lt;-</span> <span class="fu">mean</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>])</span>
+<span id="cb145-5"><a href="empirical-application.html#cb145-5" aria-hidden="true" tabindex="-1"></a>m0.asians <span class="ot">&lt;-</span> <span class="fu">mean</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb145-6"><a href="empirical-application.html#cb145-6" aria-hidden="true" tabindex="-1"></a>m1.asians <span class="sc">-</span> m0.asians</span></code></pre></div>
+<pre><code>## [1] 0.1163793</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="empirical-application.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Use prop.test: </span><span class="al">NOTE</span><span class="do"> THE DIFFERENT SYNTAX FROM t.test</span></span>
+<span id="cb147-2"><a href="empirical-application.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x is the &quot;number of successes&quot; i.e., number of 1&#39;s for each group</span></span>
+<span id="cb147-3"><a href="empirical-application.html#cb147-3" aria-hidden="true" tabindex="-1"></a><span class="do">## n is sample size for each group</span></span>
+<span id="cb147-4"><a href="empirical-application.html#cb147-4" aria-hidden="true" tabindex="-1"></a>p.test.asians <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="fu">sum</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>]),</span>
+<span id="cb147-5"><a href="empirical-application.html#cb147-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">sum</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])), </span>
+<span id="cb147-6"><a href="empirical-application.html#cb147-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">n =</span> <span class="fu">c</span>(<span class="fu">length</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>]), </span>
+<span id="cb147-7"><a href="empirical-application.html#cb147-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">length</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])))</span>
+<span id="cb147-8"><a href="empirical-application.html#cb147-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-9"><a href="empirical-application.html#cb147-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-10"><a href="empirical-application.html#cb147-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Note if you were to run the standard t-test, </span></span>
+<span id="cb147-11"><a href="empirical-application.html#cb147-11" aria-hidden="true" tabindex="-1"></a><span class="do">## the difference would be the same but calculation of uncertainty is different</span></span>
+<span id="cb147-12"><a href="empirical-application.html#cb147-12" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>], </span>
+<span id="cb147-13"><a href="empirical-application.html#cb147-13" aria-hidden="true" tabindex="-1"></a>       asians<span class="sc">$</span>dem[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  asians$dem[asians$treatment_cit == 1] and asians$dem[asians$treatment_cit == 0]
+## t = 1.1599, df = 52.547, p-value = 0.2514
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.08491716  0.31767578
+## sample estimates:
+## mean of x mean of y 
+## 0.8750000 0.7586207</code></pre>
+<p>What do you conclude about the test?</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hypothesis-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="randomization-inference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

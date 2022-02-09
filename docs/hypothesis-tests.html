@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Difference in Means Estimator | Experimental Methods in Political Science</title>
-  <meta name="description" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <title>4.3 Hypothesis Tests | Experimental Methods in Political Science</title>
+  <meta name="description" content="4.3 Hypothesis Tests | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta property="og:title" content="4.3 Hypothesis Tests | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="4.3 Hypothesis Tests | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="identification-strategy.html"/>
-<link rel="next" href="overview-of-identification-assumptions.html"/>
+<link rel="prev" href="confidence-intervals.html"/>
+<link rel="next" href="empirical-application.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -238,77 +238,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="difference-in-means-estimator" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Difference in Means Estimator</h2>
-<p>In the real world, we follow this process for causal identification:</p>
+<div id="hypothesis-tests" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Hypothesis Tests</h2>
+<p>Generally, we want to actually test hypotheses. We will use the null hypothesis testing framework. In this framework, we collect evidence to reject or fail to reject a naive starting assumption: the null hypothesis.</p>
+<p>Typical setup for two-sample test.</p>
 <ul>
-<li>Our motivation: Find quantities that represent the population parameters (<span class="math inline">\(\theta\)</span>)</li>
-<li>Our problem: We often only get a sample of the population and can only observe one potential outcome for any unit in our sample</li>
-<li>Goal: Get unbiased estimators for the population</li>
-<li>Definition of unbiasedness: <span class="math inline">\(E[\hat{\theta}] = \theta\)</span></li>
+<li>Null hypotheis: <span class="math inline">\(H_o\)</span>: <span class="math inline">\(\mu_{Y(1)} = \mu_{Y(0)}\)</span></li>
+<li>Alternative hypothesis: <span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu_{Y(1)} \neq \mu_{Y(0)}\)</span>;
+<ul>
+<li>or <span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu_{Y(1)} &gt; \mu_{Y(0)}\)</span> or <span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu_{Y(1)} &lt; \mu_{Y(0)}\)</span></li>
+</ul></li>
 </ul>
-<p>Suppose <span class="math inline">\(D_i\)</span> were randomly assigned such that <span class="math inline">\(m\)</span> subjects assigned to treatment and <span class="math inline">\(N-m\)</span> subjects assigned to control.</p>
-<p><span class="math display">\[\begin{align*}
-\widehat{ATE} &amp;= \frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i \\
-\end{align*}\]</span></p>
-<p>Is the difference in means estimator an unbiased estimate for the ATE? How can we find out?</p>
-<p>We take the expected value:</p>
-<p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= \frac{E(Y_1) + E(Y_2) +...+E(Y_m)}{m} -  \frac{E(Y_{m+1}) + E(Y_{m+2}) +...+E(Y_N)}{N-m}\\
-&amp;= \frac{m * E[Y_i(1 | D_i = 1)]}{m} - \frac{(N-m)* E[Y_i(0) | D_i = 0]}{N-m}\\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-%&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]=ATE
-\end{align*}\]</span></p>
-<p>Is the final statement equivalent to the ATE?</p>
+<p>Review: Let’s say we do a two-sided test and get a p-value from our t-test of 0.003. What should we conclude?</p>
 <ul>
-<li>We want our final statement to be <span class="math inline">\(E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\)</span>=ATE</li>
-<li>Our final statement is: <span class="math inline">\(E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0]=E[\widehat{ATE}]\)</span></li>
+<li>Wait, what’s a p-value? How should we interpret this p-value? (pg. 64, Gerber and Green)</li>
 </ul>
-<p>Under what conditions can we get those two statements to look the same?</p>
-<details>
-<summary>
-Well, let’s look into some rules of expectation.
-</summary>
-<p><span class="math inline">\(E[Y|X] = E[Y]\)</span> if Y and X are independent.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-</details>
-<p>Our final statement can be simplified when treatment assignment is independent of potential outcomes:</p>
-<ul>
-<li><span class="math inline">\(E[Y_i(1) |D_i = 1] = E[Y_i(1) |D_i = 0] = E[Y_i(1)]\)</span></li>
-<li><span class="math inline">\(E[Y_i(0) |D_i = 0] = E[Y_i(0) |D_i = 1] = E[Y_i(0)]\)</span></li>
-</ul>
-<p>When does this occur? Random assignment of treatment!!</p>
-<p>Putting this together, under random assignment:</p>
-<p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\\
-E[\widehat{ATE}] &amp;= ATE
+<div id="t-tests" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> t-tests</h3>
+<p>A common implementation of hypothesis tests for comparing averages of two groups is the t-test.</p>
+<p>Single population
+<span class="math display">\[\begin{align*}
+t &amp;= \frac{\bar{X} - \mu_o}{\widehat{SE}_m}\\
 \end{align*}\]</span></p>
-<p><strong><em>Why Experiments</em></strong></p>
-<p>One approach for addressing the fundamental problem of causal inference is to simulate two potential states of the world through random assignment: Randomized Controlled Trials / Experiments</p>
-<p>Experiments approximate factual vs. counterfactual comparison</p>
+<p>Two populations</p>
+<p><span class="math display">\[\begin{align*}
+t &amp;= \frac{(\bar{X_1} - \bar{X_0})- (\mu_1 - \mu_0)}{\widehat{SE}_{d-i-m}}\\
+\end{align*}\]</span></p>
+<p>In each case, we standardize our estimates according to the student’s t-distribution. We look to see just how extreme our t statistic is.</p>
+</div>
+<div id="p-values" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> p-values</h3>
+<p>What is the probability of getting a result this extreme or more extreme “by chance”/“if the null were true”?</p>
 <ul>
-<li>We randomly assign one group to receive a “treatment” and another not to receive a treatment (the control)</li>
-<li>Using what we learned above, when treatment assignment is <strong>randomized</strong>, the only thing that distinguishes the treatment group from the control group in expectation, besides the treatment itself, is chance.</li>
-<li>This allows us to use a simple differences in means estimator in experiments to estimate our average treatment effects.</li>
+<li>Lower-tailed test, p-value <span class="math inline">\(= Pr(T &lt; t | H_o\)</span> is true)</li>
+<li>Upper-tailed test, p-value <span class="math inline">\(= Pr(T &gt; t | H_o\)</span> is true)</li>
+<li>Two-sided test is specified by: p-value <span class="math inline">\(= 2 * P(T &gt; |t| \hspace{1mm} | H_o\)</span> is true)</li>
+</ul>
+<p>We primarily use two-sided tests. To get the p-value, we need the degrees of freedom. For one sample tests, it is N-1. For two-sample, it can be more complicated.</p>
+<p>If we use the Welch calculation for unequal variances, it is: df<span class="math inline">\(=\frac{\widehat{SE}^4}{ \frac{\widehat{Var}(Y_i(1))^2}{m^2(m-1)} + {\frac{\widehat{Var}(Y_i(0))^2}{(N-m)^2(N-m-1)}}}\)</span>.</p>
+<ul>
+<li>Fortunately, the <code>t.test</code> function in R will calculate that for you.</li>
 </ul>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>See <a href="https://www.youtube.com/watch?v=Ki2HpTCPwhM">video</a> for help on law of iterated expectations<a href="difference-in-means-estimator.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="identification-strategy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-identification-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="confidence-intervals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="empirical-application.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

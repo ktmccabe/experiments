@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Difference in Means Estimator | Experimental Methods in Political Science</title>
-  <meta name="description" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <title>4.6 A Note on Expectations and Variance | Experimental Methods in Political Science</title>
+  <meta name="description" content="4.6 A Note on Expectations and Variance | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta property="og:title" content="4.6 A Note on Expectations and Variance | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="4.6 A Note on Expectations and Variance | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="identification-strategy.html"/>
-<link rel="next" href="overview-of-identification-assumptions.html"/>
+<link rel="prev" href="randomization-inference.html"/>
+<link rel="next" href="equivalence-of-t-test-and-anova.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -238,77 +238,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="difference-in-means-estimator" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Difference in Means Estimator</h2>
-<p>In the real world, we follow this process for causal identification:</p>
+<div id="a-note-on-expectations-and-variance" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> A Note on Expectations and Variance</h2>
+<p>This section includes definitions of expectation and variance and walks through more deliberately how we derive what the variance of a mean is (which we need for standard errors!).</p>
 <ul>
-<li>Our motivation: Find quantities that represent the population parameters (<span class="math inline">\(\theta\)</span>)</li>
-<li>Our problem: We often only get a sample of the population and can only observe one potential outcome for any unit in our sample</li>
-<li>Goal: Get unbiased estimators for the population</li>
-<li>Definition of unbiasedness: <span class="math inline">\(E[\hat{\theta}] = \theta\)</span></li>
+<li>This <a href="https://www.youtube.com/watch?v=7mYDHbrLEQo">video</a> walks you through the steps in the slides from Week 3 Uncertainty with very similar notation. Below, we go through a more elongated version of the derivation that starts from the basic definition of the variance of a random variable.</li>
 </ul>
-<p>Suppose <span class="math inline">\(D_i\)</span> were randomly assigned such that <span class="math inline">\(m\)</span> subjects assigned to treatment and <span class="math inline">\(N-m\)</span> subjects assigned to control.</p>
+<p>We are going to exploit a few “rules” of expectations and variance as we go through the derivation.</p>
+<ul>
+<li>The expectation of a sum is the sum of the expectations: <span class="math inline">\(E(X + Y) = E(X) + E(Y)\)</span></li>
+<li>The expectation of a constant (<span class="math inline">\(a\)</span>) is the constant.The expectation of a constant multiplied by a random variable is <span class="math inline">\(E(aX) = aE(X)\)</span></li>
+<li>When our observations are independent (which we are generally assuming), the variance of the sum is equal to the sum of the variance: <span class="math inline">\(Var(\sum_{i=1}^N X_i) = \sum_{i=1}^N Var(X_i)\)</span></li>
+<li>When we pull a constant outside the variance operator, we square it: <span class="math inline">\(Var(a * X) = a^2Var(X)\)</span>
+<ul>
+<li>The steps below for deriving the standard error show why this squaring happens.</li>
+</ul></li>
+<li>The variance of a random variable is: <span class="math inline">\(Var(X) = E[(X - \mu)^2]\)</span> where <span class="math inline">\(\mu\)</span> refers to the expected value or ``population mean” of the random variable (i.e., <span class="math inline">\(E[(X - \mu)^2] = E[(X - E(X))^2]\)</span>).</li>
+</ul>
+<p><strong><em>Expectation and Variance of a Random Variable</em></strong></p>
+<p>The expected value of a random variable (e.g., <span class="math inline">\(X\)</span>) is the average value random variable weighted by its probability of ocurrence. We write it as <span class="math inline">\(E(X)\)</span> or sometimes <span class="math inline">\(\mu_x\)</span>.</p>
+<p>The variance of a random variable is a measure of spread (written as <span class="math inline">\(Var(X)\)</span> or <span class="math inline">\(\sigma_x^2\)</span>): the degree to which values of the random variable differ from its expected value.</p>
+<ul>
+<li>The square root of the variance is the standard deviation, sometimes written as <span class="math inline">\(\sigma_x\)</span>, a measure of spread describing the typical deviation from the expected value.</li>
+</ul>
+<p>OK: The variance of a random variable is defined as the expected squared deviation from the expected value. Let’s do this for a random variable <span class="math inline">\(X_i\)</span> (i.e., from <span class="math inline">\(E(X_i)\)</span> or <span class="math inline">\(\mu\)</span>):</p>
 <p><span class="math display">\[\begin{align*}
-\widehat{ATE} &amp;= \frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i \\
+Var(X_i) &amp;= E[(X_i - \mu)^2] 
+%\\
+%&amp;= E[X_i^2 - 2 X_i \mu + \mu^2]&amp;&amp; \text{ 1) foil the squared difference}\\
+%&amp;=E(X_i^2) - 2* E(X_i)*E(X_i) + [E(X_i)]^2 &amp;&amp; \text{ 2) Move expectation inside, rewrite $\mu$ as $E%(X_i)$}\\
+%&amp;= E(X_i^2) - [E(X_i)]^2 &amp;&amp; \text{ 3) Subtract like terms}
 \end{align*}\]</span></p>
-<p>Is the difference in means estimator an unbiased estimate for the ATE? How can we find out?</p>
-<p>We take the expected value:</p>
+<p>The square root of this quantity is the standard deviation.</p>
+<p><strong><em>Expectation and Variance of a Mean</em></strong></p>
+<p>We now consider our mean (e.g., <span class="math inline">\(\bar{X}\)</span>) as our random variable and will derive its variance. Why?</p>
+<ul>
+<li>Because this gives us the variability in our sampling distribution (how our mean varies) and will get us to our standard error.</li>
+<li>Recall the standard error is simply the standard deviation of our sampling distribution i.e., the square root of the variance of our sample mean as we think about how the mean varies over all possible randomizations.</li>
+</ul>
+<p>Recall: The expected value of our sample mean (<span class="math inline">\(E(\bar{X})\)</span>) can be written as:</p>
 <p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= \frac{E(Y_1) + E(Y_2) +...+E(Y_m)}{m} -  \frac{E(Y_{m+1}) + E(Y_{m+2}) +...+E(Y_N)}{N-m}\\
-&amp;= \frac{m * E[Y_i(1 | D_i = 1)]}{m} - \frac{(N-m)* E[Y_i(0) | D_i = 0]}{N-m}\\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-%&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]=ATE
+E(\bar{X}) &amp;= \frac{1}{N} \sum_{i=1}^N E(X_i)\\
 \end{align*}\]</span></p>
-<p>Is the final statement equivalent to the ATE?</p>
+<p>So we now start with <span class="math inline">\(Var(\bar{X})\)</span> instead of <span class="math inline">\(Var(X_i)\)</span>. However, our variance is still defined as a squared deviation. This time it is the squared deviation of a sample mean from the expected value of the sample mean.
+<span class="math display">\[\begin{align*}
+Var(\bar{X}) &amp;= E[(\bar{X} - E(\bar{X}))^2]\\
+&amp;= E[(\frac{1}{N} \sum_{i=1}^N X_i - E(\frac{1}{N} \sum_{i=1}^N X_i))^2] &amp;&amp; \text{rewrite $\bar{X}$}\\
+&amp;= E[(\frac{1}{N} [\sum_{i=1}^N X_i - E( \sum_{i=1}^N X_i)])^2] &amp;&amp; \text{pull out $\frac{1}{N}$}\\
+&amp;= E[\frac{1}{N^2}(\sum_{i=1}^N X_i - E( \sum_{i=1}^N X_i))^2] &amp;&amp; \text{Note: the squaring of constant}\\
+&amp;= \frac{1}{N^2}E[(\sum_{i=1}^N X_i - E( \sum_{i=1}^N X_i))^2]&amp;&amp; \text{Move constant outside expectation}\\
+&amp;= \frac{1}{N^2} Var(\sum_{i=1}^N X_i) &amp;&amp; \text{Rewrite as variance of the sum  of $X_i$}\\
+&amp;=  \frac{1}{N^2}\sum_{i=1}^N Var(X_i) &amp;&amp; \text{Apply rule on variance of sum}\\
+&amp;=  \frac{1}{N^2}*(Var(X_1) + Var(X_2) +...+ Var(X_N)) &amp;&amp; \text{Write out the sum}\\
+&amp;=  \frac{1}{N^2}*N* \sigma^2 &amp;&amp; \text{Substitute our known $\sigma^2$ from above}\\
+&amp;= \frac{\sigma^2}{N} 
+\end{align*}\]</span></p>
+<p>Note: the square root of this is our standard deviation aka our standard error: <span class="math inline">\(\frac{\sigma}{\sqrt{N}}\)</span>. We cannot observe <span class="math inline">\(\sigma\)</span>, so we estimate this using the sample standard deviation <span class="math inline">\(s\)</span>. This will be useful, for example, if we want a standard error for the mean outcome in our treatment group.</p>
+<p><strong><em>Variance of our Difference in Means</em></strong></p>
+<p>Now we last want to quantify the variability in the sampling distribution for our difference in means (<span class="math inline">\(\bar{X}_1 - \bar{X}_0\)</span>) assuming our samples and observations are independent. The idea is that every possible randomization similarly generates a different estimate for the difference just as it does for any individual mean.</p>
+<p>Well we just showed we know the variance of each mean separately:</p>
 <ul>
-<li>We want our final statement to be <span class="math inline">\(E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\)</span>=ATE</li>
-<li>Our final statement is: <span class="math inline">\(E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0]=E[\widehat{ATE}]\)</span></li>
+<li><span class="math inline">\(Var(\bar{X_1}) = \frac{\sigma_1^2}{N_1}\)</span></li>
+<li><span class="math inline">\(Var(\bar{X_0}) = \frac{\sigma_0^2}{N_0}\)</span></li>
 </ul>
-<p>Under what conditions can we get those two statements to look the same?</p>
-<details>
-<summary>
-Well, let’s look into some rules of expectation.
-</summary>
-<p><span class="math inline">\(E[Y|X] = E[Y]\)</span> if Y and X are independent.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-</details>
-<p>Our final statement can be simplified when treatment assignment is independent of potential outcomes:</p>
+<p>Now we have to get the variance of our difference: <span class="math inline">\(Var(\bar{X}_1 - \bar{X}_0)\)</span>.</p>
+<p>To do this, we exploit yet another rule for independent samples: that the variance of a difference is equal to the sum of the variances:</p>
 <ul>
-<li><span class="math inline">\(E[Y_i(1) |D_i = 1] = E[Y_i(1) |D_i = 0] = E[Y_i(1)]\)</span></li>
-<li><span class="math inline">\(E[Y_i(0) |D_i = 0] = E[Y_i(0) |D_i = 1] = E[Y_i(0)]\)</span></li>
+<li><span class="math inline">\(Var(\bar{X}_1 - \bar{X}_0) = Var(\bar{X}_1) + Var(\bar{X}_0)\)</span></li>
+<li>The standard deviation is again the square root of this: <span class="math inline">\(\sqrt{Var(\bar{X}_1) + Var(\bar{X}_0)}\)</span></li>
 </ul>
-<p>When does this occur? Random assignment of treatment!!</p>
-<p>Putting this together, under random assignment:</p>
+<p>Ok writing this out:
+<span class="math display">\[\begin{align*}
+Var(\bar{X}_1 - \bar{X}_0) &amp;= Var(\bar{X}_1) + Var(\bar{X}_0)\\
+&amp;= \frac{\sigma_1^2}{N_1} + \frac{\sigma_0^2}{N_0}
+\end{align*}\]</span></p>
+<p>Now if we want the standard error we get:
+<span class="math display">\[\begin{align*}
+\sqrt{Var(\bar{X}_1 - \bar{X}_0)} &amp;= \sqrt{Var(\bar{X}_1) + Var(\bar{X}_0)}\\
+&amp;= \sqrt{\frac{\sigma_1^2}{N_1} + \frac{\sigma_0^2}{N_0}}
+\end{align*}\]</span></p>
+<p>Like before, we use sample substitutes (<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_0\)</span>) where <span class="math inline">\(m\)</span> represents the number of units in the treatment and <span class="math inline">\(N-m\)</span>, the number of unites in the control (switching notation here to match the book):</p>
 <p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\\
-E[\widehat{ATE}] &amp;= ATE
+\widehat{SE}_{d-i-m} &amp;= \sqrt{\frac{s_1}{m} + \frac{s_0}{N-m}}
 \end{align*}\]</span></p>
-<p><strong><em>Why Experiments</em></strong></p>
-<p>One approach for addressing the fundamental problem of causal inference is to simulate two potential states of the world through random assignment: Randomized Controlled Trials / Experiments</p>
-<p>Experiments approximate factual vs. counterfactual comparison</p>
+<p>Note: this estimate of the standard error is considered conservative and is only appropriate when samples are independent. We will discuss alternative measures of variance.</p>
 <ul>
-<li>We randomly assign one group to receive a “treatment” and another not to receive a treatment (the control)</li>
-<li>Using what we learned above, when treatment assignment is <strong>randomized</strong>, the only thing that distinguishes the treatment group from the control group in expectation, besides the treatment itself, is chance.</li>
-<li>This allows us to use a simple differences in means estimator in experiments to estimate our average treatment effects.</li>
+<li>For example, when we use OLS to get out difference in means, we will use a slightly different “pooled variance estimator” where we assume <span class="math inline">\(\sigma_1^2 = \sigma_0^2\)</span>.
+<ul>
+<li>Here, the pooled sample variance is: <span class="math inline">\(s_{pooled}^2 = \frac{(n_1 -1)s^2_1 + (n_0-1)s^2_0}{(n_1 +n_0 -2)}\)</span></li>
+<li>where the standard error is: $  * $</li>
+</ul></li>
 </ul>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>See <a href="https://www.youtube.com/watch?v=Ki2HpTCPwhM">video</a> for help on law of iterated expectations<a href="difference-in-means-estimator.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="identification-strategy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-identification-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="randomization-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="equivalence-of-t-test-and-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Difference in Means Estimator | Experimental Methods in Political Science</title>
-  <meta name="description" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <title>4.1 Standard Errors | Experimental Methods in Political Science</title>
+  <meta name="description" content="4.1 Standard Errors | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta property="og:title" content="4.1 Standard Errors | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Difference in Means Estimator | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="4.1 Standard Errors | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="identification-strategy.html"/>
-<link rel="next" href="overview-of-identification-assumptions.html"/>
+<link rel="prev" href="uncertainty.html"/>
+<link rel="next" href="confidence-intervals.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -238,77 +238,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="difference-in-means-estimator" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Difference in Means Estimator</h2>
-<p>In the real world, we follow this process for causal identification:</p>
+<div id="standard-errors" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Standard Errors</h2>
+<p>Standard errors represent the standard deviation of a sampling distribution.</p>
+<p><strong><em>What is the standard deviation?</em></strong></p>
+<p>Measure of spread: typical deviation of an observation from the mean.</p>
+<p><img src="images/spread1.png" style="width:40.0%" /> <img src="images/spread1.png" style="width:40.0%" /></p>
+<p><em>From the Cartoon Guide to Statistics</em></p>
+<p>To calculate the standard deviation:</p>
+<ol style="list-style-type: decimal">
+<li>Take a squared deviation from the mean for a unit <span class="math inline">\(i\)</span>.
+<span class="math display">\[\begin{align*}
+&amp;= (y_i -  \bar{y})^2 
+\end{align*}\]</span></li>
+<li>Do this for each unit <span class="math inline">\(i\)</span> out of a sample. Take the sum.
+<span class="math display">\[\begin{align*}
+&amp;= \sum_{i=1}^{N} (y_i -  \bar{y})^2 
+\end{align*}\]</span></li>
+<li>Divide over the total sample. When we are dealing with a sample from a population whose mean is unknown (usually the case), we have to take N-1 instead of N.
+<span class="math display">\[\begin{align*}
+&amp;= \frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 
+\end{align*}\]</span></li>
+<li>Take the square root
+<span class="math display">\[\begin{align*}
+s &amp;= \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 }
+\end{align*}\]</span>
+Remember: standard deviation is the square root of the variance!</li>
+</ol>
+<p>Let’s say these were the data for a sample of 10 voters’ scores on a feeling thermometer of their views toward liberals.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="standard-errors.html#cb111-1" aria-hidden="true" tabindex="-1"></a>fts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">95</span>, <span class="dv">100</span>, <span class="dv">5</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">65</span>, <span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">28</span>)</span>
+<span id="cb111-2"><a href="standard-errors.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-3"><a href="standard-errors.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. take the squared deviation from the mean</span></span>
+<span id="cb111-4"><a href="standard-errors.html#cb111-4" aria-hidden="true" tabindex="-1"></a>sq.dev <span class="ot">&lt;-</span> (fts <span class="sc">-</span> <span class="fu">mean</span>(fts))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb111-5"><a href="standard-errors.html#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-6"><a href="standard-errors.html#cb111-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. Take the sum</span></span>
+<span id="cb111-7"><a href="standard-errors.html#cb111-7" aria-hidden="true" tabindex="-1"></a>sum.sq.dev <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq.dev)</span>
+<span id="cb111-8"><a href="standard-errors.html#cb111-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-9"><a href="standard-errors.html#cb111-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 3. Divide over N - 1</span></span>
+<span id="cb111-10"><a href="standard-errors.html#cb111-10" aria-hidden="true" tabindex="-1"></a>sum.sq.dev.n <span class="ot">&lt;-</span> sum.sq.dev<span class="sc">/</span>(<span class="fu">length</span>(fts) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb111-11"><a href="standard-errors.html#cb111-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-12"><a href="standard-errors.html#cb111-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4. Take the square root</span></span>
+<span id="cb111-13"><a href="standard-errors.html#cb111-13" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sum.sq.dev.n)</span>
+<span id="cb111-14"><a href="standard-errors.html#cb111-14" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
+<pre><code>## [1] 33.02457</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="standard-errors.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="do">## optional code</span></span>
+<span id="cb113-2"><a href="standard-errors.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(fts) <span class="co"># or sqrt(var(fts)) </span></span></code></pre></div>
+<pre><code>## [1] 33.02457</code></pre>
+<p><strong><em>What is a sampling distribution?</em></strong></p>
+<p>The experiment we happen to conduct yields an estimate of the average treatment effect, but in a different randomization, our estimate might have been different.</p>
 <ul>
-<li>Our motivation: Find quantities that represent the population parameters (<span class="math inline">\(\theta\)</span>)</li>
-<li>Our problem: We often only get a sample of the population and can only observe one potential outcome for any unit in our sample</li>
-<li>Goal: Get unbiased estimators for the population</li>
-<li>Definition of unbiasedness: <span class="math inline">\(E[\hat{\theta}] = \theta\)</span></li>
+<li>Sampling distribution refers to the set of estimates that could have been generated by every possible random assignment.</li>
+<li>The standard error is a measure of the spread of this distribution.</li>
+<li>Good news: Under the central limit theorem, this distribution approximates the shape of a normal distribution when there are sufficient observations.
+<ul>
+<li>Why is this good news? Going to help us estimate uncertainty.</li>
+</ul></li>
 </ul>
-<p>Suppose <span class="math inline">\(D_i\)</span> were randomly assigned such that <span class="math inline">\(m\)</span> subjects assigned to treatment and <span class="math inline">\(N-m\)</span> subjects assigned to control.</p>
+<div id="standard-error-of-the-mean" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Standard Error of the Mean</h3>
+<p>The population mean and variance are <span class="math inline">\(\mu_y\)</span> and <span class="math inline">\(\sigma^2_y\)</span> for some variable <span class="math inline">\(Y\)</span> and <span class="math inline">\(\sigma_y\)</span> is the standard deviation. We want to know the variability of our sample mean <span class="math inline">\(\bar{Y}\)</span>.</p>
+<p>Well we already know the mean of our sample mean (<span class="math inline">\(\bar{Y}\)</span>) is the population mean <span class="math inline">\((\mu_y)\)</span>:</p>
 <p><span class="math display">\[\begin{align*}
-\widehat{ATE} &amp;= \frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i \\
+E(\bar{Y}) &amp;= E[\frac{1}{N}\sum_{i=1}^{N} y_i] \\
+&amp;= \frac{1}{N}*[E(y_1) + E(y_2) + ... + E(y_N)]\\
+&amp;= \frac{1}{N}*N\mu_y\\
+&amp;= \mu_y
 \end{align*}\]</span></p>
-<p>Is the difference in means estimator an unbiased estimate for the ATE? How can we find out?</p>
-<p>We take the expected value:</p>
+<p>What about the variance of <span class="math inline">\(\bar{Y}\)</span>? We call the variance of our population mean: <span class="math inline">\(\sigma^2\)</span>.
+</p>
 <p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= \frac{E(Y_1) + E(Y_2) +...+E(Y_m)}{m} -  \frac{E(Y_{m+1}) + E(Y_{m+2}) +...+E(Y_N)}{N-m}\\
-&amp;= \frac{m * E[Y_i(1 | D_i = 1)]}{m} - \frac{(N-m)* E[Y_i(0) | D_i = 0]}{N-m}\\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-%&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]=ATE
+Var(\bar{Y}) &amp;= Var[\frac{1}{N}\sum_{i=1}^{N} y_i] \\
+&amp;= \frac{1}{N^2}*[Var(y_1) + Var(y_2) + ... + Var(y_N)]\\
+&amp;= \frac{1}{N^2}*N\sigma^2\\
+&amp;= \frac{\sigma^2}{N}
 \end{align*}\]</span></p>
-<p>Is the final statement equivalent to the ATE?</p>
+<p>Then to get to the standard error, we take the square root:</p>
+<p><span class="math display">\[\begin{align*}
+&amp;= \frac{\sigma}{\sqrt{N}}
+\end{align*}\]</span></p>
+<p>We cannot observe the actual <span class="math inline">\(\sigma\)</span> so instead, we will follow the practice of using a “sample analogue.” In our case, this is <span class="math inline">\(s\)</span>, the sample standard deviation:</p>
 <ul>
-<li>We want our final statement to be <span class="math inline">\(E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\)</span>=ATE</li>
-<li>Our final statement is: <span class="math inline">\(E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0]=E[\widehat{ATE}]\)</span></li>
+<li>So we have an <strong><em>estimate for the standard error of our sample mean</em></strong>:</li>
 </ul>
-<p>Under what conditions can we get those two statements to look the same?</p>
-<details>
-<summary>
-Well, let’s look into some rules of expectation.
-</summary>
-<p><span class="math inline">\(E[Y|X] = E[Y]\)</span> if Y and X are independent.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-</details>
-<p>Our final statement can be simplified when treatment assignment is independent of potential outcomes:</p>
-<ul>
-<li><span class="math inline">\(E[Y_i(1) |D_i = 1] = E[Y_i(1) |D_i = 0] = E[Y_i(1)]\)</span></li>
-<li><span class="math inline">\(E[Y_i(0) |D_i = 0] = E[Y_i(0) |D_i = 1] = E[Y_i(0)]\)</span></li>
-</ul>
-<p>When does this occur? Random assignment of treatment!!</p>
-<p>Putting this together, under random assignment:</p>
 <p><span class="math display">\[\begin{align*}
-E[\widehat{ATE}] &amp;= E[\frac{1}{m}\sum_1^m Y_i - \frac{1}{N-m}\sum_{m+1}^{N} Y_i ]\\
-&amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i ) \\
-&amp;= E[Y_i(1) | D_i = 1] - E[Y_i(0) | D_i = 0] \\
-&amp;= E[Y_i (1)]-E[Y_i (0)]=E[\tau_i ]\\
-E[\widehat{ATE}] &amp;= ATE
+\widehat{SE}_m &amp;= \frac{s}{\sqrt{N}}\\
 \end{align*}\]</span></p>
-<p><strong><em>Why Experiments</em></strong></p>
-<p>One approach for addressing the fundamental problem of causal inference is to simulate two potential states of the world through random assignment: Randomized Controlled Trials / Experiments</p>
-<p>Experiments approximate factual vs. counterfactual comparison</p>
+<p><strong><em>Computing the estimate of our standard error</em></strong></p>
+<ol style="list-style-type: decimal">
+<li>Take the standard deviation of our sample. Recall:</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+s &amp;= \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 }\\
+\end{align*}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Divide by the square root of the sample size.</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+\widehat{SE}_m &amp;= \frac{s}{\sqrt{N}}\\
+\end{align*}\]</span></p>
+<p><strong><em>Example</em></strong></p>
+<p>What’s our estimate for the mean and standard error for feeling thermometer scores toward liberals?</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="standard-errors.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. Take standard deviation</span></span>
+<span id="cb115-2"><a href="standard-errors.html#cb115-2" aria-hidden="true" tabindex="-1"></a>st.dev.fts <span class="ot">&lt;-</span> <span class="fu">sd</span>(fts)</span>
+<span id="cb115-3"><a href="standard-errors.html#cb115-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-4"><a href="standard-errors.html#cb115-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. Divide by square root of sample size</span></span>
+<span id="cb115-5"><a href="standard-errors.html#cb115-5" aria-hidden="true" tabindex="-1"></a>se.fts <span class="ot">&lt;-</span> st.dev.fts<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(fts))</span>
+<span id="cb115-6"><a href="standard-errors.html#cb115-6" aria-hidden="true" tabindex="-1"></a>se.fts</span></code></pre></div>
+<pre><code>## [1] 10.44329</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="standard-errors.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alternative</span></span>
+<span id="cb117-2"><a href="standard-errors.html#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(fts)<span class="sc">/</span><span class="fu">length</span>(fts))</span></code></pre></div>
+<pre><code>## [1] 10.44329</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="standard-errors.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="do">## What&#39;s the mean?</span></span>
+<span id="cb119-2"><a href="standard-errors.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(fts)</span></code></pre></div>
+<pre><code>## [1] 67.8</code></pre>
+</div>
+<div id="standard-error-for-a-difference-in-means" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Standard error for a difference in means</h3>
+<p>So we have an estimate for the standard error of our sample mean: But often we want the standard error of a <strong>difference</strong> in means, correspondig to the uncertainty of <span class="math inline">\(\widehat{ATE}\)</span>.</p>
+<p>When we take the difference in variances from two independent samples, we add their variances:</p>
+<p><span class="math display">\[\begin{align*}
+\widehat{SE}_{d-i-m} &amp;= \sqrt{\frac{\widehat{Var}(Y_i(1))}{m} + \frac{\widehat{Var}(Y_i(0))}{N-m}}\\
+\end{align*}\]</span></p>
+<p>Note: Let’s inspect this formula. What does it tell us about when the standard error will be larger/smaller?</p>
 <ul>
-<li>We randomly assign one group to receive a “treatment” and another not to receive a treatment (the control)</li>
-<li>Using what we learned above, when treatment assignment is <strong>randomized</strong>, the only thing that distinguishes the treatment group from the control group in expectation, besides the treatment itself, is chance.</li>
-<li>This allows us to use a simple differences in means estimator in experiments to estimate our average treatment effects.</li>
+<li>Gives us insight into designs with blocking, matched pairs</li>
 </ul>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>See <a href="https://www.youtube.com/watch?v=Ki2HpTCPwhM">video</a> for help on law of iterated expectations<a href="difference-in-means-estimator.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="identification-strategy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-identification-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="uncertainty.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="confidence-intervals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
