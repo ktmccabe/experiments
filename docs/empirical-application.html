@@ -346,7 +346,11 @@ Your ideas …
 <span id="cb130-25"><a href="empirical-application.html#cb130-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb130-26"><a href="empirical-application.html#cb130-26" aria-hidden="true" tabindex="-1"></a><span class="do">## p-value for two-sided test</span></span>
 <span id="cb130-27"><a href="empirical-application.html#cb130-27" aria-hidden="true" tabindex="-1"></a>p.asians <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t.diffasians), t.df))<span class="sc">*</span><span class="dv">2</span></span></code></pre></div>
-<p>When learning a new function, you can access the help files in R by typing <code>?FUN</code> into the console. Example: <code>t.test</code>.</p>
+<p>We could visualize this according to the t-distribution with degrees of freedom equal to <code>t.df</code>: 50.73481 and our t-value of 2.196597 in the dashed red line.</p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-62-1.svg" width="672" /></p>
+<p>To get our p-value in a two-sided test, we compute the area to the right of this and to the left of its corresponding value on the opposite side of the distribution (equivalently due to the symmetric nature of the distribution, we can take 2 <span class="math inline">\(\times\)</span> either area). This area represents a probability, as the total area under the curve sums to 1.</p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-63-1.svg" width="672" /></p>
+<p>A shortcut for computing the results is to use the R function. When learning a new function, you can access the help files in R by typing <code>?FUN</code> into the console. Example: <code>t.test</code>.</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="empirical-application.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="do">## t-test the quick way!</span></span>
 <span id="cb131-2"><a href="empirical-application.html#cb131-2" aria-hidden="true" tabindex="-1"></a>asians.t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
 <span id="cb131-3"><a href="empirical-application.html#cb131-3" aria-hidden="true" tabindex="-1"></a>                   asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span>

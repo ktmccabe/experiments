@@ -264,18 +264,19 @@ t &amp;= \frac{\bar{X} - \mu_o}{\widehat{SE}_m}\\
 <p><span class="math display">\[\begin{align*}
 t &amp;= \frac{(\bar{X_1} - \bar{X_0})- (\mu_1 - \mu_0)}{\widehat{SE}_{d-i-m}}\\
 \end{align*}\]</span></p>
-<p>In each case, we standardize our estimates according to the student’s t-distribution. We look to see just how extreme our t statistic is.</p>
+<p>In each case, we standardize our estimates according to the student’s t-distribution. We look to see just how extreme our t statistic is. t is our test statistic, a ratio between the size of the difference in means over the variability in the underlying data, represented by the standard error. <a href="https://blog.minitab.com/en/adventures-in-statistics-2/understanding-t-tests-t-values-and-t-distributions">Here</a> is a relatively accessible summary of t values.</p>
 </div>
 <div id="p-values" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> p-values</h3>
-<p>What is the probability of getting a result this extreme or more extreme “by chance”/“if the null were true”?</p>
+<p><img src="images/tdist.png" style="width:70.0%" /></p>
+<p>The p-value asks: What is the probability of getting a result this extreme or more extreme “by chance”/“if the null were true”? In a world where the null is true, we still might not get a t=0 in every sample. The t-distribution represents the range of t-values we might expect to see with some probability under the assumption the null is true. We need to quantify how likely it would be to get our t-statistic in this world where the null is true.</p>
 <ul>
 <li>Lower-tailed test, p-value <span class="math inline">\(= Pr(T &lt; t | H_o\)</span> is true)</li>
 <li>Upper-tailed test, p-value <span class="math inline">\(= Pr(T &gt; t | H_o\)</span> is true)</li>
 <li>Two-sided test is specified by: p-value <span class="math inline">\(= 2 * P(T &gt; |t| \hspace{1mm} | H_o\)</span> is true)</li>
 </ul>
-<p>We primarily use two-sided tests. To get the p-value, we need the degrees of freedom. For one sample tests, it is N-1. For two-sample, it can be more complicated.</p>
-<p>If we use the Welch calculation for unequal variances, it is: df<span class="math inline">\(=\frac{\widehat{SE}^4}{ \frac{\widehat{Var}(Y_i(1))^2}{m^2(m-1)} + {\frac{\widehat{Var}(Y_i(0))^2}{(N-m)^2(N-m-1)}}}\)</span>.</p>
+<p>We primarily use two-sided tests. To get the p-value, we need the degrees of freedom because the t-distribution varies somewhat in shape according to the degrees of freedom, which are primarily a function of the sample size. Degrees of freedom govern how thick the tails of the distribution are, which can influence and increase the size of the p-value. For one sample tests, it is N-1. For two-sample t-tests, the degrees of freedom calculation can be more complicated.</p>
+<p>If we use the Welch calculation for unequal variances, which is the default setting in the R <code>t.test</code> function it is: df<span class="math inline">\(=\frac{\widehat{SE}^4}{ \frac{\widehat{Var}(Y_i(1))^2}{m^2(m-1)} + {\frac{\widehat{Var}(Y_i(0))^2}{(N-m)^2(N-m-1)}}}\)</span>.</p>
 <ul>
 <li>Fortunately, the <code>t.test</code> function in R will calculate that for you.</li>
 </ul>

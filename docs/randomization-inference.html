@@ -287,7 +287,7 @@ Here is our data for 7 observations, where 4 are assigned to treatment, 3 to con
 <span id="cb153-5"><a href="randomization-inference.html#cb153-5" aria-hidden="true" tabindex="-1"></a>distout <span class="ot">&lt;-</span> <span class="fu">gendist</span>(Ys,perms,<span class="at">prob=</span>probs)</span></code></pre></div>
 <p>Plot and compare distribution to observed ATE</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="randomization-inference.html#cb154-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">dispdist</span>(distout, ate)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-72-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-74-1.svg" width="672" /></p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="randomization-inference.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
 <span id="cb155-2"><a href="randomization-inference.html#cb155-2" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>two.tailed.p.value</span></code></pre></div>
 <pre><code>## [1] 0.036</code></pre>

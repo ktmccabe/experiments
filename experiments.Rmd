@@ -1631,8 +1631,7 @@ Typical setup for two-sample test.
 
 Review: Let's say we do a two-sided test and get a p-value from our t-test of 0.003. What should we conclude? 
 
-  - Wait, what's a p-value? How should we interpret this p-value? (pg. 64, Gerber and Green)
-
+  - Wait, what's a p-value? How should we interpret this p-value? (pg. 64, Gerber and Green) 
 
 ### t-tests
 
@@ -1649,20 +1648,21 @@ Two populations
 t &= \frac{(\bar{X_1} - \bar{X_0})- (\mu_1 - \mu_0)}{\widehat{SE}_{d-i-m}}\\
 \end{align*}
 
-In each case, we standardize our estimates according to the student's t-distribution. We look to see just how extreme our t statistic is.
+In each case, we standardize our estimates according to the student's t-distribution. We look to see just how extreme our t statistic is. t is our test statistic, a ratio between the size of the difference in means over the variability in the underlying data, represented by the standard error. [Here](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-t-tests-t-values-and-t-distributions) is a relatively accessible summary of t values. 
 
 ### p-values
 
+![](images/tdist.png){width=70%}
 
-What is the probability of getting a result this extreme or more extreme "by chance"/"if the null were true"?
+The p-value asks: What is the probability of getting a result this extreme or more extreme "by chance"/"if the null were true"? In a world where the null is true, we still might not get a t=0 in every sample. The t-distribution represents the range of t-values we might expect to see with some probability under the assumption the null is true. We need to quantify how likely it would be to get our t-statistic in this world where the null is true.
 
   - Lower-tailed test, p-value $= Pr(T < t  | H_o$ is true) 
   - Upper-tailed test, p-value $= Pr(T > t  | H_o$ is true)
   - Two-sided test is specified by: p-value $= 2 * P(T > |t| \hspace{1mm} | H_o$ is true)
 
-We primarily use two-sided tests. To get the p-value, we need the degrees of freedom. For one sample tests, it is N-1. For two-sample, it can be more complicated. 
+We primarily use two-sided tests. To get the p-value, we need the degrees of freedom because the t-distribution varies somewhat in shape according to the degrees of freedom, which are primarily a function of the sample size. Degrees of freedom govern how thick the tails of the distribution are, which can influence and increase the size of the p-value. For one sample tests, it is N-1. For two-sample t-tests, the degrees of freedom calculation can be more complicated. 
 
-If we use the Welch calculation for unequal variances, it is: df$=\frac{\widehat{SE}^4}{ \frac{\widehat{Var}(Y_i(1))^2}{m^2(m-1)} + {\frac{\widehat{Var}(Y_i(0))^2}{(N-m)^2(N-m-1)}}}$.
+If we use the Welch calculation for unequal variances, which is the default setting in the R `t.test` function it is: df$=\frac{\widehat{SE}^4}{ \frac{\widehat{Var}(Y_i(1))^2}{m^2(m-1)} + {\frac{\widehat{Var}(Y_i(0))^2}{(N-m)^2(N-m-1)}}}$.
 
   - Fortunately, the `t.test` function in R will calculate that for you.
 
@@ -1793,7 +1793,35 @@ t.df <- (se.diffasians)^4/
 p.asians <- (1- pt(abs(t.diffasians), t.df))*2
 ```
 
-When learning a new function, you can access the help files in R by typing `?FUN` into the console. Example: `t.test`.
+We could visualize this according to the t-distribution with degrees of freedom equal to `t.df`: 50.73481 and our t-value of 2.196597 in the dashed red line.
+
+```{r, echo=F}
+
+t <- seq(-3, 3, .1)
+plot(t, dt(t, df=t.df), ylab="Density", type="l")
+abline(v=t.diffasians, col="red", lty=2)
+```
+
+To get our p-value in a two-sided test, we compute the area to the right of this and to the left of its corresponding value on the opposite side of the distribution (equivalently due to the symmetric nature of the distribution, we can take 2 $\times$ either area). This area represents a probability, as the total area under the curve sums to 1.
+
+
+```{r, echo=F}
+
+t <- seq(-3, 3, .1)
+plot(t, dt(t, df=t.df), ylab="Density", type="l")
+abline(v=c(t.diffasians, -t.diffasians), col="red", lty=2)
+polygon(c(-3,seq(-3, -t.diffasians, .1),-t.diffasians),
+        c(0,dt(seq(-3, -t.diffasians, .1), df=t.df),0),
+        col="pink")
+polygon(c(t.diffasians, seq(t.diffasians, 3,.1),3),
+        c(0,dt(seq(t.diffasians,3, .1), df=t.df),0),
+        col="pink")
+```
+
+
+
+
+A shortcut for computing the results is to use the R function. When learning a new function, you can access the help files in R by typing `?FUN` into the console. Example: `t.test`.
 
 ```{r}
 ## t-test the quick way!
