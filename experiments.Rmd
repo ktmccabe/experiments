@@ -1977,7 +1977,7 @@ For randomization inference, what we do now is simulate possible randomizations-
 
 ![](images/ri4.png)
 
-What is our average treatment effect for \textcolor{blue}{$d$}? 18/4 - 15/3 = -.5
+What is our average treatment effect for d? 18/4 - 15/3 = -.5
 
 
 Repeat for all (or a lot of) possible permutations of d. This gives us an implied null distribution of the average treatment effect under the sharp null. Note: it won't always be zero. It will be a distribution around zero. We will compare how extreme our observed estimate of the average treatment effect is compared to this distribution under the null.
@@ -2128,7 +2128,7 @@ Note: this estimate of the standard error is considered conservative and is only
 
   - For example, when we use OLS to get out difference in means, we will use a slightly different "pooled variance estimator" where we assume $\sigma_1^2 = \sigma_0^2$.
       + Here, the pooled sample variance is: $s_{pooled}^2 = \frac{(n_1 -1)s^2_1 + (n_0-1)s^2_0}{(n_1 +n_0 -2)}$
-      + where the standard error is: $ \sqrt{s_{pooled}^2} * \sqrt{(\frac{1}{n_1}+\frac{1}{n_0})}$
+      + where the standard error is: $\sqrt{s_{pooled}^2} * \sqrt{(\frac{1}{n_1}+\frac{1}{n_0})}$
 
 ## Equivalence of t-test and ANOVA
 
@@ -2177,7 +2177,7 @@ ANOVA and t-test diverge in estimates when you have more than 2 groups
   - t-tests are meant for pairwise comparisons of significance
   - BUT there are "post-hoc" anova tests to look at pairwise comparisons, 
   - As there are multiple-testing corrections for t-tests
-      + More on [multiple testing adjustments](https://egap.org/methods-guides/10-things-you-need-know-about-multiple-comparisons)
+      + More on [multiple testing adjustments](https://egap.org/resource/10-things-to-know-about-multiple-comparisons/)
 
 
 

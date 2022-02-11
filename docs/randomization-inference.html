@@ -263,7 +263,7 @@ Here is our data for 7 observations, where 4 are assigned to treatment, 3 to con
 <p><img src="images/ri3.png" /></p>
 <p>For randomization inference, what we do now is simulate possible randomizations– what if a different set of observations were treated each time?</p>
 <p><img src="images/ri4.png" /></p>
-<p>What is our average treatment effect for ? 18/4 - 15/3 = -.5</p>
+<p>What is our average treatment effect for d? 18/4 - 15/3 = -.5</p>
 <p>Repeat for all (or a lot of) possible permutations of d. This gives us an implied null distribution of the average treatment effect under the sharp null. Note: it won’t always be zero. It will be a distribution around zero. We will compare how extreme our observed estimate of the average treatment effect is compared to this distribution under the null.</p>
 <p><strong><em>Empirical example with social exclusion experiment</em></strong></p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="randomization-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri&quot;)</span></span>
