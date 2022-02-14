@@ -59,3 +59,9 @@ randomization-inference
 a-note-on-expectations-and-variance
 equivalence-of-t-test-and-anova
 experimental-design-complications
+visualize
+plotting-average-treatment-effects
+ate-using-plot
+ate-with-ggplot
+heterogeneous-treatment-effects-1
+examples-of-arguments-in-plot

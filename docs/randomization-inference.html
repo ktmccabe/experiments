@@ -221,6 +221,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
 <li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html"><i class="fa fa-check"></i><b>5.1</b> Plotting Average Treatment Effects</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-using-plot"><i class="fa fa-check"></i><b>5.1.1</b> ATE using <code>plot</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-with-ggplot"><i class="fa fa-check"></i><b>5.1.2</b> ATE with <code>ggplot</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="heterogeneous-treatment-effects-1.html"><a href="heterogeneous-treatment-effects-1.html"><i class="fa fa-check"></i><b>5.2</b> Heterogeneous Treatment Effects</a></li>
+<li class="chapter" data-level="5.3" data-path="examples-of-arguments-in-plot.html"><a href="examples-of-arguments-in-plot.html"><i class="fa fa-check"></i><b>5.3</b> Examples of arguments in <code>plot</code></a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -266,37 +276,36 @@ Here is our data for 7 observations, where 4 are assigned to treatment, 3 to con
 <p>What is our average treatment effect for d? 18/4 - 15/3 = -.5</p>
 <p>Repeat for all (or a lot of) possible permutations of d. This gives us an implied null distribution of the average treatment effect under the sharp null. Note: it won’t always be zero. It will be a distribution around zero. We will compare how extreme our observed estimate of the average treatment effect is compared to this distribution under the null.</p>
 <p><strong><em>Empirical example with social exclusion experiment</em></strong></p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="randomization-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri&quot;)</span></span>
-<span id="cb149-2"><a href="randomization-inference.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri)</span></code></pre></div>
-<pre><code>## Warning: package &#39;ri&#39; was built under R version 4.0.2</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="randomization-inference.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb151-2"><a href="randomization-inference.html#cb151-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb151-3"><a href="randomization-inference.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
-<span id="cb151-4"><a href="randomization-inference.html#cb151-4" aria-hidden="true" tabindex="-1"></a>probs <span class="ot">&lt;-</span> <span class="fu">genprobexact</span>(asians<span class="sc">$</span>treatment_cit)</span>
-<span id="cb151-5"><a href="randomization-inference.html#cb151-5" aria-hidden="true" tabindex="-1"></a>ate <span class="ot">&lt;-</span> <span class="fu">estate</span>(asians<span class="sc">$</span>study2_avg,asians<span class="sc">$</span>treatment_cit,<span class="at">prob=</span>probs)</span>
-<span id="cb151-6"><a href="randomization-inference.html#cb151-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb151-7"><a href="randomization-inference.html#cb151-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Generate permutations of random assignments</span></span>
-<span id="cb151-8"><a href="randomization-inference.html#cb151-8" aria-hidden="true" tabindex="-1"></a>perms <span class="ot">&lt;-</span> <span class="fu">genperms</span>(asians<span class="sc">$</span>treatment_cit,<span class="at">maxiter=</span><span class="dv">1000</span>) </span></code></pre></div>
-<pre><code>## Too many permutations to use exact method.
-## Defaulting to approximate method.
-## Increase maxiter to at least 218169540588403552 to perform exact estimation.</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="randomization-inference.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Generate Potential Outcomes. When null ate = 0, this will just be your Y</span></span>
-<span id="cb153-2"><a href="randomization-inference.html#cb153-2" aria-hidden="true" tabindex="-1"></a>Ys <span class="ot">&lt;-</span> <span class="fu">genouts</span>(asians<span class="sc">$</span>study2_avg,asians<span class="sc">$</span>treatment_cit,<span class="at">ate=</span><span class="dv">0</span>)</span>
-<span id="cb153-3"><a href="randomization-inference.html#cb153-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb153-4"><a href="randomization-inference.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Simulate the implied distribution of ates</span></span>
-<span id="cb153-5"><a href="randomization-inference.html#cb153-5" aria-hidden="true" tabindex="-1"></a>distout <span class="ot">&lt;-</span> <span class="fu">gendist</span>(Ys,perms,<span class="at">prob=</span>probs)</span></code></pre></div>
+<p>Alex Coppock has updated the randomization inference package to <code>ri2</code> in R. More on this package is available <a href="http://alexandercoppock.com/ri2/index.html">here</a>.</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="randomization-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri2&quot;, dependencies=T)</span></span>
+<span id="cb149-2"><a href="randomization-inference.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri2)</span>
+<span id="cb149-3"><a href="randomization-inference.html#cb149-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-4"><a href="randomization-inference.html#cb149-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Declare randomization</span></span>
+<span id="cb149-5"><a href="randomization-inference.html#cb149-5" aria-hidden="true" tabindex="-1"></a>declaration <span class="ot">&lt;-</span> <span class="fu">declare_ra</span>(<span class="at">N=</span><span class="fu">nrow</span>(asians), <span class="at">prob=</span>.<span class="dv">5</span>)</span>
+<span id="cb149-6"><a href="randomization-inference.html#cb149-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-7"><a href="randomization-inference.html#cb149-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
+<span id="cb149-8"><a href="randomization-inference.html#cb149-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1215</span>)</span>
+<span id="cb149-9"><a href="randomization-inference.html#cb149-9" aria-hidden="true" tabindex="-1"></a>ri2_out <span class="ot">&lt;-</span> <span class="fu">conduct_ri</span>(</span>
+<span id="cb149-10"><a href="randomization-inference.html#cb149-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> study2_avg <span class="sc">~</span> treatment_cit,</span>
+<span id="cb149-11"><a href="randomization-inference.html#cb149-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">assignment =</span> <span class="st">&quot;treatment_cit&quot;</span>,</span>
+<span id="cb149-12"><a href="randomization-inference.html#cb149-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">declaration =</span> declaration,</span>
+<span id="cb149-13"><a href="randomization-inference.html#cb149-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">sharp_hypothesis =</span> <span class="dv">0</span>,</span>
+<span id="cb149-14"><a href="randomization-inference.html#cb149-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> asians</span>
+<span id="cb149-15"><a href="randomization-inference.html#cb149-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Plot and compare distribution to observed ATE</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="randomization-inference.html#cb154-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">dispdist</span>(distout, ate)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="randomization-inference.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ri2_out)</span></code></pre></div>
 <p><img src="experiments_files/figure-html/unnamed-chunk-74-1.svg" width="672" /></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="randomization-inference.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
-<span id="cb155-2"><a href="randomization-inference.html#cb155-2" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>two.tailed.p.value</span></code></pre></div>
-<pre><code>## [1] 0.036</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="randomization-inference.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(distout[distout <span class="sc">&gt;=</span> ate])<span class="sc">/</span><span class="fu">length</span>(distout)</span></code></pre></div>
-<pre><code>## [1] 0.036</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="randomization-inference.html#cb159-1" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>two.tailed.p.value.abs</span></code></pre></div>
-<pre><code>## [1] 0.034</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="randomization-inference.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(distout[<span class="fu">abs</span>(distout) <span class="sc">&gt;=</span> ate])<span class="sc">/</span><span class="fu">length</span>(distout)</span></code></pre></div>
-<pre><code>## [1] 0.034</code></pre>
+<p>Summarize Output</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="randomization-inference.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ri2_out)</span></code></pre></div>
+<pre><code>##            term   estimate two_tailed_p_value
+## 1 treatment_cit 0.09317187              0.033</code></pre>
+<p>We can manually see what the package is doing by counting how many of the simulated estimates from the empirical distribution of the sharp null hypothesis were more extreme than our estimate from the study. Note that in this case, our p-value is very similar to the t-test.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="randomization-inference.html#cb153-1" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ri2_out)<span class="sc">$</span>estimate</span>
+<span id="cb153-2"><a href="randomization-inference.html#cb153-2" aria-hidden="true" tabindex="-1"></a>nsims <span class="ot">&lt;-</span> <span class="fu">length</span>(ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim)</span>
+<span id="cb153-3"><a href="randomization-inference.html#cb153-3" aria-hidden="true" tabindex="-1"></a>simstimates <span class="ot">&lt;-</span> ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim</span>
+<span id="cb153-4"><a href="randomization-inference.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
+<span id="cb153-5"><a href="randomization-inference.html#cb153-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(simstimates[<span class="fu">abs</span>(simstimates) <span class="sc">&gt;=</span> <span class="fu">abs</span>(estimate)])<span class="sc">/</span>nsims</span></code></pre></div>
+<pre><code>## [1] 0.033</code></pre>
 </div>
             </section>
 

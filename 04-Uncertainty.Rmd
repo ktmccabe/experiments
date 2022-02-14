@@ -574,38 +574,46 @@ Repeat for all (or a lot of) possible permutations of d. This gives us an implie
 
 ***Empirical example with social exclusion experiment***
 
-```{r}
-## install.packages("ri")
-library(ri)
-set.seed(1234)
+Alex Coppock has updated the randomization inference package to `ri2` in R. More on this package is available [here](http://alexandercoppock.com/ri2/index.html).
+
+```{r, warning=F, message=FALSE}
+## install.packages("ri2", dependencies=T)
+library(ri2)
+
+## Declare randomization
+declaration <- declare_ra(N=nrow(asians), prob=.5)
 
 ## Estimate the average treatment effect
-probs <- genprobexact(asians$treatment_cit)
-ate <- estate(asians$study2_avg,asians$treatment_cit,prob=probs)
-
-## Generate permutations of random assignments
-perms <- genperms(asians$treatment_cit,maxiter=1000) 
-
-## Generate Potential Outcomes. When null ate = 0, this will just be your Y
-Ys <- genouts(asians$study2_avg,asians$treatment_cit,ate=0)
-
-## Simulate the implied distribution of ates
-distout <- gendist(Ys,perms,prob=probs)
+set.seed(1215)
+ri2_out <- conduct_ri(
+  formula = study2_avg ~ treatment_cit,
+  assignment = "treatment_cit",
+  declaration = declaration,
+  sharp_hypothesis = 0,
+  data = asians
+)
 ```
 
 Plot and compare distribution to observed ATE
 
-```{r}
-results <- dispdist(distout, ate)
+```{r, warning=F, message=F}
+plot(ri2_out)
 ```
 
-```{r}
-## Two-tailed p-value
-results$two.tailed.p.value
-2*length(distout[distout >= ate])/length(distout)
+Summarize Output
 
-results$two.tailed.p.value.abs
-length(distout[abs(distout) >= ate])/length(distout)
+```{r}
+summary(ri2_out)
+```
+
+We can manually see what the package is doing by counting how many of the simulated estimates from the empirical distribution of the sharp null hypothesis were more extreme than our estimate from the study. Note that in this case, our p-value is very similar to the t-test.
+
+```{r}
+estimate <- tidy(ri2_out)$estimate
+nsims <- length(ri2_out$sims_df$est_sim)
+simstimates <- ri2_out$sims_df$est_sim
+## Two-tailed p-value
+length(simstimates[abs(simstimates) >= abs(estimate)])/nsims
 ```
 
 ## A Note on Expectations and Variance

@@ -221,6 +221,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
 <li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html"><i class="fa fa-check"></i><b>5.1</b> Plotting Average Treatment Effects</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-using-plot"><i class="fa fa-check"></i><b>5.1.1</b> ATE using <code>plot</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-with-ggplot"><i class="fa fa-check"></i><b>5.1.2</b> ATE with <code>ggplot</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="heterogeneous-treatment-effects-1.html"><a href="heterogeneous-treatment-effects-1.html"><i class="fa fa-check"></i><b>5.2</b> Heterogeneous Treatment Effects</a></li>
+<li class="chapter" data-level="5.3" data-path="examples-of-arguments-in-plot.html"><a href="examples-of-arguments-in-plot.html"><i class="fa fa-check"></i><b>5.3</b> Examples of arguments in <code>plot</code></a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -241,43 +251,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="equivalence-of-t-test-and-anova" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Equivalence of t-test and ANOVA</h2>
 <p>You may be familiar with ANOVA as a way to test for group differences. When you have two groups, the t-test and ANOVA are actually equivalent. Let’s convince ourselves of this.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="equivalence-of-t-test-and-anova.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1) t-test where variances are assumed to be equal (often we leave this unequal, which adjusts for unequal variances)</span></span>
-<span id="cb163-2"><a href="equivalence-of-t-test-and-anova.html#cb163-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
-<span id="cb163-3"><a href="equivalence-of-t-test-and-anova.html#cb163-3" aria-hidden="true" tabindex="-1"></a>                   asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>],</span>
-<span id="cb163-4"><a href="equivalence-of-t-test-and-anova.html#cb163-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">var.equal=</span>T)</span>
-<span id="cb163-5"><a href="equivalence-of-t-test-and-anova.html#cb163-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-6"><a href="equivalence-of-t-test-and-anova.html#cb163-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2) One-way anova</span></span>
-<span id="cb163-7"><a href="equivalence-of-t-test-and-anova.html#cb163-7" aria-hidden="true" tabindex="-1"></a><span class="do">## create variable that is back out vs. stay out only</span></span>
-<span id="cb163-8"><a href="equivalence-of-t-test-and-anova.html#cb163-8" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(study2_avg <span class="sc">~</span> treatment_cit, <span class="at">data =</span> asians)</span>
-<span id="cb163-9"><a href="equivalence-of-t-test-and-anova.html#cb163-9" aria-hidden="true" tabindex="-1"></a>a1.sum <span class="ot">&lt;-</span> <span class="fu">summary</span>(a1)</span>
-<span id="cb163-10"><a href="equivalence-of-t-test-and-anova.html#cb163-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-11"><a href="equivalence-of-t-test-and-anova.html#cb163-11" aria-hidden="true" tabindex="-1"></a><span class="do">## In one-way ANOVA test, a significant p-value indicates that</span></span>
-<span id="cb163-12"><a href="equivalence-of-t-test-and-anova.html#cb163-12" aria-hidden="true" tabindex="-1"></a><span class="do">## at least one of the group means are different, but we don’t know which </span></span>
-<span id="cb163-13"><a href="equivalence-of-t-test-and-anova.html#cb163-13" aria-hidden="true" tabindex="-1"></a><span class="do">## pairs of groups are different.</span></span>
-<span id="cb163-14"><a href="equivalence-of-t-test-and-anova.html#cb163-14" aria-hidden="true" tabindex="-1"></a><span class="do">## However, if we only have two groups, ANOVA reduces to a t-test</span></span>
-<span id="cb163-15"><a href="equivalence-of-t-test-and-anova.html#cb163-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-16"><a href="equivalence-of-t-test-and-anova.html#cb163-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 3) Also equivalent to simple regression</span></span>
-<span id="cb163-17"><a href="equivalence-of-t-test-and-anova.html#cb163-17" aria-hidden="true" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(study2_avg <span class="sc">~</span> treatment_cit, <span class="at">data =</span> asians)</span>
-<span id="cb163-18"><a href="equivalence-of-t-test-and-anova.html#cb163-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-19"><a href="equivalence-of-t-test-and-anova.html#cb163-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-20"><a href="equivalence-of-t-test-and-anova.html#cb163-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Prove to yourself the equivalence</span></span>
-<span id="cb163-21"><a href="equivalence-of-t-test-and-anova.html#cb163-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 1) Compare p-values of the treatment effect in each case</span></span>
-<span id="cb163-22"><a href="equivalence-of-t-test-and-anova.html#cb163-22" aria-hidden="true" tabindex="-1"></a>t1<span class="sc">$</span>p.value</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="equivalence-of-t-test-and-anova.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1) t-test where variances are assumed to be equal (often we leave this unequal, which adjusts for unequal variances)</span></span>
+<span id="cb155-2"><a href="equivalence-of-t-test-and-anova.html#cb155-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
+<span id="cb155-3"><a href="equivalence-of-t-test-and-anova.html#cb155-3" aria-hidden="true" tabindex="-1"></a>                   asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>],</span>
+<span id="cb155-4"><a href="equivalence-of-t-test-and-anova.html#cb155-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">var.equal=</span>T)</span>
+<span id="cb155-5"><a href="equivalence-of-t-test-and-anova.html#cb155-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-6"><a href="equivalence-of-t-test-and-anova.html#cb155-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2) One-way anova</span></span>
+<span id="cb155-7"><a href="equivalence-of-t-test-and-anova.html#cb155-7" aria-hidden="true" tabindex="-1"></a><span class="do">## create variable that is back out vs. stay out only</span></span>
+<span id="cb155-8"><a href="equivalence-of-t-test-and-anova.html#cb155-8" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(study2_avg <span class="sc">~</span> treatment_cit, <span class="at">data =</span> asians)</span>
+<span id="cb155-9"><a href="equivalence-of-t-test-and-anova.html#cb155-9" aria-hidden="true" tabindex="-1"></a>a1.sum <span class="ot">&lt;-</span> <span class="fu">summary</span>(a1)</span>
+<span id="cb155-10"><a href="equivalence-of-t-test-and-anova.html#cb155-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-11"><a href="equivalence-of-t-test-and-anova.html#cb155-11" aria-hidden="true" tabindex="-1"></a><span class="do">## In one-way ANOVA test, a significant p-value indicates that</span></span>
+<span id="cb155-12"><a href="equivalence-of-t-test-and-anova.html#cb155-12" aria-hidden="true" tabindex="-1"></a><span class="do">## at least one of the group means are different, but we don’t know which </span></span>
+<span id="cb155-13"><a href="equivalence-of-t-test-and-anova.html#cb155-13" aria-hidden="true" tabindex="-1"></a><span class="do">## pairs of groups are different.</span></span>
+<span id="cb155-14"><a href="equivalence-of-t-test-and-anova.html#cb155-14" aria-hidden="true" tabindex="-1"></a><span class="do">## However, if we only have two groups, ANOVA reduces to a t-test</span></span>
+<span id="cb155-15"><a href="equivalence-of-t-test-and-anova.html#cb155-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-16"><a href="equivalence-of-t-test-and-anova.html#cb155-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 3) Also equivalent to simple regression</span></span>
+<span id="cb155-17"><a href="equivalence-of-t-test-and-anova.html#cb155-17" aria-hidden="true" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(study2_avg <span class="sc">~</span> treatment_cit, <span class="at">data =</span> asians)</span>
+<span id="cb155-18"><a href="equivalence-of-t-test-and-anova.html#cb155-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-19"><a href="equivalence-of-t-test-and-anova.html#cb155-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-20"><a href="equivalence-of-t-test-and-anova.html#cb155-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Prove to yourself the equivalence</span></span>
+<span id="cb155-21"><a href="equivalence-of-t-test-and-anova.html#cb155-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 1) Compare p-values of the treatment effect in each case</span></span>
+<span id="cb155-22"><a href="equivalence-of-t-test-and-anova.html#cb155-22" aria-hidden="true" tabindex="-1"></a>t1<span class="sc">$</span>p.value</span></code></pre></div>
 <pre><code>## [1] 0.02951252</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="equivalence-of-t-test-and-anova.html#cb165-1" aria-hidden="true" tabindex="-1"></a>a1.sum[[<span class="dv">1</span>]]<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="equivalence-of-t-test-and-anova.html#cb157-1" aria-hidden="true" tabindex="-1"></a>a1.sum[[<span class="dv">1</span>]]<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span></span></code></pre></div>
 <pre><code>## [1] 0.02951252         NA</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="equivalence-of-t-test-and-anova.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(l1)<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="equivalence-of-t-test-and-anova.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(l1)<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] 0.02951252</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="equivalence-of-t-test-and-anova.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 2) Compare test-statistics</span></span>
-<span id="cb169-2"><a href="equivalence-of-t-test-and-anova.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Note it&#39;s the same F-statistic in ANOVA and lm</span></span>
-<span id="cb169-3"><a href="equivalence-of-t-test-and-anova.html#cb169-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(l1)<span class="sc">$</span>f</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="equivalence-of-t-test-and-anova.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 2) Compare test-statistics</span></span>
+<span id="cb161-2"><a href="equivalence-of-t-test-and-anova.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Note it&#39;s the same F-statistic in ANOVA and lm</span></span>
+<span id="cb161-3"><a href="equivalence-of-t-test-and-anova.html#cb161-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(l1)<span class="sc">$</span>f</span></code></pre></div>
 <pre><code>##     value     numdf     dendf 
 ##  4.976264  1.000000 59.000000</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="equivalence-of-t-test-and-anova.html#cb171-1" aria-hidden="true" tabindex="-1"></a>a1.sum[[<span class="dv">1</span>]]<span class="sc">$</span><span class="st">`</span><span class="at">F value</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="equivalence-of-t-test-and-anova.html#cb163-1" aria-hidden="true" tabindex="-1"></a>a1.sum[[<span class="dv">1</span>]]<span class="sc">$</span><span class="st">`</span><span class="at">F value</span><span class="st">`</span></span></code></pre></div>
 <pre><code>## [1] 4.976264       NA</code></pre>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="equivalence-of-t-test-and-anova.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="do">## And woohoo! the f-statistic is actually equivalent to our t-stat^2</span></span>
-<span id="cb173-2"><a href="equivalence-of-t-test-and-anova.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (with two groups, sqrt(f) equals the absolute value of t)</span></span>
-<span id="cb173-3"><a href="equivalence-of-t-test-and-anova.html#cb173-3" aria-hidden="true" tabindex="-1"></a>t1<span class="sc">$</span>statistic<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="equivalence-of-t-test-and-anova.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="do">## And woohoo! the f-statistic is actually equivalent to our t-stat^2</span></span>
+<span id="cb165-2"><a href="equivalence-of-t-test-and-anova.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (with two groups, sqrt(f) equals the absolute value of t)</span></span>
+<span id="cb165-3"><a href="equivalence-of-t-test-and-anova.html#cb165-3" aria-hidden="true" tabindex="-1"></a>t1<span class="sc">$</span>statistic<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>##        t 
 ## 4.976264</code></pre>
 <p>ANOVA and t-test diverge in estimates when you have more than 2 groups</p>
