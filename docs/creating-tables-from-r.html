@@ -235,9 +235,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.5.1" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#additional-formatting-examples"><i class="fa fa-check"></i><b>5.5.1</b> Additional formatting examples</a></li>
 <li class="chapter" data-level="5.5.2" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#additional-table-types"><i class="fa fa-check"></i><b>5.5.2</b> Additional Table Types</a></li>
-<li class="chapter" data-level="5.5.3" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#formatting-and-exporting-r-results"><i class="fa fa-check"></i><b>5.5.3</b> Formatting and Exporting R Results</a></li>
-<li class="chapter" data-level="5.5.4" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#additional-formatting-examples-1"><i class="fa fa-check"></i><b>5.5.4</b> Additional formatting examples</a></li>
-<li class="chapter" data-level="5.5.5" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#additional-table-types-1"><i class="fa fa-check"></i><b>5.5.5</b> Additional Table Types</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -551,354 +548,14 @@ Num. obs.
 <h3><span class="header-section-number">5.5.2</span> Additional Table Types</h3>
 <p>Sometimes you might want to create tables that are not from regression models, such as tables for descriptive statistics. R has other packages for tables of this type.</p>
 <p>For example <code>xtable</code> can create simple html and latex tables. You just have to supply the function with a table object or matrix.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="creating-tables-from-r.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
-<span id="cb210-2"><a href="creating-tables-from-r.html#cb210-2" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">race =</span> mydata<span class="sc">$</span>race, <span class="at">sex =</span> mydata<span class="sc">$</span>sex)</span></code></pre></div>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="creating-tables-from-r.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="do">## LaTeX</span></span>
-<span id="cb211-2"><a href="creating-tables-from-r.html#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xtable</span>(table1)</span></code></pre></div>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="creating-tables-from-r.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Word</span></span>
-<span id="cb212-2"><a href="creating-tables-from-r.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">file =</span> <span class="st">&quot;crosstab.doc&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="creating-tables-from-r.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Html</span></span>
-<span id="cb213-2"><a href="creating-tables-from-r.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
-<!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
-<!-- Wed Feb 16 12:13:28 2022 -->
-<table border="1">
-<tr>
-<th>
-</th>
-<th>
-female
-</th>
-<th>
-male
-</th>
-</tr>
-<tr>
-<td align="right">
-black
-</td>
-<td align="right">
-1886
-</td>
-<td align="right">
-549
-</td>
-</tr>
-<tr>
-<td align="right">
-white
-</td>
-<td align="right">
-1860
-</td>
-<td align="right">
-575
-</td>
-</tr>
-</table>
-<p>Here is an example with the <code>t.test</code> function.</p>
-</div>
-<div id="formatting-and-exporting-r-results" class="section level3" number="5.5.3">
-<h3><span class="header-section-number">5.5.3</span> Formatting and Exporting R Results</h3>
-<p>R has a number of tools, including the packages <code>texreg</code>, <code>xtable</code>, and <code>stargazer</code>, which can be used to export tables made in R to nicely formatted LaTex or html output.</p>
-<p>Here is a link to the <code>texreg</code> package <a href="https://rpubs.com/YaRrr/SweaveIntro">documentation</a>. Section 5 has examples of the <code>texreg</code> and <code>htmlreg</code> functions within the texreg package. These can be integrated into R Markdown and Sweave documents, and their output can be pasted into LaTex or Microsoft Word.</p>
-<p>Your choice of function will depend on where you ultimately want your results to be compiled. If you are generating results that will be compiled to pdf using LaTex, then <code>texreg</code> works well. If you are exporting results to Word, than you may wish to use the <code>htmlreg</code> function within the <code>texreg</code> package, which will generate output that can be pasted into Word.</p>
-<p>A simple example using R Markdown html output. (Note, if you wanted to export the table to Word, you would add an argument specifying <code>file = "myfit.doc"</code> to the function. See the above link for examples:</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="creating-tables-from-r.html#cb214-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/ktmccabe/teachingdata/main/resume.csv&quot;</span>)</span>
-<span id="cb214-2"><a href="creating-tables-from-r.html#cb214-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(call <span class="sc">~</span> race, <span class="at">data=</span>mydata)</span></code></pre></div>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="creating-tables-from-r.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First time you use texreg, install it</span></span>
-<span id="cb215-2"><a href="creating-tables-from-r.html#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;texreg&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="creating-tables-from-r.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
-<span id="cb216-2"><a href="creating-tables-from-r.html#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit),</span>
-<span id="cb216-3"><a href="creating-tables-from-r.html#cb216-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars=</span><span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>),</span>
-<span id="cb216-4"><a href="creating-tables-from-r.html#cb216-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Regression of Call Backs on Race&quot;</span>)</span></code></pre></div>
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>
-Regression of Call Backs on Race
-</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">
- 
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Model 1
-</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-(Intercept)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.06<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-racewhite
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.03<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Adj. R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Num. obs.
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-4870
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="2">
-<sup><em><strong></sup>p &lt; 0.001; <sup></strong></sup>p &lt; 0.01; <sup></em></sup>p &lt; 0.05
-</td>
-</tr>
-</tfoot>
-</table>
-<p>You can add more arguments to the function to customize the name of the model and the coefficients. You can also add multiple models inside the list argument, for example, if you wanted to present a table with five regression models at once. Here is an example with two:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="creating-tables-from-r.html#cb217-1" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(call <span class="sc">~</span> race <span class="sc">+</span> sex, <span class="at">data=</span>mydata)</span>
-<span id="cb217-2"><a href="creating-tables-from-r.html#cb217-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb217-3"><a href="creating-tables-from-r.html#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
-<span id="cb217-4"><a href="creating-tables-from-r.html#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit, fit2),</span>
-<span id="cb217-5"><a href="creating-tables-from-r.html#cb217-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars=</span><span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>),</span>
-<span id="cb217-6"><a href="creating-tables-from-r.html#cb217-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Regression of Call Backs on Race and Sex&quot;</span>)</span></code></pre></div>
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>
-Regression of Call Backs on Race and Sex
-</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">
- 
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Model 1
-</th>
-<th style="padding-left: 5px;padding-right: 5px;">
-Model 2
-</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-(Intercept)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.06<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.07<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-racewhite
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.03<sup>***</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.03<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-sexmale
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.01
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.01)
-</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-Adj. R<sup>2</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.00
-</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">
-Num. obs.
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-4870
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-4870
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="3">
-<sup><em><strong></sup>p &lt; 0.001; <sup></strong></sup>p &lt; 0.01; <sup></em></sup>p &lt; 0.05
-</td>
-</tr>
-</tfoot>
-</table>
-</div>
-<div id="additional-formatting-examples-1" class="section level3" number="5.5.4">
-<h3><span class="header-section-number">5.5.4</span> Additional formatting examples</h3>
-<p>Here are some additional examples with different formats. You can run them on your own computer to see what the output looks like.</p>
-<p>The package <code>texreg</code> has three primary formats</p>
-<ul>
-<li><code>texreg()</code> for LATEX output;</li>
-<li><code>htmlreg()</code> for HTML, Markdown-compatible and Microsoft Word-compatible output;</li>
-<li><code>screenreg()</code> for text output to the R console.</li>
-</ul>
-<p>If you are working with a LaTex document, I recommend using <code>texreg()</code>, which will output LaTex syntax in your R console, which you can copy and paste into your article document.</p>
-<p>Note: this function allows you to customize model and coefficient names.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="creating-tables-from-r.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
-<span id="cb218-2"><a href="creating-tables-from-r.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="fu">texreg</span>(<span class="fu">list</span>(fit, fit2),</span>
-<span id="cb218-3"><a href="creating-tables-from-r.html#cb218-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars=</span><span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>),</span>
-<span id="cb218-4"><a href="creating-tables-from-r.html#cb218-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Regression of Call Backs on Race and Sex&quot;</span>,</span>
-<span id="cb218-5"><a href="creating-tables-from-r.html#cb218-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">&quot;Bivariate&quot;</span>, <span class="st">&quot;Includes Sex&quot;</span>),</span>
-<span id="cb218-6"><a href="creating-tables-from-r.html#cb218-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">custom.coef.names =</span> <span class="fu">c</span>(<span class="st">&quot;Intercept&quot;</span>,</span>
-<span id="cb218-7"><a href="creating-tables-from-r.html#cb218-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Race- White&quot;</span>,</span>
-<span id="cb218-8"><a href="creating-tables-from-r.html#cb218-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sex- Male&quot;</span>))</span></code></pre></div>
-<p>If you are working with a Microsoft Word document, I recommend using <code>htmlreg()</code> and specifying a file name for your output. This will export a file to your working directory, which you can copy and paste into your Word article document. Otherwise, the syntax is the same as above.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="creating-tables-from-r.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
-<span id="cb219-2"><a href="creating-tables-from-r.html#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(<span class="fu">list</span>(fit, fit2), <span class="at">file =</span> <span class="st">&quot;models.doc&quot;</span>,</span>
-<span id="cb219-3"><a href="creating-tables-from-r.html#cb219-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars=</span><span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>),</span>
-<span id="cb219-4"><a href="creating-tables-from-r.html#cb219-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Regression of Call Backs on Race and Sex&quot;</span>,</span>
-<span id="cb219-5"><a href="creating-tables-from-r.html#cb219-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">&quot;Bivariate&quot;</span>, <span class="st">&quot;Includes Sex&quot;</span>),</span>
-<span id="cb219-6"><a href="creating-tables-from-r.html#cb219-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">custom.coef.names =</span> <span class="fu">c</span>(<span class="st">&quot;Intercept&quot;</span>,</span>
-<span id="cb219-7"><a href="creating-tables-from-r.html#cb219-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Race- White&quot;</span>,</span>
-<span id="cb219-8"><a href="creating-tables-from-r.html#cb219-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sex- Male&quot;</span>))</span></code></pre></div>
-<p>If you are trying to read the output in your R console, that’s when I would use <code>screenreg()</code>. However, for professional manuscript submissions, I would recommend the other formats.</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="creating-tables-from-r.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
-<span id="cb220-2"><a href="creating-tables-from-r.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(<span class="fu">list</span>(fit, fit2), </span>
-<span id="cb220-3"><a href="creating-tables-from-r.html#cb220-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">stars=</span><span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>),</span>
-<span id="cb220-4"><a href="creating-tables-from-r.html#cb220-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Regression of Call Backs on Race and Sex&quot;</span>,</span>
-<span id="cb220-5"><a href="creating-tables-from-r.html#cb220-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">&quot;Bivariate&quot;</span>, <span class="st">&quot;Includes Sex&quot;</span>),</span>
-<span id="cb220-6"><a href="creating-tables-from-r.html#cb220-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">custom.coef.names =</span> <span class="fu">c</span>(<span class="st">&quot;Intercept&quot;</span>,</span>
-<span id="cb220-7"><a href="creating-tables-from-r.html#cb220-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Race- White&quot;</span>,</span>
-<span id="cb220-8"><a href="creating-tables-from-r.html#cb220-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sex- Male&quot;</span>))</span></code></pre></div>
-<p>The package <code>stargazer</code> allows similar options. I don’t think there are particular advantages to either package. Whatever comes easiest to you. The default for stargazer will output LaTex code into your R console.</p>
-<ul>
-<li>Note that the syntax is similar but has slightly different argument names from the <code>texreg</code> package.</li>
-<li>Also, the intercept is at the bottom by default for <code>stargazer</code>. Be careful of the covariate ordering when you add labels.</li>
-</ul>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="creating-tables-from-r.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb221-2"><a href="creating-tables-from-r.html#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(<span class="fu">list</span>(fit, fit2), </span>
-<span id="cb221-3"><a href="creating-tables-from-r.html#cb221-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">star.cutoffs=</span><span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.01</span>, <span class="fl">0.001</span>),</span>
-<span id="cb221-4"><a href="creating-tables-from-r.html#cb221-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span> <span class="st">&quot;Regression of Call Backs on Race and Sex&quot;</span>,</span>
-<span id="cb221-5"><a href="creating-tables-from-r.html#cb221-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">dep.var.labels.include =</span> F,</span>
-<span id="cb221-6"><a href="creating-tables-from-r.html#cb221-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">&quot;Call Back&quot;</span>, <span class="st">&quot;Call Back&quot;</span>),</span>
-<span id="cb221-7"><a href="creating-tables-from-r.html#cb221-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">&quot;Race- White&quot;</span>,</span>
-<span id="cb221-8"><a href="creating-tables-from-r.html#cb221-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sex- Male&quot;</span>,</span>
-<span id="cb221-9"><a href="creating-tables-from-r.html#cb221-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Intercept&quot;</span>))</span></code></pre></div>
-<p>You can adjust the type of output in <code>stargazer</code> for other formats, similar to <code>texreg</code>. Here is an example of Microsoft Word output.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="creating-tables-from-r.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb222-2"><a href="creating-tables-from-r.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(<span class="fu">list</span>(fit, fit2), <span class="at">out =</span> <span class="st">&quot;modelstar.doc&quot;</span>, <span class="at">type=</span><span class="st">&quot;html&quot;</span>,</span>
-<span id="cb222-3"><a href="creating-tables-from-r.html#cb222-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">star.cutoffs=</span><span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.01</span>, <span class="fl">0.001</span>),</span>
-<span id="cb222-4"><a href="creating-tables-from-r.html#cb222-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">dep.var.labels.include =</span> F,</span>
-<span id="cb222-5"><a href="creating-tables-from-r.html#cb222-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">title=</span> <span class="st">&quot;Regression of Call Backs on Race and Sex&quot;</span>,</span>
-<span id="cb222-6"><a href="creating-tables-from-r.html#cb222-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">&quot;Call Back&quot;</span>, <span class="st">&quot;Call Back&quot;</span>),</span>
-<span id="cb222-7"><a href="creating-tables-from-r.html#cb222-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">&quot;Race- White&quot;</span>,</span>
-<span id="cb222-8"><a href="creating-tables-from-r.html#cb222-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sex- Male&quot;</span>,</span>
-<span id="cb222-9"><a href="creating-tables-from-r.html#cb222-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Intercept&quot;</span>))</span></code></pre></div>
-</div>
-<div id="additional-table-types-1" class="section level3" number="5.5.5">
-<h3><span class="header-section-number">5.5.5</span> Additional Table Types</h3>
-<p>Sometimes you might want to create tables that are not from regression models, such as tables for descriptive statistics. R has other packages for tables of this type.</p>
-<p>For example <code>xtable</code> can create simple html and latex tables. You just have to supply the function with a table object or matrix.</p>
 <p>Here is a first example making a formated table using crosstabs of two variables.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="creating-tables-from-r.html#cb223-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/ktmccabe/teachingdata/main/resume.csv&quot;</span>)</span>
-<span id="cb223-2"><a href="creating-tables-from-r.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
-<span id="cb223-3"><a href="creating-tables-from-r.html#cb223-3" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">race =</span> mydata<span class="sc">$</span>race, <span class="at">sex =</span> mydata<span class="sc">$</span>sex)</span></code></pre></div>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="creating-tables-from-r.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="do">## RMarkdown html</span></span>
-<span id="cb224-2"><a href="creating-tables-from-r.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="creating-tables-from-r.html#cb210-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/ktmccabe/teachingdata/main/resume.csv&quot;</span>)</span>
+<span id="cb210-2"><a href="creating-tables-from-r.html#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
+<span id="cb210-3"><a href="creating-tables-from-r.html#cb210-3" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">race =</span> mydata<span class="sc">$</span>race, <span class="at">sex =</span> mydata<span class="sc">$</span>sex)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="creating-tables-from-r.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="do">## RMarkdown html</span></span>
+<span id="cb211-2"><a href="creating-tables-from-r.html#cb211-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 <!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
-<!-- Wed Feb 16 12:13:28 2022 -->
+<!-- Wed Feb 16 12:22:53 2022 -->
 <table border="1">
 <tr>
 <th>
@@ -933,33 +590,33 @@ white
 </td>
 </tr>
 </table>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="creating-tables-from-r.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="do">## LaTeX</span></span>
-<span id="cb225-2"><a href="creating-tables-from-r.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1))</span></code></pre></div>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="creating-tables-from-r.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Word</span></span>
-<span id="cb226-2"><a href="creating-tables-from-r.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">file =</span> <span class="st">&quot;crosstab.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="creating-tables-from-r.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="do">## LaTeX</span></span>
+<span id="cb212-2"><a href="creating-tables-from-r.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1))</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="creating-tables-from-r.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Word</span></span>
+<span id="cb213-2"><a href="creating-tables-from-r.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">file =</span> <span class="st">&quot;crosstab.doc&quot;</span>)</span></code></pre></div>
 <p><strong><em>Example with a t-test</em></strong></p>
 <ul>
 <li>We assemble the results in a vector. Using <code>rbind</code> makes it into a matrix object.</li>
 <li>If you had multiple t-tests, you could <code>rbind()</code> several vector rows together into one xtable</li>
 <li>I extracted the estimates, t-statistic, and confidence intervals. You could also extract the p-value.</li>
 </ul>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="creating-tables-from-r.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Run t-test and gather results</span></span>
-<span id="cb227-2"><a href="creating-tables-from-r.html#cb227-2" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/ktmccabe/teachingdata/main/resume.csv&quot;</span>)</span>
-<span id="cb227-3"><a href="creating-tables-from-r.html#cb227-3" aria-hidden="true" tabindex="-1"></a>t.resume <span class="ot">&lt;-</span> <span class="fu">t.test</span>(mydata<span class="sc">$</span>call[mydata<span class="sc">$</span>race <span class="sc">==</span> <span class="st">&quot;black&quot;</span>],</span>
-<span id="cb227-4"><a href="creating-tables-from-r.html#cb227-4" aria-hidden="true" tabindex="-1"></a>                   mydata<span class="sc">$</span>call[mydata<span class="sc">$</span>race <span class="sc">==</span> <span class="st">&quot;white&quot;</span>])</span>
-<span id="cb227-5"><a href="creating-tables-from-r.html#cb227-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb227-6"><a href="creating-tables-from-r.html#cb227-6" aria-hidden="true" tabindex="-1"></a>estimates <span class="ot">&lt;-</span> t.resume<span class="sc">$</span>estimate</span>
-<span id="cb227-7"><a href="creating-tables-from-r.html#cb227-7" aria-hidden="true" tabindex="-1"></a>cinterval <span class="ot">&lt;-</span> t.resume<span class="sc">$</span>conf.int</span>
-<span id="cb227-8"><a href="creating-tables-from-r.html#cb227-8" aria-hidden="true" tabindex="-1"></a>tstat <span class="ot">&lt;-</span> t.resume<span class="sc">$</span>statistic</span>
-<span id="cb227-9"><a href="creating-tables-from-r.html#cb227-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb227-10"><a href="creating-tables-from-r.html#cb227-10" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">c</span>(estimates, cinterval, tstat)</span>
-<span id="cb227-11"><a href="creating-tables-from-r.html#cb227-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mean Black App&quot;</span>, <span class="st">&quot;Mean White App&quot;</span>, <span class="st">&quot;Lower CI&quot;</span>, <span class="st">&quot;Upper CI&quot;</span>, <span class="st">&quot;t-statistic&quot;</span>)</span>
-<span id="cb227-12"><a href="creating-tables-from-r.html#cb227-12" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results)</span></code></pre></div>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="creating-tables-from-r.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
-<span id="cb228-2"><a href="creating-tables-from-r.html#cb228-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Rmarkdown html</span></span>
-<span id="cb228-3"><a href="creating-tables-from-r.html#cb228-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">include.rownames =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="creating-tables-from-r.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Run t-test and gather results</span></span>
+<span id="cb214-2"><a href="creating-tables-from-r.html#cb214-2" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/ktmccabe/teachingdata/main/resume.csv&quot;</span>)</span>
+<span id="cb214-3"><a href="creating-tables-from-r.html#cb214-3" aria-hidden="true" tabindex="-1"></a>t.resume <span class="ot">&lt;-</span> <span class="fu">t.test</span>(mydata<span class="sc">$</span>call[mydata<span class="sc">$</span>race <span class="sc">==</span> <span class="st">&quot;black&quot;</span>],</span>
+<span id="cb214-4"><a href="creating-tables-from-r.html#cb214-4" aria-hidden="true" tabindex="-1"></a>                   mydata<span class="sc">$</span>call[mydata<span class="sc">$</span>race <span class="sc">==</span> <span class="st">&quot;white&quot;</span>])</span>
+<span id="cb214-5"><a href="creating-tables-from-r.html#cb214-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-6"><a href="creating-tables-from-r.html#cb214-6" aria-hidden="true" tabindex="-1"></a>estimates <span class="ot">&lt;-</span> t.resume<span class="sc">$</span>estimate</span>
+<span id="cb214-7"><a href="creating-tables-from-r.html#cb214-7" aria-hidden="true" tabindex="-1"></a>cinterval <span class="ot">&lt;-</span> t.resume<span class="sc">$</span>conf.int</span>
+<span id="cb214-8"><a href="creating-tables-from-r.html#cb214-8" aria-hidden="true" tabindex="-1"></a>tstat <span class="ot">&lt;-</span> t.resume<span class="sc">$</span>statistic</span>
+<span id="cb214-9"><a href="creating-tables-from-r.html#cb214-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-10"><a href="creating-tables-from-r.html#cb214-10" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">c</span>(estimates, cinterval, tstat)</span>
+<span id="cb214-11"><a href="creating-tables-from-r.html#cb214-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mean Black App&quot;</span>, <span class="st">&quot;Mean White App&quot;</span>, <span class="st">&quot;Lower CI&quot;</span>, <span class="st">&quot;Upper CI&quot;</span>, <span class="st">&quot;t-statistic&quot;</span>)</span>
+<span id="cb214-12"><a href="creating-tables-from-r.html#cb214-12" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="creating-tables-from-r.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
+<span id="cb215-2"><a href="creating-tables-from-r.html#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Rmarkdown html</span></span>
+<span id="cb215-3"><a href="creating-tables-from-r.html#cb215-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">include.rownames =</span> F)</span></code></pre></div>
 <!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
-<!-- Wed Feb 16 12:13:28 2022 -->
+<!-- Wed Feb 16 12:22:53 2022 -->
 <table border="1">
 <tr>
 <th>
@@ -996,12 +653,12 @@ t-statistic
 </td>
 </tr>
 </table>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="creating-tables-from-r.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
-<span id="cb229-2"><a href="creating-tables-from-r.html#cb229-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Word doc</span></span>
-<span id="cb229-3"><a href="creating-tables-from-r.html#cb229-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">include.rownames =</span> F, <span class="at">file=</span><span class="st">&quot;tresults.doc&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="creating-tables-from-r.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
-<span id="cb230-2"><a href="creating-tables-from-r.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Latex</span></span>
-<span id="cb230-3"><a href="creating-tables-from-r.html#cb230-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">include.rownames =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="creating-tables-from-r.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
+<span id="cb216-2"><a href="creating-tables-from-r.html#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Word doc</span></span>
+<span id="cb216-3"><a href="creating-tables-from-r.html#cb216-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">include.rownames =</span> F, <span class="at">file=</span><span class="st">&quot;tresults.doc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="creating-tables-from-r.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
+<span id="cb217-2"><a href="creating-tables-from-r.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Latex</span></span>
+<span id="cb217-3"><a href="creating-tables-from-r.html#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">include.rownames =</span> F)</span></code></pre></div>
 
 </div>
 </div>

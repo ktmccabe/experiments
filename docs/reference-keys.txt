@@ -69,6 +69,3 @@ examples-of-arguments-in-plot
 creating-tables-from-r
 additional-formatting-examples
 additional-table-types
-formatting-and-exporting-r-results
-additional-formatting-examples-1
-additional-table-types-1
