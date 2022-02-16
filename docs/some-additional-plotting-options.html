@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Experimental Methods in Political Science</title>
-  <meta name="description" content="Experimental Methods in Political Science" />
+  <title>5.3 Some additional plotting options | Experimental Methods in Political Science</title>
+  <meta name="description" content="5.3 Some additional plotting options | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Experimental Methods in Political Science" />
+  <meta property="og:title" content="5.3 Some additional plotting options | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="5.3 Some additional plotting options | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="rsetup.html"/>
+<link rel="prev" href="heterogeneous-treatment-effects-1.html"/>
+<link rel="next" href="examples-of-arguments-in-plot.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -249,29 +249,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Experimental Methods in Political Science</h1>
-<p class="author"><em>Instructor: Katie McCabe</em></p>
-</div>
-<div id="course-notes" class="section level1" number="1">
-<h1><span class="header-section-number">Section 1</span> Course Notes</h1>
-<p>This document will include important links and course notes for Experimental Methods in Political Science.</p>
+<div id="some-additional-plotting-options" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Some additional plotting options</h2>
+<p>The common visualizations used to show average treatment effects do not give much information about the distributions of underlying data. Here are a few examples of plotting the underlying distributions.</p>
 <ul>
-<li>This site will be updated throughout the semester with new content.</li>
-<li>The Canvas modules will provide links to the relevant sections to review for a given week of the course.</li>
-<li>The primary text for the course is <a href="https://wwnorton.com/books/9780393979954">Field Experiments: Design, Analysis, and Interpretation</a> by Alan Gerber and Don Green. We will refer to this as FEDAI in the notes.</li>
-<li>This is a new and living document. If you spot errors or have questions or suggestions, please email me at <a href="mailto:k.mccabe@rutgers.edu" class="email">k.mccabe@rutgers.edu</a> or send a Slack message.</li>
+<li>You might also explore <code>geom_bar</code> for outcomes that are binary or categorical in nature as an alternative to <code>geom_histogram</code>.</li>
 </ul>
-<!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
-<!-- Instructions: https://ontheline.trincoll.edu/bookdown.html -->
+<p>Create a variable that summarizes all three experimental conditions. This will make it easier to plot data grouped by each condition.</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="some-additional-plotting-options.html#cb196-1" aria-hidden="true" tabindex="-1"></a>banks<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb196-2"><a href="some-additional-plotting-options.html#cb196-2" aria-hidden="true" tabindex="-1"></a>banks<span class="sc">$</span>condition[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Anger&quot;</span></span>
+<span id="cb196-3"><a href="some-additional-plotting-options.html#cb196-3" aria-hidden="true" tabindex="-1"></a>banks<span class="sc">$</span>condition[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Hope&quot;</span></span>
+<span id="cb196-4"><a href="some-additional-plotting-options.html#cb196-4" aria-hidden="true" tabindex="-1"></a>banks<span class="sc">$</span>condition[banks<span class="sc">$</span>angvcon <span class="sc">==</span>  <span class="dv">0</span> <span class="sc">&amp;</span> banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">0</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Control&quot;</span></span>
+<span id="cb196-5"><a href="some-additional-plotting-options.html#cb196-5" aria-hidden="true" tabindex="-1"></a>banks<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="fu">factor</span>(banks<span class="sc">$</span>condition, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Anger&quot;</span>, <span class="st">&quot;Hope&quot;</span>))</span></code></pre></div>
+<p>We filter out respondents who were not assigned to any condition. You can do this as part of the plot code, or you can <code>banks &lt;- subset(banks, is.na(condition)==F)</code> prior to running the plot code.</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="some-additional-plotting-options.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb197-2"><a href="some-additional-plotting-options.html#cb197-2" aria-hidden="true" tabindex="-1"></a>banks <span class="sc">%&gt;%</span></span>
+<span id="cb197-3"><a href="some-additional-plotting-options.html#cb197-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(condition)<span class="sc">==</span>F) <span class="sc">%&gt;%</span></span>
+<span id="cb197-4"><a href="some-additional-plotting-options.html#cb197-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>blackdon, <span class="at">fill=</span>condition))<span class="sc">+</span></span>
+<span id="cb197-5"><a href="some-additional-plotting-options.html#cb197-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha=</span>.<span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb197-6"><a href="some-additional-plotting-options.html#cb197-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb197-7"><a href="some-additional-plotting-options.html#cb197-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Distribution of Donations to Black Organizations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb197-8"><a href="some-additional-plotting-options.html#cb197-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb197-9"><a href="some-additional-plotting-options.html#cb197-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>) <span class="sc">+</span></span>
+<span id="cb197-10"><a href="some-additional-plotting-options.html#cb197-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>condition)<span class="sc">+</span></span>
+<span id="cb197-11"><a href="some-additional-plotting-options.html#cb197-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Amount Donation (dollars)&quot;</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-104-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="some-additional-plotting-options.html#cb198-1" aria-hidden="true" tabindex="-1"></a>banks <span class="sc">%&gt;%</span></span>
+<span id="cb198-2"><a href="some-additional-plotting-options.html#cb198-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(condition)<span class="sc">==</span>F) <span class="sc">%&gt;%</span></span>
+<span id="cb198-3"><a href="some-additional-plotting-options.html#cb198-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>blackdon, <span class="at">x=</span>condition, <span class="at">color=</span>condition))<span class="sc">+</span></span>
+<span id="cb198-4"><a href="some-additional-plotting-options.html#cb198-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb198-5"><a href="some-additional-plotting-options.html#cb198-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb198-6"><a href="some-additional-plotting-options.html#cb198-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb198-7"><a href="some-additional-plotting-options.html#cb198-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Distribution of Donations to Black Organizations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb198-8"><a href="some-additional-plotting-options.html#cb198-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb198-9"><a href="some-additional-plotting-options.html#cb198-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>) <span class="sc">+</span></span>
+<span id="cb198-10"><a href="some-additional-plotting-options.html#cb198-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Amount Donation (dollars)&quot;</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-105-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="some-additional-plotting-options.html#cb199-1" aria-hidden="true" tabindex="-1"></a>banks <span class="sc">%&gt;%</span></span>
+<span id="cb199-2"><a href="some-additional-plotting-options.html#cb199-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(condition)<span class="sc">==</span>F) <span class="sc">%&gt;%</span></span>
+<span id="cb199-3"><a href="some-additional-plotting-options.html#cb199-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>blackdon, <span class="at">fill=</span>condition))<span class="sc">+</span></span>
+<span id="cb199-4"><a href="some-additional-plotting-options.html#cb199-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb199-5"><a href="some-additional-plotting-options.html#cb199-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb199-6"><a href="some-additional-plotting-options.html#cb199-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Distribution of Donations to Black Organizations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-7"><a href="some-additional-plotting-options.html#cb199-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb199-8"><a href="some-additional-plotting-options.html#cb199-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>condition)<span class="sc">+</span></span>
+<span id="cb199-9"><a href="some-additional-plotting-options.html#cb199-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Amount Donation (dollars)&quot;</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-106-1.svg" width="672" /></p>
+<p>Here is a way to show the means and confidence intervals for each condition. This figure is based on the plot in Figure 17.1 from Alex Coppock’s <a href="https://alexandercoppock.com/coppock_2020.pdf">chapter</a> in <em>Advances in Experimental Political Science</em>.</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="some-additional-plotting-options.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Find means and confidence intervals by condition</span></span>
+<span id="cb200-2"><a href="some-additional-plotting-options.html#cb200-2" aria-hidden="true" tabindex="-1"></a>banks <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, <span class="fu">is.na</span>(condition)<span class="sc">==</span>F)</span>
+<span id="cb200-3"><a href="some-additional-plotting-options.html#cb200-3" aria-hidden="true" tabindex="-1"></a>m.cond <span class="ot">&lt;-</span> <span class="fu">tapply</span>(banks<span class="sc">$</span>blackdon, banks<span class="sc">$</span>condition, mean, <span class="at">na.rm=</span>T)</span>
+<span id="cb200-4"><a href="some-additional-plotting-options.html#cb200-4" aria-hidden="true" tabindex="-1"></a>ci.hope <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>condition <span class="sc">==</span> <span class="st">&quot;Hope&quot;</span>])<span class="sc">$</span>conf.int</span>
+<span id="cb200-5"><a href="some-additional-plotting-options.html#cb200-5" aria-hidden="true" tabindex="-1"></a>ci.anger <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>condition <span class="sc">==</span> <span class="st">&quot;Anger&quot;</span>])<span class="sc">$</span>conf.int</span>
+<span id="cb200-6"><a href="some-additional-plotting-options.html#cb200-6" aria-hidden="true" tabindex="-1"></a>ci.control <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>condition <span class="sc">==</span> <span class="st">&quot;Control&quot;</span>])<span class="sc">$</span>conf.int</span>
+<span id="cb200-7"><a href="some-additional-plotting-options.html#cb200-7" aria-hidden="true" tabindex="-1"></a>combd <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(<span class="fu">cbind</span>(m.cond),<span class="fu">rbind</span>(ci.control, ci.anger, ci.hope)))</span>
+<span id="cb200-8"><a href="some-additional-plotting-options.html#cb200-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(combd) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mean&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)</span>
+<span id="cb200-9"><a href="some-additional-plotting-options.html#cb200-9" aria-hidden="true" tabindex="-1"></a>combd<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Anger&quot;</span>, <span class="st">&quot;Hope&quot;</span>)</span>
+<span id="cb200-10"><a href="some-additional-plotting-options.html#cb200-10" aria-hidden="true" tabindex="-1"></a>combd<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="fu">factor</span>(combd<span class="sc">$</span>condition, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Anger&quot;</span>, <span class="st">&quot;Hope&quot;</span>))</span>
+<span id="cb200-11"><a href="some-additional-plotting-options.html#cb200-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-12"><a href="some-additional-plotting-options.html#cb200-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb200-13"><a href="some-additional-plotting-options.html#cb200-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Note we draw from both data=combd and data=banks</span></span>
+<span id="cb200-14"><a href="some-additional-plotting-options.html#cb200-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(combd, <span class="fu">aes</span>(<span class="at">x=</span>condition, <span class="at">y=</span>Mean, <span class="at">color=</span>condition)) <span class="sc">+</span></span>
+<span id="cb200-15"><a href="some-additional-plotting-options.html#cb200-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> banks, <span class="fu">aes</span>(<span class="at">y=</span>blackdon),</span>
+<span id="cb200-16"><a href="some-additional-plotting-options.html#cb200-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="fl">0.1</span>),</span>
+<span id="cb200-17"><a href="some-additional-plotting-options.html#cb200-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb200-18"><a href="some-additional-plotting-options.html#cb200-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb200-19"><a href="some-additional-plotting-options.html#cb200-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper), <span class="at">width =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb200-20"><a href="some-additional-plotting-options.html#cb200-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb200-21"><a href="some-additional-plotting-options.html#cb200-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Donations to Black Organizations by Condition&quot;</span>)<span class="sc">+</span></span>
+<span id="cb200-22"><a href="some-additional-plotting-options.html#cb200-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb200-23"><a href="some-additional-plotting-options.html#cb200-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb200-24"><a href="some-additional-plotting-options.html#cb200-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb200-25"><a href="some-additional-plotting-options.html#cb200-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Donations (dollars)&quot;</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-107-1.svg" width="672" /></p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="rsetup.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="heterogeneous-treatment-effects-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples-of-arguments-in-plot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

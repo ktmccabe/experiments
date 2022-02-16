@@ -64,4 +64,5 @@ plotting-average-treatment-effects
 ate-using-plot
 ate-with-ggplot
 heterogeneous-treatment-effects-1
+some-additional-plotting-options
 examples-of-arguments-in-plot

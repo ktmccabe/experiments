@@ -2,6 +2,9 @@
 
 In this section, we will walk through some options for visualizing the results of experiments using R.
 
+  - You may wish to refer to the [R Graphics cookbook](https://r-graphics.org/) by Winston Chang or [Data Visualization](https://socviz.co/) by Kieran Healy for additional examples of plotting in R.
+  - For considerations on plotting for different types of experimental designs and randomization schemes, you may wish to consult Alex Coppock's [chapter](https://alexandercoppock.com/coppock_2020.pdf) in *Advances in Experimental Political Science*.
+
 
 ## Plotting Average Treatment Effects
 
@@ -306,15 +309,22 @@ We will look at how the effect of anger varies across the Community Nationalism 
 ## option 1- categorical
 fit <- lm(blackdon ~ angvcon*factor(blackauto3), data=angcontrol)
 summary(fit)
+```
 
+Focus on the interaction term when interpreting the results for the heterogeneous treatment effects.
+
+```{r}
 ## option 2- numeric
 fit.numeric <- lm(blackdon ~ angvcon*blackauto3, data=angcontrol)
-summary(fit.numeric)
 ```
 
 We can then calculate the average treatment effects within each level of `blackauto3` using the `margins()` function in R from the `margins` package.
 
-```{r}
+  - The first input is the object name for the regression model (e.g., `fit`).
+  - The next input is a list of variables and their corresponding values for which you want to hold constant while estimating marginal effects of some other variable
+  - The `variable` input is then the treatment condition, or the variable for which you want to estimate the marginal effect on the outcome. The `change` then describes the two values of the treatment condition variable that represent the control vs. treatment. In this case it was 0 vs. 1. If your treatment condition is a factor variable, you probably don't need to specify this.
+
+```{r, warning=F, message=F}
 library(margins)
 outp <- margins(fit, at = list(blackauto3 = c(0, 1, 2)),
         variable = "angvcon", change = c(0, 1))
@@ -355,9 +365,9 @@ ggplot(outp.df, aes(x=blackauto3, y=AME))+
 
 An alternative way to represent heterogeneity is instead of plotting the conditional average treatment effects, we can plot the raw outcomes in each condition.
 
-We can then calculate the estimated outcomes using the `prediction` package in R.
+We can then calculate the estimated outcomes using the `prediction` package in R. It works somewhat similarly to `margins` except we do not specify the variable for estimating the marginal effect. Instead, we fold the treatment variable into the list argument.
 
-```{r}
+```{r, message=F, warning=F}
 library(prediction)
 outp2 <- prediction(fit, at = list(blackauto3 = c(0, 1, 2),
                                   angvcon = c(0,1)),
@@ -382,6 +392,98 @@ ggplot(outp2.df, aes(x=at.blackauto3., y=Prediction,
                      labels = c("Low", "Medium", "High"))+
   theme(plot.title = element_text(hjust = 0.5))# centers title
 ```
+
+
+## Some additional plotting options
+
+
+The common visualizations used to show average treatment effects do not give much information about the distributions of underlying data. Here are a few examples of plotting the underlying distributions.
+
+  - You might also explore `geom_bar` for outcomes that are binary or categorical in nature as an alternative to `geom_histogram`.
+
+
+Create a variable that summarizes all three experimental conditions. This will make it easier to plot data grouped by each condition.
+```{r}
+banks$condition <- NA
+banks$condition[banks$angvcon == 1] <- "Anger"
+banks$condition[banks$hopevcon == 1] <- "Hope"
+banks$condition[banks$angvcon ==  0 & banks$hopevcon == 0] <- "Control"
+banks$condition <- factor(banks$condition, levels=c("Control", "Anger", "Hope"))
+```
+
+We filter out respondents who were not assigned to any condition. You can do this as part of the plot code, or you can `banks <- subset(banks, is.na(condition)==F)` prior to running the plot code.
+
+```{r, warning=F, message=FALSE}
+library(tidyverse)
+banks %>%
+  filter(is.na(condition)==F) %>%
+  ggplot(aes(x=blackdon, fill=condition))+
+  geom_histogram(alpha=.4)+
+  theme_bw()+
+  ggtitle("Distribution of Donations to Black Organizations")+
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position = "bottom") +
+  facet_grid(~condition)+
+  xlab("Amount Donation (dollars)")
+```
+
+
+```{r, warning=F, message=FALSE}
+banks %>%
+  filter(is.na(condition)==F) %>%
+  ggplot(aes(y=blackdon, x=condition, color=condition))+
+  geom_boxplot()+
+  geom_jitter(alpha=.5)+
+  theme_bw()+
+  ggtitle("Distribution of Donations to Black Organizations")+
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position = "bottom") +
+  ylab("Amount Donation (dollars)")
+```
+
+
+```{r, warning=F, message=FALSE}
+banks %>%
+  filter(is.na(condition)==F) %>%
+  ggplot(aes(x=blackdon, fill=condition))+
+  geom_density(alpha=.5)+
+  theme_bw()+
+  ggtitle("Distribution of Donations to Black Organizations")+
+  theme(plot.title = element_text(hjust = 0.5)) +
+  facet_grid(~condition)+
+  xlab("Amount Donation (dollars)")
+```
+
+Here is a way to show the means and confidence intervals for each condition. This figure is based on the plot in Figure 17.1 from Alex Coppock's [chapter](https://alexandercoppock.com/coppock_2020.pdf) in *Advances in Experimental Political Science*.
+```{r, warning=F, message=FALSE}
+## Find means and confidence intervals by condition
+banks <- subset(banks, is.na(condition)==F)
+m.cond <- tapply(banks$blackdon, banks$condition, mean, na.rm=T)
+ci.hope <- t.test(banks$blackdon[banks$condition == "Hope"])$conf.int
+ci.anger <- t.test(banks$blackdon[banks$condition == "Anger"])$conf.int
+ci.control <- t.test(banks$blackdon[banks$condition == "Control"])$conf.int
+combd <- data.frame(cbind(cbind(m.cond),rbind(ci.control, ci.anger, ci.hope)))
+names(combd) <- c("Mean", "lower", "upper")
+combd$condition <- c("Control", "Anger", "Hope")
+combd$condition <- factor(combd$condition, levels=c("Control", "Anger", "Hope"))
+
+
+## Note we draw from both data=combd and data=banks
+ggplot(combd, aes(x=condition, y=Mean, color=condition)) +
+  geom_point(data = banks, aes(y=blackdon),
+    position = position_jitter(width = 0.2, height = 0.1),
+    alpha = 0.4) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0) +
+  theme_bw() +
+  ggtitle("Donations to Black Organizations by Condition")+
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(breaks = seq(0, 10, length.out = 5)) +
+  theme(axis.title.x = element_blank()) +
+  ylab("Donations (dollars)")
+```
+
+
 
 ## Examples of arguments in `plot`
 

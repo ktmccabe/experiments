@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="plotting-average-treatment-effects.html"/>
-<link rel="next" href="examples-of-arguments-in-plot.html"/>
+<link rel="next" href="some-additional-plotting-options.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -229,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1.2" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-with-ggplot"><i class="fa fa-check"></i><b>5.1.2</b> ATE with <code>ggplot</code></a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="heterogeneous-treatment-effects-1.html"><a href="heterogeneous-treatment-effects-1.html"><i class="fa fa-check"></i><b>5.2</b> Heterogeneous Treatment Effects</a></li>
-<li class="chapter" data-level="5.3" data-path="examples-of-arguments-in-plot.html"><a href="examples-of-arguments-in-plot.html"><i class="fa fa-check"></i><b>5.3</b> Examples of arguments in <code>plot</code></a></li>
+<li class="chapter" data-level="5.3" data-path="some-additional-plotting-options.html"><a href="some-additional-plotting-options.html"><i class="fa fa-check"></i><b>5.3</b> Some additional plotting options</a></li>
+<li class="chapter" data-level="5.4" data-path="examples-of-arguments-in-plot.html"><a href="examples-of-arguments-in-plot.html"><i class="fa fa-check"></i><b>5.4</b> Examples of arguments in <code>plot</code></a></li>
 </ul></li>
 </ul>
 
@@ -280,74 +281,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   (8 observations deleted due to missingness)
 ## Multiple R-squared:  0.06442,    Adjusted R-squared:  0.04643 
 ## F-statistic: 3.581 on 5 and 260 DF,  p-value: 0.003779</code></pre>
+<p>Focus on the interaction term when interpreting the results for the heterogeneous treatment effects.</p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="heterogeneous-treatment-effects-1.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="do">## option 2- numeric</span></span>
-<span id="cb187-2"><a href="heterogeneous-treatment-effects-1.html#cb187-2" aria-hidden="true" tabindex="-1"></a>fit.numeric <span class="ot">&lt;-</span> <span class="fu">lm</span>(blackdon <span class="sc">~</span> angvcon<span class="sc">*</span>blackauto3, <span class="at">data=</span>angcontrol)</span>
-<span id="cb187-3"><a href="heterogeneous-treatment-effects-1.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit.numeric)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = blackdon ~ angvcon * blackauto3, data = angcontrol)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -5.8846 -3.2067 -0.2682  3.4543  7.0460 
-## 
-## Coefficients:
-##                    Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)          2.9540     0.5750   5.137 5.45e-07 ***
-## angvcon              0.2527     0.7997   0.316    0.752    
-## blackauto3           0.6571     0.4082   1.610    0.109    
-## angvcon:blackauto3   0.6818     0.5744   1.187    0.236    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 3.889 on 262 degrees of freedom
-##   (8 observations deleted due to missingness)
-## Multiple R-squared:  0.06371,    Adjusted R-squared:  0.05299 
-## F-statistic: 5.942 on 3 and 262 DF,  p-value: 0.0006191</code></pre>
+<span id="cb187-2"><a href="heterogeneous-treatment-effects-1.html#cb187-2" aria-hidden="true" tabindex="-1"></a>fit.numeric <span class="ot">&lt;-</span> <span class="fu">lm</span>(blackdon <span class="sc">~</span> angvcon<span class="sc">*</span>blackauto3, <span class="at">data=</span>angcontrol)</span></code></pre></div>
 <p>We can then calculate the average treatment effects within each level of <code>blackauto3</code> using the <code>margins()</code> function in R from the <code>margins</code> package.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="heterogeneous-treatment-effects-1.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(margins)</span></code></pre></div>
-<pre><code>## Warning: package &#39;margins&#39; was built under R version 4.0.2</code></pre>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="heterogeneous-treatment-effects-1.html#cb191-1" aria-hidden="true" tabindex="-1"></a>outp <span class="ot">&lt;-</span> <span class="fu">margins</span>(fit, <span class="at">at =</span> <span class="fu">list</span>(<span class="at">blackauto3 =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)),</span>
-<span id="cb191-2"><a href="heterogeneous-treatment-effects-1.html#cb191-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">variable =</span> <span class="st">&quot;angvcon&quot;</span>, <span class="at">change =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb191-3"><a href="heterogeneous-treatment-effects-1.html#cb191-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(outp)</span></code></pre></div>
+<ul>
+<li>The first input is the object name for the regression model (e.g., <code>fit</code>).</li>
+<li>The next input is a list of variables and their corresponding values for which you want to hold constant while estimating marginal effects of some other variable</li>
+<li>The <code>variable</code> input is then the treatment condition, or the variable for which you want to estimate the marginal effect on the outcome. The <code>change</code> then describes the two values of the treatment condition variable that represent the control vs. treatment. In this case it was 0 vs. 1. If your treatment condition is a factor variable, you probably don’t need to specify this.</li>
+</ul>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="heterogeneous-treatment-effects-1.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(margins)</span>
+<span id="cb188-2"><a href="heterogeneous-treatment-effects-1.html#cb188-2" aria-hidden="true" tabindex="-1"></a>outp <span class="ot">&lt;-</span> <span class="fu">margins</span>(fit, <span class="at">at =</span> <span class="fu">list</span>(<span class="at">blackauto3 =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)),</span>
+<span id="cb188-3"><a href="heterogeneous-treatment-effects-1.html#cb188-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">variable =</span> <span class="st">&quot;angvcon&quot;</span>, <span class="at">change =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb188-4"><a href="heterogeneous-treatment-effects-1.html#cb188-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(outp)</span></code></pre></div>
 <pre><code>##   factor blackauto3    AME     SE      z      p   lower  upper
 ##  angvcon     0.0000 0.3329 0.8840 0.3766 0.7065 -1.3996 2.0654
 ##  angvcon     1.0000 0.7574 0.8815 0.8592 0.3902 -0.9703 2.4852
 ##  angvcon     2.0000 1.6702 0.7475 2.2342 0.0255  0.2050 3.1354</code></pre>
 <p>The summary is already in a nice dataframe format, which makes it easy to use ggplot.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="heterogeneous-treatment-effects-1.html#cb193-1" aria-hidden="true" tabindex="-1"></a>outp.df <span class="ot">&lt;-</span> <span class="fu">summary</span>(outp)</span>
-<span id="cb193-2"><a href="heterogeneous-treatment-effects-1.html#cb193-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-3"><a href="heterogeneous-treatment-effects-1.html#cb193-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp.df, <span class="fu">aes</span>(<span class="at">x=</span>blackauto3, <span class="at">y=</span>AME))<span class="sc">+</span></span>
-<span id="cb193-4"><a href="heterogeneous-treatment-effects-1.html#cb193-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb193-5"><a href="heterogeneous-treatment-effects-1.html#cb193-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb193-6"><a href="heterogeneous-treatment-effects-1.html#cb193-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb193-7"><a href="heterogeneous-treatment-effects-1.html#cb193-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
-<span id="cb193-8"><a href="heterogeneous-treatment-effects-1.html#cb193-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations </span><span class="sc">\n</span><span class="st"> by Community nationalism&quot;</span>)<span class="sc">+</span></span>
-<span id="cb193-9"><a href="heterogeneous-treatment-effects-1.html#cb193-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Average Treatment Effects on Black Org. Donations&quot;</span>)<span class="sc">+</span></span>
-<span id="cb193-10"><a href="heterogeneous-treatment-effects-1.html#cb193-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
-<span id="cb193-11"><a href="heterogeneous-treatment-effects-1.html#cb193-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
-<span id="cb193-12"><a href="heterogeneous-treatment-effects-1.html#cb193-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-98-1.svg" width="672" /></p>
-<p>Here’s an alternative way to look at it with <code>geom_line</code> and <code>geom_ribbon</code></p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="heterogeneous-treatment-effects-1.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp.df, <span class="fu">aes</span>(<span class="at">x=</span>blackauto3, <span class="at">y=</span>AME))<span class="sc">+</span></span>
-<span id="cb194-2"><a href="heterogeneous-treatment-effects-1.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb194-3"><a href="heterogeneous-treatment-effects-1.html#cb194-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb194-4"><a href="heterogeneous-treatment-effects-1.html#cb194-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">alpha=</span>.<span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb194-5"><a href="heterogeneous-treatment-effects-1.html#cb194-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb194-6"><a href="heterogeneous-treatment-effects-1.html#cb194-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
-<span id="cb194-7"><a href="heterogeneous-treatment-effects-1.html#cb194-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations </span><span class="sc">\n</span><span class="st"> by Community nationalism&quot;</span>)<span class="sc">+</span></span>
-<span id="cb194-8"><a href="heterogeneous-treatment-effects-1.html#cb194-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Average Treatment Effects on Black Org. Donations&quot;</span>)<span class="sc">+</span></span>
-<span id="cb194-9"><a href="heterogeneous-treatment-effects-1.html#cb194-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
-<span id="cb194-10"><a href="heterogeneous-treatment-effects-1.html#cb194-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
-<span id="cb194-11"><a href="heterogeneous-treatment-effects-1.html#cb194-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="heterogeneous-treatment-effects-1.html#cb190-1" aria-hidden="true" tabindex="-1"></a>outp.df <span class="ot">&lt;-</span> <span class="fu">summary</span>(outp)</span>
+<span id="cb190-2"><a href="heterogeneous-treatment-effects-1.html#cb190-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-3"><a href="heterogeneous-treatment-effects-1.html#cb190-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp.df, <span class="fu">aes</span>(<span class="at">x=</span>blackauto3, <span class="at">y=</span>AME))<span class="sc">+</span></span>
+<span id="cb190-4"><a href="heterogeneous-treatment-effects-1.html#cb190-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb190-5"><a href="heterogeneous-treatment-effects-1.html#cb190-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb190-6"><a href="heterogeneous-treatment-effects-1.html#cb190-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb190-7"><a href="heterogeneous-treatment-effects-1.html#cb190-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
+<span id="cb190-8"><a href="heterogeneous-treatment-effects-1.html#cb190-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations </span><span class="sc">\n</span><span class="st"> by Community nationalism&quot;</span>)<span class="sc">+</span></span>
+<span id="cb190-9"><a href="heterogeneous-treatment-effects-1.html#cb190-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Average Treatment Effects on Black Org. Donations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb190-10"><a href="heterogeneous-treatment-effects-1.html#cb190-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
+<span id="cb190-11"><a href="heterogeneous-treatment-effects-1.html#cb190-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
+<span id="cb190-12"><a href="heterogeneous-treatment-effects-1.html#cb190-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
 <p><img src="experiments_files/figure-html/unnamed-chunk-99-1.svg" width="672" /></p>
+<p>Here’s an alternative way to look at it with <code>geom_line</code> and <code>geom_ribbon</code></p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="heterogeneous-treatment-effects-1.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp.df, <span class="fu">aes</span>(<span class="at">x=</span>blackauto3, <span class="at">y=</span>AME))<span class="sc">+</span></span>
+<span id="cb191-2"><a href="heterogeneous-treatment-effects-1.html#cb191-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb191-3"><a href="heterogeneous-treatment-effects-1.html#cb191-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb191-4"><a href="heterogeneous-treatment-effects-1.html#cb191-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">alpha=</span>.<span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb191-5"><a href="heterogeneous-treatment-effects-1.html#cb191-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb191-6"><a href="heterogeneous-treatment-effects-1.html#cb191-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
+<span id="cb191-7"><a href="heterogeneous-treatment-effects-1.html#cb191-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations </span><span class="sc">\n</span><span class="st"> by Community nationalism&quot;</span>)<span class="sc">+</span></span>
+<span id="cb191-8"><a href="heterogeneous-treatment-effects-1.html#cb191-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Average Treatment Effects on Black Org. Donations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb191-9"><a href="heterogeneous-treatment-effects-1.html#cb191-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
+<span id="cb191-10"><a href="heterogeneous-treatment-effects-1.html#cb191-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
+<span id="cb191-11"><a href="heterogeneous-treatment-effects-1.html#cb191-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-100-1.svg" width="672" /></p>
 <p>An alternative way to represent heterogeneity is instead of plotting the conditional average treatment effects, we can plot the raw outcomes in each condition.</p>
-<p>We can then calculate the estimated outcomes using the <code>prediction</code> package in R.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="heterogeneous-treatment-effects-1.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prediction)</span>
-<span id="cb195-2"><a href="heterogeneous-treatment-effects-1.html#cb195-2" aria-hidden="true" tabindex="-1"></a>outp2 <span class="ot">&lt;-</span> <span class="fu">prediction</span>(fit, <span class="at">at =</span> <span class="fu">list</span>(<span class="at">blackauto3 =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
-<span id="cb195-3"><a href="heterogeneous-treatment-effects-1.html#cb195-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">angvcon =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)),</span>
-<span id="cb195-4"><a href="heterogeneous-treatment-effects-1.html#cb195-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">calculate_se =</span> T)</span>
-<span id="cb195-5"><a href="heterogeneous-treatment-effects-1.html#cb195-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(outp2)</span></code></pre></div>
+<p>We can then calculate the estimated outcomes using the <code>prediction</code> package in R. It works somewhat similarly to <code>margins</code> except we do not specify the variable for estimating the marginal effect. Instead, we fold the treatment variable into the list argument.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="heterogeneous-treatment-effects-1.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prediction)</span>
+<span id="cb192-2"><a href="heterogeneous-treatment-effects-1.html#cb192-2" aria-hidden="true" tabindex="-1"></a>outp2 <span class="ot">&lt;-</span> <span class="fu">prediction</span>(fit, <span class="at">at =</span> <span class="fu">list</span>(<span class="at">blackauto3 =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb192-3"><a href="heterogeneous-treatment-effects-1.html#cb192-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">angvcon =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)),</span>
+<span id="cb192-4"><a href="heterogeneous-treatment-effects-1.html#cb192-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">calculate_se =</span> T)</span>
+<span id="cb192-5"><a href="heterogeneous-treatment-effects-1.html#cb192-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(outp2)</span></code></pre></div>
 <pre><code>##  at(blackauto3) at(angvcon) Prediction     SE      z         p lower upper
 ##               0           0      2.842 0.6330  4.490 7.129e-06 1.601 4.083
 ##               1           0      3.847 0.6504  5.916 3.308e-09 2.573 5.122
@@ -355,21 +339,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##               0           1      3.175 0.6170  5.146 2.661e-07 1.966 4.384
 ##               1           1      4.605 0.5951  7.738 1.010e-14 3.438 5.771
 ##               2           1      5.861 0.5310 11.038 2.518e-28 4.820 6.902</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="heterogeneous-treatment-effects-1.html#cb197-1" aria-hidden="true" tabindex="-1"></a>outp2.df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">summary</span>(outp2))</span></code></pre></div>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="heterogeneous-treatment-effects-1.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp2.df, <span class="fu">aes</span>(<span class="at">x=</span>at.blackauto3., <span class="at">y=</span>Prediction, </span>
-<span id="cb198-2"><a href="heterogeneous-treatment-effects-1.html#cb198-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill=</span><span class="fu">as.factor</span>(at.angvcon.)))<span class="sc">+</span></span>
-<span id="cb198-3"><a href="heterogeneous-treatment-effects-1.html#cb198-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb198-4"><a href="heterogeneous-treatment-effects-1.html#cb198-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb198-5"><a href="heterogeneous-treatment-effects-1.html#cb198-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">alpha=</span>.<span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb198-6"><a href="heterogeneous-treatment-effects-1.html#cb198-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb198-7"><a href="heterogeneous-treatment-effects-1.html#cb198-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Donations to Black Organizations </span><span class="sc">\n</span><span class="st"> by Community nationalism&quot;</span>)<span class="sc">+</span></span>
-<span id="cb198-8"><a href="heterogeneous-treatment-effects-1.html#cb198-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Average Black Org. Donations&quot;</span>)<span class="sc">+</span></span>
-<span id="cb198-9"><a href="heterogeneous-treatment-effects-1.html#cb198-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
-<span id="cb198-10"><a href="heterogeneous-treatment-effects-1.html#cb198-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;Condition&quot;</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Anger&quot;</span>), <span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;dodgerblue&quot;</span>))<span class="sc">+</span></span>
-<span id="cb198-11"><a href="heterogeneous-treatment-effects-1.html#cb198-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), </span>
-<span id="cb198-12"><a href="heterogeneous-treatment-effects-1.html#cb198-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
-<span id="cb198-13"><a href="heterogeneous-treatment-effects-1.html#cb198-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-101-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="heterogeneous-treatment-effects-1.html#cb194-1" aria-hidden="true" tabindex="-1"></a>outp2.df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">summary</span>(outp2))</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="heterogeneous-treatment-effects-1.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp2.df, <span class="fu">aes</span>(<span class="at">x=</span>at.blackauto3., <span class="at">y=</span>Prediction, </span>
+<span id="cb195-2"><a href="heterogeneous-treatment-effects-1.html#cb195-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill=</span><span class="fu">as.factor</span>(at.angvcon.)))<span class="sc">+</span></span>
+<span id="cb195-3"><a href="heterogeneous-treatment-effects-1.html#cb195-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb195-4"><a href="heterogeneous-treatment-effects-1.html#cb195-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb195-5"><a href="heterogeneous-treatment-effects-1.html#cb195-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">alpha=</span>.<span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb195-6"><a href="heterogeneous-treatment-effects-1.html#cb195-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb195-7"><a href="heterogeneous-treatment-effects-1.html#cb195-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Donations to Black Organizations </span><span class="sc">\n</span><span class="st"> by Community nationalism&quot;</span>)<span class="sc">+</span></span>
+<span id="cb195-8"><a href="heterogeneous-treatment-effects-1.html#cb195-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Average Black Org. Donations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb195-9"><a href="heterogeneous-treatment-effects-1.html#cb195-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
+<span id="cb195-10"><a href="heterogeneous-treatment-effects-1.html#cb195-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;Condition&quot;</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Anger&quot;</span>), <span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;dodgerblue&quot;</span>))<span class="sc">+</span></span>
+<span id="cb195-11"><a href="heterogeneous-treatment-effects-1.html#cb195-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), </span>
+<span id="cb195-12"><a href="heterogeneous-treatment-effects-1.html#cb195-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
+<span id="cb195-13"><a href="heterogeneous-treatment-effects-1.html#cb195-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-102-1.svg" width="672" /></p>
 </div>
             </section>
 
@@ -377,7 +361,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="plotting-average-treatment-effects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="examples-of-arguments-in-plot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="some-additional-plotting-options.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
