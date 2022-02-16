@@ -1,0 +1,7 @@
+<!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
+<!-- Wed Feb 16 12:03:21 2022 -->
+<table border=1>
+<tr> <th>  </th> <th> female </th> <th> male </th>  </tr>
+  <tr> <td align="right"> black </td> <td align="right"> 1886 </td> <td align="right"> 549 </td> </tr>
+  <tr> <td align="right"> white </td> <td align="right"> 1860 </td> <td align="right"> 575 </td> </tr>
+   </table>

@@ -1,0 +1,6 @@
+<!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
+<!-- Wed Feb 16 12:03:49 2022 -->
+<table border=1>
+<tr> <th> Mean Black App </th> <th> Mean White App </th> <th> Lower CI </th> <th> Upper CI </th> <th> t-statistic </th>  </tr>
+  <tr> <td align="right"> 0.06 </td> <td align="right"> 0.10 </td> <td align="right"> -0.05 </td> <td align="right"> -0.02 </td> <td align="right"> -4.11 </td> </tr>
+   </table>
