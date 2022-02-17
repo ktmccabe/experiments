@@ -256,7 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="heterogeneous-treatment-effects-1" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Heterogeneous Treatment Effects</h2>
-<p>Let’s replicate Figure 3 of the paper to study heterogeneous treatment effects. The authors compute these using a regression analysis. We will focus on the Anger vs. Control condition.</p>
+<p>Here is a short video walking through the code to plot the ATEs using <code>plot</code> and <code>ggplot</code>. (Via youtube, you can speed up the playback to 1.5 or 2x speed.)</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/wflFvDQlC4k" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+<p>Let’s replicate Figure 4 of the paper to study heterogeneous treatment effects. The authors compute these using a regression analysis. We will focus on the Anger vs. Control condition.</p>
+<p><img src="images/fig4banks.png" style="width:60.0%" /></p>
 <p>First, let’s limit the sample to just these two conditions.</p>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="heterogeneous-treatment-effects-1.html#cb184-1" aria-hidden="true" tabindex="-1"></a>angcontrol <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, angvcon <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> angvcon <span class="sc">==</span> <span class="dv">0</span>)</span></code></pre></div>
 <p>We will look at how the effect of anger varies across the Community Nationalism Scale in the variable <code>blackauto3</code>. This is a three-point scale with points at 0,1, and 2. We could treat this as a numeric variable or as a categorical variable. We will first do it as a categorical variable.</p>
@@ -316,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb190-10"><a href="heterogeneous-treatment-effects-1.html#cb190-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
 <span id="cb190-11"><a href="heterogeneous-treatment-effects-1.html#cb190-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
 <span id="cb190-12"><a href="heterogeneous-treatment-effects-1.html#cb190-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-99-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-101-1.svg" width="672" /></p>
 <p>Here’s an alternative way to look at it with <code>geom_line</code> and <code>geom_ribbon</code></p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="heterogeneous-treatment-effects-1.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outp.df, <span class="fu">aes</span>(<span class="at">x=</span>blackauto3, <span class="at">y=</span>AME))<span class="sc">+</span></span>
 <span id="cb191-2"><a href="heterogeneous-treatment-effects-1.html#cb191-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
@@ -329,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb191-9"><a href="heterogeneous-treatment-effects-1.html#cb191-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Community Nationalism&quot;</span>)<span class="sc">+</span></span>
 <span id="cb191-10"><a href="heterogeneous-treatment-effects-1.html#cb191-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
 <span id="cb191-11"><a href="heterogeneous-treatment-effects-1.html#cb191-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-100-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-102-1.svg" width="672" /></p>
 <p>An alternative way to represent heterogeneity is instead of plotting the conditional average treatment effects, we can plot the raw outcomes in each condition.</p>
 <p>We can then calculate the estimated outcomes using the <code>prediction</code> package in R. It works somewhat similarly to <code>margins</code> except we do not specify the variable for estimating the marginal effect. Instead, we fold the treatment variable into the list argument.</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="heterogeneous-treatment-effects-1.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prediction)</span>
@@ -358,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb195-11"><a href="heterogeneous-treatment-effects-1.html#cb195-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), </span>
 <span id="cb195-12"><a href="heterogeneous-treatment-effects-1.html#cb195-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))<span class="sc">+</span></span>
 <span id="cb195-13"><a href="heterogeneous-treatment-effects-1.html#cb195-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-102-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-104-1.svg" width="672" /></p>
 </div>
             </section>
 

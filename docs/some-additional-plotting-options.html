@@ -278,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb197-9"><a href="some-additional-plotting-options.html#cb197-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>) <span class="sc">+</span></span>
 <span id="cb197-10"><a href="some-additional-plotting-options.html#cb197-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>condition)<span class="sc">+</span></span>
 <span id="cb197-11"><a href="some-additional-plotting-options.html#cb197-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Amount Donation (dollars)&quot;</span>)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-104-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-106-1.svg" width="672" /></p>
 <div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="some-additional-plotting-options.html#cb198-1" aria-hidden="true" tabindex="-1"></a>banks <span class="sc">%&gt;%</span></span>
 <span id="cb198-2"><a href="some-additional-plotting-options.html#cb198-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(condition)<span class="sc">==</span>F) <span class="sc">%&gt;%</span></span>
 <span id="cb198-3"><a href="some-additional-plotting-options.html#cb198-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>blackdon, <span class="at">x=</span>condition, <span class="at">color=</span>condition))<span class="sc">+</span></span>
@@ -289,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb198-8"><a href="some-additional-plotting-options.html#cb198-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
 <span id="cb198-9"><a href="some-additional-plotting-options.html#cb198-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>) <span class="sc">+</span></span>
 <span id="cb198-10"><a href="some-additional-plotting-options.html#cb198-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Amount Donation (dollars)&quot;</span>)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-105-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-107-1.svg" width="672" /></p>
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="some-additional-plotting-options.html#cb199-1" aria-hidden="true" tabindex="-1"></a>banks <span class="sc">%&gt;%</span></span>
 <span id="cb199-2"><a href="some-additional-plotting-options.html#cb199-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(condition)<span class="sc">==</span>F) <span class="sc">%&gt;%</span></span>
 <span id="cb199-3"><a href="some-additional-plotting-options.html#cb199-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>blackdon, <span class="at">fill=</span>condition))<span class="sc">+</span></span>
@@ -299,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb199-7"><a href="some-additional-plotting-options.html#cb199-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
 <span id="cb199-8"><a href="some-additional-plotting-options.html#cb199-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>condition)<span class="sc">+</span></span>
 <span id="cb199-9"><a href="some-additional-plotting-options.html#cb199-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Amount Donation (dollars)&quot;</span>)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-106-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-108-1.svg" width="672" /></p>
 <p>Here is a way to show the means and confidence intervals for each condition. This figure is based on the plot in Figure 17.1 from Alex Coppock’s <a href="https://alexandercoppock.com/coppock_2020.pdf">chapter</a> in <em>Advances in Experimental Political Science</em>.</p>
 <div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="some-additional-plotting-options.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Find means and confidence intervals by condition</span></span>
 <span id="cb200-2"><a href="some-additional-plotting-options.html#cb200-2" aria-hidden="true" tabindex="-1"></a>banks <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, <span class="fu">is.na</span>(condition)<span class="sc">==</span>F)</span>
@@ -326,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb200-23"><a href="some-additional-plotting-options.html#cb200-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
 <span id="cb200-24"><a href="some-additional-plotting-options.html#cb200-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
 <span id="cb200-25"><a href="some-additional-plotting-options.html#cb200-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Donations (dollars)&quot;</span>)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-107-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-109-1.svg" width="672" /></p>
 </div>
             </section>
 

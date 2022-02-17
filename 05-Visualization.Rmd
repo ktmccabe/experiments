@@ -18,6 +18,15 @@ We will replicate the results from Study 2, which is a survey experiment. The sa
 
 ![](images/bankstreat.png){width=70%}
 
+Here is a short video walking through the code to plot the ATEs using `plot` and `ggplot`. (Via youtube, you can speed up the playback to 1.5 or 2x speed.)
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library("vembedr")
+library(knitr)
+
+embed_url("https://www.youtube.com/watch?v=_RniJm-hmHE")
+```
+
 
 Let's load the data. Note: This file is in a .dta format, but if you try to use `read.dta` to load it, you may receive an error because it is too new of a Stata format. As an alternative, we can use the `rio` package to open the file. Install the package, open the package with `library` an load the data. The `rio` packages uses a single `import` function to load data.
 
@@ -138,6 +147,7 @@ polygon(c(t.results$statistic, seq(t.results$statistic, 3,.05),3),
 
 
 ### ATE using `plot`
+
 
 When we want to visualize results in R, generally we plot the main Quantity of Interest 
 
@@ -297,8 +307,19 @@ ggplot(comb, aes(x=Comparison, y=ATE))+
 
 ## Heterogeneous Treatment Effects
 
+Here is a short video walking through the code to plot the ATEs using `plot` and `ggplot`. (Via youtube, you can speed up the playback to 1.5 or 2x speed.)
 
-Let's replicate Figure 3 of the paper to study heterogeneous treatment effects. The authors compute these using a regression analysis. We will focus on the Anger vs. Control condition.
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library("vembedr")
+library(knitr)
+
+embed_url("https://www.youtube.com/watch?v=wflFvDQlC4k")
+```
+
+
+Let's replicate Figure 4 of the paper to study heterogeneous treatment effects. The authors compute these using a regression analysis. We will focus on the Anger vs. Control condition.
+
+![](images/fig4banks.png){width=60%}
 
 First, let's limit the sample to just these two conditions.
 

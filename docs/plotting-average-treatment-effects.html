@@ -260,6 +260,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Blacks Pursue to Reduce Racial Inequality”</a> by Antoine J. Banks, Ismail K. White, and Brian D. McKenzie, published in <em>Political Behavior</em> in 2019.</p>
 <p>We will replicate the results from Study 2, which is a survey experiment. The sample includes 444 Black treated Black respondents recruited by Qualtrics. The excerpt below shows the experimental manipulation.</p>
 <p><img src="images/bankstreat.png" style="width:70.0%" /></p>
+<p>Here is a short video walking through the code to plot the ATEs using <code>plot</code> and <code>ggplot</code>. (Via youtube, you can speed up the playback to 1.5 or 2x speed.)</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/_RniJm-hmHE" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
 <p>Let’s load the data. Note: This file is in a .dta format, but if you try to use <code>read.dta</code> to load it, you may receive an error because it is too new of a Stata format. As an alternative, we can use the <code>rio</code> package to open the file. Install the package, open the package with <code>library</code> an load the data. The <code>rio</code> packages uses a single <code>import</code> function to load data.</p>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="plotting-average-treatment-effects.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;rio&quot;, dependencies=T)</span></span>
 <span id="cb167-2"><a href="plotting-average-treatment-effects.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
@@ -312,7 +318,7 @@ Expand for a randomization inference example.
 <span id="cb171-20"><a href="plotting-average-treatment-effects.html#cb171-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Plot and compare distribution to observed ATE</p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="plotting-average-treatment-effects.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ri2_out)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-83-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-84-1.svg" width="672" /></p>
 <p>Summarize Output</p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="plotting-average-treatment-effects.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ri2_out)</span></code></pre></div>
 <pre><code>##      term  estimate two_tailed_p_value
@@ -325,7 +331,7 @@ Expand for a randomization inference example.
 <span id="cb175-5"><a href="plotting-average-treatment-effects.html#cb175-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(simstimates[<span class="fu">abs</span>(simstimates) <span class="sc">&gt;=</span> <span class="fu">abs</span>(estimate)])<span class="sc">/</span>nsims</span></code></pre></div>
 <pre><code>## [1] 0.041</code></pre>
 <p>We can compare this to the p-value through the t-test where we assume a t distribution and calculate the area at the extremes as larger or larger than our t-statistic.</p>
-<p><img src="experiments_files/figure-html/unnamed-chunk-86-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-87-1.svg" width="672" /></p>
 </details>
 <div id="ate-using-plot" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> ATE using <code>plot</code></h3>
@@ -339,7 +345,7 @@ Expand for a randomization inference example.
 <li>Some marker to show a relative benchmark (e.g., a line at 0)</li>
 </ul>
 <p>The <code>plot</code> function in R is based on a coordinate system. We supply the <code>x=</code> and <code>y=</code> values where we want to place points.</p>
-<p><img src="experiments_files/figure-html/unnamed-chunk-87-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-88-1.svg" width="672" /></p>
 <p>We will make a plot to display the two ATE estimates we just calculated.</p>
 <ul>
 <li>We need to supply the exact same number of values for the x-axis as the y-axis. Let’s plot the ATE estimates at points 1 and 2 on the x-axis and at the corresponding y-values for the ATEs we estimated.</li>
@@ -347,7 +353,7 @@ Expand for a randomization inference example.
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="plotting-average-treatment-effects.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot </span></span>
 <span id="cb177-2"><a href="plotting-average-treatment-effects.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
 <span id="cb177-3"><a href="plotting-average-treatment-effects.html#cb177-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2))</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-88-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-89-1.svg" width="672" /></p>
 <p>This has created the plot, but it is not very informative.</p>
 <ul>
 <li>Let’ set the axis dimensions with <code>xlim=</code> an <code>ylim=</code></li>
@@ -369,7 +375,7 @@ Expand for a randomization inference example.
 <span id="cb178-7"><a href="plotting-average-treatment-effects.html#cb178-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
 <span id="cb178-8"><a href="plotting-average-treatment-effects.html#cb178-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
 <span id="cb178-9"><a href="plotting-average-treatment-effects.html#cb178-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-89-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-90-1.svg" width="672" /></p>
 <p>In our case, the values on the x-axis are meaningless. We arbitrarily placed the points at 1 and 2. Let’s get rid of the current x-axis and instead replace it with an axis that labels our comparisons.</p>
 <ul>
 <li>We get rid of the current x-axis with <code>xaxt="n"</code></li>
@@ -387,7 +393,7 @@ Expand for a randomization inference example.
 <span id="cb179-10"><a href="plotting-average-treatment-effects.html#cb179-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
 <span id="cb179-11"><a href="plotting-average-treatment-effects.html#cb179-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>),</span>
 <span id="cb179-12"><a href="plotting-average-treatment-effects.html#cb179-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">tick=</span>F)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-90-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-91-1.svg" width="672" /></p>
 <p>We now have an informative plot of our ATE quantities of interest. However, we still need to add something to visualize uncertainty and a benchmark to indicate the size and/or significance of our quantities.</p>
 <ul>
 <li>We can add a horizonatal line to the plot with <code>abline(h=)</code>. Like <code>axis()</code>, this function goes below the <code>plot()</code> function.</li>
@@ -408,7 +414,7 @@ Expand for a randomization inference example.
 <span id="cb180-13"><a href="plotting-average-treatment-effects.html#cb180-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">&quot;red3&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
 <span id="cb180-14"><a href="plotting-average-treatment-effects.html#cb180-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), ci)</span>
 <span id="cb180-15"><a href="plotting-average-treatment-effects.html#cb180-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), ci2)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-91-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-92-1.svg" width="672" /></p>
 </div>
 <div id="ate-with-ggplot" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> ATE with <code>ggplot</code></h3>
@@ -446,7 +452,7 @@ Expand for a randomization inference example.
 <span id="cb182-3"><a href="plotting-average-treatment-effects.html#cb182-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb182-4"><a href="plotting-average-treatment-effects.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
 <span id="cb182-5"><a href="plotting-average-treatment-effects.html#cb182-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-93-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-94-1.svg" width="672" /></p>
 <p>Just like with the other plotting functions in R, you can also specify a number of other arguments to make your plot more informative and aesthetically pleasing. Here, you do this by adding (<code>+</code>) additional arguments. See examples below (e.g., <code>ggtitle</code>, <code>xlab</code>, <code>ylab</code> for titles, <code>ylim</code> for y-axis limits, etc.). We can also add a horizontal line with <code>geom_hline</code>.</p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="plotting-average-treatment-effects.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comb, <span class="fu">aes</span>(<span class="at">x=</span>Comparison, <span class="at">y=</span>ATE))<span class="sc">+</span></span>
 <span id="cb183-2"><a href="plotting-average-treatment-effects.html#cb183-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
@@ -455,7 +461,7 @@ Expand for a randomization inference example.
 <span id="cb183-5"><a href="plotting-average-treatment-effects.html#cb183-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
 <span id="cb183-6"><a href="plotting-average-treatment-effects.html#cb183-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>)<span class="sc">+</span></span>
 <span id="cb183-7"><a href="plotting-average-treatment-effects.html#cb183-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-94-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-95-1.svg" width="672" /></p>
 </div>
 </div>
             </section>
