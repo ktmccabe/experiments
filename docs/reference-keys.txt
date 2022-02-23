@@ -69,3 +69,6 @@ examples-of-arguments-in-plot
 creating-tables-from-r
 additional-formatting-examples
 additional-table-types
+ethics
+value-of-informed-consent
+research-fraud

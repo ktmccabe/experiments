@@ -1,0 +1,128 @@
+# Ethics and Sampling Considerations {#ethics}
+
+
+In this section, we touch on different ethical issues that can arise when conducting experiments, as well as considerations we should have when recruiting subjects and assessing data quality.
+
+We touch on the following resources:
+
+  - Teele, D. (2021). [Virtual Consent: The Bronze Standard for Experimental Ethics](https://www.cambridge.org/core/books/abs/advances-in-experimental-political-science/virtual-consent-the-bronze-standard-for-experimental-ethics/D18EE0E6CD7A9BE2E9F9EE65BE986F2C). In J. Druckman & D. Green (Eds.), Advances in Experimental Political Science (pp. 130-146). Cambridge: Cambridge University Press.
+  - Konnikova, Maria. 2015. "[How a Gay-Marriage Study Went Wrong](https://www.newyorker.com/science/maria-konnikova/how-a-gay-marriage-study-went-wrong)." The New Yorker. 
+  - Johnson, Jeremy. 2015. "[Campaign Experiment found to be in Violation of Montana Law](https://www.washingtonpost.com/news/monkey-cage/wp/2015/05/13/campaign-experiment-found-to-be-in-violation-of-montana-law/)." Washington Post.
+      + [In Defense of the Montana Experiment](https://thomasleeper.com/2014/10/montana-experiment/) by Thomas Leeper. 
+      
+
+## Value of Informed Consent
+
+Below we will use some of these questions to guide our discussion.
+
+
+
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+
+
+As Teele reviews, the Belmont report covers three principles. How should we define these?:
+
+  - Beneficence
+  - Respect for persons
+  - Justice
+
+Here is a summary of different forms of consent:
+
+![](images/teele1.png)
+
+
+Which one is the most common for the experiments we have designed?
+
+***What is the value of informed consent? What does it try to achieve***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
+
+***When might informed consent undermine research goals? Can it ever actually increase harm to subjects?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+   
+   
+   
+   
+***How can we resolve tradeoffs between informed consent and measurement? Should we? Must we?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
+***In cases where we do not get informed consent for seemingly valuable reasons, can this go awry? Are there potential downstream consequences? Does it depend on the sample size? Or study design? Is the research still worth it in the end?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+88See [example mentioned](https://www.thedenverchannel.com/news/investigations/fbi-probes-emails-sent-to-county-clerks-across-colorado-and-12-other-states)** in response to a study varying the names used in emails to Colorado county clerks:
+
+*"My name is Karim and I hope you are well. I found your contact information in a voting resources directory and I want to ask about the voting process. What do I need to bring to vote? I want to vote for president but I did not register with a political party. Do I have to do that before I vote. And if I have to work late will I still be able to vote in time."*
+
+
+**See example** of mailers sent to more than 100,000 Montana registered voters for a nonpartisan judicial election.
+
+![](images/montana.png){width=50%}
+
+
+## Research Fraud
+
+
+
+
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+
+
+***How do the incentives that structure academia encourage vs. discourage research fraud?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
+***Are there steps the field has taken / can take to detect and mitigate it?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
+
+
+
+
+
+
+
+
+
+
+
+
+   
+      
