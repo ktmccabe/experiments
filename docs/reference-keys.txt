@@ -71,4 +71,11 @@ additional-formatting-examples
 additional-table-types
 ethics
 value-of-informed-consent
-research-fraud
+research-integrity-reproducibility-and-transparency
+preregistration
+reporting-an-experimental-analysis
+sampling-considerations
+power-analysis
+power-in-r
+additional-resources-for-power-in-r
+relationship-between-error-rates-and-multiple-testing

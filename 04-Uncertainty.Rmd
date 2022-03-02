@@ -79,6 +79,7 @@ The experiment we happen to conduct yields an estimate of the average treatment 
 
 The population mean and variance are $\mu_y$ and $\sigma^2_y$ for some variable $Y$ and $\sigma_y$ is the standard deviation. We want to know the variability of our sample mean $\bar{Y}$.
 
+
 Well we already know the mean of our sample mean ($\bar{Y}$) is the population mean $(\mu_y)$:
 
 \begin{align*}

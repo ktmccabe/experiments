@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Experimental Methods in Political Science</title>
-  <meta name="description" content="Experimental Methods in Political Science" />
+  <title>6.3 Sampling Considerations | Experimental Methods in Political Science</title>
+  <meta name="description" content="6.3 Sampling Considerations | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Experimental Methods in Political Science" />
+  <meta property="og:title" content="6.3 Sampling Considerations | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="6.3 Sampling Considerations | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="research-integrity-reproducibility-and-transparency.html"/>
 
-<link rel="next" href="rsetup.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -269,29 +269,198 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Experimental Methods in Political Science</h1>
-<p class="author"><em>Instructor: Katie McCabe</em></p>
-</div>
-<div id="course-notes" class="section level1" number="1">
-<h1><span class="header-section-number">Section 1</span> Course Notes</h1>
-<p>This document will include important links and course notes for Experimental Methods in Political Science.</p>
+<div id="sampling-considerations" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Sampling Considerations</h2>
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+<p><strong><em>What makes a sample a good sample?</em></strong></p>
+<p class="comment">
+Your ideas …
+</p>
+<p>Who is in our sample? For an average person’s discussion of polling and sampling and participating in surveys, see 37-39:40 minutes of the <a href="https://youtu.be/oVur-yNCv5I?t=2197">Nateland podcast</a>.</p>
+<p><strong><em>How can we check for data quality? What elements are a part of data quality? I.e., what should we be worried about?</em></strong></p>
+<p class="comment">
+Your ideas …
+</p>
+<p><strong><em>What are examples of bot checks/attention checks?</em></strong></p>
+<p class="comment">
+Your ideas …
+</p>
+<p><strong><em>When should we actually exclude subjects? When should we not?</em></strong></p>
+<p class="comment">
+Your ideas …
+</p>
+<div id="power-analysis" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Power Analysis</h3>
+<p>We are often concerned about guarding against false positives. We do this by setting a conservative threshold for judging significance in hypothesis testing.</p>
 <ul>
-<li>This site will be updated throughout the semester with new content.</li>
-<li>The Canvas modules will provide links to the relevant sections to review for a given week of the course.</li>
-<li>The primary text for the course is <a href="https://wwnorton.com/books/9780393979954">Field Experiments: Design, Analysis, and Interpretation</a> by Alan Gerber and Don Green. We will refer to this as FEDAI in the notes.</li>
-<li>This is a new and living document. If you spot errors or have questions or suggestions, please email me at <a href="mailto:k.mccabe@rutgers.edu" class="email">k.mccabe@rutgers.edu</a> or send a Slack message.</li>
+<li>Type I error: “false positive”: the error of rejecting a null hypothesis when it is actually true
++Conventionally, our tolerance for false positives are <span class="math inline">\(\alpha = 0.05\)</span>.</li>
+<li>Type II error: “false negative”: conclude there is no effect (failing to reject the null) when there is one.
+<ul>
+<li>We tend to refer to this as <span class="math inline">\(\beta\)</span> and statistical power is <span class="math inline">\(1-\beta\)</span> (true positive)</li>
+</ul></li>
 </ul>
-<!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
-<!-- Instructions: https://ontheline.trincoll.edu/bookdown.html -->
+<p>What is a test’s Power?</p>
+<ul>
+<li>Power helps us guard against false negatives. It is the probability of a true positive:
+<ul>
+<li>Finding a significant effect if one is there,</li>
+<li>(1- Type II) where a Type II error is when you conclude there is no effect when there is one.</li>
+</ul></li>
+<li>See discussion on power from <a href="https://egap.org/resource/10-things-to-know-about-statistical-power/">EGAP</a>.</li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+1 - Pr(\text{Type II error}) &amp;= 1 - \beta\\
+ &amp;=  \underbrace{\Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \Phi^{-1}(1 - \frac{\alpha}{2}))}_{\text{A common formula}} \\
+ &amp;=  \Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \underbrace{ 1.96}_{\text{At conventional levels}})\\
+ &amp;= \text{Prob test stat exceeds threshold for rejecting null}
+\end{align*}\]</span></p>
+<p>Terms</p>
+<ul>
+<li><span class="math inline">\(\beta\)</span> is measure of power, between 0 and 1.</li>
+<li><span class="math inline">\(\Phi\)</span> is the CDF of the normal distribution (think: area under the curve), and <span class="math inline">\(\Phi^{-1}\)</span> is its inverse.</li>
+<li><span class="math inline">\(\mu_t - \mu_c\)</span> is the difference in average outcomes in the treatment and control groups.</li>
+<li><span class="math inline">\(\sigma\)</span> is the standard deviation of outcomes.</li>
+<li><span class="math inline">\(\alpha\)</span> is our significance level - conventionally, 0.05.</li>
+<li><span class="math inline">\(N\)</span> is the total number of subjects. This is the only variable that is under the direct control of the researcher.</li>
+</ul>
+<p>Helpful <a href="https://www.youtube.com/watch?v=QBONLUp7i28&amp;t=10s">video</a></p>
+<p>Recall that t-statistics beyond the critical values (e.g., 1.96) will result in rejecting the null hypothesis.
+<img src="experiments_files/figure-html/unnamed-chunk-127-1.svg" width="672" /></p>
+<p>We want to know the probability that our test statistic will fall in this rejection region.
+<img src="experiments_files/figure-html/unnamed-chunk-128-1.svg" width="672" /></p>
 </div>
+<div id="power-in-r" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Power in R</h3>
+<p>To conduct a power analysis</p>
+<p>We need all but one of:</p>
+<ul>
+<li>sample size</li>
+<li>effect size in population</li>
+<li>standard deviation of outcome in population</li>
+<li>desired power level</li>
+<li>significance level</li>
+</ul>
+<p>What makes this calculation difficult?</p>
+<p>For continuous variables, we can calculate the power of either one-sample or two-sample test using the command <code>power.t.test(n, delta, sd, sig.level, power, type, alternative)</code>.</p>
+<ul>
+<li><code>n</code> is the number of observations;</li>
+<li><code>delta</code> is the true difference in means;</li>
+<li><code>sd</code> is the standard deviation within the population;</li>
+<li><code>sig.level</code> is the test’s level of significance (Type I error probability);</li>
+<li><code>type</code> is the type of t-test (“two.sample”, “one.sample” or “paired”);</li>
+<li><code>alternative</code> specifies a direction of the test (“two.sided” or “one.sided”)</li>
+<li><code>power</code> is the power of the test</li>
+</ul>
+<p>Note on effect sizes</p>
+<p>Cohen’s <span class="math inline">\(d = \frac{delta}{\sigma}\)</span> = <span class="math inline">\(\frac{\tt delta}{\tt sd}\)</span></p>
+<ul>
+<li>Problem: We usually don’t know <span class="math inline">\(\sigma\)</span> or delta.
+<ul>
+<li>Solution 1: Use sample data for pooled standard deviation (<span class="math inline">\(\hat{s}_y\)</span>) and difference in means (<span class="math inline">\(\bar{y}_T - \bar{y}_C\)</span>).</li>
+<li>Solution 2: Use rules of thumb, .2, .5, .8 (e.g., <code>delta</code> = .5 and <code>d</code> = 1})</li>
+</ul></li>
+<li>Cohen,Jacob.1992.<a href="https://journals.sagepub.com/doi/10.1111/1467-8721.ep10768783">Statistical power analysis</a>.Psychological Science</li>
+</ul>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="sampling-considerations.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Leave one argument blank or = NULL</span></span>
+<span id="cb218-2"><a href="sampling-considerations.html#cb218-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-3"><a href="sampling-considerations.html#cb218-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Power for an 800-person study with .25 effect size and 400-person groups</span></span>
+<span id="cb218-4"><a href="sampling-considerations.html#cb218-4" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">n=</span> <span class="dv">400</span>,</span>
+<span id="cb218-5"><a href="sampling-considerations.html#cb218-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">delta =</span> .<span class="dv">25</span>, <span class="at">sd=</span><span class="dv">1</span>, <span class="at">sig.level =</span> .<span class="dv">05</span>,</span>
+<span id="cb218-6"><a href="sampling-considerations.html#cb218-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">power =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 400
+##           delta = 0.25
+##              sd = 1
+##       sig.level = 0.05
+##           power = 0.9419449
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="sampling-considerations.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="do">## What effect size would we need for 80% power?</span></span>
+<span id="cb220-2"><a href="sampling-considerations.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">n=</span> <span class="dv">400</span>,</span>
+<span id="cb220-3"><a href="sampling-considerations.html#cb220-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">delta =</span> <span class="cn">NULL</span>, <span class="at">sd=</span><span class="dv">1</span>, <span class="at">sig.level =</span> .<span class="dv">05</span>,</span>
+<span id="cb220-4"><a href="sampling-considerations.html#cb220-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">power =</span> .<span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 400
+##           delta = 0.1983417
+##              sd = 1
+##       sig.level = 0.05
+##           power = 0.8
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+<div id="additional-resources-for-power-in-r" class="section level4" number="6.3.2.1">
+<h4><span class="header-section-number">6.3.2.1</span> Additional Resources for Power in R</h4>
+<p>Power analysis in Conjoint Experiments by Martin Lukac: <a href="https://mblukac.github.io/posts/2020/08/cj_poweranalysis/">tool</a></p>
+<p>R resource: Additional functions from <a href="https://www.statmethods.net/stats/power.html">Statmethods</a></p>
+<p>For proportions, The command <code>power.prop.test(n, p1, p2, sig.level, power, alternative)</code> may be used to calculate the power. Note that this command may only be used to calculate power for a two-sample test.</p>
+<ul>
+<li><code>n</code> is the number of observations per group (assumes equal size);</li>
+<li><code>p1</code> the proportion in group 1;</li>
+<li><code>p2</code> the proportion in group 2;</li>
+<li><code>sig.level</code> is the test’s level of significance</li>
+<li><code>alternative</code> specifies a direction of the test (“two.sided” or “one.sided”);</li>
+<li><code>power</code> specifies power of the test</li>
+</ul>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="sampling-considerations.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="do">## What sample size for difference in proportions at 80% power?</span></span>
+<span id="cb222-2"><a href="sampling-considerations.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="at">n=</span><span class="cn">NULL</span>, <span class="at">p1 =</span> .<span class="dv">75</span>, <span class="at">p2=</span>.<span class="dv">80</span>,</span>
+<span id="cb222-3"><a href="sampling-considerations.html#cb222-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sig.level=</span>.<span class="dv">10</span>, <span class="at">power =</span> .<span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## 
+##      Two-sample comparison of proportions power calculation 
+## 
+##               n = 861.4198
+##              p1 = 0.75
+##              p2 = 0.8
+##       sig.level = 0.1
+##           power = 0.8
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+<div id="relationship-between-error-rates-and-multiple-testing" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Relationship between Error Rates and Multiple Testing</h3>
+<p><span class="math display">\[\begin{align*}
+Pr(\text{at least one significant result}) &amp;= 1 - Pr(\text{no significant result})\\
+&amp;= 1 - (1 - 0.05)^{\text{number of tests}}
+\end{align*}\]</span></p>
+<p>With 20 tests, you have a 64% chance of observing at least one significant result even if all are not significant.</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="sampling-considerations.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span>)<span class="sc">^</span><span class="dv">20</span></span></code></pre></div>
+<pre><code>## [1] 0.6415141</code></pre>
+<p>For this reason, researchers may make adjustments to p-values when they have several tests in a single analysis. See <a href="https://egap.org/resource/10-things-to-know-about-multiple-comparisons/">EGAP’s resource</a></p>
+
+</div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
+<a href="research-integrity-reproducibility-and-transparency.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="rsetup.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

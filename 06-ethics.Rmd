@@ -9,6 +9,10 @@ We touch on the following resources:
   - Konnikova, Maria. 2015. "[How a Gay-Marriage Study Went Wrong](https://www.newyorker.com/science/maria-konnikova/how-a-gay-marriage-study-went-wrong)." The New Yorker. 
   - Johnson, Jeremy. 2015. "[Campaign Experiment found to be in Violation of Montana Law](https://www.washingtonpost.com/news/monkey-cage/wp/2015/05/13/campaign-experiment-found-to-be-in-violation-of-montana-law/)." Washington Post.
       + [In Defense of the Montana Experiment](https://thomasleeper.com/2014/10/montana-experiment/) by Thomas Leeper. 
+  - Boudreau, Cheryl. (2021). Transparency in Experimental Research. In J. Druckman & D. Green (Eds.), Advances in Experimental Political Science (pp. 339-353). Cambridge: Cambridge University Press. doi:10.1017/9781108777919.024 
+  - Krupnikov, Yanna, Nam, Hannah, & Style, Hillary. (2021). Convenience Samples in Political Science Experiments. In J. Druckman & D. Green (Eds.), Advances in Experimental Political Science (pp. 165-183). Cambridge: Cambridge University Press. doi:10.1017/9781108777919.012
+  - Mummolo, Jonathan and Erik Peterson. "Demand Effects in Survey Experiments: An Empirical Assessment." APSR https://doi.org/10.1017/S0003055418000837 
+
       
 
 ## Value of Informed Consent
@@ -83,7 +87,7 @@ Your ideas ...                                                                  
 ![](images/montana.png){width=50%}
 
 
-## Research Fraud
+## Research Integrity, Reproducibility, and Transparency
 
 
 
@@ -116,13 +120,284 @@ Your ideas ...                                                                  
 
 
 
+![](images/psychscience.png){width=60%}
+
+
+***When our findings don't replicate, how should we interpret this? Does it mean the original result was a false positive?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                             </p>
 
 
 
 
 
 
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+
+### Preregistration 
+
+What is pre-registration? (from Boudreau)
+
+  - "Practice of developing one's research questions, hypotheses, research
+  design, and analyses before observing the data and making that information public
+  on an independent registry." 
+  - "Researchers may also create and submit pre-analysis plans that describe in detail the procedures they will use when collecting and analyzing the data (e.g., planned data analyses and statistical tests)."
+  - These can also include [standard operating procedures](https://alexandercoppock.com/Green-Lab-SOP/Green_Lab_SOP.pdf)
+  - Here is a short guide to a pre-analysis plan from [EGAP](https://egap.org/resource/10-things-to-know-about-pre-analysis-plans/)
+  - Examples of pre-registration registries: [Aspredicted.org](https://aspredicted.org/); [Open Science Framework](https://osf.io/); [EGAP (now hosted by OSF)](https://egap.org/registry-0/)
+  - Note that some journals now require pre-registration for experiments. E.g., [The Journal of Politics](https://www.journals.uchicago.edu/journals/jop/instruct) 
+  - Some journals now offer a chance to submit a registered report, where your paper is reviewed blind to the results. E.g., [Journal of Experimental Political Science](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/information/submission-guidelines-for-preregistered-reports). See a discussion from the editor Vin Arceneaux [here](https://connect.apsanet.org/s42/2021/04/28/what-is-a-registered-report-and-why-should-you-be-writing-one-for-jeps/).
 
 
-   
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+
+
+***What items should be included in a pre-registration plan?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                               </p>                                                                                        
+
+
+***What are the benefits of pre-registration? Are there downsides?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                                   </p>                                                                                    
+
+### Reporting an Experimental Analysis 
+
+(from Boudreau and Gerber et al. 2015)
+
+  - Eligibility and exclusion criteria for participants
+  - Details of recruitment and selection of participants, including incentives and any firms used
+  - Type of experiment (lab, survey, field), mode, location, and dates conducted
+  - Response rate or other participation metric (and how calculated), when possible
+  - Details of randomization procedure
+  - Baseline means and standard deviations for demographics and other pretreatment measures by experimental group
+  - Whether blinding took place and how it was accomplished
+  - Description of the treatment(s), as well as description of the control group
+  - Details of experiment: its duration, number of participants, within- versus between-subject design, piggybacking/ordering/repetition of treatments, use of deception, use of incentives
+  - Evidence treatment was delivered as intended, if available
+  - Definitions of outcome measures and covariates, as well as noting whether the level of analysis differs from the level of randomization
+  - Identification of analyses specified ex ante versus ex post exploratory analyses
+  - Information in [CONSORT participant flow diagram](http://www.consort-statement.org/consort-statement/flow-diagram)
+  - Sample means and standard deviations for outcome variables using intent-to-treat analysis
+  - Patterns of missing data, attrition, and methods of addressing these issues if missing data and/or attrition are present
+  - Description of weighting procedures, if used
+  - Institutional review board approval, preregistration, source of funding, conflicts of interest
+  - Availability of replication materials and data set
+      + Many researchers share data via [Dataverse](https://dataverse.harvard.edu/), [OSF](https://osf.io/), or [Github](https://github.com/)
+
+
+
+## Sampling Considerations
+
+
+<style>
+p.comment {
+background-color: #DBDBDB;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+
+</style>
+
+
+***What makes a sample a good sample?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                            </p>                                                                                            
+
+Who is in our sample? For an average person's discussion of polling and sampling and participating in surveys, see 37-39:40 minutes of the [Nateland podcast](https://youtu.be/oVur-yNCv5I?t=2197).
+
+***How can we check for data quality? What elements are a part of data quality? I.e., what should we be worried about?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                            </p>                                           
+***What are examples of bot checks/attention checks?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                            </p>                                                                                                                     
+
+***When should we actually exclude subjects? When should we not?***
+
+<p class="comment">
+Your ideas ...                                                                                                                                                                                                            </p>                                                                            
+
+
+### Power Analysis
+
+We are often concerned about guarding against false positives. We do this by setting a conservative threshold for judging significance in hypothesis testing.
+
+  - Type I error: "false positive": the error of rejecting a null hypothesis when it is actually true
+      +Conventionally, our tolerance for false positives are  $\alpha = 0.05$.
+  - Type II error: "false negative": conclude there is no effect (failing to reject the null) when there is one.
+      + We tend to refer to this  as $\beta$ and statistical power is $1-\beta$ (true positive)
+
+What is a test's Power?
+
+  - Power helps us guard against false negatives. It is the probability of a true positive: 
+      + Finding a significant effect if one is there, 
+      + (1- Type II) where a Type II error is when you conclude there is no effect when there is one.
+  - See discussion on power from [EGAP](https://egap.org/resource/10-things-to-know-about-statistical-power/).
+
+
+\begin{align*}
+1 - Pr(\text{Type II error}) &= 1 - \beta\\
+ &=  \underbrace{\Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \Phi^{-1}(1 - \frac{\alpha}{2}))}_{\text{A common formula}} \\
+ &=  \Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \underbrace{ 1.96}_{\text{At conventional levels}})\\
+ &= \text{Prob test stat exceeds threshold for rejecting null}
+\end{align*}
+
+
+Terms
+
+  - $\beta$ is measure of power, between 0 and 1.
+  - $\Phi$ is the CDF of the normal distribution (think: area under the curve), and $\Phi^{-1}$ is its inverse. 
+  - $\mu_t - \mu_c$ is the difference in average outcomes in the treatment and control groups. 
+  - $\sigma$ is the standard deviation of outcomes. 
+  - $\alpha$ is our significance level - conventionally, 0.05. 
+  - $N$ is the total number of subjects. This is the only variable that is under the direct control of the researcher. 
+
+Helpful [video](https://www.youtube.com/watch?v=QBONLUp7i28&t=10s)
+
+
+Recall that t-statistics beyond the critical values (e.g., 1.96) will result in rejecting the null hypothesis.
+```{r, echo=F}
+z <- seq(-3, 3, .02)
+dz <- dnorm(z)
+plot(z, dz, type="l", xlab="test statistic, null distribution",
+     ylab="Density")
+abline(v=1.96, col="red", lty=2)
+abline(v=-1.96, col="red", lty=2)
+
+```
+
+We want to know the probability that our test statistic will fall in this rejection region.
+```{r, echo=F}
+z <- seq(-4, 4, .02)
+dz <- dnorm(z)
+plot(z, dz, type="l", xlab="test statistic, null distribution",
+     ylab="Density")
+abline(v=1.96, col="red", lty=2)
+abline(v=-1.96, col="red", lty=2)
+z2 <- seq(-4, 4, .02)
+dz2 <- dnorm(z2, mean=1, sd=1.2)
+points(z2, dz2, type="l", col="purple", lty="dashed")
+
+```
+
+### Power in R
+
+To conduct a power analysis
+
+We need all but one of:
+
+  - sample size
+  - effect size in population
+  - standard deviation of outcome in population
+  - desired power level
+  - significance level
+
+What makes this calculation difficult? 
+
+For continuous variables, we can calculate the power of either one-sample or two-sample test using the command `power.t.test(n, delta, sd, sig.level, power, type, alternative)`.
+
+  - `n` is the number of observations;
+  - `delta` is the true difference in means;
+  - `sd` is the standard deviation within the population;
+  - `sig.level` is the test's level of significance (Type I error probability);
+  - `type` is the type of t-test ("two.sample", "one.sample" or "paired");
+  - `alternative` specifies a direction of the test ("two.sided" or "one.sided")
+  - `power` is the power of the test
+
+
+Note on effect sizes
+
+Cohen's $d = \frac{delta}{\sigma}$ = $\frac{\tt delta}{\tt sd}$
+
+  - Problem: We usually don't know $\sigma$ or delta. 
+      + Solution 1: Use sample data for pooled standard deviation ($\hat{s}_y$) and difference in means  ($\bar{y}_T - \bar{y}_C$).
+      + Solution 2: Use rules of thumb, .2, .5, .8 (e.g., `delta` = .5 and `d` = 1})
+  - Cohen,Jacob.1992.[Statistical power analysis](https://journals.sagepub.com/doi/10.1111/1467-8721.ep10768783).Psychological Science 
+
+
+```{r}
+## Leave one argument blank or = NULL
+
+## Power for an 800-person study with .25 effect size and 400-person groups
+power.t.test(n= 400,
+             delta = .25, sd=1, sig.level = .05,
+             power = NULL)
+
+## What effect size would we need for 80% power?
+power.t.test(n= 400,
+             delta = NULL, sd=1, sig.level = .05,
+             power = .8)
+
+```
+
+
+#### Additional Resources for Power in R
+
+Power analysis in Conjoint Experiments by Martin Lukac: [tool](https://mblukac.github.io/posts/2020/08/cj_poweranalysis/)
+
+R resource: Additional functions from [Statmethods](https://www.statmethods.net/stats/power.html)
+
+For proportions, The command `power.prop.test(n, p1, p2, sig.level, power, alternative)` may be used to calculate the power. Note that this command may only be used to calculate power for a two-sample test.
+
+  - `n` is the number of observations per group (assumes equal size);
+  - `p1` the proportion in group 1;
+  - `p2` the proportion in group 2;
+  - `sig.level` is the test’s level of significance 
+  - `alternative` specifies a direction of the test ("two.sided" or "one.sided");
+  - `power` specifies power of the test
+
+
+```{r}
+## What sample size for difference in proportions at 80% power?
+power.prop.test(n=NULL, p1 = .75, p2=.80,
+                sig.level=.10, power = .8)
+
+```
+
+
+### Relationship between Error Rates and Multiple Testing
+
+\begin{align*}
+Pr(\text{at least one significant result}) &= 1 - Pr(\text{no significant result})\\
+&= 1 - (1 - 0.05)^{\text{number of tests}}
+\end{align*}
+
+With 20 tests, you have a 64\%  chance of observing at least one significant result even if all are not significant.
+
+```{r}
+1 - (1 - 0.05)^20
+```
+
+For this reason, researchers may make adjustments to p-values when they have several tests in a single analysis. See [EGAP's resource](https://egap.org/resource/10-things-to-know-about-multiple-comparisons/)
+
       
