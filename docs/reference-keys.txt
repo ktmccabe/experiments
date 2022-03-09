@@ -79,3 +79,12 @@ power-analysis
 power-in-r
 additional-resources-for-power-in-r
 relationship-between-error-rates-and-multiple-testing
+fieldexp
+field-experiment-application
+clustering-standard-errors
+adjusting-p-values
+additional-complex-sampling-designs
+compliance
+notation-for-compliance
+complier-average-causal-effect
+design-based-approach-to-help-measure-compliance
