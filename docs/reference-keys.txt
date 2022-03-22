@@ -42,6 +42,7 @@ adding-a-randomizer-in-the-survey-flow
 using-piped-text-in-randomization
 data-and-analysis
 additional-bells-and-whistles
+adding-a-gif-to-qualtrics
 uncertainty
 standard-errors
 standard-error-of-the-mean
