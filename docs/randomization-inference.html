@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -314,34 +323,34 @@ Here is our data for 7 observations, where 4 are assigned to treatment, 3 to con
 <p>Repeat for all (or a lot of) possible permutations of d. This gives us an implied null distribution of the average treatment effect under the sharp null. Note: it won’t always be zero. It will be a distribution around zero. We will compare how extreme our observed estimate of the average treatment effect is compared to this distribution under the null.</p>
 <p><strong><em>Empirical example with social exclusion experiment</em></strong></p>
 <p>Alex Coppock has updated the randomization inference package to <code>ri2</code> in R. More on this package is available <a href="http://alexandercoppock.com/ri2/index.html">here</a>.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="randomization-inference.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri2&quot;, dependencies=T)</span></span>
-<span id="cb149-2"><a href="randomization-inference.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri2)</span>
-<span id="cb149-3"><a href="randomization-inference.html#cb149-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-4"><a href="randomization-inference.html#cb149-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Declare randomization</span></span>
-<span id="cb149-5"><a href="randomization-inference.html#cb149-5" aria-hidden="true" tabindex="-1"></a>declaration <span class="ot">&lt;-</span> <span class="fu">declare_ra</span>(<span class="at">N=</span><span class="fu">nrow</span>(asians), <span class="at">prob=</span>.<span class="dv">5</span>)</span>
-<span id="cb149-6"><a href="randomization-inference.html#cb149-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-7"><a href="randomization-inference.html#cb149-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
-<span id="cb149-8"><a href="randomization-inference.html#cb149-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1215</span>)</span>
-<span id="cb149-9"><a href="randomization-inference.html#cb149-9" aria-hidden="true" tabindex="-1"></a>ri2_out <span class="ot">&lt;-</span> <span class="fu">conduct_ri</span>(</span>
-<span id="cb149-10"><a href="randomization-inference.html#cb149-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> study2_avg <span class="sc">~</span> treatment_cit,</span>
-<span id="cb149-11"><a href="randomization-inference.html#cb149-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">assignment =</span> <span class="st">&quot;treatment_cit&quot;</span>,</span>
-<span id="cb149-12"><a href="randomization-inference.html#cb149-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">declaration =</span> declaration,</span>
-<span id="cb149-13"><a href="randomization-inference.html#cb149-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">sharp_hypothesis =</span> <span class="dv">0</span>,</span>
-<span id="cb149-14"><a href="randomization-inference.html#cb149-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> asians</span>
-<span id="cb149-15"><a href="randomization-inference.html#cb149-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="randomization-inference.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri2&quot;, dependencies=T)</span></span>
+<span id="cb205-2"><a href="randomization-inference.html#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri2)</span>
+<span id="cb205-3"><a href="randomization-inference.html#cb205-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb205-4"><a href="randomization-inference.html#cb205-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Declare randomization</span></span>
+<span id="cb205-5"><a href="randomization-inference.html#cb205-5" aria-hidden="true" tabindex="-1"></a>declaration <span class="ot">&lt;-</span> <span class="fu">declare_ra</span>(<span class="at">N=</span><span class="fu">nrow</span>(asians), <span class="at">prob=</span>.<span class="dv">5</span>)</span>
+<span id="cb205-6"><a href="randomization-inference.html#cb205-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb205-7"><a href="randomization-inference.html#cb205-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
+<span id="cb205-8"><a href="randomization-inference.html#cb205-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1215</span>)</span>
+<span id="cb205-9"><a href="randomization-inference.html#cb205-9" aria-hidden="true" tabindex="-1"></a>ri2_out <span class="ot">&lt;-</span> <span class="fu">conduct_ri</span>(</span>
+<span id="cb205-10"><a href="randomization-inference.html#cb205-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> study2_avg <span class="sc">~</span> treatment_cit,</span>
+<span id="cb205-11"><a href="randomization-inference.html#cb205-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">assignment =</span> <span class="st">&quot;treatment_cit&quot;</span>,</span>
+<span id="cb205-12"><a href="randomization-inference.html#cb205-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">declaration =</span> declaration,</span>
+<span id="cb205-13"><a href="randomization-inference.html#cb205-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">sharp_hypothesis =</span> <span class="dv">0</span>,</span>
+<span id="cb205-14"><a href="randomization-inference.html#cb205-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> asians</span>
+<span id="cb205-15"><a href="randomization-inference.html#cb205-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Plot and compare distribution to observed ATE</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="randomization-inference.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ri2_out)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-74-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="randomization-inference.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ri2_out)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-113-1.svg" width="672" /></p>
 <p>Summarize Output</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="randomization-inference.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ri2_out)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="randomization-inference.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ri2_out)</span></code></pre></div>
 <pre><code>##            term   estimate two_tailed_p_value
 ## 1 treatment_cit 0.09317187              0.033</code></pre>
 <p>We can manually see what the package is doing by counting how many of the simulated estimates from the empirical distribution of the sharp null hypothesis were more extreme than our estimate from the study. Note that in this case, our p-value is very similar to the t-test.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="randomization-inference.html#cb153-1" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ri2_out)<span class="sc">$</span>estimate</span>
-<span id="cb153-2"><a href="randomization-inference.html#cb153-2" aria-hidden="true" tabindex="-1"></a>nsims <span class="ot">&lt;-</span> <span class="fu">length</span>(ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim)</span>
-<span id="cb153-3"><a href="randomization-inference.html#cb153-3" aria-hidden="true" tabindex="-1"></a>simstimates <span class="ot">&lt;-</span> ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim</span>
-<span id="cb153-4"><a href="randomization-inference.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
-<span id="cb153-5"><a href="randomization-inference.html#cb153-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(simstimates[<span class="fu">abs</span>(simstimates) <span class="sc">&gt;=</span> <span class="fu">abs</span>(estimate)])<span class="sc">/</span>nsims</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="randomization-inference.html#cb209-1" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ri2_out)<span class="sc">$</span>estimate</span>
+<span id="cb209-2"><a href="randomization-inference.html#cb209-2" aria-hidden="true" tabindex="-1"></a>nsims <span class="ot">&lt;-</span> <span class="fu">length</span>(ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim)</span>
+<span id="cb209-3"><a href="randomization-inference.html#cb209-3" aria-hidden="true" tabindex="-1"></a>simstimates <span class="ot">&lt;-</span> ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim</span>
+<span id="cb209-4"><a href="randomization-inference.html#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
+<span id="cb209-5"><a href="randomization-inference.html#cb209-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(simstimates[<span class="fu">abs</span>(simstimates) <span class="sc">&gt;=</span> <span class="fu">abs</span>(estimate)])<span class="sc">/</span>nsims</span></code></pre></div>
 <pre><code>## [1] 0.033</code></pre>
 </div>
             </section>

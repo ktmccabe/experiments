@@ -1,0 +1,1943 @@
+"","condition","male","econcon"
+"2","Concrete",1,0.75
+"3","Self-Esteem",1,1
+"4","Placebo",1,0.666666666666667
+"5","Self-Esteem",0,0.25
+"6","Self-Esteem",0,1
+"7","Social Approval",0,0.833333333333333
+"8","Self-Esteem",1,0.416666666666667
+"9","Conspicuous Consumption",0,0.75
+"10","Placebo",1,0.916666666666667
+"11","Conspicuous Consumption",0,0.666666666666667
+"12","Concrete",0,0.75
+"13","Concrete",0,1
+"14","Conspicuous Consumption",1,0.583333333333333
+"15","Self-Esteem",1,1
+"16","Self-Esteem",1,1
+"17","Self-Esteem",0,0.333333333333333
+"18","Self-Esteem",1,1
+"19","Social Approval",1,1
+"20","Concrete",1,0.916666666666667
+"21","Self-Esteem",1,0.5
+"22","Self-Esteem",1,0.5
+"23","Self-Esteem",1,1
+"24","Placebo",0,0.333333333333333
+"25","Concrete",0,0.583333333333333
+"26","Conspicuous Consumption",1,1
+"27","Self-Esteem",0,0.333333333333333
+"28","Placebo",0,0.75
+"29","Placebo",0,0.333333333333333
+"30","Placebo",1,0.916666666666667
+"31","Concrete",0,0.583333333333333
+"32","Conspicuous Consumption",0,1
+"33","Placebo",0,0.833333333333333
+"34","Conspicuous Consumption",1,1
+"35","Self-Esteem",0,0.583333333333333
+"36","Self-Esteem",0,0.583333333333333
+"37","Self-Esteem",0,0.75
+"38","Conspicuous Consumption",1,0.25
+"39","Social Approval",0,0.583333333333333
+"40","Conspicuous Consumption",0,0.666666666666667
+"41","Placebo",1,0.916666666666667
+"42","Placebo",1,0.5
+"43","Placebo",0,0.75
+"44","Placebo",1,1
+"45","Conspicuous Consumption",0,0.666666666666667
+"46","Placebo",0,0.833333333333333
+"47","Social Approval",0,0
+"48","Concrete",1,0.333333333333333
+"49","Placebo",0,0.916666666666667
+"50","Placebo",0,0.416666666666667
+"51","Self-Esteem",0,0.166666666666667
+"52","Placebo",0,1
+"53","Concrete",0,1
+"54","Conspicuous Consumption",0,0.583333333333333
+"55","Placebo",1,0.75
+"56","Placebo",0,0.666666666666667
+"57","Concrete",0,0
+"58","Placebo",1,0.75
+"59","Social Approval",0,1
+"60","Concrete",0,0.583333333333333
+"61","Placebo",0,0.75
+"62","Concrete",1,0.916666666666667
+"63","Social Approval",0,0.916666666666667
+"64","Placebo",1,0.666666666666667
+"65","Conspicuous Consumption",0,0.5
+"66","Self-Esteem",0,0.833333333333333
+"67","Social Approval",0,1
+"68","Concrete",0,0.416666666666667
+"69","Conspicuous Consumption",1,1
+"70","Social Approval",1,1
+"71","Placebo",0,0.583333333333333
+"72","Social Approval",1,0.666666666666667
+"73","Social Approval",0,0.583333333333333
+"74","Placebo",1,0.916666666666667
+"75","Concrete",0,0.583333333333333
+"76","Social Approval",0,0.916666666666667
+"77","Conspicuous Consumption",0,0.666666666666667
+"78","Social Approval",1,0.333333333333333
+"79","Concrete",1,0.5
+"80","Concrete",1,0.666666666666667
+"81","Social Approval",1,1
+"82","Concrete",0,0.25
+"83","Social Approval",1,0.916666666666667
+"84","Concrete",1,0.75
+"85","Conspicuous Consumption",1,0.833333333333333
+"86","Concrete",1,1
+"87","Conspicuous Consumption",0,0.583333333333333
+"88","Self-Esteem",0,0.75
+"89","Social Approval",1,0.833333333333333
+"90","Concrete",1,0.666666666666667
+"91","Concrete",0,0.416666666666667
+"92","Concrete",0,1
+"93","Placebo",0,0.166666666666667
+"94","Placebo",0,0.75
+"95","Concrete",0,1
+"96","Concrete",1,0.916666666666667
+"97","Self-Esteem",0,0.416666666666667
+"98","Concrete",0,0.666666666666667
+"99","Conspicuous Consumption",1,0.666666666666667
+"100","Social Approval",1,1
+"101","Conspicuous Consumption",1,0
+"102","Conspicuous Consumption",1,0.416666666666667
+"103","Placebo",1,0.416666666666667
+"104","Social Approval",0,0.666666666666667
+"105","Placebo",0,0.416666666666667
+"106","Concrete",1,0.166666666666667
+"107","Social Approval",0,0.75
+"108","Concrete",0,0
+"109","Self-Esteem",1,0.833333333333333
+"110","Concrete",1,0.583333333333333
+"111","Placebo",0,1
+"112","Self-Esteem",1,0.916666666666667
+"113","Conspicuous Consumption",1,0.25
+"114","Placebo",1,0.166666666666667
+"115","Self-Esteem",0,1
+"116","Placebo",0,0.666666666666667
+"117","Placebo",0,0.25
+"118","Self-Esteem",0,0.75
+"119","Self-Esteem",0,0.5
+"120","Social Approval",1,0.333333333333333
+"121","Conspicuous Consumption",1,0.666666666666667
+"122","Placebo",0,0.666666666666667
+"123","Placebo",0,0.833333333333333
+"124","Placebo",1,0.25
+"125","Self-Esteem",0,0.75
+"126","Conspicuous Consumption",0,1
+"127","Self-Esteem",1,0.5
+"128","Conspicuous Consumption",0,0.5
+"129","Self-Esteem",1,1
+"130","Social Approval",1,0.833333333333333
+"131","Concrete",0,0.833333333333333
+"132","Concrete",0,0.666666666666667
+"133","Conspicuous Consumption",0,0.666666666666667
+"134","Conspicuous Consumption",1,0.0833333333333333
+"135","Concrete",1,1
+"136","Social Approval",0,0.25
+"137","Self-Esteem",0,0.666666666666667
+"138","Social Approval",1,0.916666666666667
+"139","Social Approval",0,0.583333333333333
+"140","Placebo",1,0.333333333333333
+"141","Conspicuous Consumption",1,0.166666666666667
+"142","Self-Esteem",1,0.916666666666667
+"143","Conspicuous Consumption",0,0.583333333333333
+"144","Placebo",0,0.666666666666667
+"145","Social Approval",1,0.25
+"146","Concrete",1,0.916666666666667
+"147","Self-Esteem",1,0.25
+"148","Self-Esteem",0,0.75
+"149","Placebo",0,0.916666666666667
+"150","Placebo",0,0.583333333333333
+"151","Conspicuous Consumption",0,0.0833333333333333
+"152","Self-Esteem",1,0.75
+"153","Concrete",0,0.916666666666667
+"154","Social Approval",1,1
+"155","Conspicuous Consumption",0,1
+"156","Placebo",0,0.25
+"157","Concrete",0,0.666666666666667
+"158","Self-Esteem",1,1
+"159","Conspicuous Consumption",1,0.333333333333333
+"160","Conspicuous Consumption",0,0.916666666666667
+"161","Conspicuous Consumption",1,1
+"162","Social Approval",0,0.833333333333333
+"163","Self-Esteem",0,0.5
+"164","Self-Esteem",1,1
+"165","Concrete",0,0.333333333333333
+"166","Concrete",1,0.333333333333333
+"167","Concrete",0,0.666666666666667
+"168","Concrete",0,0.666666666666667
+"169","Social Approval",1,0.833333333333333
+"170","Concrete",0,0.25
+"171","Self-Esteem",1,0.833333333333333
+"172","Self-Esteem",0,0.5
+"173","Concrete",0,1
+"174","Placebo",1,1
+"175","Social Approval",0,0.25
+"176","Conspicuous Consumption",0,0.666666666666667
+"177","Placebo",1,0.833333333333333
+"178","Social Approval",0,0.25
+"179","Conspicuous Consumption",1,0.75
+"180","Conspicuous Consumption",0,0.666666666666667
+"181","Conspicuous Consumption",0,0.416666666666667
+"182","Self-Esteem",1,0.666666666666667
+"183","Placebo",0,0.5
+"184","Concrete",0,0.416666666666667
+"185","Placebo",0,0.833333333333333
+"186","Conspicuous Consumption",0,0.75
+"187","Conspicuous Consumption",1,0.666666666666667
+"188","Placebo",0,0.833333333333333
+"189","Concrete",1,0.25
+"190","Placebo",1,0
+"191","Conspicuous Consumption",1,0.416666666666667
+"192","Concrete",1,0.416666666666667
+"193","Conspicuous Consumption",0,0.666666666666667
+"194","Conspicuous Consumption",0,0.5
+"195","Self-Esteem",1,0.583333333333333
+"196","Social Approval",1,0.833333333333333
+"197","Placebo",1,0.416666666666667
+"198","Concrete",0,0.583333333333333
+"199","Placebo",0,0.666666666666667
+"200","Self-Esteem",1,0.5
+"201","Concrete",1,0.75
+"202","Placebo",1,0.833333333333333
+"203","Self-Esteem",1,0.916666666666667
+"204","Concrete",1,0.916666666666667
+"205","Conspicuous Consumption",0,0.333333333333333
+"206","Placebo",0,0.25
+"207","Self-Esteem",1,0.416666666666667
+"208","Self-Esteem",0,0.666666666666667
+"209","Social Approval",1,0.833333333333333
+"210","Social Approval",0,0.25
+"211","Conspicuous Consumption",1,0.333333333333333
+"212","Self-Esteem",0,0
+"213","Social Approval",0,0.333333333333333
+"214","Social Approval",1,0
+"215","Self-Esteem",0,0.333333333333333
+"216","Placebo",1,1
+"217","Concrete",0,0.25
+"218","Placebo",1,0.416666666666667
+"219","Concrete",0,0.333333333333333
+"220","Social Approval",1,0.5
+"221","Concrete",0,0.416666666666667
+"222","Placebo",0,0.5
+"223","Conspicuous Consumption",0,0.5
+"224","Conspicuous Consumption",1,0.916666666666667
+"225","Conspicuous Consumption",0,0.5
+"226","Conspicuous Consumption",0,1
+"227","Social Approval",0,0.916666666666667
+"228","Concrete",0,0.833333333333333
+"229","Self-Esteem",1,0.5
+"230","Concrete",1,0.916666666666667
+"231","Social Approval",1,0.166666666666667
+"232","Self-Esteem",1,0.5
+"233","Concrete",1,0.75
+"234","Conspicuous Consumption",0,0.583333333333333
+"235","Concrete",0,0.333333333333333
+"236","Conspicuous Consumption",1,0.5
+"237","Concrete",1,0.833333333333333
+"238","Social Approval",1,0.75
+"239","Conspicuous Consumption",1,0.833333333333333
+"240","Placebo",0,0.666666666666667
+"241","Conspicuous Consumption",1,1
+"242","Placebo",0,1
+"243","Placebo",1,0.5
+"244","Conspicuous Consumption",1,0.333333333333333
+"245","Self-Esteem",0,0.416666666666667
+"246","Placebo",1,0.833333333333333
+"247","Conspicuous Consumption",0,0.5
+"248","Conspicuous Consumption",0,1
+"249","Placebo",1,0.916666666666667
+"250","Placebo",0,0.75
+"251","Concrete",1,0.333333333333333
+"252","Placebo",0,0.0833333333333333
+"253","Conspicuous Consumption",0,0.583333333333333
+"254","Social Approval",0,0.833333333333333
+"255","Self-Esteem",1,0.75
+"256","Self-Esteem",1,0.666666666666667
+"257","Social Approval",0,0.75
+"258","Concrete",0,1
+"259","Placebo",0,0.25
+"260","Self-Esteem",1,0.833333333333333
+"261","Social Approval",0,0
+"262","Concrete",0,1
+"263","Conspicuous Consumption",0,0.583333333333333
+"264","Concrete",1,0.75
+"265","Self-Esteem",1,0.916666666666667
+"266","Conspicuous Consumption",0,0.583333333333333
+"267","Placebo",0,0.916666666666667
+"268","Conspicuous Consumption",1,0.916666666666667
+"269","Conspicuous Consumption",1,0.75
+"270","Conspicuous Consumption",1,0.666666666666667
+"271","Self-Esteem",0,0.583333333333333
+"272","Self-Esteem",1,0.333333333333333
+"273","Self-Esteem",1,0.75
+"274","Conspicuous Consumption",1,1
+"275","Self-Esteem",0,0.916666666666667
+"276","Concrete",1,0
+"277","Placebo",0,0.333333333333333
+"278","Placebo",0,0.75
+"279","Self-Esteem",1,0.0833333333333333
+"280","Social Approval",0,0.5
+"281","Conspicuous Consumption",1,0.833333333333333
+"282","Placebo",0,0
+"283","Conspicuous Consumption",0,0.666666666666667
+"284","Concrete",0,0.75
+"285","Conspicuous Consumption",0,0.833333333333333
+"286","Self-Esteem",1,0.75
+"287","Social Approval",0,0.5
+"288","Self-Esteem",0,0.666666666666667
+"289","Conspicuous Consumption",1,0.166666666666667
+"290","Social Approval",0,0.666666666666667
+"291","Self-Esteem",0,0.416666666666667
+"292","Social Approval",1,0
+"293","Conspicuous Consumption",0,1
+"294","Self-Esteem",0,0.666666666666667
+"295","Placebo",0,0.333333333333333
+"296","Self-Esteem",1,0.75
+"297","Conspicuous Consumption",0,1
+"298","Self-Esteem",1,0.25
+"299","Self-Esteem",1,0.416666666666667
+"300","Concrete",1,0.5
+"301","Social Approval",0,0.666666666666667
+"302","Concrete",0,0.666666666666667
+"303","Conspicuous Consumption",0,0.583333333333333
+"304","Self-Esteem",1,1
+"305","Conspicuous Consumption",1,0.583333333333333
+"306","Conspicuous Consumption",1,0.583333333333333
+"307","Placebo",0,0.666666666666667
+"308","Concrete",0,0.833333333333333
+"309","Concrete",0,0.583333333333333
+"310","Conspicuous Consumption",0,0.833333333333333
+"311","Self-Esteem",1,0.75
+"312","Placebo",0,0.666666666666667
+"313","Concrete",0,0.583333333333333
+"314","Social Approval",0,0.583333333333333
+"315","Conspicuous Consumption",1,0.333333333333333
+"316","Concrete",0,0.75
+"317","Concrete",0,0.416666666666667
+"318","Concrete",0,0.75
+"319","Conspicuous Consumption",1,0.833333333333333
+"320","Social Approval",1,1
+"321","Self-Esteem",1,1
+"322","Placebo",0,0.5
+"323","Concrete",0,0.833333333333333
+"324","Social Approval",1,0.25
+"325","Placebo",1,0.416666666666667
+"326","Conspicuous Consumption",0,1
+"327","Conspicuous Consumption",0,0.583333333333333
+"328","Self-Esteem",0,0.166666666666667
+"329","Social Approval",0,0.5
+"330","Self-Esteem",1,1
+"331","Concrete",0,0.333333333333333
+"332","Conspicuous Consumption",0,0.416666666666667
+"333","Conspicuous Consumption",0,0.666666666666667
+"334","Social Approval",1,1
+"335","Placebo",1,0.5
+"336","Placebo",0,1
+"337","Concrete",0,0.75
+"338","Placebo",1,0.833333333333333
+"339","Placebo",1,0.666666666666667
+"340","Self-Esteem",0,0.333333333333333
+"341","Concrete",0,0.583333333333333
+"342","Placebo",0,0.916666666666667
+"343","Self-Esteem",1,0.666666666666667
+"344","Placebo",0,0.833333333333333
+"345","Self-Esteem",0,0.666666666666667
+"346","Placebo",0,0.5
+"347","Self-Esteem",1,1
+"348","Placebo",0,0.416666666666667
+"349","Placebo",0,0.833333333333333
+"350","Self-Esteem",0,0.5
+"351","Placebo",0,1
+"352","Self-Esteem",1,0.666666666666667
+"353","Social Approval",0,1
+"354","Conspicuous Consumption",0,0.916666666666667
+"355","Placebo",1,0.916666666666667
+"356","Concrete",1,1
+"357","Social Approval",0,1
+"358","Placebo",0,0.666666666666667
+"359","Concrete",0,0
+"360","Self-Esteem",0,0.916666666666667
+"361","Placebo",0,0.583333333333333
+"362","Social Approval",0,0.916666666666667
+"363","Conspicuous Consumption",0,0.583333333333333
+"364","Social Approval",0,0.666666666666667
+"365","Placebo",0,1
+"366","Social Approval",1,0.916666666666667
+"367","Concrete",0,0.666666666666667
+"368","Self-Esteem",0,0.75
+"369","Placebo",1,0.583333333333333
+"370","Self-Esteem",0,1
+"371","Conspicuous Consumption",0,0.833333333333333
+"372","Conspicuous Consumption",1,0.833333333333333
+"373","Placebo",0,0.416666666666667
+"374","Self-Esteem",1,0.583333333333333
+"375","Social Approval",0,0.583333333333333
+"376","Concrete",1,0.916666666666667
+"377","Placebo",1,1
+"378","Social Approval",0,1
+"379","Self-Esteem",0,0.916666666666667
+"380","Concrete",0,0.833333333333333
+"381","Self-Esteem",1,0.75
+"382","Placebo",1,1
+"383","Placebo",0,1
+"384","Concrete",0,0.75
+"385","Social Approval",1,1
+"386","Self-Esteem",1,0.5
+"387","Concrete",0,0.666666666666667
+"388","Self-Esteem",0,0.5
+"389","Placebo",0,1
+"390","Conspicuous Consumption",1,0.916666666666667
+"391","Conspicuous Consumption",1,0.416666666666667
+"392","Placebo",1,0.583333333333333
+"393","Concrete",0,0.333333333333333
+"394","Conspicuous Consumption",1,0.583333333333333
+"395","Self-Esteem",1,1
+"396","Self-Esteem",1,0.166666666666667
+"397","Social Approval",0,0.833333333333333
+"398","Self-Esteem",0,0.416666666666667
+"399","Concrete",0,1
+"400","Social Approval",1,0.666666666666667
+"401","Concrete",0,0.5
+"402","Concrete",0,0.583333333333333
+"403","Concrete",1,0.833333333333333
+"404","Concrete",1,0.416666666666667
+"405","Self-Esteem",0,0.416666666666667
+"406","Conspicuous Consumption",0,0.666666666666667
+"407","Self-Esteem",1,0.166666666666667
+"408","Social Approval",1,0.333333333333333
+"409","Social Approval",0,0.583333333333333
+"410","Concrete",0,0.833333333333333
+"411","Self-Esteem",0,0.75
+"412","Social Approval",1,0.833333333333333
+"413","Concrete",0,0.5
+"414","Concrete",1,0.666666666666667
+"415","Self-Esteem",0,0.833333333333333
+"416","Concrete",0,0.75
+"417","Conspicuous Consumption",1,0.666666666666667
+"418","Self-Esteem",1,1
+"419","Concrete",0,0.583333333333333
+"420","Placebo",1,0.75
+"421","Self-Esteem",0,0.583333333333333
+"422","Conspicuous Consumption",1,0.916666666666667
+"423","Concrete",1,0.833333333333333
+"424","Self-Esteem",0,1
+"425","Self-Esteem",1,0.333333333333333
+"426","Social Approval",1,0.916666666666667
+"427","Social Approval",1,0.916666666666667
+"428","Self-Esteem",0,0.333333333333333
+"429","Social Approval",0,0.666666666666667
+"430","Self-Esteem",1,0.25
+"431","Concrete",1,0.75
+"432","Self-Esteem",0,0.416666666666667
+"433","Concrete",1,0.416666666666667
+"434","Concrete",1,0.916666666666667
+"435","Social Approval",1,0.333333333333333
+"436","Social Approval",1,0.666666666666667
+"437","Social Approval",1,1
+"438","Social Approval",0,0.666666666666667
+"439","Self-Esteem",1,1
+"440","Concrete",1,1
+"441","Social Approval",0,0.666666666666667
+"442","Social Approval",1,0.5
+"443","Placebo",1,0.5
+"444","Self-Esteem",1,0.333333333333333
+"445","Social Approval",1,0.75
+"446","Placebo",1,0.916666666666667
+"447","Self-Esteem",1,0.916666666666667
+"448","Concrete",0,0.666666666666667
+"449","Self-Esteem",0,1
+"450","Placebo",0,0.666666666666667
+"451","Social Approval",0,0.75
+"452","Placebo",1,0.583333333333333
+"453","Self-Esteem",0,0.166666666666667
+"454","Social Approval",1,0.5
+"455","Social Approval",0,0.416666666666667
+"456","Placebo",0,0.833333333333333
+"457","Conspicuous Consumption",0,0.416666666666667
+"458","Placebo",0,0.75
+"459","Conspicuous Consumption",1,0.833333333333333
+"460","Social Approval",0,0.916666666666667
+"461","Self-Esteem",1,0.916666666666667
+"462","Self-Esteem",0,0.416666666666667
+"463","Concrete",0,0.0833333333333333
+"464","Concrete",1,0
+"465","Placebo",0,0.583333333333333
+"466","Self-Esteem",1,0.666666666666667
+"467","Social Approval",1,0.5
+"468","Concrete",0,0.916666666666667
+"469","Placebo",1,0.666666666666667
+"470","Social Approval",1,0.333333333333333
+"471","Placebo",1,0.583333333333333
+"472","Placebo",1,0.666666666666667
+"473","Conspicuous Consumption",0,0.75
+"474","Concrete",1,0.583333333333333
+"475","Placebo",0,0.416666666666667
+"476","Placebo",1,0.5
+"477","Social Approval",0,0.75
+"478","Social Approval",1,0.833333333333333
+"479","Placebo",1,0
+"480","Social Approval",0,0.666666666666667
+"481","Social Approval",1,0.75
+"482","Concrete",0,0.833333333333333
+"483","Concrete",0,0.5
+"484","Placebo",0,0.666666666666667
+"485","Self-Esteem",1,0
+"486","Placebo",1,0.833333333333333
+"487","Social Approval",1,0.833333333333333
+"488","Placebo",0,0.75
+"489","Conspicuous Consumption",0,0
+"490","Conspicuous Consumption",1,1
+"491","Placebo",0,0.333333333333333
+"492","Conspicuous Consumption",0,0.916666666666667
+"493","Conspicuous Consumption",0,0.5
+"494","Self-Esteem",1,0.416666666666667
+"495","Concrete",0,0.583333333333333
+"496","Social Approval",1,0.583333333333333
+"497","Conspicuous Consumption",0,1
+"498","Concrete",1,0.166666666666667
+"499","Self-Esteem",0,0.5
+"500","Social Approval",1,0.583333333333333
+"501","Placebo",1,0.25
+"502","Concrete",0,0.583333333333333
+"503","Placebo",0,0.416666666666667
+"504","Concrete",0,0.583333333333333
+"505","Concrete",0,0.916666666666667
+"506","Concrete",0,0.666666666666667
+"507","Concrete",0,1
+"508","Social Approval",1,0.916666666666667
+"509","Self-Esteem",1,0.75
+"510","Social Approval",1,0.166666666666667
+"511","Conspicuous Consumption",0,0.666666666666667
+"512","Placebo",0,0.583333333333333
+"513","Concrete",0,0.333333333333333
+"514","Concrete",1,0.333333333333333
+"515","Concrete",1,0.416666666666667
+"516","Social Approval",0,1
+"517","Conspicuous Consumption",1,0.333333333333333
+"518","Concrete",0,0.5
+"519","Conspicuous Consumption",1,0.5
+"520","Self-Esteem",0,1
+"521","Self-Esteem",0,0.833333333333333
+"522","Self-Esteem",0,0.5
+"523","Conspicuous Consumption",0,0.916666666666667
+"524","Placebo",1,0.25
+"525","Placebo",0,0.5
+"526","Placebo",0,0.5
+"527","Placebo",0,0.5
+"528","Placebo",1,0.333333333333333
+"529","Social Approval",1,0.833333333333333
+"530","Placebo",1,0.833333333333333
+"531","Conspicuous Consumption",0,0.666666666666667
+"532","Self-Esteem",1,0.0833333333333333
+"533","Placebo",1,0.5
+"534","Social Approval",1,0.916666666666667
+"535","Conspicuous Consumption",0,0.583333333333333
+"536","Placebo",0,0.0833333333333333
+"537","Self-Esteem",1,0.75
+"538","Placebo",1,0.416666666666667
+"539","Placebo",0,0.916666666666667
+"540","Placebo",0,0.75
+"541","Concrete",0,0.666666666666667
+"542","Social Approval",0,0.75
+"543","Placebo",1,0.166666666666667
+"544","Self-Esteem",1,0.666666666666667
+"545","Placebo",0,0.583333333333333
+"546","Self-Esteem",0,0.75
+"547","Concrete",1,0.25
+"548","Conspicuous Consumption",1,0.75
+"549","Placebo",1,0.916666666666667
+"550","Self-Esteem",1,0.333333333333333
+"551","Social Approval",1,0.75
+"552","Social Approval",0,0.75
+"553","Placebo",0,0.583333333333333
+"554","Conspicuous Consumption",1,1
+"555","Placebo",1,0.583333333333333
+"556","Conspicuous Consumption",0,1
+"557","Conspicuous Consumption",0,1
+"558","Concrete",1,0.416666666666667
+"559","Self-Esteem",0,0.0833333333333333
+"560","Concrete",0,0.666666666666667
+"561","Social Approval",1,0.666666666666667
+"562","Self-Esteem",1,0.416666666666667
+"563","Social Approval",0,0.5
+"564","Conspicuous Consumption",0,0.416666666666667
+"565","Conspicuous Consumption",1,0.25
+"566","Conspicuous Consumption",1,1
+"567","Placebo",0,0.166666666666667
+"568","Self-Esteem",1,0.333333333333333
+"569","Social Approval",1,1
+"570","Self-Esteem",0,0.666666666666667
+"571","Self-Esteem",1,0.5
+"572","Social Approval",1,0.916666666666667
+"573","Placebo",0,0.75
+"574","Concrete",0,0.666666666666667
+"575","Social Approval",0,0.833333333333333
+"576","Self-Esteem",1,0.583333333333333
+"577","Placebo",0,0.833333333333333
+"578","Concrete",0,0
+"579","Self-Esteem",0,0.666666666666667
+"580","Concrete",0,0.25
+"581","Self-Esteem",0,0.583333333333333
+"582","Conspicuous Consumption",0,0.75
+"583","Self-Esteem",1,0.916666666666667
+"584","Social Approval",0,0.666666666666667
+"585","Social Approval",0,1
+"586","Conspicuous Consumption",0,0.75
+"587","Social Approval",0,0.833333333333333
+"588","Social Approval",0,0.75
+"589","Social Approval",0,0.5
+"590","Concrete",1,0.833333333333333
+"591","Conspicuous Consumption",1,0.666666666666667
+"592","Placebo",0,0.833333333333333
+"593","Social Approval",1,0.166666666666667
+"594","Conspicuous Consumption",0,0.833333333333333
+"595","Conspicuous Consumption",0,0.25
+"596","Conspicuous Consumption",0,0.5
+"597","Self-Esteem",1,0.333333333333333
+"598","Self-Esteem",0,0.416666666666667
+"599","Self-Esteem",0,0.75
+"600","Social Approval",0,0.75
+"601","Social Approval",0,0.833333333333333
+"602","Conspicuous Consumption",0,1
+"603","Self-Esteem",1,0.333333333333333
+"604","Conspicuous Consumption",1,1
+"605","Self-Esteem",0,0.833333333333333
+"606","Self-Esteem",0,0.25
+"607","Concrete",1,0.666666666666667
+"608","Conspicuous Consumption",0,0.75
+"609","Placebo",1,0.666666666666667
+"610","Social Approval",1,1
+"611","Conspicuous Consumption",1,0.75
+"612","Self-Esteem",1,0.916666666666667
+"613","Concrete",1,0.75
+"614","Concrete",0,0.666666666666667
+"615","Self-Esteem",0,0.5
+"616","Self-Esteem",1,0.75
+"617","Self-Esteem",0,0.416666666666667
+"618","Conspicuous Consumption",1,0.416666666666667
+"619","Self-Esteem",1,0.666666666666667
+"620","Self-Esteem",1,0.916666666666667
+"621","Concrete",1,0.916666666666667
+"622","Placebo",1,0.416666666666667
+"623","Social Approval",0,0.583333333333333
+"624","Social Approval",0,0
+"625","Social Approval",1,0.416666666666667
+"626","Conspicuous Consumption",1,0.666666666666667
+"627","Placebo",0,0.5
+"628","Placebo",0,0.333333333333333
+"629","Conspicuous Consumption",1,0.75
+"630","Social Approval",0,0.833333333333333
+"631","Placebo",0,0.333333333333333
+"632","Placebo",0,0.5
+"633","Placebo",0,0.833333333333333
+"634","Placebo",1,0.5
+"635","Placebo",0,0.5
+"636","Self-Esteem",0,0.833333333333333
+"637","Concrete",0,0.583333333333333
+"638","Placebo",1,0.0833333333333333
+"639","Placebo",0,0.75
+"640","Placebo",1,0.166666666666667
+"641","Placebo",1,0.75
+"642","Concrete",0,1
+"643","Social Approval",0,0.416666666666667
+"644","Conspicuous Consumption",0,0.166666666666667
+"645","Concrete",1,0.5
+"646","Social Approval",0,0.333333333333333
+"647","Conspicuous Consumption",0,0.25
+"648","Social Approval",0,0.833333333333333
+"649","Social Approval",1,0.666666666666667
+"650","Placebo",0,0.5
+"651","Self-Esteem",1,0.583333333333333
+"652","Conspicuous Consumption",0,0.5
+"653","Social Approval",1,1
+"654","Concrete",1,1
+"655","Concrete",0,0
+"656","Concrete",0,0.333333333333333
+"657","Concrete",1,0.916666666666667
+"658","Self-Esteem",1,0.333333333333333
+"659","Conspicuous Consumption",0,0.75
+"660","Conspicuous Consumption",0,0.5
+"661","Placebo",0,0.666666666666667
+"662","Self-Esteem",0,0.583333333333333
+"663","Self-Esteem",0,0.833333333333333
+"664","Self-Esteem",0,0.416666666666667
+"665","Conspicuous Consumption",0,0.5
+"666","Conspicuous Consumption",1,0.833333333333333
+"667","Social Approval",0,0.416666666666667
+"668","Self-Esteem",0,0.75
+"669","Placebo",1,0.5
+"670","Placebo",1,0.5
+"671","Self-Esteem",0,0.666666666666667
+"672","Conspicuous Consumption",0,0.5
+"673","Self-Esteem",1,0.25
+"674","Self-Esteem",1,0.0833333333333333
+"675","Placebo",0,0.333333333333333
+"676","Self-Esteem",1,0.0833333333333333
+"677","Conspicuous Consumption",1,1
+"678","Social Approval",0,0.583333333333333
+"679","Self-Esteem",0,0.166666666666667
+"680","Concrete",0,0.75
+"681","Conspicuous Consumption",1,0.583333333333333
+"682","Conspicuous Consumption",1,0.333333333333333
+"683","Conspicuous Consumption",1,0.416666666666667
+"684","Conspicuous Consumption",0,0.333333333333333
+"685","Conspicuous Consumption",1,0.5
+"686","Concrete",1,0.833333333333333
+"687","Self-Esteem",0,0.583333333333333
+"688","Conspicuous Consumption",1,0.75
+"689","Placebo",0,0.666666666666667
+"690","Placebo",0,0.333333333333333
+"691","Social Approval",1,0.666666666666667
+"692","Concrete",1,0.5
+"693","Conspicuous Consumption",0,0.0833333333333333
+"694","Self-Esteem",0,0.333333333333333
+"695","Social Approval",0,0.5
+"696","Concrete",0,0.5
+"697","Self-Esteem",0,0.833333333333333
+"698","Conspicuous Consumption",0,0.5
+"699","Social Approval",1,0.583333333333333
+"700","Placebo",1,0.75
+"701","Conspicuous Consumption",0,0.333333333333333
+"702","Self-Esteem",1,0.333333333333333
+"703","Conspicuous Consumption",0,0.833333333333333
+"704","Concrete",1,0.333333333333333
+"705","Placebo",1,0
+"706","Social Approval",0,0
+"707","Placebo",0,0.666666666666667
+"708","Concrete",1,0.666666666666667
+"709","Concrete",0,0.666666666666667
+"710","Placebo",1,0.5
+"711","Placebo",1,0.5
+"712","Conspicuous Consumption",1,0.0833333333333333
+"713","Social Approval",1,0.916666666666667
+"714","Social Approval",0,0.333333333333333
+"715","Placebo",0,0.666666666666667
+"716","Concrete",0,0.666666666666667
+"717","Self-Esteem",1,0.916666666666667
+"718","Social Approval",0,0
+"719","Social Approval",0,0.75
+"720","Concrete",0,0.583333333333333
+"721","Concrete",0,0.666666666666667
+"722","Social Approval",1,0.833333333333333
+"723","Self-Esteem",1,0.833333333333333
+"724","Placebo",0,0.916666666666667
+"725","Self-Esteem",1,0.833333333333333
+"726","Self-Esteem",0,0.25
+"727","Conspicuous Consumption",0,0.583333333333333
+"728","Concrete",1,0.75
+"729","Conspicuous Consumption",0,0.75
+"730","Self-Esteem",0,0.333333333333333
+"731","Conspicuous Consumption",0,0.5
+"732","Self-Esteem",0,0.416666666666667
+"733","Self-Esteem",0,0.75
+"734","Placebo",1,0
+"735","Social Approval",0,0.5
+"736","Self-Esteem",0,1
+"737","Social Approval",1,0.75
+"738","Self-Esteem",1,0.0833333333333333
+"739","Concrete",1,1
+"740","Self-Esteem",0,0.416666666666667
+"741","Social Approval",1,0.833333333333333
+"742","Placebo",0,0.583333333333333
+"743","Conspicuous Consumption",1,0.5
+"744","Concrete",0,0.666666666666667
+"745","Placebo",0,0.333333333333333
+"746","Self-Esteem",0,0.583333333333333
+"747","Conspicuous Consumption",0,1
+"748","Concrete",0,1
+"749","Concrete",0,0.916666666666667
+"750","Self-Esteem",0,0.666666666666667
+"751","Self-Esteem",0,0.583333333333333
+"752","Concrete",1,1
+"753","Concrete",0,0.25
+"754","Conspicuous Consumption",0,0.583333333333333
+"755","Concrete",1,0.916666666666667
+"756","Self-Esteem",0,0.333333333333333
+"757","Self-Esteem",1,0.583333333333333
+"758","Placebo",0,0.25
+"759","Concrete",1,0.25
+"760","Conspicuous Consumption",1,0.833333333333333
+"761","Self-Esteem",0,0.75
+"762","Self-Esteem",0,0.416666666666667
+"763","Social Approval",1,1
+"764","Concrete",0,0.583333333333333
+"765","Conspicuous Consumption",1,0.916666666666667
+"766","Concrete",1,0.75
+"767","Social Approval",1,0.75
+"768","Placebo",0,0.833333333333333
+"769","Conspicuous Consumption",1,1
+"770","Concrete",1,0.833333333333333
+"771","Placebo",0,0.166666666666667
+"772","Self-Esteem",1,0.333333333333333
+"773","Placebo",0,0.25
+"774","Placebo",1,0.666666666666667
+"775","Social Approval",0,0.25
+"776","Social Approval",0,0.833333333333333
+"777","Social Approval",0,0.5
+"778","Social Approval",1,0.666666666666667
+"779","Social Approval",0,0.916666666666667
+"780","Social Approval",1,0.916666666666667
+"781","Conspicuous Consumption",0,0.916666666666667
+"782","Placebo",0,0.5
+"783","Social Approval",1,0.416666666666667
+"784","Placebo",1,0.833333333333333
+"785","Social Approval",0,0.833333333333333
+"786","Self-Esteem",1,0.75
+"787","Placebo",0,1
+"788","Conspicuous Consumption",1,1
+"789","Social Approval",0,0.333333333333333
+"790","Conspicuous Consumption",1,0.666666666666667
+"791","Placebo",0,0.25
+"792","Self-Esteem",0,0.666666666666667
+"793","Conspicuous Consumption",1,0.916666666666667
+"794","Placebo",0,0.5
+"795","Placebo",0,0.75
+"796","Social Approval",1,1
+"797","Placebo",0,0.416666666666667
+"798","Placebo",0,0.833333333333333
+"799","Conspicuous Consumption",0,0.5
+"800","Social Approval",0,0.333333333333333
+"801","Self-Esteem",1,0.75
+"802","Social Approval",1,0.833333333333333
+"803","Conspicuous Consumption",0,0.666666666666667
+"804","Conspicuous Consumption",0,0.583333333333333
+"805","Social Approval",0,0.25
+"806","Placebo",1,0.666666666666667
+"807","Concrete",0,0.75
+"808","Placebo",0,0.75
+"809","Conspicuous Consumption",1,0.833333333333333
+"810","Concrete",1,1
+"811","Placebo",1,0.833333333333333
+"812","Self-Esteem",1,1
+"813","Conspicuous Consumption",0,0.5
+"814","Placebo",1,1
+"815","Social Approval",0,0.75
+"816","Social Approval",0,0.916666666666667
+"817","Concrete",0,1
+"818","Self-Esteem",0,0.75
+"819","Concrete",0,0.25
+"820","Concrete",0,0.583333333333333
+"821","Placebo",0,0.666666666666667
+"822","Social Approval",1,0.583333333333333
+"823","Social Approval",1,0.583333333333333
+"824","Placebo",0,0.416666666666667
+"825","Conspicuous Consumption",0,0.75
+"826","Concrete",0,0.75
+"827","Placebo",1,0.333333333333333
+"828","Social Approval",1,0.833333333333333
+"829","Conspicuous Consumption",0,0.166666666666667
+"830","Social Approval",0,0.833333333333333
+"831","Social Approval",0,0.333333333333333
+"832","Social Approval",0,0.333333333333333
+"833","Self-Esteem",1,0.5
+"834","Conspicuous Consumption",1,0.833333333333333
+"835","Social Approval",1,0.666666666666667
+"836","Placebo",0,0.25
+"837","Concrete",0,0.583333333333333
+"838","Self-Esteem",1,0.666666666666667
+"839","Conspicuous Consumption",0,1
+"840","Self-Esteem",0,0.833333333333333
+"841","Self-Esteem",1,0.666666666666667
+"842","Placebo",0,0.75
+"843","Placebo",0,0.333333333333333
+"844","Placebo",0,0.333333333333333
+"845","Social Approval",0,0.666666666666667
+"846","Self-Esteem",1,0.75
+"847","Placebo",0,0.583333333333333
+"848","Placebo",1,0.75
+"849","Placebo",0,0.416666666666667
+"850","Self-Esteem",0,0.0833333333333333
+"851","Social Approval",0,0.583333333333333
+"852","Self-Esteem",0,0.25
+"853","Self-Esteem",1,0.25
+"854","Social Approval",1,0.5
+"855","Placebo",1,0.75
+"856","Conspicuous Consumption",1,0.75
+"857","Conspicuous Consumption",0,0.333333333333333
+"858","Conspicuous Consumption",0,0.666666666666667
+"859","Placebo",1,1
+"860","Placebo",0,0.833333333333333
+"861","Concrete",1,0.0833333333333333
+"862","Self-Esteem",1,0.916666666666667
+"863","Self-Esteem",0,0.833333333333333
+"864","Conspicuous Consumption",0,0.333333333333333
+"865","Conspicuous Consumption",0,0.666666666666667
+"866","Concrete",0,0.666666666666667
+"867","Placebo",0,0.916666666666667
+"868","Social Approval",0,1
+"869","Conspicuous Consumption",0,1
+"870","Concrete",1,0.666666666666667
+"871","Concrete",0,0.333333333333333
+"872","Conspicuous Consumption",1,0.75
+"873","Placebo",0,0.75
+"874","Social Approval",0,0.333333333333333
+"875","Self-Esteem",0,0.416666666666667
+"876","Self-Esteem",0,0.25
+"877","Placebo",0,1
+"878","Self-Esteem",0,0.25
+"879","Social Approval",0,1
+"880","Placebo",0,0.5
+"881","Conspicuous Consumption",0,0.583333333333333
+"882","Conspicuous Consumption",0,0.416666666666667
+"883","Placebo",0,0.666666666666667
+"884","Concrete",1,0.833333333333333
+"885","Social Approval",0,0.583333333333333
+"886","Concrete",1,0.75
+"887","Conspicuous Consumption",0,0.583333333333333
+"888","Placebo",0,0.25
+"889","Self-Esteem",0,0.5
+"890","Self-Esteem",1,0.833333333333333
+"891","Self-Esteem",1,0.416666666666667
+"892","Self-Esteem",1,0.916666666666667
+"893","Social Approval",0,0.5
+"894","Conspicuous Consumption",0,0.333333333333333
+"895","Concrete",0,0.75
+"896","Concrete",1,0.0833333333333333
+"897","Social Approval",0,1
+"898","Social Approval",1,0.5
+"899","Social Approval",0,0.583333333333333
+"900","Conspicuous Consumption",1,0.916666666666667
+"901","Self-Esteem",0,0.666666666666667
+"902","Concrete",1,0.75
+"903","Concrete",1,0.166666666666667
+"904","Social Approval",1,0.583333333333333
+"905","Placebo",0,0.25
+"906","Conspicuous Consumption",1,1
+"907","Placebo",1,0.333333333333333
+"908","Social Approval",0,0.916666666666667
+"909","Placebo",0,1
+"910","Concrete",1,0.25
+"911","Placebo",0,0
+"912","Social Approval",0,0.25
+"913","Concrete",0,0.916666666666667
+"914","Self-Esteem",1,0.333333333333333
+"915","Conspicuous Consumption",1,0.333333333333333
+"916","Concrete",0,0.166666666666667
+"917","Conspicuous Consumption",1,1
+"918","Self-Esteem",0,0.666666666666667
+"919","Social Approval",1,0.416666666666667
+"920","Conspicuous Consumption",0,0.166666666666667
+"921","Placebo",0,0.333333333333333
+"922","Social Approval",1,0.833333333333333
+"923","Placebo",1,1
+"924","Social Approval",1,0.666666666666667
+"925","Concrete",1,0.916666666666667
+"926","Conspicuous Consumption",1,0.5
+"927","Conspicuous Consumption",1,0.916666666666667
+"928","Placebo",0,0.75
+"929","Conspicuous Consumption",0,0.583333333333333
+"930","Self-Esteem",1,0.5
+"931","Conspicuous Consumption",0,0.416666666666667
+"932","Placebo",1,0.75
+"933","Concrete",0,0.416666666666667
+"934","Conspicuous Consumption",0,0.666666666666667
+"935","Conspicuous Consumption",0,0.833333333333333
+"936","Conspicuous Consumption",0,0.916666666666667
+"937","Placebo",0,0.666666666666667
+"938","Placebo",1,0.75
+"939","Social Approval",1,0.916666666666667
+"940","Conspicuous Consumption",0,0.833333333333333
+"941","Self-Esteem",1,0.75
+"942","Conspicuous Consumption",1,0.25
+"943","Self-Esteem",0,0.416666666666667
+"944","Self-Esteem",1,0.416666666666667
+"945","Concrete",0,0.833333333333333
+"946","Social Approval",1,1
+"947","Self-Esteem",1,1
+"948","Placebo",1,0.5
+"949","Social Approval",1,0.916666666666667
+"950","Conspicuous Consumption",0,0.583333333333333
+"951","Concrete",0,0.916666666666667
+"952","Placebo",0,0.666666666666667
+"953","Social Approval",0,0.416666666666667
+"954","Placebo",0,0.583333333333333
+"955","Placebo",1,0.583333333333333
+"956","Social Approval",0,0.75
+"957","Self-Esteem",0,0.75
+"958","Social Approval",1,1
+"959","Placebo",0,0.75
+"960","Concrete",1,0.75
+"961","Self-Esteem",0,0.916666666666667
+"962","Self-Esteem",1,0.916666666666667
+"963","Social Approval",0,0.0833333333333333
+"964","Social Approval",0,0.583333333333333
+"965","Self-Esteem",1,0.833333333333333
+"966","Conspicuous Consumption",1,0.25
+"967","Conspicuous Consumption",1,0.5
+"968","Conspicuous Consumption",0,0.416666666666667
+"969","Self-Esteem",1,0.916666666666667
+"970","Conspicuous Consumption",0,1
+"971","Self-Esteem",0,0.416666666666667
+"972","Concrete",0,0.75
+"973","Placebo",1,0.333333333333333
+"974","Conspicuous Consumption",1,0.583333333333333
+"975","Concrete",0,0.416666666666667
+"976","Conspicuous Consumption",0,0.333333333333333
+"977","Self-Esteem",1,1
+"978","Self-Esteem",0,0.583333333333333
+"979","Conspicuous Consumption",1,0.916666666666667
+"980","Self-Esteem",1,0.75
+"981","Concrete",1,0.916666666666667
+"982","Conspicuous Consumption",1,0.75
+"983","Concrete",0,0.916666666666667
+"984","Self-Esteem",0,0.416666666666667
+"985","Concrete",1,0.416666666666667
+"986","Self-Esteem",0,0.583333333333333
+"987","Self-Esteem",1,0.833333333333333
+"988","Self-Esteem",0,0.666666666666667
+"989","Placebo",0,0.5
+"990","Placebo",0,0.583333333333333
+"991","Placebo",0,0.916666666666667
+"992","Self-Esteem",1,0.333333333333333
+"993","Self-Esteem",0,0.833333333333333
+"994","Self-Esteem",0,1
+"995","Concrete",0,1
+"996","Conspicuous Consumption",1,1
+"997","Concrete",0,1
+"998","Self-Esteem",0,0.916666666666667
+"999","Placebo",0,0.583333333333333
+"1000","Concrete",0,1
+"1001","Placebo",1,0.25
+"1002","Conspicuous Consumption",0,0.916666666666667
+"1003","Placebo",0,0.25
+"1004","Self-Esteem",1,0.666666666666667
+"1005","Concrete",1,1
+"1006","Placebo",0,0.833333333333333
+"1007","Conspicuous Consumption",1,0.666666666666667
+"1008","Placebo",1,0.583333333333333
+"1009","Conspicuous Consumption",0,0.5
+"1010","Social Approval",1,0.833333333333333
+"1011","Concrete",1,0.583333333333333
+"1012","Self-Esteem",1,0.666666666666667
+"1013","Conspicuous Consumption",1,1
+"1014","Conspicuous Consumption",1,0.583333333333333
+"1015","Placebo",1,0.583333333333333
+"1016","Self-Esteem",0,0.916666666666667
+"1017","Social Approval",1,0.833333333333333
+"1018","Conspicuous Consumption",1,0.916666666666667
+"1019","Conspicuous Consumption",0,0.416666666666667
+"1020","Self-Esteem",1,1
+"1021","Conspicuous Consumption",0,1
+"1022","Social Approval",0,0.583333333333333
+"1023","Self-Esteem",0,0.916666666666667
+"1024","Conspicuous Consumption",0,0.166666666666667
+"1025","Self-Esteem",1,0.833333333333333
+"1026","Concrete",1,0.75
+"1027","Conspicuous Consumption",1,1
+"1028","Self-Esteem",0,1
+"1029","Self-Esteem",1,0.75
+"1030","Conspicuous Consumption",1,0.333333333333333
+"1031","Concrete",1,0.833333333333333
+"1032","Concrete",1,0.75
+"1033","Concrete",0,0.5
+"1034","Self-Esteem",1,0.5
+"1035","Concrete",0,0.583333333333333
+"1036","Concrete",0,0.833333333333333
+"1037","Concrete",1,0.583333333333333
+"1038","Concrete",0,0.416666666666667
+"1039","Self-Esteem",0,1
+"1040","Conspicuous Consumption",1,0.583333333333333
+"1041","Self-Esteem",1,0.583333333333333
+"1042","Social Approval",0,1
+"1043","Conspicuous Consumption",1,0.666666666666667
+"1044","Conspicuous Consumption",0,0.5
+"1045","Concrete",0,0.583333333333333
+"1046","Conspicuous Consumption",0,0.583333333333333
+"1047","Concrete",1,0.75
+"1048","Placebo",1,0.916666666666667
+"1049","Self-Esteem",1,0.916666666666667
+"1050","Concrete",1,1
+"1051","Conspicuous Consumption",0,0.25
+"1052","Social Approval",0,0.416666666666667
+"1053","Placebo",0,0.833333333333333
+"1054","Conspicuous Consumption",1,0.666666666666667
+"1055","Self-Esteem",0,0.916666666666667
+"1056","Social Approval",1,1
+"1057","Placebo",0,0.583333333333333
+"1058","Placebo",1,0.5
+"1059","Social Approval",1,0.333333333333333
+"1060","Social Approval",1,0.166666666666667
+"1061","Social Approval",0,0.416666666666667
+"1062","Placebo",0,0.666666666666667
+"1063","Concrete",0,0.416666666666667
+"1064","Social Approval",0,0.416666666666667
+"1065","Social Approval",0,0.5
+"1066","Concrete",1,0.666666666666667
+"1067","Concrete",1,0.833333333333333
+"1068","Placebo",0,0
+"1069","Self-Esteem",1,0.416666666666667
+"1070","Placebo",0,0.75
+"1071","Social Approval",1,0.583333333333333
+"1072","Placebo",1,0.75
+"1073","Self-Esteem",1,0.833333333333333
+"1074","Self-Esteem",0,0.5
+"1075","Self-Esteem",0,0
+"1076","Self-Esteem",1,0.25
+"1077","Self-Esteem",1,0.916666666666667
+"1078","Placebo",1,0.916666666666667
+"1079","Concrete",0,0.666666666666667
+"1080","Social Approval",1,0.916666666666667
+"1081","Conspicuous Consumption",0,0.166666666666667
+"1082","Social Approval",1,0.833333333333333
+"1083","Self-Esteem",0,1
+"1084","Concrete",1,1
+"1085","Concrete",0,0.833333333333333
+"1086","Placebo",0,0.5
+"1087","Self-Esteem",0,0.333333333333333
+"1088","Concrete",0,0.583333333333333
+"1089","Self-Esteem",0,0.833333333333333
+"1090","Self-Esteem",1,1
+"1091","Conspicuous Consumption",1,0.75
+"1092","Social Approval",0,0.666666666666667
+"1093","Placebo",1,0.416666666666667
+"1094","Concrete",0,1
+"1095","Self-Esteem",0,0.5
+"1096","Conspicuous Consumption",0,0.916666666666667
+"1097","Social Approval",1,0.25
+"1098","Placebo",0,0.166666666666667
+"1099","Self-Esteem",0,0.25
+"1100","Concrete",0,0.666666666666667
+"1101","Placebo",1,0.0833333333333333
+"1102","Placebo",0,0.833333333333333
+"1103","Concrete",0,0.75
+"1104","Self-Esteem",1,0.416666666666667
+"1105","Conspicuous Consumption",1,1
+"1106","Conspicuous Consumption",1,0.333333333333333
+"1107","Conspicuous Consumption",1,0.416666666666667
+"1108","Social Approval",0,0.833333333333333
+"1109","Placebo",0,0.583333333333333
+"1110","Self-Esteem",1,1
+"1111","Concrete",1,0.833333333333333
+"1112","Social Approval",1,0.5
+"1113","Conspicuous Consumption",0,0.583333333333333
+"1114","Placebo",1,0.833333333333333
+"1115","Placebo",1,0.416666666666667
+"1116","Self-Esteem",0,0.25
+"1117","Concrete",0,0.333333333333333
+"1118","Concrete",1,0.416666666666667
+"1119","Social Approval",0,1
+"1120","Social Approval",0,1
+"1121","Conspicuous Consumption",1,0.25
+"1122","Concrete",0,1
+"1123","Conspicuous Consumption",0,0.416666666666667
+"1124","Social Approval",1,0.416666666666667
+"1125","Placebo",0,0.666666666666667
+"1126","Concrete",0,0.25
+"1127","Concrete",0,1
+"1128","Conspicuous Consumption",0,0.416666666666667
+"1129","Self-Esteem",0,0.75
+"1130","Conspicuous Consumption",0,1
+"1131","Self-Esteem",1,0
+"1132","Placebo",0,0.583333333333333
+"1133","Placebo",0,0.166666666666667
+"1134","Conspicuous Consumption",1,1
+"1135","Placebo",0,0.333333333333333
+"1136","Conspicuous Consumption",0,1
+"1137","Social Approval",1,0.166666666666667
+"1138","Social Approval",0,0.416666666666667
+"1139","Placebo",0,0.25
+"1140","Conspicuous Consumption",0,0.75
+"1141","Conspicuous Consumption",0,0.333333333333333
+"1142","Self-Esteem",1,1
+"1143","Conspicuous Consumption",0,0.75
+"1144","Concrete",1,0.166666666666667
+"1145","Placebo",1,1
+"1146","Social Approval",0,0.416666666666667
+"1147","Social Approval",0,0.75
+"1148","Conspicuous Consumption",0,0.166666666666667
+"1149","Social Approval",1,1
+"1150","Conspicuous Consumption",0,0.25
+"1151","Placebo",0,0
+"1152","Concrete",1,1
+"1153","Concrete",0,1
+"1154","Placebo",0,1
+"1155","Placebo",1,0.583333333333333
+"1156","Self-Esteem",0,0.833333333333333
+"1157","Placebo",1,0.666666666666667
+"1158","Social Approval",1,0.0833333333333333
+"1159","Conspicuous Consumption",0,0.75
+"1160","Concrete",0,0.916666666666667
+"1161","Social Approval",1,0.75
+"1162","Self-Esteem",1,0.833333333333333
+"1163","Concrete",0,1
+"1164","Placebo",0,0.416666666666667
+"1165","Placebo",0,1
+"1166","Conspicuous Consumption",0,0.666666666666667
+"1167","Placebo",1,0.666666666666667
+"1168","Social Approval",0,0.916666666666667
+"1169","Conspicuous Consumption",0,0.666666666666667
+"1170","Placebo",1,1
+"1171","Placebo",0,0.666666666666667
+"1172","Concrete",0,1
+"1173","Social Approval",0,0.833333333333333
+"1174","Social Approval",0,0.5
+"1175","Concrete",0,0.666666666666667
+"1176","Concrete",0,0.833333333333333
+"1177","Self-Esteem",0,0.75
+"1178","Concrete",0,0.583333333333333
+"1179","Social Approval",1,1
+"1180","Conspicuous Consumption",1,0.583333333333333
+"1181","Conspicuous Consumption",0,1
+"1182","Self-Esteem",1,0.833333333333333
+"1183","Placebo",0,0.666666666666667
+"1184","Placebo",1,0.833333333333333
+"1185","Placebo",0,1
+"1186","Concrete",0,0.5
+"1187","Concrete",1,0.666666666666667
+"1188","Self-Esteem",1,0.333333333333333
+"1189","Concrete",0,0
+"1190","Social Approval",0,0.416666666666667
+"1191","Placebo",0,0.333333333333333
+"1192","Social Approval",0,0.916666666666667
+"1193","Conspicuous Consumption",1,0.5
+"1194","Placebo",1,1
+"1195","Social Approval",0,0.75
+"1196","Placebo",1,0.333333333333333
+"1197","Concrete",0,0.916666666666667
+"1198","Concrete",0,0.583333333333333
+"1199","Conspicuous Consumption",1,0.833333333333333
+"1200","Self-Esteem",0,0.416666666666667
+"1201","Placebo",0,0.833333333333333
+"1202","Concrete",1,0.833333333333333
+"1203","Concrete",0,0.666666666666667
+"1204","Social Approval",0,1
+"1205","Placebo",1,0.5
+"1206","Social Approval",0,0.0833333333333333
+"1207","Concrete",1,0.833333333333333
+"1208","Social Approval",1,0.583333333333333
+"1209","Conspicuous Consumption",0,0.25
+"1210","Social Approval",0,0.25
+"1211","Placebo",0,0.75
+"1212","Social Approval",1,0.833333333333333
+"1213","Concrete",1,0.333333333333333
+"1214","Placebo",0,0.416666666666667
+"1215","Conspicuous Consumption",0,0.166666666666667
+"1216","Social Approval",0,0.416666666666667
+"1217","Placebo",0,1
+"1218","Placebo",1,0.583333333333333
+"1219","Concrete",1,1
+"1220","Placebo",0,0.666666666666667
+"1221","Placebo",0,0.416666666666667
+"1222","Concrete",0,0.5
+"1223","Concrete",1,0.0833333333333333
+"1224","Self-Esteem",0,0.5
+"1225","Self-Esteem",0,0.5
+"1226","Self-Esteem",0,0.333333333333333
+"1227","Self-Esteem",0,0.333333333333333
+"1228","Conspicuous Consumption",1,0.833333333333333
+"1229","Placebo",0,1
+"1230","Social Approval",1,1
+"1231","Social Approval",0,0.666666666666667
+"1232","Conspicuous Consumption",0,1
+"1233","Social Approval",1,0.916666666666667
+"1234","Conspicuous Consumption",1,0.583333333333333
+"1235","Placebo",1,0.416666666666667
+"1236","Concrete",0,0.5
+"1237","Social Approval",1,1
+"1238","Placebo",0,1
+"1239","Placebo",0,0.916666666666667
+"1240","Social Approval",0,0.916666666666667
+"1241","Conspicuous Consumption",0,0.416666666666667
+"1242","Conspicuous Consumption",0,0.583333333333333
+"1243","Conspicuous Consumption",0,0.25
+"1244","Social Approval",1,0.416666666666667
+"1245","Social Approval",0,1
+"1246","Concrete",0,0.833333333333333
+"1247","Placebo",0,0.666666666666667
+"1248","Self-Esteem",1,0.75
+"1249","Concrete",1,1
+"1250","Conspicuous Consumption",1,0.666666666666667
+"1251","Placebo",1,1
+"1252","Self-Esteem",0,0.666666666666667
+"1253","Self-Esteem",1,0.833333333333333
+"1254","Placebo",1,0.666666666666667
+"1255","Concrete",0,0.416666666666667
+"1256","Social Approval",0,0.833333333333333
+"1257","Social Approval",0,0.5
+"1258","Social Approval",0,0.583333333333333
+"1259","Conspicuous Consumption",0,0.583333333333333
+"1260","Conspicuous Consumption",1,1
+"1261","Concrete",1,0.333333333333333
+"1262","Conspicuous Consumption",0,0.666666666666667
+"1263","Conspicuous Consumption",0,1
+"1264","Social Approval",1,0.916666666666667
+"1265","Concrete",1,0.666666666666667
+"1266","Self-Esteem",1,0.583333333333333
+"1267","Self-Esteem",1,0.75
+"1268","Conspicuous Consumption",1,1
+"1269","Conspicuous Consumption",0,0.75
+"1270","Conspicuous Consumption",0,0.25
+"1271","Placebo",0,0.833333333333333
+"1272","Social Approval",0,1
+"1273","Concrete",0,0.583333333333333
+"1274","Conspicuous Consumption",1,0.916666666666667
+"1275","Placebo",0,0.833333333333333
+"1276","Conspicuous Consumption",1,0.583333333333333
+"1277","Self-Esteem",1,0.333333333333333
+"1278","Social Approval",0,0.166666666666667
+"1279","Self-Esteem",0,0.666666666666667
+"1280","Concrete",0,0.666666666666667
+"1281","Concrete",0,0.666666666666667
+"1282","Self-Esteem",0,0.833333333333333
+"1283","Concrete",0,0.416666666666667
+"1284","Concrete",0,0.666666666666667
+"1285","Social Approval",0,1
+"1286","Concrete",1,1
+"1287","Placebo",1,0.666666666666667
+"1288","Self-Esteem",1,0.5
+"1289","Social Approval",1,0.416666666666667
+"1290","Self-Esteem",0,1
+"1291","Conspicuous Consumption",0,0.666666666666667
+"1292","Concrete",1,0.916666666666667
+"1293","Placebo",0,0.583333333333333
+"1294","Concrete",1,0.5
+"1295","Self-Esteem",0,1
+"1296","Concrete",1,0.583333333333333
+"1297","Conspicuous Consumption",1,0.5
+"1298","Conspicuous Consumption",1,0.416666666666667
+"1299","Conspicuous Consumption",0,1
+"1300","Conspicuous Consumption",0,0.666666666666667
+"1301","Self-Esteem",1,1
+"1302","Placebo",1,1
+"1303","Self-Esteem",0,0
+"1304","Placebo",1,0.75
+"1305","Conspicuous Consumption",1,1
+"1306","Placebo",0,0.416666666666667
+"1307","Conspicuous Consumption",0,0.416666666666667
+"1308","Self-Esteem",0,0.75
+"1309","Placebo",1,0.583333333333333
+"1310","Self-Esteem",0,0.166666666666667
+"1311","Conspicuous Consumption",0,0.583333333333333
+"1312","Social Approval",0,1
+"1313","Conspicuous Consumption",0,0.333333333333333
+"1314","Self-Esteem",1,0.583333333333333
+"1315","Placebo",0,0.833333333333333
+"1316","Self-Esteem",1,0.916666666666667
+"1317","Social Approval",0,0.25
+"1318","Self-Esteem",1,0.666666666666667
+"1319","Concrete",0,0.416666666666667
+"1320","Concrete",1,0.666666666666667
+"1321","Self-Esteem",0,1
+"1322","Concrete",0,0.833333333333333
+"1323","Social Approval",0,0.416666666666667
+"1324","Concrete",1,1
+"1325","Social Approval",0,0.416666666666667
+"1326","Conspicuous Consumption",0,1
+"1327","Placebo",1,0.5
+"1328","Placebo",1,0.25
+"1329","Conspicuous Consumption",1,1
+"1330","Self-Esteem",1,0.5
+"1331","Conspicuous Consumption",1,1
+"1332","Concrete",1,1
+"1333","Concrete",0,0.833333333333333
+"1334","Social Approval",1,1
+"1335","Self-Esteem",1,0.583333333333333
+"1336","Social Approval",0,0.916666666666667
+"1337","Social Approval",1,1
+"1338","Self-Esteem",0,0.666666666666667
+"1339","Social Approval",0,0.916666666666667
+"1340","Placebo",1,0.25
+"1341","Concrete",1,0.833333333333333
+"1342","Placebo",0,1
+"1343","Social Approval",0,0.666666666666667
+"1344","Self-Esteem",0,0.25
+"1345","Social Approval",1,0.166666666666667
+"1346","Conspicuous Consumption",1,0.833333333333333
+"1347","Placebo",1,1
+"1348","Concrete",0,1
+"1349","Social Approval",1,0.916666666666667
+"1350","Conspicuous Consumption",0,0
+"1351","Conspicuous Consumption",1,1
+"1352","Placebo",1,0.166666666666667
+"1353","Self-Esteem",1,1
+"1354","Self-Esteem",0,0.666666666666667
+"1355","Social Approval",1,0.833333333333333
+"1356","Placebo",0,0.833333333333333
+"1357","Placebo",1,0.416666666666667
+"1358","Concrete",0,0.416666666666667
+"1359","Concrete",0,0.583333333333333
+"1360","Social Approval",0,0
+"1361","Placebo",1,0.583333333333333
+"1362","Placebo",1,0.75
+"1363","Self-Esteem",0,0.666666666666667
+"1364","Conspicuous Consumption",1,1
+"1365","Concrete",0,0.416666666666667
+"1366","Concrete",0,0.583333333333333
+"1367","Concrete",0,0.666666666666667
+"1368","Concrete",1,0.75
+"1369","Concrete",0,0.833333333333333
+"1370","Social Approval",0,0.333333333333333
+"1371","Conspicuous Consumption",0,0.5
+"1372","Self-Esteem",0,0.916666666666667
+"1373","Conspicuous Consumption",0,0.416666666666667
+"1374","Social Approval",1,0.916666666666667
+"1375","Social Approval",1,0.916666666666667
+"1376","Social Approval",1,0.5
+"1377","Conspicuous Consumption",0,0.833333333333333
+"1378","Conspicuous Consumption",0,0.75
+"1379","Social Approval",1,1
+"1380","Social Approval",0,0.333333333333333
+"1381","Placebo",1,0.666666666666667
+"1382","Placebo",0,0.75
+"1383","Concrete",1,0
+"1384","Self-Esteem",1,1
+"1385","Conspicuous Consumption",1,0.5
+"1386","Placebo",0,0.333333333333333
+"1387","Concrete",0,0.5
+"1388","Social Approval",1,1
+"1389","Conspicuous Consumption",1,0.916666666666667
+"1390","Placebo",1,0.416666666666667
+"1391","Social Approval",0,0.5
+"1392","Concrete",1,0.833333333333333
+"1393","Social Approval",0,0
+"1394","Placebo",1,0.666666666666667
+"1395","Concrete",1,0.666666666666667
+"1396","Self-Esteem",0,1
+"1397","Concrete",0,1
+"1398","Concrete",0,0.583333333333333
+"1399","Self-Esteem",0,0.0833333333333333
+"1400","Conspicuous Consumption",0,0.583333333333333
+"1401","Concrete",1,0.666666666666667
+"1402","Conspicuous Consumption",1,1
+"1403","Self-Esteem",0,0.416666666666667
+"1404","Social Approval",0,0.75
+"1405","Conspicuous Consumption",0,1
+"1406","Concrete",0,0.833333333333333
+"1407","Self-Esteem",1,1
+"1408","Concrete",0,0.833333333333333
+"1409","Self-Esteem",0,1
+"1410","Social Approval",1,0.833333333333333
+"1411","Placebo",1,0.166666666666667
+"1412","Self-Esteem",0,0.75
+"1413","Social Approval",0,0.583333333333333
+"1414","Concrete",1,1
+"1415","Conspicuous Consumption",0,0.333333333333333
+"1416","Conspicuous Consumption",1,1
+"1417","Self-Esteem",0,0.916666666666667
+"1418","Self-Esteem",0,0.5
+"1419","Placebo",0,0.5
+"1420","Conspicuous Consumption",0,0.416666666666667
+"1421","Conspicuous Consumption",0,0.25
+"1422","Placebo",1,0.416666666666667
+"1423","Concrete",1,0.916666666666667
+"1424","Conspicuous Consumption",0,0.583333333333333
+"1425","Placebo",1,1
+"1426","Concrete",1,0.666666666666667
+"1427","Placebo",0,0.25
+"1428","Concrete",1,0.583333333333333
+"1429","Placebo",1,0.25
+"1430","Conspicuous Consumption",0,0.833333333333333
+"1431","Social Approval",1,0.916666666666667
+"1432","Self-Esteem",0,0.666666666666667
+"1433","Conspicuous Consumption",1,0.916666666666667
+"1434","Placebo",1,1
+"1435","Concrete",0,0.666666666666667
+"1436","Conspicuous Consumption",0,0.833333333333333
+"1437","Self-Esteem",0,0.666666666666667
+"1438","Self-Esteem",0,0.75
+"1439","Social Approval",0,0.666666666666667
+"1440","Self-Esteem",1,0.583333333333333
+"1441","Social Approval",1,1
+"1442","Conspicuous Consumption",0,0.833333333333333
+"1443","Self-Esteem",0,0.583333333333333
+"1444","Concrete",0,0.583333333333333
+"1445","Concrete",0,0.75
+"1446","Self-Esteem",0,0
+"1447","Concrete",1,0
+"1448","Concrete",0,0.666666666666667
+"1449","Self-Esteem",0,0.833333333333333
+"1450","Placebo",0,0.666666666666667
+"1451","Concrete",1,0.583333333333333
+"1452","Social Approval",1,0.833333333333333
+"1453","Self-Esteem",0,0.916666666666667
+"1454","Placebo",0,0.583333333333333
+"1455","Self-Esteem",0,0.916666666666667
+"1456","Self-Esteem",1,0.75
+"1457","Concrete",1,0.916666666666667
+"1458","Placebo",0,0.666666666666667
+"1459","Social Approval",0,1
+"1460","Concrete",1,0.5
+"1461","Conspicuous Consumption",1,0.583333333333333
+"1462","Social Approval",1,1
+"1463","Conspicuous Consumption",1,0.75
+"1464","Conspicuous Consumption",1,0.916666666666667
+"1465","Social Approval",1,0
+"1466","Conspicuous Consumption",1,0.666666666666667
+"1467","Social Approval",0,0.5
+"1468","Concrete",1,1
+"1469","Placebo",0,0.916666666666667
+"1470","Concrete",0,0.25
+"1471","Placebo",1,0.5
+"1472","Placebo",0,0.666666666666667
+"1473","Concrete",0,0.916666666666667
+"1474","Self-Esteem",0,0.75
+"1475","Concrete",0,0.5
+"1476","Concrete",0,0.75
+"1477","Concrete",1,1
+"1478","Placebo",1,1
+"1479","Concrete",0,0.5
+"1480","Self-Esteem",0,0.583333333333333
+"1481","Concrete",0,0.916666666666667
+"1482","Concrete",0,0.5
+"1483","Self-Esteem",1,0.0833333333333333
+"1484","Concrete",0,0.666666666666667
+"1485","Placebo",0,0
+"1486","Concrete",0,0.916666666666667
+"1487","Social Approval",1,0.833333333333333
+"1488","Social Approval",0,0.333333333333333
+"1489","Conspicuous Consumption",0,0.5
+"1490","Social Approval",0,0.416666666666667
+"1491","Concrete",0,0.416666666666667
+"1492","Placebo",0,0.5
+"1493","Conspicuous Consumption",0,0.833333333333333
+"1494","Self-Esteem",1,0.916666666666667
+"1495","Concrete",1,1
+"1496","Social Approval",0,0.833333333333333
+"1497","Conspicuous Consumption",0,0.0833333333333333
+"1498","Concrete",1,0.833333333333333
+"1499","Social Approval",0,0.25
+"1500","Self-Esteem",1,0.833333333333333
+"1501","Placebo",1,0.5
+"1502","Self-Esteem",0,0.416666666666667
+"1503","Social Approval",0,0.583333333333333
+"1504","Placebo",0,0.666666666666667
+"1505","Conspicuous Consumption",0,0.666666666666667
+"1506","Social Approval",0,0.666666666666667
+"1507","Social Approval",0,0
+"1508","Concrete",1,0.5
+"1509","Self-Esteem",0,0.833333333333333
+"1510","Social Approval",0,0.833333333333333
+"1511","Social Approval",0,0.666666666666667
+"1512","Conspicuous Consumption",0,0.416666666666667
+"1513","Placebo",0,0.416666666666667
+"1514","Self-Esteem",0,0.5
+"1515","Concrete",0,0.5
+"1516","Conspicuous Consumption",1,1
+"1517","Conspicuous Consumption",0,0.333333333333333
+"1518","Conspicuous Consumption",0,0.666666666666667
+"1519","Social Approval",0,0.833333333333333
+"1520","Conspicuous Consumption",0,0.666666666666667
+"1521","Concrete",0,1
+"1523","Concrete",0,0.583333333333333
+"1524","Concrete",0,0.583333333333333
+"1525","Concrete",1,0.833333333333333
+"1526","Self-Esteem",1,0.916666666666667
+"1527","Concrete",1,0.833333333333333
+"1528","Social Approval",0,0.333333333333333
+"1529","Social Approval",1,0.916666666666667
+"1530","Self-Esteem",1,0.833333333333333
+"1531","Placebo",0,0.583333333333333
+"1532","Concrete",1,0.5
+"1533","Conspicuous Consumption",1,1
+"1534","Social Approval",1,0.5
+"1535","Conspicuous Consumption",1,0.916666666666667
+"1536","Conspicuous Consumption",0,0.916666666666667
+"1537","Placebo",1,0.666666666666667
+"1538","Conspicuous Consumption",1,0.583333333333333
+"1539","Conspicuous Consumption",1,0.5
+"1540","Social Approval",0,0.333333333333333
+"1541","Placebo",0,0.916666666666667
+"1542","Social Approval",0,0.916666666666667
+"1543","Self-Esteem",1,0.75
+"1544","Concrete",0,0.333333333333333
+"1545","Self-Esteem",0,0.583333333333333
+"1546","Conspicuous Consumption",0,0
+"1547","Self-Esteem",1,1
+"1548","Placebo",0,0.916666666666667
+"1549","Self-Esteem",0,0.833333333333333
+"1550","Placebo",0,1
+"1551","Social Approval",1,1
+"1552","Conspicuous Consumption",0,0
+"1553","Concrete",1,1
+"1554","Self-Esteem",0,1
+"1555","Conspicuous Consumption",1,0.5
+"1556","Social Approval",0,0.5
+"1557","Placebo",0,0.75
+"1558","Conspicuous Consumption",0,1
+"1559","Self-Esteem",0,0.75
+"1560","Self-Esteem",0,1
+"1561","Placebo",0,0.166666666666667
+"1562","Concrete",1,0.583333333333333
+"1563","Concrete",0,0.583333333333333
+"1564","Social Approval",1,0.416666666666667
+"1565","Placebo",1,0.5
+"1566","Placebo",0,0.5
+"1567","Self-Esteem",1,0.5
+"1568","Concrete",1,1
+"1569","Placebo",0,0.833333333333333
+"1570","Social Approval",0,0.833333333333333
+"1571","Placebo",0,0.5
+"1572","Conspicuous Consumption",1,0.0833333333333333
+"1573","Concrete",1,0.916666666666667
+"1574","Social Approval",0,1
+"1575","Placebo",0,1
+"1576","Conspicuous Consumption",0,0.666666666666667
+"1577","Concrete",1,0.833333333333333
+"1579","Conspicuous Consumption",1,1
+"1581","Placebo",0,0.666666666666667
+"1583","Placebo",1,0.916666666666667
+"1584","Conspicuous Consumption",0,0.5
+"1585","Conspicuous Consumption",0,0.416666666666667
+"1586","Social Approval",0,1
+"1587","Social Approval",0,1
+"1588","Social Approval",1,0.5
+"1589","Self-Esteem",0,0.833333333333333
+"1590","Placebo",0,0.833333333333333
+"1591","Placebo",0,0.666666666666667
+"1592","Concrete",1,0.833333333333333
+"1593","Conspicuous Consumption",0,1
+"1594","Conspicuous Consumption",0,0.833333333333333
+"1595","Social Approval",0,0.583333333333333
+"1598","Social Approval",1,0.75
+"1599","Conspicuous Consumption",0,0.5
+"1602","Self-Esteem",0,1
+"1603","Social Approval",0,0.25
+"1604","Conspicuous Consumption",0,0.416666666666667
+"1605","Placebo",1,1
+"1606","Concrete",0,0.916666666666667
+"1608","Conspicuous Consumption",0,0.75
+"1611","Social Approval",0,0.833333333333333
+"1612","Social Approval",0,0.833333333333333
+"1613","Concrete",0,1
+"1614","Concrete",1,0.833333333333333
+"1615","Self-Esteem",0,1
+"1616","Conspicuous Consumption",0,1
+"1617","Social Approval",0,1
+"1618","Social Approval",1,1
+"1619","Self-Esteem",1,1
+"1620","Placebo",0,0.916666666666667
+"1621","Social Approval",0,0.666666666666667
+"1622","Concrete",1,0.166666666666667
+"1623","Self-Esteem",1,0.916666666666667
+"1624","Concrete",1,1
+"1625","Social Approval",1,0.666666666666667
+"1626","Social Approval",0,0.833333333333333
+"1627","Concrete",0,0.416666666666667
+"1628","Self-Esteem",0,0.416666666666667
+"1629","Conspicuous Consumption",0,0.583333333333333
+"1630","Concrete",1,1
+"1631","Concrete",0,0.25
+"1632","Self-Esteem",1,0.75
+"1633","Placebo",1,0.25
+"1634","Self-Esteem",0,0.5
+"1635","Concrete",0,1
+"1637","Social Approval",1,1
+"1638","Placebo",0,0.583333333333333
+"1639","Conspicuous Consumption",1,0.916666666666667
+"1640","Social Approval",1,0.583333333333333
+"1641","Concrete",1,0.75
+"1643","Placebo",1,0.916666666666667
+"1644","Self-Esteem",0,1
+"1645","Conspicuous Consumption",1,0.833333333333333
+"1646","Social Approval",0,1
+"1647","Self-Esteem",1,0.833333333333333
+"1648","Placebo",1,0.75
+"1649","Concrete",0,0.833333333333333
+"1650","Self-Esteem",0,0.333333333333333
+"1651","Conspicuous Consumption",1,1
+"1652","Concrete",0,0.5
+"1653","Social Approval",0,0.666666666666667
+"1654","Placebo",1,1
+"1655","Concrete",1,0.75
+"1656","Self-Esteem",0,1
+"1657","Placebo",1,0.416666666666667
+"1658","Placebo",1,0.833333333333333
+"1659","Self-Esteem",0,0.666666666666667
+"1660","Social Approval",0,1
+"1661","Concrete",0,1
+"1662","Social Approval",0,1
+"1663","Concrete",1,0.916666666666667
+"1664","Placebo",1,0.833333333333333
+"1666","Self-Esteem",0,0.5
+"1667","Self-Esteem",1,0.833333333333333
+"1668","Social Approval",1,0.666666666666667
+"1669","Placebo",1,1
+"1670","Placebo",1,1
+"1671","Placebo",1,0.5
+"1672","Self-Esteem",1,1
+"1673","Concrete",1,0.833333333333333
+"1674","Conspicuous Consumption",0,1
+"1675","Self-Esteem",1,0.75
+"1676","Self-Esteem",1,0.5
+"1677","Placebo",1,0.833333333333333
+"1678","Placebo",1,0.5
+"1679","Self-Esteem",1,1
+"1680","Concrete",1,0.916666666666667
+"1681","Conspicuous Consumption",0,0.666666666666667
+"1683","Self-Esteem",0,0.916666666666667
+"1685","Concrete",0,0.5
+"1686","Conspicuous Consumption",0,0.583333333333333
+"1688","Concrete",0,1
+"1689","Placebo",0,0.666666666666667
+"1691","Concrete",1,0.666666666666667
+"1692","Social Approval",1,0.75
+"1693","Concrete",1,0.833333333333333
+"1694","Social Approval",1,0.416666666666667
+"1695","Conspicuous Consumption",0,0.833333333333333
+"1696","Concrete",1,0
+"1697","Social Approval",1,1
+"1698","Social Approval",1,1
+"1699","Conspicuous Consumption",1,0.583333333333333
+"1700","Concrete",1,0.916666666666667
+"1701","Placebo",0,1
+"1702","Placebo",1,0.583333333333333
+"1703","Conspicuous Consumption",1,0.416666666666667
+"1704","Self-Esteem",1,0.5
+"1705","Self-Esteem",0,0.416666666666667
+"1708","Self-Esteem",1,1
+"1709","Conspicuous Consumption",0,1
+"1710","Social Approval",1,1
+"1711","Concrete",1,0.833333333333333
+"1712","Social Approval",1,1
+"1713","Concrete",1,1
+"1716","Self-Esteem",0,0.666666666666667
+"1717","Self-Esteem",1,1
+"1718","Placebo",1,0.416666666666667
+"1720","Social Approval",1,1
+"1721","Conspicuous Consumption",1,0.583333333333333
+"1724","Placebo",1,1
+"1726","Concrete",0,0.5
+"1727","Conspicuous Consumption",1,0.916666666666667
+"1728","Conspicuous Consumption",1,1
+"1729","Self-Esteem",1,1
+"1730","Concrete",1,0.916666666666667
+"1732","Concrete",1,0.666666666666667
+"1733","Concrete",1,0.666666666666667
+"1735","Social Approval",1,0.666666666666667
+"1736","Concrete",1,0.916666666666667
+"1737","Self-Esteem",1,1
+"1738","Concrete",0,0.75
+"1739","Placebo",1,1
+"1740","Placebo",1,1
+"1741","Conspicuous Consumption",1,0.833333333333333
+"1743","Concrete",1,0.916666666666667
+"1744","Conspicuous Consumption",1,0.916666666666667
+"1745","Social Approval",0,0.583333333333333
+"1746","Conspicuous Consumption",1,1
+"1748","Conspicuous Consumption",0,0.666666666666667
+"1749","Social Approval",0,0.916666666666667
+"1750","Conspicuous Consumption",1,0.75
+"1751","Self-Esteem",0,0.833333333333333
+"1752","Conspicuous Consumption",0,0.75
+"1754","Placebo",0,0.833333333333333
+"1755","Concrete",1,0.833333333333333
+"1756","Social Approval",1,1
+"1757","Placebo",0,1
+"1758","Concrete",0,0.333333333333333
+"1759","Self-Esteem",1,0.833333333333333
+"1760","Concrete",1,1
+"1761","Conspicuous Consumption",0,0.583333333333333
+"1762","Concrete",1,0.916666666666667
+"1764","Self-Esteem",1,0.833333333333333
+"1765","Concrete",1,0.5
+"1766","Social Approval",0,0.666666666666667
+"1768","Concrete",1,0.833333333333333
+"1769","Social Approval",1,0.666666666666667
+"1770","Conspicuous Consumption",1,0.833333333333333
+"1771","Conspicuous Consumption",1,0.333333333333333
+"1772","Conspicuous Consumption",1,0.916666666666667
+"1773","Self-Esteem",0,0.5
+"1774","Concrete",0,0.75
+"1775","Concrete",1,0.5
+"1776","Conspicuous Consumption",0,1
+"1777","Social Approval",1,0.666666666666667
+"1778","Conspicuous Consumption",1,0.416666666666667
+"1779","Placebo",1,0.666666666666667
+"1780","Concrete",0,1
+"1781","Placebo",0,0.583333333333333
+"1782","Placebo",1,1
+"1783","Self-Esteem",1,1
+"1784","Conspicuous Consumption",1,1
+"1785","Social Approval",0,0.833333333333333
+"1786","Concrete",0,1
+"1787","Social Approval",0,1
+"1788","Conspicuous Consumption",1,0.416666666666667
+"1789","Self-Esteem",0,0.916666666666667
+"1790","Conspicuous Consumption",1,1
+"1791","Self-Esteem",1,0.833333333333333
+"1792","Placebo",1,0.416666666666667
+"1793","Placebo",1,0.666666666666667
+"1795","Placebo",0,0.916666666666667
+"1796","Placebo",1,1
+"1797","Concrete",1,0.25
+"1799","Placebo",1,0.583333333333333
+"1801","Conspicuous Consumption",0,0.583333333333333
+"1802","Conspicuous Consumption",0,0.5
+"1803","Self-Esteem",1,1
+"1804","Conspicuous Consumption",0,1
+"1805","Concrete",1,0.166666666666667
+"1806","Social Approval",0,0.666666666666667
+"1807","Self-Esteem",0,1
+"1808","Conspicuous Consumption",0,0.75
+"1809","Placebo",1,0
+"1810","Conspicuous Consumption",0,0.5
+"1811","Social Approval",0,1
+"1812","Self-Esteem",0,0.5
+"1815","Conspicuous Consumption",1,0.416666666666667
+"1816","Conspicuous Consumption",1,0.833333333333333
+"1819","Placebo",0,0.583333333333333
+"1820","Concrete",0,0.0833333333333333
+"1822","Conspicuous Consumption",0,0.583333333333333
+"1823","Concrete",0,1
+"1824","Conspicuous Consumption",0,0.333333333333333
+"1825","Social Approval",0,0.166666666666667
+"1826","Social Approval",1,1
+"1827","Conspicuous Consumption",0,0.583333333333333
+"1828","Placebo",1,0.666666666666667
+"1829","Self-Esteem",0,0.833333333333333
+"1831","Conspicuous Consumption",0,1
+"1832","Concrete",0,0.916666666666667
+"1833","Conspicuous Consumption",1,1
+"1834","Social Approval",0,0.833333333333333
+"1835","Social Approval",0,0.666666666666667
+"1836","Self-Esteem",1,1
+"1837","Social Approval",0,0.75
+"1838","Conspicuous Consumption",1,0.75
+"1839","Conspicuous Consumption",0,0.75
+"1840","Self-Esteem",0,0.666666666666667
+"1841","Concrete",1,0.833333333333333
+"1842","Conspicuous Consumption",0,0.666666666666667
+"1843","Self-Esteem",0,1
+"1844","Self-Esteem",1,0.666666666666667
+"1845","Conspicuous Consumption",1,0.75
+"1846","Social Approval",1,1
+"1847","Social Approval",1,0.5
+"1848","Placebo",0,0.666666666666667
+"1849","Social Approval",1,0.916666666666667
+"1850","Social Approval",0,1
+"1852","Social Approval",0,1
+"1853","Self-Esteem",0,0.5
+"1854","Conspicuous Consumption",1,0.916666666666667
+"1855","Social Approval",1,0.833333333333333
+"1856","Self-Esteem",1,0.666666666666667
+"1857","Social Approval",1,0.75
+"1858","Social Approval",1,0.75
+"1859","Self-Esteem",1,0.916666666666667
+"1860","Concrete",1,0.416666666666667
+"1861","Self-Esteem",1,1
+"1862","Concrete",0,0.5
+"1863","Self-Esteem",1,1
+"1864","Social Approval",0,0.833333333333333
+"1865","Concrete",0,0.75
+"1867","Placebo",1,0.833333333333333
+"1869","Conspicuous Consumption",0,0.666666666666667
+"1870","Social Approval",0,1
+"1871","Self-Esteem",0,0.75
+"1872","Placebo",1,0.416666666666667
+"1873","Conspicuous Consumption",0,1
+"1874","Conspicuous Consumption",1,1
+"1875","Placebo",1,1
+"1876","Placebo",1,1
+"1877","Concrete",1,1
+"1878","Placebo",1,0.916666666666667
+"1880","Placebo",0,0.583333333333333
+"1881","Self-Esteem",0,0.5
+"1883","Concrete",0,0.75
+"1884","Placebo",1,1
+"1885","Placebo",0,1
+"1886","Social Approval",0,0.583333333333333
+"1887","Placebo",1,1
+"1888","Self-Esteem",0,0.416666666666667
+"1889","Conspicuous Consumption",1,0.75
+"1890","Placebo",0,1
+"1891","Social Approval",0,0.916666666666667
+"1892","Placebo",0,1
+"1893","Social Approval",1,0.166666666666667
+"1894","Concrete",0,0.583333333333333
+"1895","Social Approval",0,1
+"1896","Conspicuous Consumption",0,1
+"1897","Social Approval",0,0.833333333333333
+"1898","Placebo",0,0.583333333333333
+"1899","Concrete",0,0.916666666666667
+"1900","Placebo",1,0.916666666666667
+"1901","Placebo",1,0.333333333333333
+"1903","Placebo",1,0.833333333333333
+"1904","Conspicuous Consumption",1,0.75
+"1905","Self-Esteem",0,0.333333333333333
+"1906","Self-Esteem",0,0.75
+"1907","Self-Esteem",1,0.916666666666667
+"1908","Social Approval",1,1
+"1909","Social Approval",0,1
+"1910","Self-Esteem",1,0.5
+"1912","Concrete",0,0.5
+"1913","Concrete",1,0.833333333333333
+"1914","Conspicuous Consumption",1,1
+"1915","Self-Esteem",0,0.75
+"1918","Social Approval",1,0.583333333333333
+"1919","Self-Esteem",1,0.833333333333333
+"1920","Concrete",1,0.833333333333333
+"1921","Social Approval",1,0.75
+"1922","Social Approval",1,1
+"1925","Social Approval",0,0.5
+"1926","Social Approval",1,0.75
+"1928","Placebo",0,0.666666666666667
+"1930","Social Approval",0,0.583333333333333
+"1931","Social Approval",0,1
+"1932","Conspicuous Consumption",0,0.666666666666667
+"1933","Placebo",0,1
+"1934","Self-Esteem",1,1
+"1935","Conspicuous Consumption",1,0.583333333333333
+"1936","Social Approval",0,1
+"1937","Concrete",1,0.416666666666667
+"1938","Concrete",0,0.75
+"1939","Concrete",1,1
+"1940","Placebo",0,0.75
+"1941","Social Approval",1,0.916666666666667
+"1942","Concrete",1,0.583333333333333
+"1944","Social Approval",0,0.75
+"1945","Conspicuous Consumption",0,1
+"1946","Self-Esteem",0,1
+"1947","Self-Esteem",0,0.666666666666667
+"1949","Social Approval",1,1
+"1950","Social Approval",1,1
+"1951","Social Approval",1,0.5
+"1952","Self-Esteem",0,0.666666666666667
+"1953","Social Approval",0,0.583333333333333
+"1954","Social Approval",0,1
+"1955","Social Approval",0,0.75
+"1956","Concrete",0,0.583333333333333
+"1958","Conspicuous Consumption",1,1
+"1959","Social Approval",1,1
+"1962","Social Approval",1,0.666666666666667
+"1963","Concrete",0,0.833333333333333
+"1964","Placebo",0,0.75
+"1965","Self-Esteem",1,0.5
+"1966","Concrete",0,0.666666666666667
+"1967","Concrete",1,0.916666666666667
+"1968","Conspicuous Consumption",1,0.666666666666667
+"1969","Concrete",0,0.25
+"1970","Social Approval",1,1
+"1971","Conspicuous Consumption",0,0.916666666666667
+"1972","Concrete",0,0.5
+"1974","Conspicuous Consumption",0,1
+"1975","Concrete",1,0.25
+"1976","Concrete",0,0.5
+"1977","Conspicuous Consumption",0,0.833333333333333
+"1979","Self-Esteem",0,0.666666666666667
+"1980","Social Approval",0,0.75
+"1981","Self-Esteem",0,0.583333333333333
+"1982","Self-Esteem",1,0.0833333333333333
+"1983","Placebo",0,0.583333333333333
+"1984","Placebo",1,0.75
+"1985","Placebo",0,0.666666666666667
+"1986","Concrete",0,0.5
+"1988","Conspicuous Consumption",0,0.75
+"1989","Conspicuous Consumption",1,1
+"1990","Social Approval",0,0.666666666666667
+"1991","Conspicuous Consumption",0,1
+"1992","Placebo",1,0.583333333333333
+"1993","Concrete",1,0.583333333333333
+"1995","Placebo",1,0.416666666666667
+"1996","Self-Esteem",0,0.916666666666667
+"1998","Concrete",1,0.833333333333333
+"1999","Concrete",0,0.333333333333333
+"2000","Conspicuous Consumption",1,0.833333333333333
+"2001","Social Approval",0,1
+"2002","Conspicuous Consumption",1,1
+"2003","Conspicuous Consumption",0,0.916666666666667
+"2004","Conspicuous Consumption",0,1
+"2005","Placebo",0,1
+"2006","Social Approval",0,0.5
+"2007","Self-Esteem",0,0.416666666666667
+"2010","Social Approval",1,1

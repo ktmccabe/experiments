@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -298,11 +307,11 @@ Blacks Pursue to Reduce Racial Inequality”</a> by Antoine J. Banks, Ismail K. 
 </div>
 </div>
 <p>Let’s load the data. Note: This file is in a .dta format, but if you try to use <code>read.dta</code> to load it, you may receive an error because it is too new of a Stata format. As an alternative, we can use the <code>rio</code> package to open the file. Install the package, open the package with <code>library</code> an load the data. The <code>rio</code> packages uses a single <code>import</code> function to load data.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="plotting-average-treatment-effects.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;rio&quot;, dependencies=T)</span></span>
-<span id="cb167-2"><a href="plotting-average-treatment-effects.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
-<span id="cb167-3"><a href="plotting-average-treatment-effects.html#cb167-3" aria-hidden="true" tabindex="-1"></a>banks <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">&quot;data/banksstudy2.dta&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="plotting-average-treatment-effects.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;rio&quot;, dependencies=T)</span></span>
+<span id="cb237-2"><a href="plotting-average-treatment-effects.html#cb237-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb237-3"><a href="plotting-average-treatment-effects.html#cb237-3" aria-hidden="true" tabindex="-1"></a>banks <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">&quot;data/banksstudy2.dta&quot;</span>)</span></code></pre></div>
 <p>The authors have a variable in their data <code>baddata</code> they use to exclude subjects who failed to follow the instructions of their manipulation. They limit their analyses to those who passed this check. Let’s do the same by removing any subjects that have non-missing values on this variable.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="plotting-average-treatment-effects.html#cb168-1" aria-hidden="true" tabindex="-1"></a>banks <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, <span class="fu">is.na</span>(baddata)<span class="sc">==</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="plotting-average-treatment-effects.html#cb238-1" aria-hidden="true" tabindex="-1"></a>banks <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, <span class="fu">is.na</span>(baddata)<span class="sc">==</span>T)</span></code></pre></div>
 <p>Let’s replicate a portion of the analysis presented in Table 3 of the paper.</p>
 <p><img src="images/bankstable3.png" style="width:80.0%" /></p>
 <p>We will first calculate our estimate of <span class="math inline">\(E(Y_i(1_{anger}) - Y_i(0_{no anger}))\)</span> using the difference-in-means estimator: <span class="math inline">\(\sum_{i=1}^m Y_i(1_{anger}) - \sum_{m+1}^{N-m}Y_i(0_{no anger})\)</span>.</p>
@@ -310,59 +319,59 @@ Blacks Pursue to Reduce Racial Inequality”</a> by Antoine J. Banks, Ismail K. 
 <li>We will compare those in the Anger and Control conditions on the outcome for donations to Black organizations.</li>
 <li>We will use a t-test to do so.</li>
 </ul>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="plotting-average-treatment-effects.html#cb169-1" aria-hidden="true" tabindex="-1"></a>d.i.m <span class="ot">&lt;-</span> <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">1</span>], <span class="at">na.rm=</span>T) <span class="sc">-</span></span>
-<span id="cb169-2"><a href="plotting-average-treatment-effects.html#cb169-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">0</span>], <span class="at">na.rm=</span>T)</span>
-<span id="cb169-3"><a href="plotting-average-treatment-effects.html#cb169-3" aria-hidden="true" tabindex="-1"></a>t.results <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">1</span>],</span>
-<span id="cb169-4"><a href="plotting-average-treatment-effects.html#cb169-4" aria-hidden="true" tabindex="-1"></a>                    banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">0</span>])</span>
-<span id="cb169-5"><a href="plotting-average-treatment-effects.html#cb169-5" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> t.results<span class="sc">$</span>conf.int</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="plotting-average-treatment-effects.html#cb239-1" aria-hidden="true" tabindex="-1"></a>d.i.m <span class="ot">&lt;-</span> <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">1</span>], <span class="at">na.rm=</span>T) <span class="sc">-</span></span>
+<span id="cb239-2"><a href="plotting-average-treatment-effects.html#cb239-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">0</span>], <span class="at">na.rm=</span>T)</span>
+<span id="cb239-3"><a href="plotting-average-treatment-effects.html#cb239-3" aria-hidden="true" tabindex="-1"></a>t.results <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">1</span>],</span>
+<span id="cb239-4"><a href="plotting-average-treatment-effects.html#cb239-4" aria-hidden="true" tabindex="-1"></a>                    banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>angvcon <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb239-5"><a href="plotting-average-treatment-effects.html#cb239-5" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> t.results<span class="sc">$</span>conf.int</span></code></pre></div>
 <p>Let’s repeat for the hope condition.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="plotting-average-treatment-effects.html#cb170-1" aria-hidden="true" tabindex="-1"></a>d.i.m2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">1</span>], <span class="at">na.rm=</span>T) <span class="sc">-</span></span>
-<span id="cb170-2"><a href="plotting-average-treatment-effects.html#cb170-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">0</span>], <span class="at">na.rm=</span>T)</span>
-<span id="cb170-3"><a href="plotting-average-treatment-effects.html#cb170-3" aria-hidden="true" tabindex="-1"></a>t.results2 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">1</span>],</span>
-<span id="cb170-4"><a href="plotting-average-treatment-effects.html#cb170-4" aria-hidden="true" tabindex="-1"></a>                    banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">0</span>])</span>
-<span id="cb170-5"><a href="plotting-average-treatment-effects.html#cb170-5" aria-hidden="true" tabindex="-1"></a>ci2 <span class="ot">&lt;-</span> t.results2<span class="sc">$</span>conf.int</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="plotting-average-treatment-effects.html#cb240-1" aria-hidden="true" tabindex="-1"></a>d.i.m2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">1</span>], <span class="at">na.rm=</span>T) <span class="sc">-</span></span>
+<span id="cb240-2"><a href="plotting-average-treatment-effects.html#cb240-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">0</span>], <span class="at">na.rm=</span>T)</span>
+<span id="cb240-3"><a href="plotting-average-treatment-effects.html#cb240-3" aria-hidden="true" tabindex="-1"></a>t.results2 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">1</span>],</span>
+<span id="cb240-4"><a href="plotting-average-treatment-effects.html#cb240-4" aria-hidden="true" tabindex="-1"></a>                    banks<span class="sc">$</span>blackdon[banks<span class="sc">$</span>hopevcon <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb240-5"><a href="plotting-average-treatment-effects.html#cb240-5" aria-hidden="true" tabindex="-1"></a>ci2 <span class="ot">&lt;-</span> t.results2<span class="sc">$</span>conf.int</span></code></pre></div>
 We could have alternatively used a linear regression to assess significance or randomization inference.
 <details>
 <summary>
 Expand for a randomization inference example.
 </summary>
 <p>Let’s focus on just the Anger vs. Control first.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="plotting-average-treatment-effects.html#cb171-1" aria-hidden="true" tabindex="-1"></a>angercontrol <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, angvcon <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> angvcon <span class="sc">==</span><span class="dv">1</span>)</span>
-<span id="cb171-2"><a href="plotting-average-treatment-effects.html#cb171-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb171-3"><a href="plotting-average-treatment-effects.html#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="do">## remove missing data</span></span>
-<span id="cb171-4"><a href="plotting-average-treatment-effects.html#cb171-4" aria-hidden="true" tabindex="-1"></a>angercontrol <span class="ot">&lt;-</span> <span class="fu">subset</span>(angercontrol, <span class="fu">is.na</span>(blackdon) <span class="sc">==</span>F)</span>
-<span id="cb171-5"><a href="plotting-average-treatment-effects.html#cb171-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb171-6"><a href="plotting-average-treatment-effects.html#cb171-6" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri2&quot;, dependencies=T)</span></span>
-<span id="cb171-7"><a href="plotting-average-treatment-effects.html#cb171-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri2)</span>
-<span id="cb171-8"><a href="plotting-average-treatment-effects.html#cb171-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb171-9"><a href="plotting-average-treatment-effects.html#cb171-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Declare randomization</span></span>
-<span id="cb171-10"><a href="plotting-average-treatment-effects.html#cb171-10" aria-hidden="true" tabindex="-1"></a>declaration <span class="ot">&lt;-</span> <span class="fu">declare_ra</span>(<span class="at">N=</span><span class="fu">nrow</span>(angercontrol), <span class="at">prob=</span>.<span class="dv">5</span>)</span>
-<span id="cb171-11"><a href="plotting-average-treatment-effects.html#cb171-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb171-12"><a href="plotting-average-treatment-effects.html#cb171-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
-<span id="cb171-13"><a href="plotting-average-treatment-effects.html#cb171-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1215</span>)</span>
-<span id="cb171-14"><a href="plotting-average-treatment-effects.html#cb171-14" aria-hidden="true" tabindex="-1"></a>ri2_out <span class="ot">&lt;-</span> <span class="fu">conduct_ri</span>(</span>
-<span id="cb171-15"><a href="plotting-average-treatment-effects.html#cb171-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> blackdon <span class="sc">~</span> angvcon,</span>
-<span id="cb171-16"><a href="plotting-average-treatment-effects.html#cb171-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">assignment =</span> <span class="st">&quot;angvcon&quot;</span>,</span>
-<span id="cb171-17"><a href="plotting-average-treatment-effects.html#cb171-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">declaration =</span> declaration,</span>
-<span id="cb171-18"><a href="plotting-average-treatment-effects.html#cb171-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">sharp_hypothesis =</span> <span class="dv">0</span>,</span>
-<span id="cb171-19"><a href="plotting-average-treatment-effects.html#cb171-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> angercontrol</span>
-<span id="cb171-20"><a href="plotting-average-treatment-effects.html#cb171-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="plotting-average-treatment-effects.html#cb241-1" aria-hidden="true" tabindex="-1"></a>angercontrol <span class="ot">&lt;-</span> <span class="fu">subset</span>(banks, angvcon <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> angvcon <span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb241-2"><a href="plotting-average-treatment-effects.html#cb241-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-3"><a href="plotting-average-treatment-effects.html#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="do">## remove missing data</span></span>
+<span id="cb241-4"><a href="plotting-average-treatment-effects.html#cb241-4" aria-hidden="true" tabindex="-1"></a>angercontrol <span class="ot">&lt;-</span> <span class="fu">subset</span>(angercontrol, <span class="fu">is.na</span>(blackdon) <span class="sc">==</span>F)</span>
+<span id="cb241-5"><a href="plotting-average-treatment-effects.html#cb241-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-6"><a href="plotting-average-treatment-effects.html#cb241-6" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;ri2&quot;, dependencies=T)</span></span>
+<span id="cb241-7"><a href="plotting-average-treatment-effects.html#cb241-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ri2)</span>
+<span id="cb241-8"><a href="plotting-average-treatment-effects.html#cb241-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-9"><a href="plotting-average-treatment-effects.html#cb241-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Declare randomization</span></span>
+<span id="cb241-10"><a href="plotting-average-treatment-effects.html#cb241-10" aria-hidden="true" tabindex="-1"></a>declaration <span class="ot">&lt;-</span> <span class="fu">declare_ra</span>(<span class="at">N=</span><span class="fu">nrow</span>(angercontrol), <span class="at">prob=</span>.<span class="dv">5</span>)</span>
+<span id="cb241-11"><a href="plotting-average-treatment-effects.html#cb241-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-12"><a href="plotting-average-treatment-effects.html#cb241-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimate the average treatment effect</span></span>
+<span id="cb241-13"><a href="plotting-average-treatment-effects.html#cb241-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1215</span>)</span>
+<span id="cb241-14"><a href="plotting-average-treatment-effects.html#cb241-14" aria-hidden="true" tabindex="-1"></a>ri2_out <span class="ot">&lt;-</span> <span class="fu">conduct_ri</span>(</span>
+<span id="cb241-15"><a href="plotting-average-treatment-effects.html#cb241-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> blackdon <span class="sc">~</span> angvcon,</span>
+<span id="cb241-16"><a href="plotting-average-treatment-effects.html#cb241-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">assignment =</span> <span class="st">&quot;angvcon&quot;</span>,</span>
+<span id="cb241-17"><a href="plotting-average-treatment-effects.html#cb241-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">declaration =</span> declaration,</span>
+<span id="cb241-18"><a href="plotting-average-treatment-effects.html#cb241-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">sharp_hypothesis =</span> <span class="dv">0</span>,</span>
+<span id="cb241-19"><a href="plotting-average-treatment-effects.html#cb241-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> angercontrol</span>
+<span id="cb241-20"><a href="plotting-average-treatment-effects.html#cb241-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Plot and compare distribution to observed ATE</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="plotting-average-treatment-effects.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ri2_out)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-84-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="plotting-average-treatment-effects.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ri2_out)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-127-1.svg" width="672" /></p>
 <p>Summarize Output</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="plotting-average-treatment-effects.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ri2_out)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="plotting-average-treatment-effects.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ri2_out)</span></code></pre></div>
 <pre><code>##      term  estimate two_tailed_p_value
 ## 1 angvcon 0.9793778              0.041</code></pre>
 <p>We can manually see what the package is doing by counting how many of the simulated estimates from the empirical distribution of the sharp null hypothesis were more extreme than our estimate from the study. Note that in this case, our p-value is very similar to the t-test.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="plotting-average-treatment-effects.html#cb175-1" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ri2_out)<span class="sc">$</span>estimate</span>
-<span id="cb175-2"><a href="plotting-average-treatment-effects.html#cb175-2" aria-hidden="true" tabindex="-1"></a>nsims <span class="ot">&lt;-</span> <span class="fu">length</span>(ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim)</span>
-<span id="cb175-3"><a href="plotting-average-treatment-effects.html#cb175-3" aria-hidden="true" tabindex="-1"></a>simstimates <span class="ot">&lt;-</span> ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim</span>
-<span id="cb175-4"><a href="plotting-average-treatment-effects.html#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
-<span id="cb175-5"><a href="plotting-average-treatment-effects.html#cb175-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(simstimates[<span class="fu">abs</span>(simstimates) <span class="sc">&gt;=</span> <span class="fu">abs</span>(estimate)])<span class="sc">/</span>nsims</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="plotting-average-treatment-effects.html#cb245-1" aria-hidden="true" tabindex="-1"></a>estimate <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ri2_out)<span class="sc">$</span>estimate</span>
+<span id="cb245-2"><a href="plotting-average-treatment-effects.html#cb245-2" aria-hidden="true" tabindex="-1"></a>nsims <span class="ot">&lt;-</span> <span class="fu">length</span>(ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim)</span>
+<span id="cb245-3"><a href="plotting-average-treatment-effects.html#cb245-3" aria-hidden="true" tabindex="-1"></a>simstimates <span class="ot">&lt;-</span> ri2_out<span class="sc">$</span>sims_df<span class="sc">$</span>est_sim</span>
+<span id="cb245-4"><a href="plotting-average-treatment-effects.html#cb245-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Two-tailed p-value</span></span>
+<span id="cb245-5"><a href="plotting-average-treatment-effects.html#cb245-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(simstimates[<span class="fu">abs</span>(simstimates) <span class="sc">&gt;=</span> <span class="fu">abs</span>(estimate)])<span class="sc">/</span>nsims</span></code></pre></div>
 <pre><code>## [1] 0.041</code></pre>
 <p>We can compare this to the p-value through the t-test where we assume a t distribution and calculate the area at the extremes as larger or larger than our t-statistic.</p>
-<p><img src="experiments_files/figure-html/unnamed-chunk-87-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-130-1.svg" width="672" /></p>
 </details>
 <div id="ate-using-plot" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> ATE using <code>plot</code></h3>
@@ -376,15 +385,15 @@ Expand for a randomization inference example.
 <li>Some marker to show a relative benchmark (e.g., a line at 0)</li>
 </ul>
 <p>The <code>plot</code> function in R is based on a coordinate system. We supply the <code>x=</code> and <code>y=</code> values where we want to place points.</p>
-<p><img src="experiments_files/figure-html/unnamed-chunk-88-1.svg" width="672" /></p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-131-1.svg" width="672" /></p>
 <p>We will make a plot to display the two ATE estimates we just calculated.</p>
 <ul>
 <li>We need to supply the exact same number of values for the x-axis as the y-axis. Let’s plot the ATE estimates at points 1 and 2 on the x-axis and at the corresponding y-values for the ATEs we estimated.</li>
 </ul>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="plotting-average-treatment-effects.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot </span></span>
-<span id="cb177-2"><a href="plotting-average-treatment-effects.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
-<span id="cb177-3"><a href="plotting-average-treatment-effects.html#cb177-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2))</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-89-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="plotting-average-treatment-effects.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot </span></span>
+<span id="cb247-2"><a href="plotting-average-treatment-effects.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
+<span id="cb247-3"><a href="plotting-average-treatment-effects.html#cb247-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2))</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-132-1.svg" width="672" /></p>
 <p>This has created the plot, but it is not very informative.</p>
 <ul>
 <li>Let’ set the axis dimensions with <code>xlim=</code> an <code>ylim=</code></li>
@@ -397,73 +406,73 @@ Expand for a randomization inference example.
 <li>We can adjust the size of the labels <code>cex.lab</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="plotting-average-treatment-effects.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
-<span id="cb178-2"><a href="plotting-average-treatment-effects.html#cb178-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2),</span>
-<span id="cb178-3"><a href="plotting-average-treatment-effects.html#cb178-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(.<span class="dv">5</span>, <span class="fl">2.5</span>),</span>
-<span id="cb178-4"><a href="plotting-average-treatment-effects.html#cb178-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>),</span>
-<span id="cb178-5"><a href="plotting-average-treatment-effects.html#cb178-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>,</span>
-<span id="cb178-6"><a href="plotting-average-treatment-effects.html#cb178-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.main=</span>.<span class="dv">8</span>,</span>
-<span id="cb178-7"><a href="plotting-average-treatment-effects.html#cb178-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
-<span id="cb178-8"><a href="plotting-average-treatment-effects.html#cb178-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
-<span id="cb178-9"><a href="plotting-average-treatment-effects.html#cb178-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-90-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="plotting-average-treatment-effects.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
+<span id="cb248-2"><a href="plotting-average-treatment-effects.html#cb248-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2),</span>
+<span id="cb248-3"><a href="plotting-average-treatment-effects.html#cb248-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(.<span class="dv">5</span>, <span class="fl">2.5</span>),</span>
+<span id="cb248-4"><a href="plotting-average-treatment-effects.html#cb248-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb248-5"><a href="plotting-average-treatment-effects.html#cb248-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>,</span>
+<span id="cb248-6"><a href="plotting-average-treatment-effects.html#cb248-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.main=</span>.<span class="dv">8</span>,</span>
+<span id="cb248-7"><a href="plotting-average-treatment-effects.html#cb248-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
+<span id="cb248-8"><a href="plotting-average-treatment-effects.html#cb248-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
+<span id="cb248-9"><a href="plotting-average-treatment-effects.html#cb248-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-133-1.svg" width="672" /></p>
 <p>In our case, the values on the x-axis are meaningless. We arbitrarily placed the points at 1 and 2. Let’s get rid of the current x-axis and instead replace it with an axis that labels our comparisons.</p>
 <ul>
 <li>We get rid of the current x-axis with <code>xaxt="n"</code></li>
 <li>We create a new axis using the <code>axis</code> function. Note: this function goes below the <code>plot()</code> function instead of inside it.</li>
 </ul>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="plotting-average-treatment-effects.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
-<span id="cb179-2"><a href="plotting-average-treatment-effects.html#cb179-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2),</span>
-<span id="cb179-3"><a href="plotting-average-treatment-effects.html#cb179-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(.<span class="dv">5</span>, <span class="fl">2.5</span>),</span>
-<span id="cb179-4"><a href="plotting-average-treatment-effects.html#cb179-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>),</span>
-<span id="cb179-5"><a href="plotting-average-treatment-effects.html#cb179-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>,</span>
-<span id="cb179-6"><a href="plotting-average-treatment-effects.html#cb179-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.main=</span>.<span class="dv">8</span>,</span>
-<span id="cb179-7"><a href="plotting-average-treatment-effects.html#cb179-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
-<span id="cb179-8"><a href="plotting-average-treatment-effects.html#cb179-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
-<span id="cb179-9"><a href="plotting-average-treatment-effects.html#cb179-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>,</span>
-<span id="cb179-10"><a href="plotting-average-treatment-effects.html#cb179-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
-<span id="cb179-11"><a href="plotting-average-treatment-effects.html#cb179-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>),</span>
-<span id="cb179-12"><a href="plotting-average-treatment-effects.html#cb179-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">tick=</span>F)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-91-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="plotting-average-treatment-effects.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
+<span id="cb249-2"><a href="plotting-average-treatment-effects.html#cb249-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2),</span>
+<span id="cb249-3"><a href="plotting-average-treatment-effects.html#cb249-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(.<span class="dv">5</span>, <span class="fl">2.5</span>),</span>
+<span id="cb249-4"><a href="plotting-average-treatment-effects.html#cb249-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb249-5"><a href="plotting-average-treatment-effects.html#cb249-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>,</span>
+<span id="cb249-6"><a href="plotting-average-treatment-effects.html#cb249-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.main=</span>.<span class="dv">8</span>,</span>
+<span id="cb249-7"><a href="plotting-average-treatment-effects.html#cb249-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
+<span id="cb249-8"><a href="plotting-average-treatment-effects.html#cb249-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
+<span id="cb249-9"><a href="plotting-average-treatment-effects.html#cb249-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>,</span>
+<span id="cb249-10"><a href="plotting-average-treatment-effects.html#cb249-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb249-11"><a href="plotting-average-treatment-effects.html#cb249-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>),</span>
+<span id="cb249-12"><a href="plotting-average-treatment-effects.html#cb249-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">tick=</span>F)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-134-1.svg" width="672" /></p>
 <p>We now have an informative plot of our ATE quantities of interest. However, we still need to add something to visualize uncertainty and a benchmark to indicate the size and/or significance of our quantities.</p>
 <ul>
 <li>We can add a horizonatal line to the plot with <code>abline(h=)</code>. Like <code>axis()</code>, this function goes below the <code>plot()</code> function.</li>
 <li>We can add confidence intervals as vertical line segments to our plot using the <code>lines</code> function. Again, this adds a layer below our plot.</li>
 </ul>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="plotting-average-treatment-effects.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
-<span id="cb180-2"><a href="plotting-average-treatment-effects.html#cb180-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2),</span>
-<span id="cb180-3"><a href="plotting-average-treatment-effects.html#cb180-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(.<span class="dv">5</span>, <span class="fl">2.5</span>),</span>
-<span id="cb180-4"><a href="plotting-average-treatment-effects.html#cb180-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>),</span>
-<span id="cb180-5"><a href="plotting-average-treatment-effects.html#cb180-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>,</span>
-<span id="cb180-6"><a href="plotting-average-treatment-effects.html#cb180-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.main=</span>.<span class="dv">8</span>,</span>
-<span id="cb180-7"><a href="plotting-average-treatment-effects.html#cb180-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
-<span id="cb180-8"><a href="plotting-average-treatment-effects.html#cb180-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
-<span id="cb180-9"><a href="plotting-average-treatment-effects.html#cb180-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>,</span>
-<span id="cb180-10"><a href="plotting-average-treatment-effects.html#cb180-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
-<span id="cb180-11"><a href="plotting-average-treatment-effects.html#cb180-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>),</span>
-<span id="cb180-12"><a href="plotting-average-treatment-effects.html#cb180-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">tick=</span>F)</span>
-<span id="cb180-13"><a href="plotting-average-treatment-effects.html#cb180-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">&quot;red3&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb180-14"><a href="plotting-average-treatment-effects.html#cb180-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), ci)</span>
-<span id="cb180-15"><a href="plotting-average-treatment-effects.html#cb180-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), ci2)</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-92-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="plotting-average-treatment-effects.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), </span>
+<span id="cb250-2"><a href="plotting-average-treatment-effects.html#cb250-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">c</span>(d.i.m, d.i.m2),</span>
+<span id="cb250-3"><a href="plotting-average-treatment-effects.html#cb250-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(.<span class="dv">5</span>, <span class="fl">2.5</span>),</span>
+<span id="cb250-4"><a href="plotting-average-treatment-effects.html#cb250-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb250-5"><a href="plotting-average-treatment-effects.html#cb250-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>,</span>
+<span id="cb250-6"><a href="plotting-average-treatment-effects.html#cb250-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.main=</span>.<span class="dv">8</span>,</span>
+<span id="cb250-7"><a href="plotting-average-treatment-effects.html#cb250-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Difference in Donation Amount&quot;</span>,</span>
+<span id="cb250-8"><a href="plotting-average-treatment-effects.html#cb250-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Treatment Comparison&quot;</span>,</span>
+<span id="cb250-9"><a href="plotting-average-treatment-effects.html#cb250-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.lab=</span>.<span class="dv">8</span>,</span>
+<span id="cb250-10"><a href="plotting-average-treatment-effects.html#cb250-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb250-11"><a href="plotting-average-treatment-effects.html#cb250-11" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>),</span>
+<span id="cb250-12"><a href="plotting-average-treatment-effects.html#cb250-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">tick=</span>F)</span>
+<span id="cb250-13"><a href="plotting-average-treatment-effects.html#cb250-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">&quot;red3&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb250-14"><a href="plotting-average-treatment-effects.html#cb250-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), ci)</span>
+<span id="cb250-15"><a href="plotting-average-treatment-effects.html#cb250-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), ci2)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-135-1.svg" width="672" /></p>
 </div>
 <div id="ate-with-ggplot" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> ATE with <code>ggplot</code></h3>
 <p>The package <code>ggplot2</code> also offers a system of plotting in R. The “gg” in ggplot2 stands for the “Grammar of Graphics.” This program provides another framework for creating figures in R. According to Hadley Wickham, “ggplot2 provides beautiful, hassle-free plots that take care of fiddly details like drawing legends.”</p>
 <p>Practically speaking, <code>ggplot()</code> is another tool to plot the same types of figures we have been making in class. Some people prefer <code>ggplot2</code> because they find the logic of building figures more intuitive using this framework and/or more aesthetically pleasing. However, both <code>ggplot()</code> and the plots we have been making in class can accomplish the same ultimate goals of data visualization– to communicate information transparently, quickly, accurately, simply, and beautifully. Which types of plots you may prefer is up to your own taste.</p>
 <p>The syntax for this is different. One of the primary differences is that the <code>ggplot</code> function generally requires that you start from a <code>data.frame</code> object. This means that we will have to organize the set of results we want to plot into a rectangular data.frame.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="plotting-average-treatment-effects.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Put each result in a vector</span></span>
-<span id="cb181-2"><a href="plotting-average-treatment-effects.html#cb181-2" aria-hidden="true" tabindex="-1"></a>angerresults <span class="ot">&lt;-</span> <span class="fu">c</span>(d.i.m, ci)</span>
-<span id="cb181-3"><a href="plotting-average-treatment-effects.html#cb181-3" aria-hidden="true" tabindex="-1"></a>hoperesults <span class="ot">&lt;-</span> <span class="fu">c</span>(d.i.m2, ci2)</span>
-<span id="cb181-4"><a href="plotting-average-treatment-effects.html#cb181-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb181-5"><a href="plotting-average-treatment-effects.html#cb181-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Bind these together as rows, store as dataframe</span></span>
-<span id="cb181-6"><a href="plotting-average-treatment-effects.html#cb181-6" aria-hidden="true" tabindex="-1"></a>comb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">rbind</span>(angerresults, hoperesults))</span>
-<span id="cb181-7"><a href="plotting-average-treatment-effects.html#cb181-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb181-8"><a href="plotting-average-treatment-effects.html#cb181-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Give columns informative labels</span></span>
-<span id="cb181-9"><a href="plotting-average-treatment-effects.html#cb181-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(comb) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ATE&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)</span>
-<span id="cb181-10"><a href="plotting-average-treatment-effects.html#cb181-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb181-11"><a href="plotting-average-treatment-effects.html#cb181-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Add group indicator</span></span>
-<span id="cb181-12"><a href="plotting-average-treatment-effects.html#cb181-12" aria-hidden="true" tabindex="-1"></a>comb<span class="sc">$</span>Comparison <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="plotting-average-treatment-effects.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Put each result in a vector</span></span>
+<span id="cb251-2"><a href="plotting-average-treatment-effects.html#cb251-2" aria-hidden="true" tabindex="-1"></a>angerresults <span class="ot">&lt;-</span> <span class="fu">c</span>(d.i.m, ci)</span>
+<span id="cb251-3"><a href="plotting-average-treatment-effects.html#cb251-3" aria-hidden="true" tabindex="-1"></a>hoperesults <span class="ot">&lt;-</span> <span class="fu">c</span>(d.i.m2, ci2)</span>
+<span id="cb251-4"><a href="plotting-average-treatment-effects.html#cb251-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb251-5"><a href="plotting-average-treatment-effects.html#cb251-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Bind these together as rows, store as dataframe</span></span>
+<span id="cb251-6"><a href="plotting-average-treatment-effects.html#cb251-6" aria-hidden="true" tabindex="-1"></a>comb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">rbind</span>(angerresults, hoperesults))</span>
+<span id="cb251-7"><a href="plotting-average-treatment-effects.html#cb251-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb251-8"><a href="plotting-average-treatment-effects.html#cb251-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Give columns informative labels</span></span>
+<span id="cb251-9"><a href="plotting-average-treatment-effects.html#cb251-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(comb) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ATE&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)</span>
+<span id="cb251-10"><a href="plotting-average-treatment-effects.html#cb251-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb251-11"><a href="plotting-average-treatment-effects.html#cb251-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Add group indicator</span></span>
+<span id="cb251-12"><a href="plotting-average-treatment-effects.html#cb251-12" aria-hidden="true" tabindex="-1"></a>comb<span class="sc">$</span>Comparison <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Anger vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>,<span class="st">&quot;Hope vs. </span><span class="sc">\n</span><span class="st"> Control&quot;</span>)</span></code></pre></div>
 <p>Now we can use the <code>ggplot</code> function from the <code>ggplot2</code> package. The main plotting function in <code>ggplot2</code> is the <code>ggplot()</code> function. It will give you access to barplots, boxplots, scatterplots, histograms, etc.</p>
 <p>The three primary components of a ggplot() are a dataframe (<code>data =</code>), a set of mapping aesthetics (<code>aes()</code>), and <code>geoms</code> (e.g., geom boxplot, geom bar, geom point, geom line, etc.).</p>
 <ul>
@@ -478,21 +487,21 @@ Expand for a randomization inference example.
 </ul></li>
 </ul>
 <p>There are many more possibilities for plotting with <code>ggplot()</code>. For additional resources on all that is gg, I recommend the <a href="https://%20r-graphics.org/">R Graphics Cookbook</a>.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="plotting-average-treatment-effects.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb182-2"><a href="plotting-average-treatment-effects.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comb, <span class="fu">aes</span>(<span class="at">x=</span>Comparison, <span class="at">y=</span>ATE))<span class="sc">+</span></span>
-<span id="cb182-3"><a href="plotting-average-treatment-effects.html#cb182-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb182-4"><a href="plotting-average-treatment-effects.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb182-5"><a href="plotting-average-treatment-effects.html#cb182-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-94-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="plotting-average-treatment-effects.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb252-2"><a href="plotting-average-treatment-effects.html#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comb, <span class="fu">aes</span>(<span class="at">x=</span>Comparison, <span class="at">y=</span>ATE))<span class="sc">+</span></span>
+<span id="cb252-3"><a href="plotting-average-treatment-effects.html#cb252-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb252-4"><a href="plotting-average-treatment-effects.html#cb252-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb252-5"><a href="plotting-average-treatment-effects.html#cb252-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-137-1.svg" width="672" /></p>
 <p>Just like with the other plotting functions in R, you can also specify a number of other arguments to make your plot more informative and aesthetically pleasing. Here, you do this by adding (<code>+</code>) additional arguments. See examples below (e.g., <code>ggtitle</code>, <code>xlab</code>, <code>ylab</code> for titles, <code>ylim</code> for y-axis limits, etc.). We can also add a horizontal line with <code>geom_hline</code>.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="plotting-average-treatment-effects.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comb, <span class="fu">aes</span>(<span class="at">x=</span>Comparison, <span class="at">y=</span>ATE))<span class="sc">+</span></span>
-<span id="cb183-2"><a href="plotting-average-treatment-effects.html#cb183-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb183-3"><a href="plotting-average-treatment-effects.html#cb183-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb183-4"><a href="plotting-average-treatment-effects.html#cb183-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb183-5"><a href="plotting-average-treatment-effects.html#cb183-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
-<span id="cb183-6"><a href="plotting-average-treatment-effects.html#cb183-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>)<span class="sc">+</span></span>
-<span id="cb183-7"><a href="plotting-average-treatment-effects.html#cb183-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
-<p><img src="experiments_files/figure-html/unnamed-chunk-95-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="plotting-average-treatment-effects.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comb, <span class="fu">aes</span>(<span class="at">x=</span>Comparison, <span class="at">y=</span>ATE))<span class="sc">+</span></span>
+<span id="cb253-2"><a href="plotting-average-treatment-effects.html#cb253-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb253-3"><a href="plotting-average-treatment-effects.html#cb253-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lower, <span class="at">ymax=</span>upper), <span class="at">width=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb253-4"><a href="plotting-average-treatment-effects.html#cb253-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb253-5"><a href="plotting-average-treatment-effects.html#cb253-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">0</span>), <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>, <span class="at">colour=</span><span class="st">&quot;red3&quot;</span>)<span class="sc">+</span></span>
+<span id="cb253-6"><a href="plotting-average-treatment-effects.html#cb253-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Average Treatment Effects on Donations to Black Organizations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb253-7"><a href="plotting-average-treatment-effects.html#cb253-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))<span class="co"># centers title</span></span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-138-1.svg" width="672" /></p>
 </div>
 </div>
             </section>

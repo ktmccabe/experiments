@@ -503,7 +503,7 @@ head(status)
 The data include the following variables
 
   - `condition`: Placebo, Concrete, Self-Esteem, Social Approval, Conspicuous Consumption
-  - `gender`: 1= male; 0= otherwise
+  - `male`: 1= male; 0= otherwise
   - `econcon`: Economic views. Numeric variable from 0 to 1, with higher values reflecting more conservative views
 
 Practice:

@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -297,12 +306,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>It used to be pretty difficult to do this in R, but over the last few years, people have developed packages to integrate clustering into the standard functions for regression. We will use the package <code>estimatr</code> in this way.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="clustering-standard-errors.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;estimatr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="clustering-standard-errors.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;estimatr&quot;</span>)</span></code></pre></div>
 <p>Its primary function is <code>lm_robust</code> reflecting its easy integration of different types of “robust” standard errors.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="clustering-standard-errors.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(estimatr)</span>
-<span id="cb236-2"><a href="clustering-standard-errors.html#cb236-2" aria-hidden="true" tabindex="-1"></a>r1.cluster <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(prop_sd_fem2014 <span class="sc">~</span> condition, wom,</span>
-<span id="cb236-3"><a href="clustering-standard-errors.html#cb236-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">se_type=</span><span class="st">&quot;stata&quot;</span>, <span class="at">clusters =</span> county)</span>
-<span id="cb236-4"><a href="clustering-standard-errors.html#cb236-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">summary</span>(r1.cluster)<span class="sc">$</span>coefficients, <span class="at">digits=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="clustering-standard-errors.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(estimatr)</span>
+<span id="cb306-2"><a href="clustering-standard-errors.html#cb306-2" aria-hidden="true" tabindex="-1"></a>r1.cluster <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(prop_sd_fem2014 <span class="sc">~</span> condition, wom,</span>
+<span id="cb306-3"><a href="clustering-standard-errors.html#cb306-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">se_type=</span><span class="st">&quot;stata&quot;</span>, <span class="at">clusters =</span> county)</span>
+<span id="cb306-4"><a href="clustering-standard-errors.html#cb306-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">summary</span>(r1.cluster)<span class="sc">$</span>coefficients, <span class="at">digits=</span><span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##                        Estimate Std. Error t value Pr(&gt;|t|) CI Lower CI Upper
 ## (Intercept)              0.2457     0.0146 16.8311   0.0000   0.2158   0.2756
 ## conditionSupply          0.0149     0.0155  0.9639   0.3433  -0.0168   0.0466
@@ -322,41 +331,41 @@ Pr(\text{at least one significant result}) &amp;= 1 - Pr(\text{no significant re
 &amp;= 1 - (1 - 0.05)^{\text{number of tests}}
 \end{align*}\]</span></p>
 <p>With 3 tests, you have a 14% chance of observing at least one significant result even if all are not significant.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="clustering-standard-errors.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span>)<span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="clustering-standard-errors.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span>)<span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
 <pre><code>## [1] 0.142625</code></pre>
 <p>We can make an adjustment that makes it harder for us to conclude a result is significant under multiple comparisons. See <a href="https://egap.org/resource/10-things-to-know-about-multiple-comparisons/">EGAP’s resource</a>.</p>
 <p>Here are some examples of adjustments using the <code>p.adjust</code> function.</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="clustering-standard-errors.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="do">## extract p-values from the regression</span></span>
-<span id="cb240-2"><a href="clustering-standard-errors.html#cb240-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">summary</span>(r1.cluster)<span class="sc">$</span>coefficients[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
-<span id="cb240-3"><a href="clustering-standard-errors.html#cb240-3" aria-hidden="true" tabindex="-1"></a>pvals</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="clustering-standard-errors.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="do">## extract p-values from the regression</span></span>
+<span id="cb310-2"><a href="clustering-standard-errors.html#cb310-2" aria-hidden="true" tabindex="-1"></a>pvals <span class="ot">&lt;-</span> <span class="fu">summary</span>(r1.cluster)<span class="sc">$</span>coefficients[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
+<span id="cb310-3"><a href="clustering-standard-errors.html#cb310-3" aria-hidden="true" tabindex="-1"></a>pvals</span></code></pre></div>
 <pre><code>##        conditionSupply        conditionDemand conditionSupply+Demand 
 ##             0.34334883             0.48898188             0.01939968</code></pre>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="clustering-standard-errors.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="do">## bonferroni-- very conservative</span></span>
-<span id="cb242-2"><a href="clustering-standard-errors.html#cb242-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p.adjust</span>(pvals, <span class="at">method=</span><span class="st">&quot;bonferroni&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="clustering-standard-errors.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="do">## bonferroni-- very conservative</span></span>
+<span id="cb312-2"><a href="clustering-standard-errors.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p.adjust</span>(pvals, <span class="at">method=</span><span class="st">&quot;bonferroni&quot;</span>)</span></code></pre></div>
 <pre><code>##        conditionSupply        conditionDemand conditionSupply+Demand 
 ##             1.00000000             1.00000000             0.05819905</code></pre>
 <details>
 <summary>
 The manual approach.
 </summary>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="clustering-standard-errors.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="do">## manual (p-vals over 1 switch to 1)</span></span>
-<span id="cb244-2"><a href="clustering-standard-errors.html#cb244-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># number of tests</span></span>
-<span id="cb244-3"><a href="clustering-standard-errors.html#cb244-3" aria-hidden="true" tabindex="-1"></a>pvals <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="clustering-standard-errors.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="do">## manual (p-vals over 1 switch to 1)</span></span>
+<span id="cb314-2"><a href="clustering-standard-errors.html#cb314-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># number of tests</span></span>
+<span id="cb314-3"><a href="clustering-standard-errors.html#cb314-3" aria-hidden="true" tabindex="-1"></a>pvals <span class="sc">*</span> <span class="dv">3</span></span></code></pre></div>
 <pre><code>##        conditionSupply        conditionDemand conditionSupply+Demand 
 ##             1.03004649             1.46694564             0.05819905</code></pre>
 </details>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="clustering-standard-errors.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="do">## holm</span></span>
-<span id="cb246-2"><a href="clustering-standard-errors.html#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p.adjust</span>(pvals, <span class="at">method=</span><span class="st">&quot;holm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="clustering-standard-errors.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="do">## holm</span></span>
+<span id="cb316-2"><a href="clustering-standard-errors.html#cb316-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p.adjust</span>(pvals, <span class="at">method=</span><span class="st">&quot;holm&quot;</span>)</span></code></pre></div>
 <pre><code>##        conditionSupply        conditionDemand conditionSupply+Demand 
 ##             0.68669766             0.68669766             0.05819905</code></pre>
 <details>
 <summary>
 The manual approach.
 </summary>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="clustering-standard-errors.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="do">## manual-- requires pval sorting</span></span>
-<span id="cb248-2"><a href="clustering-standard-errors.html#cb248-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># number of tests</span></span>
-<span id="cb248-3"><a href="clustering-standard-errors.html#cb248-3" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="co"># sequence of rankings</span></span>
-<span id="cb248-4"><a href="clustering-standard-errors.html#cb248-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cummax</span>((m <span class="sc">+</span> <span class="dv">1</span> <span class="sc">-</span> i) <span class="sc">*</span> <span class="fu">sort</span>(pvals))</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="clustering-standard-errors.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="do">## manual-- requires pval sorting</span></span>
+<span id="cb318-2"><a href="clustering-standard-errors.html#cb318-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># number of tests</span></span>
+<span id="cb318-3"><a href="clustering-standard-errors.html#cb318-3" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="co"># sequence of rankings</span></span>
+<span id="cb318-4"><a href="clustering-standard-errors.html#cb318-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cummax</span>((m <span class="sc">+</span> <span class="dv">1</span> <span class="sc">-</span> i) <span class="sc">*</span> <span class="fu">sort</span>(pvals))</span></code></pre></div>
 <pre><code>## conditionSupply+Demand        conditionSupply        conditionDemand 
 ##             0.05819905             0.68669766             0.68669766</code></pre>
 </details>

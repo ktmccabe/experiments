@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -370,32 +379,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We have an experimental <span class="math inline">\(z=\)</span> <code>assignment</code> variable</li>
 <li>And we have a compliance variable <span class="math inline">\(d=\)</span> <code>treated</code></li>
 </ul>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="compliance.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Replicating Chapter 5 analyses</span></span>
-<span id="cb250-2"><a href="compliance.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="do">## z = Assigned, d = Treated, y= Voted</span></span>
-<span id="cb250-3"><a href="compliance.html#cb250-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
-<span id="cb250-4"><a href="compliance.html#cb250-4" aria-hidden="true" tabindex="-1"></a>voters <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">&quot;data/ggch5.dta&quot;</span>)</span>
-<span id="cb250-5"><a href="compliance.html#cb250-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb250-6"><a href="compliance.html#cb250-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. effect of experimental assignment on receipt of treatment</span></span>
-<span id="cb250-7"><a href="compliance.html#cb250-7" aria-hidden="true" tabindex="-1"></a>ITTd <span class="ot">&lt;-</span> <span class="fu">lm</span>(treated <span class="sc">~</span> assigned, voters)</span>
-<span id="cb250-8"><a href="compliance.html#cb250-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb250-9"><a href="compliance.html#cb250-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. effect of experimental assignment on whether voted (outcome)</span></span>
-<span id="cb250-10"><a href="compliance.html#cb250-10" aria-hidden="true" tabindex="-1"></a>ITT <span class="ot">&lt;-</span> <span class="fu">lm</span>(voted <span class="sc">~</span> assigned, voters)</span>
-<span id="cb250-11"><a href="compliance.html#cb250-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb250-12"><a href="compliance.html#cb250-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 3. ratio of treatment effect. compare with Box 5.6</span></span>
-<span id="cb250-13"><a href="compliance.html#cb250-13" aria-hidden="true" tabindex="-1"></a>ITT<span class="sc">$</span>coefficients[<span class="dv">2</span>]<span class="sc">/</span>ITTd<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="compliance.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Replicating Chapter 5 analyses</span></span>
+<span id="cb320-2"><a href="compliance.html#cb320-2" aria-hidden="true" tabindex="-1"></a><span class="do">## z = Assigned, d = Treated, y= Voted</span></span>
+<span id="cb320-3"><a href="compliance.html#cb320-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb320-4"><a href="compliance.html#cb320-4" aria-hidden="true" tabindex="-1"></a>voters <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">&quot;data/ggch5.dta&quot;</span>)</span>
+<span id="cb320-5"><a href="compliance.html#cb320-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb320-6"><a href="compliance.html#cb320-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. effect of experimental assignment on receipt of treatment</span></span>
+<span id="cb320-7"><a href="compliance.html#cb320-7" aria-hidden="true" tabindex="-1"></a>ITTd <span class="ot">&lt;-</span> <span class="fu">lm</span>(treated <span class="sc">~</span> assigned, voters)</span>
+<span id="cb320-8"><a href="compliance.html#cb320-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb320-9"><a href="compliance.html#cb320-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. effect of experimental assignment on whether voted (outcome)</span></span>
+<span id="cb320-10"><a href="compliance.html#cb320-10" aria-hidden="true" tabindex="-1"></a>ITT <span class="ot">&lt;-</span> <span class="fu">lm</span>(voted <span class="sc">~</span> assigned, voters)</span>
+<span id="cb320-11"><a href="compliance.html#cb320-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb320-12"><a href="compliance.html#cb320-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 3. ratio of treatment effect. compare with Box 5.6</span></span>
+<span id="cb320-13"><a href="compliance.html#cb320-13" aria-hidden="true" tabindex="-1"></a>ITT<span class="sc">$</span>coefficients[<span class="dv">2</span>]<span class="sc">/</span>ITTd<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>##  assigned 
 ## 0.1407115</code></pre>
 <p>Alternative, recommended approach using <code>ivreg</code>. This will calculate the correct standard errors for this type of setup using instrumental variables regression. The experimental assignment is considered an “instrument” for the treatment.</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="compliance.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;AER&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="compliance.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AER) </span>
-<span id="cb253-2"><a href="compliance.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Function for conducting two-stage least squares regression</span></span>
-<span id="cb253-3"><a href="compliance.html#cb253-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Takes form ivreg(Y ~ d | z, data)</span></span>
-<span id="cb253-4"><a href="compliance.html#cb253-4" aria-hidden="true" tabindex="-1"></a>cace <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(voted <span class="sc">~</span> treated  <span class="sc">|</span> assigned, <span class="at">data =</span> voters)</span>
-<span id="cb253-5"><a href="compliance.html#cb253-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cace)<span class="sc">$</span>coefficients[<span class="dv">2</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="compliance.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;AER&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="compliance.html#cb323-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AER) </span>
+<span id="cb323-2"><a href="compliance.html#cb323-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Function for conducting two-stage least squares regression</span></span>
+<span id="cb323-3"><a href="compliance.html#cb323-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Takes form ivreg(Y ~ d | z, data)</span></span>
+<span id="cb323-4"><a href="compliance.html#cb323-4" aria-hidden="true" tabindex="-1"></a>cace <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(voted <span class="sc">~</span> treated  <span class="sc">|</span> assigned, <span class="at">data =</span> voters)</span>
+<span id="cb323-5"><a href="compliance.html#cb323-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cace)<span class="sc">$</span>coefficients[<span class="dv">2</span>,]</span></code></pre></div>
 <pre><code>##    Estimate  Std. Error     t value    Pr(&gt;|t|) 
 ## 0.140711507 0.052276906 2.691657117 0.007126494</code></pre>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="compliance.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional, more conservative standard errors</span></span>
-<span id="cb255-2"><a href="compliance.html#cb255-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(cace, <span class="fu">vcovHC</span>(cace))[<span class="dv">2</span>,] </span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="compliance.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Optional, more conservative standard errors</span></span>
+<span id="cb325-2"><a href="compliance.html#cb325-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(cace, <span class="fu">vcovHC</span>(cace))[<span class="dv">2</span>,] </span></code></pre></div>
 <pre><code>##    Estimate  Std. Error     t value    Pr(&gt;|t|) 
 ## 0.140711507 0.052433888 2.683598551 0.007300369</code></pre>
 <p>Substantively, when might be interested in the CACE? When might we not?</p>

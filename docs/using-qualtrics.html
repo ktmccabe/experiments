@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -418,19 +427,19 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 <li>Save the .csv file with an informative name in the working directory where you store files to work on in R.</li>
 </ul>
 <p>Load the data into R.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="using-qualtrics.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="do">## my data are in a /data/ subfolder of my working directory</span></span>
-<span id="cb103-2"><a href="using-qualtrics.html#cb103-2" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/expdemo.csv&quot;</span>)</span>
-<span id="cb103-3"><a href="using-qualtrics.html#cb103-3" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> expdemo[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>),] <span class="co"># remove first two rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="using-qualtrics.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="do">## my data are in a /data/ subfolder of my working directory</span></span>
+<span id="cb159-2"><a href="using-qualtrics.html#cb159-2" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/expdemo.csv&quot;</span>)</span>
+<span id="cb159-3"><a href="using-qualtrics.html#cb159-3" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> expdemo[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>),] <span class="co"># remove first two rows</span></span></code></pre></div>
 <p>Let’s limit the sample to those who agreed to our consent form. Locate your consent variable and subset on those who agree.</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="using-qualtrics.html#cb104-1" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> <span class="fu">subset</span>(expdemo, QID1 <span class="sc">==</span> <span class="st">&quot;I Agree&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="using-qualtrics.html#cb160-1" aria-hidden="true" tabindex="-1"></a>expdemo <span class="ot">&lt;-</span> <span class="fu">subset</span>(expdemo, QID1 <span class="sc">==</span> <span class="st">&quot;I Agree&quot;</span>)</span></code></pre></div>
 <p>At this stage, we just have fake/test respondents. However, we can still see if the randomization works properly and if the outcome questions are populating in the way we want.</p>
 <p>For example, we want about a quarter of respondents assigned to each of the experimental conditions.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="using-qualtrics.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(expdemo<span class="sc">$</span>treat)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="using-qualtrics.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(expdemo<span class="sc">$</span>treat)</span></code></pre></div>
 <pre><code>## 
 ## endorsement   operation     stayout      threat 
 ##          71          58          57          56</code></pre>
 <p>And let’s make sure our outcomes are populating correctly. Note how people from each condition have populated the outcomes. This gives us confidence that the survey logic is working correctly. If, for example, no one from the endorsement condition had answered the outcome, this might mean we had a typo or other error in our survey logic.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="using-qualtrics.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(expdemo<span class="sc">$</span>approval)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="using-qualtrics.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(expdemo<span class="sc">$</span>approval)</span></code></pre></div>
 <pre><code>## 
 ##               Approve somewhat               Approve strongly 
 ##                             51                             46 
@@ -438,8 +447,8 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 ##                             49                             43 
 ## Neither approve nor disapprove 
 ##                             53</code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="using-qualtrics.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">condition=</span>expdemo<span class="sc">$</span>treat,</span>
-<span id="cb109-2"><a href="using-qualtrics.html#cb109-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">outcome =</span> expdemo<span class="sc">$</span>approval)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="using-qualtrics.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">condition=</span>expdemo<span class="sc">$</span>treat,</span>
+<span id="cb165-2"><a href="using-qualtrics.html#cb165-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">outcome =</span> expdemo<span class="sc">$</span>approval)</span></code></pre></div>
 <pre><code>##              outcome
 ## condition     Approve somewhat Approve strongly Disapprove somewhat
 ##   endorsement               13               15                  19

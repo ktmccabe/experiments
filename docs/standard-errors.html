@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -313,23 +322,23 @@ s &amp;= \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 }
 Remember: standard deviation is the square root of the variance!</li>
 </ol>
 <p>Let’s say these were the data for a sample of 10 voters’ scores on a feeling thermometer of their views toward liberals.</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="standard-errors.html#cb111-1" aria-hidden="true" tabindex="-1"></a>fts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">95</span>, <span class="dv">100</span>, <span class="dv">5</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">65</span>, <span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">28</span>)</span>
-<span id="cb111-2"><a href="standard-errors.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-3"><a href="standard-errors.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. take the squared deviation from the mean</span></span>
-<span id="cb111-4"><a href="standard-errors.html#cb111-4" aria-hidden="true" tabindex="-1"></a>sq.dev <span class="ot">&lt;-</span> (fts <span class="sc">-</span> <span class="fu">mean</span>(fts))<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb111-5"><a href="standard-errors.html#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-6"><a href="standard-errors.html#cb111-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. Take the sum</span></span>
-<span id="cb111-7"><a href="standard-errors.html#cb111-7" aria-hidden="true" tabindex="-1"></a>sum.sq.dev <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq.dev)</span>
-<span id="cb111-8"><a href="standard-errors.html#cb111-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-9"><a href="standard-errors.html#cb111-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 3. Divide over N - 1</span></span>
-<span id="cb111-10"><a href="standard-errors.html#cb111-10" aria-hidden="true" tabindex="-1"></a>sum.sq.dev.n <span class="ot">&lt;-</span> sum.sq.dev<span class="sc">/</span>(<span class="fu">length</span>(fts) <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb111-11"><a href="standard-errors.html#cb111-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-12"><a href="standard-errors.html#cb111-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4. Take the square root</span></span>
-<span id="cb111-13"><a href="standard-errors.html#cb111-13" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sum.sq.dev.n)</span>
-<span id="cb111-14"><a href="standard-errors.html#cb111-14" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="standard-errors.html#cb167-1" aria-hidden="true" tabindex="-1"></a>fts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">95</span>, <span class="dv">100</span>, <span class="dv">5</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">65</span>, <span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">28</span>)</span>
+<span id="cb167-2"><a href="standard-errors.html#cb167-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-3"><a href="standard-errors.html#cb167-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. take the squared deviation from the mean</span></span>
+<span id="cb167-4"><a href="standard-errors.html#cb167-4" aria-hidden="true" tabindex="-1"></a>sq.dev <span class="ot">&lt;-</span> (fts <span class="sc">-</span> <span class="fu">mean</span>(fts))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb167-5"><a href="standard-errors.html#cb167-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-6"><a href="standard-errors.html#cb167-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. Take the sum</span></span>
+<span id="cb167-7"><a href="standard-errors.html#cb167-7" aria-hidden="true" tabindex="-1"></a>sum.sq.dev <span class="ot">&lt;-</span> <span class="fu">sum</span>(sq.dev)</span>
+<span id="cb167-8"><a href="standard-errors.html#cb167-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-9"><a href="standard-errors.html#cb167-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 3. Divide over N - 1</span></span>
+<span id="cb167-10"><a href="standard-errors.html#cb167-10" aria-hidden="true" tabindex="-1"></a>sum.sq.dev.n <span class="ot">&lt;-</span> sum.sq.dev<span class="sc">/</span>(<span class="fu">length</span>(fts) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb167-11"><a href="standard-errors.html#cb167-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-12"><a href="standard-errors.html#cb167-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4. Take the square root</span></span>
+<span id="cb167-13"><a href="standard-errors.html#cb167-13" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sum.sq.dev.n)</span>
+<span id="cb167-14"><a href="standard-errors.html#cb167-14" aria-hidden="true" tabindex="-1"></a>s</span></code></pre></div>
 <pre><code>## [1] 33.02457</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="standard-errors.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="do">## optional code</span></span>
-<span id="cb113-2"><a href="standard-errors.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(fts) <span class="co"># or sqrt(var(fts)) </span></span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="standard-errors.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="do">## optional code</span></span>
+<span id="cb169-2"><a href="standard-errors.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(fts) <span class="co"># or sqrt(var(fts)) </span></span></code></pre></div>
 <pre><code>## [1] 33.02457</code></pre>
 <p><strong><em>What is a sampling distribution?</em></strong></p>
 <p>The experiment we happen to conduct yields an estimate of the average treatment effect, but in a different randomization, our estimate might have been different.</p>
@@ -385,18 +394,18 @@ s &amp;= \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 }\\
 \end{align*}\]</span></p>
 <p><strong><em>Example</em></strong></p>
 <p>What’s our estimate for the mean and standard error for feeling thermometer scores toward liberals?</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="standard-errors.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. Take standard deviation</span></span>
-<span id="cb115-2"><a href="standard-errors.html#cb115-2" aria-hidden="true" tabindex="-1"></a>st.dev.fts <span class="ot">&lt;-</span> <span class="fu">sd</span>(fts)</span>
-<span id="cb115-3"><a href="standard-errors.html#cb115-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-4"><a href="standard-errors.html#cb115-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. Divide by square root of sample size</span></span>
-<span id="cb115-5"><a href="standard-errors.html#cb115-5" aria-hidden="true" tabindex="-1"></a>se.fts <span class="ot">&lt;-</span> st.dev.fts<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(fts))</span>
-<span id="cb115-6"><a href="standard-errors.html#cb115-6" aria-hidden="true" tabindex="-1"></a>se.fts</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="standard-errors.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. Take standard deviation</span></span>
+<span id="cb171-2"><a href="standard-errors.html#cb171-2" aria-hidden="true" tabindex="-1"></a>st.dev.fts <span class="ot">&lt;-</span> <span class="fu">sd</span>(fts)</span>
+<span id="cb171-3"><a href="standard-errors.html#cb171-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb171-4"><a href="standard-errors.html#cb171-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2. Divide by square root of sample size</span></span>
+<span id="cb171-5"><a href="standard-errors.html#cb171-5" aria-hidden="true" tabindex="-1"></a>se.fts <span class="ot">&lt;-</span> st.dev.fts<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(fts))</span>
+<span id="cb171-6"><a href="standard-errors.html#cb171-6" aria-hidden="true" tabindex="-1"></a>se.fts</span></code></pre></div>
 <pre><code>## [1] 10.44329</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="standard-errors.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alternative</span></span>
-<span id="cb117-2"><a href="standard-errors.html#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(fts)<span class="sc">/</span><span class="fu">length</span>(fts))</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="standard-errors.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alternative</span></span>
+<span id="cb173-2"><a href="standard-errors.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(fts)<span class="sc">/</span><span class="fu">length</span>(fts))</span></code></pre></div>
 <pre><code>## [1] 10.44329</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="standard-errors.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="do">## What&#39;s the mean?</span></span>
-<span id="cb119-2"><a href="standard-errors.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(fts)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="standard-errors.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="do">## What&#39;s the mean?</span></span>
+<span id="cb175-2"><a href="standard-errors.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(fts)</span></code></pre></div>
 <pre><code>## [1] 67.8</code></pre>
 </div>
 <div id="standard-error-for-a-difference-in-means" class="section level3" number="4.1.2">

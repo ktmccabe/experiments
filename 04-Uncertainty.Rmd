@@ -778,6 +778,94 @@ ANOVA and t-test diverge in estimates when you have more than 2 groups
   - As there are multiple-testing corrections for t-tests
       + More on [multiple testing adjustments](https://egap.org/resource/10-things-to-know-about-multiple-comparisons/)
 
+## Comparing different types of tests
+
+We have suggested that using a linear regression or a t-test result in the same difference-in-mean estimates with estimating average treatment effects.
+
+There may be some slight differences in the uncertainty depending on how you specifiy the t-test.
+
+A t-test generally uses this formula for a t-test, which allows the variances to be unequal between the two groups `var.equal = F`. However, this is not the only way to estimate uncertainty when comparing two independent groups.
+
+\begin{align*}
+\widehat{SE}_{d-i-m} &= \sqrt{\frac{s_1}{m} + \frac{s_0}{N-m}}
+\end{align*}
+
+```{r}
+asians.t <- t.test(asians$study2_avg[asians$treatment_cit == 1],
+                   asians$study2_avg[asians$treatment_cit == 0],
+                   var.equal=F)
+asians.t$stderr
+
+## by hand
+## Get N for each group
+n.asianst1 <- length(asians$study2_avg[asians$treatment_cit == 1])
+n.asianst0 <- length(asians$study2_avg[asians$treatment_cit == 0])
+
+## Get variance for each group
+v.asianst1 <- var(asians$study2_avg[asians$treatment_cit == 1])
+v.asianst0 <- var(asians$study2_avg[asians$treatment_cit == 0])
+
+## Standard error
+se.diffasians <- sqrt(v.asianst1/n.asianst1 + v.asianst0/n.asianst0)
+se.diffasians
+```
+
+It is also common to use an assumption that the variances between groups are equal `var.equal = T`, in which case the variance is calculated using a "pooled" estimator.
+
+\begin{align*}
+\widehat{SE}_{d-i-m pooled} &= \sqrt{\frac{(m-1)s^2_1 + (N -m-1)s^2_2}{N - 2}}*\sqrt{\frac{1}{m} + \frac{1}{N-m}}
+\end{align*}
+
+```{r}
+asians.t <- t.test(asians$study2_avg[asians$treatment_cit == 1],
+                   asians$study2_avg[asians$treatment_cit == 0],
+                   var.equal=T)
+asians.t$std.err
+
+
+## By hand, use pooled estimator for variance/standard error/degrees of freedom
+pooled.var <- ((n.asianst1 - 1) * v.asianst1 + 
+                 (n.asianst0 - 1)*v.asianst0)/ (n.asianst0 + n.asianst1 -2)
+pooled.se <- sqrt(pooled.var) * sqrt( 1/n.asianst0 + 1/n.asianst1)
+pooled.se
+```
+
+The pooled variance t-test and linear regression procedure will result in the same estimates of uncertainty.
+
+\begin{align*}
+\widehat{SE}_{\hat \beta } &= \sqrt{\frac{1}{N-2} \times \frac{\sum (y_i - \hat y_i)^2}{\sum (x_i - \bar x)^2}}
+\end{align*}
+
+
+```{r}
+asians.fit <- lm(study2_avg ~ treatment_cit, data=asians)
+
+## Manual application of formula
+y <- asians$study2_avg
+yhat <- fitted(asians.fit)
+x <- asians$treatment_cit
+xbar <- mean(asians$treatment_cit)
+N <- n.asianst0 + n.asianst1
+
+SSy <- sum((y - yhat)^2)
+SSx <- sum((x - xbar)^2)
+
+reg.SE <- sqrt(1/(N-2) * (SSy/SSx))
+reg.SE
+
+## compare to standard error extracted from model summary
+summary(asians.fit)$coefficients[2,2]
+```
+
+This is also equivalent to the standard error of the estimate in an ANOVA comparison with two groups, as ANOVA has an equivalence to regression and the t-test in the case of a two-group comparison.
+
+```{r}
+a1 <- aov(study2_avg ~ treatment_cit, data = asians)
+
+sqrt(diag(vcov(a1)))[2]
+```
+
+
 
 
 ## Experimental Design Complications

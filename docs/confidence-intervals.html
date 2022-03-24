@@ -155,6 +155,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
 <ul>
@@ -220,7 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
 <li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
 <li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
-<li class="chapter" data-level="4.8" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.8</b> Experimental Design Complications</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
 <ul>
@@ -303,24 +312,24 @@ CI &amp;= \bar{Y} +/- crit.value*\widehat{SE}_{\bar{Y}}\\
 \end{align*}\]</span></p>
 <p>Careful when interpreting CI’s: note that the interval may vary from experiment to experiment, while the parameter stays fixed.</p>
 <p><strong><em>Example computing confidence intervals</em></strong></p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="confidence-intervals.html#cb121-1" aria-hidden="true" tabindex="-1"></a>m.fts <span class="ot">&lt;-</span> <span class="fu">mean</span>(fts)</span>
-<span id="cb121-2"><a href="confidence-intervals.html#cb121-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-3"><a href="confidence-intervals.html#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="do">## What&#39;s our test level? .05</span></span>
-<span id="cb121-4"><a href="confidence-intervals.html#cb121-4" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> .<span class="dv">05</span></span>
-<span id="cb121-5"><a href="confidence-intervals.html#cb121-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-6"><a href="confidence-intervals.html#cb121-6" aria-hidden="true" tabindex="-1"></a><span class="do">## critical value for normal distribution</span></span>
-<span id="cb121-7"><a href="confidence-intervals.html#cb121-7" aria-hidden="true" tabindex="-1"></a>crit.z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb121-8"><a href="confidence-intervals.html#cb121-8" aria-hidden="true" tabindex="-1"></a><span class="do">## critical value for t-distribution</span></span>
-<span id="cb121-9"><a href="confidence-intervals.html#cb121-9" aria-hidden="true" tabindex="-1"></a>crit.t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> (<span class="fu">length</span>(fts)<span class="sc">-</span><span class="dv">1</span>))</span>
-<span id="cb121-10"><a href="confidence-intervals.html#cb121-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-11"><a href="confidence-intervals.html#cb121-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence interval using t-distribution</span></span>
-<span id="cb121-12"><a href="confidence-intervals.html#cb121-12" aria-hidden="true" tabindex="-1"></a>ci.ub <span class="ot">&lt;-</span> m.fts <span class="sc">+</span> crit.t<span class="sc">*</span>se.fts</span>
-<span id="cb121-13"><a href="confidence-intervals.html#cb121-13" aria-hidden="true" tabindex="-1"></a>ci.lb <span class="ot">&lt;-</span> m.fts <span class="sc">-</span> crit.t<span class="sc">*</span>se.fts</span>
-<span id="cb121-14"><a href="confidence-intervals.html#cb121-14" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(ci.lb, ci.ub) </span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="confidence-intervals.html#cb177-1" aria-hidden="true" tabindex="-1"></a>m.fts <span class="ot">&lt;-</span> <span class="fu">mean</span>(fts)</span>
+<span id="cb177-2"><a href="confidence-intervals.html#cb177-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb177-3"><a href="confidence-intervals.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="do">## What&#39;s our test level? .05</span></span>
+<span id="cb177-4"><a href="confidence-intervals.html#cb177-4" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> .<span class="dv">05</span></span>
+<span id="cb177-5"><a href="confidence-intervals.html#cb177-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb177-6"><a href="confidence-intervals.html#cb177-6" aria-hidden="true" tabindex="-1"></a><span class="do">## critical value for normal distribution</span></span>
+<span id="cb177-7"><a href="confidence-intervals.html#cb177-7" aria-hidden="true" tabindex="-1"></a>crit.z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb177-8"><a href="confidence-intervals.html#cb177-8" aria-hidden="true" tabindex="-1"></a><span class="do">## critical value for t-distribution</span></span>
+<span id="cb177-9"><a href="confidence-intervals.html#cb177-9" aria-hidden="true" tabindex="-1"></a>crit.t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span> alpha<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> (<span class="fu">length</span>(fts)<span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb177-10"><a href="confidence-intervals.html#cb177-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb177-11"><a href="confidence-intervals.html#cb177-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence interval using t-distribution</span></span>
+<span id="cb177-12"><a href="confidence-intervals.html#cb177-12" aria-hidden="true" tabindex="-1"></a>ci.ub <span class="ot">&lt;-</span> m.fts <span class="sc">+</span> crit.t<span class="sc">*</span>se.fts</span>
+<span id="cb177-13"><a href="confidence-intervals.html#cb177-13" aria-hidden="true" tabindex="-1"></a>ci.lb <span class="ot">&lt;-</span> m.fts <span class="sc">-</span> crit.t<span class="sc">*</span>se.fts</span>
+<span id="cb177-14"><a href="confidence-intervals.html#cb177-14" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(ci.lb, ci.ub) </span></code></pre></div>
 <pre><code>## [1] 44.17565 91.42435</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="confidence-intervals.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alternative using the R t.test function</span></span>
-<span id="cb123-2"><a href="confidence-intervals.html#cb123-2" aria-hidden="true" tabindex="-1"></a>t.testfts <span class="ot">&lt;-</span> <span class="fu">t.test</span>(fts)</span>
-<span id="cb123-3"><a href="confidence-intervals.html#cb123-3" aria-hidden="true" tabindex="-1"></a>t.testfts<span class="sc">$</span>conf.int[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="confidence-intervals.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alternative using the R t.test function</span></span>
+<span id="cb179-2"><a href="confidence-intervals.html#cb179-2" aria-hidden="true" tabindex="-1"></a>t.testfts <span class="ot">&lt;-</span> <span class="fu">t.test</span>(fts)</span>
+<span id="cb179-3"><a href="confidence-intervals.html#cb179-3" aria-hidden="true" tabindex="-1"></a>t.testfts<span class="sc">$</span>conf.int[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 44.17565 91.42435</code></pre>
 </div>
             </section>
