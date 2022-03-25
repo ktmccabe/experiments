@@ -673,7 +673,7 @@ In the real world, often our data include missing values, which R represents as 
 ```{r}
 range(status$econcon, na.rm=T)
 ```
-Not all functions allow this argument, so if you receive an error when trying to use it, it could be that the argument doesn't work for that particular function. For exmaple, the code below will generate an erro because `table()` doesn't have this arugment.
+Not all functions allow this argument, so if you receive an error when trying to use it, it could be that the argument doesn't work for that particular function. For example, the code below will generate an error because `table()` doesn't have this argument.
 
 ```{r, eval=F}
 table(status$econcon, na.rm=T)

@@ -298,9 +298,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.8</span> Comparing different types of tests</h2>
 <p>We have suggested that using a linear regression or a t-test result in the same difference-in-mean estimates with estimating average treatment effects.</p>
 <p>There may be some slight differences in the uncertainty depending on how you specifiy the t-test.</p>
-<p>A t-test generally uses this formula for a t-test, which allows the variances to be unequal between the two groups <code>var.equal = F</code>. However, this is not the only way to estimate uncertainty when comparing two independent groups.</p>
+<p>A t-test generally uses this formula for standard errors which allows the variances to be unequal between the two groups <code>var.equal = F</code>. However, this is not the only way to estimate uncertainty when comparing two independent groups.</p>
 <p><span class="math display">\[\begin{align*}
-\widehat{SE}_{d-i-m} &amp;= \sqrt{\frac{s_1}{m} + \frac{s_0}{N-m}}
+\widehat{SE}_{d-i-m} &amp;= \sqrt{\frac{s^2_1}{m} + \frac{s^2_0}{N-m}}
 \end{align*}\]</span></p>
 <div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="comparing-different-types-of-tests.html#cb223-1" aria-hidden="true" tabindex="-1"></a>asians.t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
 <span id="cb223-2"><a href="comparing-different-types-of-tests.html#cb223-2" aria-hidden="true" tabindex="-1"></a>                   asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>],</span>
@@ -335,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb229-4"><a href="comparing-different-types-of-tests.html#cb229-4" aria-hidden="true" tabindex="-1"></a>pooled.se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(pooled.var) <span class="sc">*</span> <span class="fu">sqrt</span>( <span class="dv">1</span><span class="sc">/</span>n.asianst0 <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>n.asianst1)</span>
 <span id="cb229-5"><a href="comparing-different-types-of-tests.html#cb229-5" aria-hidden="true" tabindex="-1"></a>pooled.se</span></code></pre></div>
 <pre><code>## [1] 0.04176698</code></pre>
-<p>The pooled variance t-test and linear regression procedure will result in the same estimates of uncertainty.</p>
+<p>The pooled variance t-test and simple linear regression procedure will result in the same estimates of uncertainty.</p>
 <p><span class="math display">\[\begin{align*}
 \widehat{SE}_{\hat \beta } &amp;= \sqrt{\frac{1}{N-2} \times \frac{\sum (y_i - \hat y_i)^2}{\sum (x_i - \bar x)^2}}
 \end{align*}\]</span></p>
@@ -363,6 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb235-3"><a href="comparing-different-types-of-tests.html#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcov</span>(a1)))[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## treatment_cit 
 ##    0.04176698</code></pre>
+<p>In practice, researchers use each of these methods, even though there may be minor differences.</p>
 </div>
             </section>
 

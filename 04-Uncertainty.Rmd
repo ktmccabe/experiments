@@ -720,7 +720,7 @@ Now if we want the standard error we get:
 Like before, we use sample substitutes ($s_1$ and $s_0$) where $m$ represents the number of units in the treatment and $N-m$, the number of unites in the control (switching notation here to match the book):
 
 \begin{align*}
-\widehat{SE}_{d-i-m} &= \sqrt{\frac{s_1}{m} + \frac{s_0}{N-m}}
+\widehat{SE}_{d-i-m} &= \sqrt{\frac{s^2_1}{m} + \frac{s^2_0}{N-m}}
 \end{align*}
 
 Note: this estimate of the standard error is considered conservative and is only appropriate when samples are independent. We will discuss alternative measures of variance.
@@ -784,10 +784,10 @@ We have suggested that using a linear regression or a t-test result in the same 
 
 There may be some slight differences in the uncertainty depending on how you specifiy the t-test.
 
-A t-test generally uses this formula for a t-test, which allows the variances to be unequal between the two groups `var.equal = F`. However, this is not the only way to estimate uncertainty when comparing two independent groups.
+A t-test generally uses this formula for standard errors which allows the variances to be unequal between the two groups `var.equal = F`. However, this is not the only way to estimate uncertainty when comparing two independent groups.
 
 \begin{align*}
-\widehat{SE}_{d-i-m} &= \sqrt{\frac{s_1}{m} + \frac{s_0}{N-m}}
+\widehat{SE}_{d-i-m} &= \sqrt{\frac{s^2_1}{m} + \frac{s^2_0}{N-m}}
 \end{align*}
 
 ```{r}
@@ -830,7 +830,7 @@ pooled.se <- sqrt(pooled.var) * sqrt( 1/n.asianst0 + 1/n.asianst1)
 pooled.se
 ```
 
-The pooled variance t-test and linear regression procedure will result in the same estimates of uncertainty.
+The pooled variance t-test and simple linear regression procedure will result in the same estimates of uncertainty.
 
 \begin{align*}
 \widehat{SE}_{\hat \beta } &= \sqrt{\frac{1}{N-2} \times \frac{\sum (y_i - \hat y_i)^2}{\sum (x_i - \bar x)^2}}
@@ -865,7 +865,7 @@ a1 <- aov(study2_avg ~ treatment_cit, data = asians)
 sqrt(diag(vcov(a1)))[2]
 ```
 
-
+In practice, researchers use each of these methods, even though there may be minor differences.
 
 
 ## Experimental Design Complications
