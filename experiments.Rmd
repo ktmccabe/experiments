@@ -1819,6 +1819,10 @@ It is also possible to download data from Qualtrics directly into R using an R p
 
 ### Adding a gif to Qualtrics
 
+![](images/map_it.png){width=40%}
+
+![](images/map_bounded_identity.png){width=40%}
+
 ![](images/map_violated_final.gif){width=40%}
 
 
