@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8.3 Regression Discontinuity | Experimental Methods in Political Science</title>
+  <meta name="description" content="8.3 Regression Discontinuity | Experimental Methods in Political Science" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8.3 Regression Discontinuity | Experimental Methods in Political Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8.3 Regression Discontinuity | Experimental Methods in Political Science" />
+  
+  
+  
+
+<meta name="author" content="Instructor: Katie McCabe" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exploiting-exogenous-policy-changes-and-events.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Notes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="rsetup.html"><a href="rsetup.html"><i class="fa fa-check"></i><b>1.1</b> Setup in R</a></li>
+<li class="chapter" data-level="1.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> First Time Working in R and RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#open-rstudio"><i class="fa fa-check"></i><b>1.2.1</b> Open RStudio</a></li>
+<li class="chapter" data-level="1.2.2" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#using-r-as-a-calculator"><i class="fa fa-check"></i><b>1.2.2</b> Using R as a Calculator</a></li>
+<li class="chapter" data-level="1.2.3" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#working-in-an-r-script"><i class="fa fa-check"></i><b>1.2.3</b> Working in an R Script</a></li>
+<li class="chapter" data-level="1.2.4" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#preparing-your-r-script"><i class="fa fa-check"></i><b>1.2.4</b> Preparing your R script</a></li>
+<li class="chapter" data-level="1.2.5" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#executing-commands-in-your-r-script"><i class="fa fa-check"></i><b>1.2.5</b> Executing Commands in your R script</a></li>
+<li class="chapter" data-level="1.2.6" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#objects"><i class="fa fa-check"></i><b>1.2.6</b> Objects</a></li>
+<li class="chapter" data-level="1.2.7" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#practice-with-r-scripts"><i class="fa fa-check"></i><b>1.2.7</b> Practice with R Scripts</a></li>
+<li class="chapter" data-level="1.2.8" data-path="first-time-working-in-r-and-rstudio.html"><a href="first-time-working-in-r-and-rstudio.html#loading-data-into-r"><i class="fa fa-check"></i><b>1.2.8</b> Loading data into R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>1.3</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="r-markdown.html"><a href="r-markdown.html#how-to-get-setup-in-rmarkdown"><i class="fa fa-check"></i><b>1.3.1</b> How to get setup in RMarkdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="r-markdown.html"><a href="r-markdown.html#additional-rmarkdown-resources"><i class="fa fa-check"></i><b>1.3.2</b> Additional RMarkdown resources</a></li>
+<li class="chapter" data-level="1.3.3" data-path="r-markdown.html"><a href="r-markdown.html#practice-with-r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> Practice with R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="what-are-experiments.html"><a href="what-are-experiments.html"><i class="fa fa-check"></i><b>1.4</b> What are experiments?</a></li>
+<li class="chapter" data-level="1.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html"><i class="fa fa-check"></i><b>1.5</b> Getting Comfortable with R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#dataframes-in-r"><i class="fa fa-check"></i><b>1.5.1</b> Dataframes in R</a></li>
+<li class="chapter" data-level="1.5.2" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#computing-summary-statistics-of-variables"><i class="fa fa-check"></i><b>1.5.2</b> Computing summary statistics of variables</a></li>
+<li class="chapter" data-level="1.5.3" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#relational-operators"><i class="fa fa-check"></i><b>1.5.3</b> Relational operators</a></li>
+<li class="chapter" data-level="1.5.4" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#subsetting-dataframes"><i class="fa fa-check"></i><b>1.5.4</b> Subsetting Dataframes</a></li>
+<li class="chapter" data-level="1.5.5" data-path="getting-comfortable-with-r.html"><a href="getting-comfortable-with-r.html#working-outside-of-dataframes"><i class="fa fa-check"></i><b>1.5.5</b> Working outside of dataframes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="causaleffects.html"><a href="causaleffects.html"><i class="fa fa-check"></i><b>2</b> Causal Effects</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html"><i class="fa fa-check"></i><b>2.1</b> Potential Outcomes Framework</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="potential-outcomes-framework.html"><a href="potential-outcomes-framework.html#average-treatment-effect"><i class="fa fa-check"></i><b>2.1.1</b> Average Treatment Effect</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="fundamental-problem-of-causal-inference.html"><a href="fundamental-problem-of-causal-inference.html"><i class="fa fa-check"></i><b>2.2</b> Fundamental Problem of Causal Inference</a></li>
+<li class="chapter" data-level="2.3" data-path="identification-strategy.html"><a href="identification-strategy.html"><i class="fa fa-check"></i><b>2.3</b> Identification strategy</a></li>
+<li class="chapter" data-level="2.4" data-path="difference-in-means-estimator.html"><a href="difference-in-means-estimator.html"><i class="fa fa-check"></i><b>2.4</b> Difference in Means Estimator</a></li>
+<li class="chapter" data-level="2.5" data-path="overview-of-identification-assumptions.html"><a href="overview-of-identification-assumptions.html"><i class="fa fa-check"></i><b>2.5</b> Overview of identification assumptions</a></li>
+<li class="chapter" data-level="2.6" data-path="application-in-r.html"><a href="application-in-r.html"><i class="fa fa-check"></i><b>2.6</b> Application in R</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="application-in-r.html"><a href="application-in-r.html#loading-the-data"><i class="fa fa-check"></i><b>2.6.1</b> Loading the data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="application-in-r.html"><a href="application-in-r.html#variable-classes"><i class="fa fa-check"></i><b>2.6.2</b> Variable classes</a></li>
+<li class="chapter" data-level="2.6.3" data-path="application-in-r.html"><a href="application-in-r.html#exploring-treatment-and-control-groups"><i class="fa fa-check"></i><b>2.6.3</b> Exploring Treatment and Control Groups</a></li>
+<li class="chapter" data-level="2.6.4" data-path="application-in-r.html"><a href="application-in-r.html#means-with-relational-operators"><i class="fa fa-check"></i><b>2.6.4</b> Means with Relational Operators</a></li>
+<li class="chapter" data-level="2.6.5" data-path="application-in-r.html"><a href="application-in-r.html#means-with-tidyverse"><i class="fa fa-check"></i><b>2.6.5</b> Means with <code>tidyverse</code></a></li>
+<li class="chapter" data-level="2.6.6" data-path="application-in-r.html"><a href="application-in-r.html#ate-with-linear-regression"><i class="fa fa-check"></i><b>2.6.6</b> ATE with linear regression</a></li>
+<li class="chapter" data-level="2.6.7" data-path="application-in-r.html"><a href="application-in-r.html#subsetting-data-in-r"><i class="fa fa-check"></i><b>2.6.7</b> Subsetting data in R</a></li>
+<li class="chapter" data-level="2.6.8" data-path="application-in-r.html"><a href="application-in-r.html#additional-practice"><i class="fa fa-check"></i><b>2.6.8</b> Additional Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="design.html"><a href="design.html"><i class="fa fa-check"></i><b>3</b> Experimental Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html"><i class="fa fa-check"></i><b>3.1</b> Designing an Experiment</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#validity"><i class="fa fa-check"></i><b>3.1.1</b> Validity</a></li>
+<li class="chapter" data-level="3.1.2" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#design-space-for-experiments"><i class="fa fa-check"></i><b>3.1.2</b> Design Space for Experiments</a></li>
+<li class="chapter" data-level="3.1.3" data-path="designing-an-experiment.html"><a href="designing-an-experiment.html#types-of-designs"><i class="fa fa-check"></i><b>3.1.3</b> Types of Designs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="using-qualtrics.html"><a href="using-qualtrics.html"><i class="fa fa-check"></i><b>3.2</b> Using Qualtrics</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="using-qualtrics.html"><a href="using-qualtrics.html#experimental-design-with-vignette-experiment"><i class="fa fa-check"></i><b>3.2.1</b> Experimental Design with Vignette Experiment</a></li>
+<li class="chapter" data-level="3.2.2" data-path="using-qualtrics.html"><a href="using-qualtrics.html#unique-blocks-per-experimental-condition"><i class="fa fa-check"></i><b>3.2.2</b> Unique blocks per experimental condition</a></li>
+<li class="chapter" data-level="3.2.3" data-path="using-qualtrics.html"><a href="using-qualtrics.html#adding-a-randomizer-in-the-survey-flow"><i class="fa fa-check"></i><b>3.2.3</b> Adding a randomizer in the survey flow</a></li>
+<li class="chapter" data-level="3.2.4" data-path="using-qualtrics.html"><a href="using-qualtrics.html#using-piped-text-in-randomization"><i class="fa fa-check"></i><b>3.2.4</b> Using Piped Text in Randomization</a></li>
+<li class="chapter" data-level="3.2.5" data-path="using-qualtrics.html"><a href="using-qualtrics.html#data-and-analysis"><i class="fa fa-check"></i><b>3.2.5</b> Data and Analysis</a></li>
+<li class="chapter" data-level="3.2.6" data-path="using-qualtrics.html"><a href="using-qualtrics.html#additional-bells-and-whistles"><i class="fa fa-check"></i><b>3.2.6</b> Additional Bells and Whistles</a></li>
+<li class="chapter" data-level="3.2.7" data-path="using-qualtrics.html"><a href="using-qualtrics.html#adding-a-gif-to-qualtrics"><i class="fa fa-check"></i><b>3.2.7</b> Adding a gif to Qualtrics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="uncertainty.html"><a href="uncertainty.html"><i class="fa fa-check"></i><b>4</b> Uncertainty</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="standard-errors.html"><a href="standard-errors.html"><i class="fa fa-check"></i><b>4.1</b> Standard Errors</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="standard-errors.html"><a href="standard-errors.html#standard-error-of-the-mean"><i class="fa fa-check"></i><b>4.1.1</b> Standard Error of the Mean</a></li>
+<li class="chapter" data-level="4.1.2" data-path="standard-errors.html"><a href="standard-errors.html#standard-error-for-a-difference-in-means"><i class="fa fa-check"></i><b>4.1.2</b> Standard error for a difference in means</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>4.2</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="4.3" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html"><i class="fa fa-check"></i><b>4.3</b> Hypothesis Tests</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#t-tests"><i class="fa fa-check"></i><b>4.3.1</b> t-tests</a></li>
+<li class="chapter" data-level="4.3.2" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#p-values"><i class="fa fa-check"></i><b>4.3.2</b> p-values</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="empirical-application.html"><a href="empirical-application.html"><i class="fa fa-check"></i><b>4.4</b> Empirical Application</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="empirical-application.html"><a href="empirical-application.html#treatment"><i class="fa fa-check"></i><b>4.4.1</b> Treatment</a></li>
+<li class="chapter" data-level="4.4.2" data-path="empirical-application.html"><a href="empirical-application.html#analysis"><i class="fa fa-check"></i><b>4.4.2</b> Analysis</a></li>
+<li class="chapter" data-level="4.4.3" data-path="empirical-application.html"><a href="empirical-application.html#heterogeneous-treatment-effects"><i class="fa fa-check"></i><b>4.4.3</b> Heterogeneous Treatment Effects</a></li>
+<li class="chapter" data-level="4.4.4" data-path="empirical-application.html"><a href="empirical-application.html#difference-in-proportions"><i class="fa fa-check"></i><b>4.4.4</b> Difference in Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="randomization-inference.html"><a href="randomization-inference.html"><i class="fa fa-check"></i><b>4.5</b> Randomization Inference</a></li>
+<li class="chapter" data-level="4.6" data-path="a-note-on-expectations-and-variance.html"><a href="a-note-on-expectations-and-variance.html"><i class="fa fa-check"></i><b>4.6</b> A Note on Expectations and Variance</a></li>
+<li class="chapter" data-level="4.7" data-path="equivalence-of-t-test-and-anova.html"><a href="equivalence-of-t-test-and-anova.html"><i class="fa fa-check"></i><b>4.7</b> Equivalence of t-test and ANOVA</a></li>
+<li class="chapter" data-level="4.8" data-path="comparing-different-types-of-tests.html"><a href="comparing-different-types-of-tests.html"><i class="fa fa-check"></i><b>4.8</b> Comparing different types of tests</a></li>
+<li class="chapter" data-level="4.9" data-path="experimental-design-complications.html"><a href="experimental-design-complications.html"><i class="fa fa-check"></i><b>4.9</b> Experimental Design Complications</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="visualize.html"><a href="visualize.html"><i class="fa fa-check"></i><b>5</b> Visualization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html"><i class="fa fa-check"></i><b>5.1</b> Plotting Average Treatment Effects</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-using-plot"><i class="fa fa-check"></i><b>5.1.1</b> ATE using <code>plot</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="plotting-average-treatment-effects.html"><a href="plotting-average-treatment-effects.html#ate-with-ggplot"><i class="fa fa-check"></i><b>5.1.2</b> ATE with <code>ggplot</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="heterogeneous-treatment-effects-1.html"><a href="heterogeneous-treatment-effects-1.html"><i class="fa fa-check"></i><b>5.2</b> Heterogeneous Treatment Effects</a></li>
+<li class="chapter" data-level="5.3" data-path="some-additional-plotting-options.html"><a href="some-additional-plotting-options.html"><i class="fa fa-check"></i><b>5.3</b> Some additional plotting options</a></li>
+<li class="chapter" data-level="5.4" data-path="examples-of-arguments-in-plot.html"><a href="examples-of-arguments-in-plot.html"><i class="fa fa-check"></i><b>5.4</b> Examples of arguments in <code>plot</code></a></li>
+<li class="chapter" data-level="5.5" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html"><i class="fa fa-check"></i><b>5.5</b> Creating Tables from R</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#additional-formatting-examples"><i class="fa fa-check"></i><b>5.5.1</b> Additional formatting examples</a></li>
+<li class="chapter" data-level="5.5.2" data-path="creating-tables-from-r.html"><a href="creating-tables-from-r.html#additional-table-types"><i class="fa fa-check"></i><b>5.5.2</b> Additional Table Types</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ethics.html"><a href="ethics.html"><i class="fa fa-check"></i><b>6</b> Ethics and Sampling Considerations</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="value-of-informed-consent.html"><a href="value-of-informed-consent.html"><i class="fa fa-check"></i><b>6.1</b> Value of Informed Consent</a></li>
+<li class="chapter" data-level="6.2" data-path="research-integrity-reproducibility-and-transparency.html"><a href="research-integrity-reproducibility-and-transparency.html"><i class="fa fa-check"></i><b>6.2</b> Research Integrity, Reproducibility, and Transparency</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="research-integrity-reproducibility-and-transparency.html"><a href="research-integrity-reproducibility-and-transparency.html#preregistration"><i class="fa fa-check"></i><b>6.2.1</b> Preregistration</a></li>
+<li class="chapter" data-level="6.2.2" data-path="research-integrity-reproducibility-and-transparency.html"><a href="research-integrity-reproducibility-and-transparency.html#reporting-an-experimental-analysis"><i class="fa fa-check"></i><b>6.2.2</b> Reporting an Experimental Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="sampling-considerations.html"><a href="sampling-considerations.html"><i class="fa fa-check"></i><b>6.3</b> Sampling Considerations</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="sampling-considerations.html"><a href="sampling-considerations.html#power-analysis"><i class="fa fa-check"></i><b>6.3.1</b> Power Analysis</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sampling-considerations.html"><a href="sampling-considerations.html#power-in-r"><i class="fa fa-check"></i><b>6.3.2</b> Power in R</a></li>
+<li class="chapter" data-level="6.3.3" data-path="sampling-considerations.html"><a href="sampling-considerations.html#relationship-between-error-rates-and-multiple-testing"><i class="fa fa-check"></i><b>6.3.3</b> Relationship between Error Rates and Multiple Testing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="fieldexp.html"><a href="fieldexp.html"><i class="fa fa-check"></i><b>7</b> Field Experiments</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="field-experiment-application.html"><a href="field-experiment-application.html"><i class="fa fa-check"></i><b>7.1</b> Field Experiment Application</a></li>
+<li class="chapter" data-level="7.2" data-path="clustering-standard-errors.html"><a href="clustering-standard-errors.html"><i class="fa fa-check"></i><b>7.2</b> Clustering standard errors</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="clustering-standard-errors.html"><a href="clustering-standard-errors.html#adjusting-p-values"><i class="fa fa-check"></i><b>7.2.1</b> Adjusting p-values</a></li>
+<li class="chapter" data-level="7.2.2" data-path="clustering-standard-errors.html"><a href="clustering-standard-errors.html#additional-complex-sampling-designs"><i class="fa fa-check"></i><b>7.2.2</b> Additional complex sampling designs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="compliance.html"><a href="compliance.html"><i class="fa fa-check"></i><b>7.3</b> Compliance</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="compliance.html"><a href="compliance.html#notation-for-compliance"><i class="fa fa-check"></i><b>7.3.1</b> Notation for Compliance</a></li>
+<li class="chapter" data-level="7.3.2" data-path="compliance.html"><a href="compliance.html#complier-average-causal-effect"><i class="fa fa-check"></i><b>7.3.2</b> Complier Average Causal Effect</a></li>
+<li class="chapter" data-level="7.3.3" data-path="compliance.html"><a href="compliance.html#design-based-approach-to-help-measure-compliance"><i class="fa fa-check"></i><b>7.3.3</b> Design-based approach to help measure compliance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="quasi.html"><a href="quasi.html"><i class="fa fa-check"></i><b>8</b> Quasi and Natural Experiments</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="what-makes-an-experiment-not-an-experiment.html"><a href="what-makes-an-experiment-not-an-experiment.html"><i class="fa fa-check"></i><b>8.1</b> What makes an experiment not an experiment?</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="what-makes-an-experiment-not-an-experiment.html"><a href="what-makes-an-experiment-not-an-experiment.html#what-is-a-natural-experiment"><i class="fa fa-check"></i><b>8.1.1</b> What is a natural experiment?</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="exploiting-exogenous-policy-changes-and-events.html"><a href="exploiting-exogenous-policy-changes-and-events.html"><i class="fa fa-check"></i><b>8.2</b> Exploiting Exogenous Policy Changes and Events</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="exploiting-exogenous-policy-changes-and-events.html"><a href="exploiting-exogenous-policy-changes-and-events.html#unexpected-event-design"><i class="fa fa-check"></i><b>8.2.1</b> Unexpected Event Design</a></li>
+<li class="chapter" data-level="8.2.2" data-path="exploiting-exogenous-policy-changes-and-events.html"><a href="exploiting-exogenous-policy-changes-and-events.html#differences-in-differences"><i class="fa fa-check"></i><b>8.2.2</b> Differences in Differences</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html"><i class="fa fa-check"></i><b>8.3</b> Regression Discontinuity</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#sharp-rd"><i class="fa fa-check"></i><b>8.3.1</b> Sharp RD</a></li>
+<li class="chapter" data-level="8.3.2" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#application-in-r-1"><i class="fa fa-check"></i><b>8.3.2</b> Application in R</a></li>
+<li class="chapter" data-level="8.3.3" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#considerations-in-rd-design"><i class="fa fa-check"></i><b>8.3.3</b> Considerations in RD Design</a></li>
+<li class="chapter" data-level="8.3.4" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#rd-visualizations"><i class="fa fa-check"></i><b>8.3.4</b> RD Visualizations</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Experimental Methods in Political Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regression-discontinuity" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Regression Discontinuity</h2>
+<p>Strategy for causal inference in observational studies</p>
+<ul>
+<li>Exploits a point of discontinuity that can be attributed to an <strong><em>exogenous treatment</em></strong> (influenced/determined by an outside force– think physical boundaries, rules, policy inclusion/exclusion thresholds)</li>
+<li>Compare units “close to” discontinuity, assuming similar except on either side of threshold</li>
+<li>Strong internal validity, low generalizability away from discontinuity</li>
+</ul>
+<div id="sharp-rd" class="section level3" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Sharp RD</h3>
+<p>We observe the treated potential outcome if a unit is above some threshold <span class="math inline">\(c\)</span> along the “running/forcing” variable <span class="math inline">\(X\)</span>. Otherwise, we observe the untreated potential outcome.</p>
+<p><span class="math display">\[\begin{equation*}
+  Y_i =(1 - d_i)Y_i(0) + d_iY_i(1)=\begin{cases}
+    Y_i(1), &amp; \text{if $X_i &gt; c$}.\\
+    Y_i(0), &amp; \text{if $X_i \leq c$}.
+  \end{cases}
+\end{equation*}\]</span>
+where <span class="math inline">\(c\)</span> is a threshold/point of discontinuity</p>
+<p>Our causal effect of interest is still <span class="math inline">\(Y_i(1) - Y_i(0)\)</span>, but we still struggle from the same fundamental problem of causal inference.</p>
+<p>In RD designs, similar to common experimental analyses, we will estimate an average treatment effect by comparing an average outcome among the treated units to the control units.</p>
+<ul>
+<li>However, we only look at units close to the discontinuity. It is here where we think treatment assignment is plausibly exogenous. Why?</li>
+<li>This then influences our interpretation of the average effect. It is no longer the average effect of all units. Instead it is a “local average treatment effect” for units at the point of discontinuity.</li>
+</ul>
+<div id="sharp-vs.-fuzzy" class="section level4" number="8.3.1.1">
+<h4><span class="header-section-number">8.3.1.1</span> Sharp vs. Fuzzy</h4>
+<p>In a fuzzy regression design, the rule/threshold only influences the <em>probability</em> of treatment status and does not determine it.</p>
+<ul>
+<li>You can think of this as similar to the encouragement designs from last section</li>
+<li>We estimate the local average treatment effects in fuzzy regression discontinuity using the same two-stage regression model with instrumental variables regression that we did there. Here, we will focus on sharp RD.</li>
+</ul>
+</div>
+</div>
+<div id="application-in-r-1" class="section level3" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Application in R</h3>
+<p>We will use a regression discontinuity design to estimate whether female state legislative incumbents have more trouble fundraising than do male
+legislative incumbents. Observations consist of information on all U.S.
+state legislative races in which a male and female candidate ran
+against each other. This is based on the article:</p>
+<ul>
+<li>Barber, Michael, Daniel Butler, and Jessica Preece. 2016. ``Gender Inequalities in Campaign Finance.http://dx.doi.org/10.1561/100.00015126 Quarterly Journal of Political Science 11(2): 219-248.</li>
+</ul>
+<p>Note the authors’ discussion of possible research designs on pg. 22-225.</p>
+<ul>
+<li>Option 1: “Most studies focus on the amount of money that
+candidates raise, comparing the amount raised by similar male and female
+candidates. On the most basic level, this is done by estimating a model that
+controls for other relevant factors and tests to see whether women raise more
+or less money than men.”
+<ul>
+<li>“It relies on the important assumption that the model accounts for all other relevant variables. If not, then omitted variable bias can affect the estimates. Omitted variable bias is particularly likely to be a problem when studying gender and fundraising because, as Palmer and Simon (2006) show, women and men represent districts that are very different on average… when
+we compare men and women we cannot rule out that any results simply reflect
+the differences in district characteristics and have nothing to do with the
+politician’s sex.”</li>
+</ul></li>
+<li>Chosen Option: “Rather than trying to control for all possible confounding factors, we use a regression discontinuity design to identify incumbents who represent districts that are otherwise similar.”
+<ul>
+<li>Assumption: Random assignment of the treatment <strong><em>in the neighborhood of the treatment threshold</em></strong></li>
+<li>“In this case, we consider races where male and female candidates face off and use the proportion of the votes won by the female candidate as the variable that determines treatment assignment:” whether or not a district has a male or female incumbent (226).</li>
+<li>“We then compare the fundraising by the male winners and female winners in the following election cycle. Differences between these two groups of legislators should be due purely to gender differences because district and electoral factors are balanced between the treatment and control groups of legislators.” (226-227).</li>
+</ul></li>
+</ul>
+<p>The data file you will use is <code>fundsub.csv</code>, a CSV data file.</p>
+<p>The independent variables are the winning (incumbent) candidate’s gender and the vote share the female candidate received in the election.</p>
+<ul>
+<li><code>male.winner</code>: Coded 1= a man won the election and 0= a woman won the election in the most recent election in a legislative district (time <span class="math inline">\(t\)</span>)</li>
+<li><code>female.margin</code>: The two-candidate vote share that the woman candidate won in the most recent election in a legislative district in time <span class="math inline">\(t\)</span> (if above 50 a woman won, if a below 50, a man won</li>
+</ul>
+<p>The outcome variable is the amount the winning candidate in a given election (which could be male or female) raised in their <em>next</em> election cycle. We will analyze their data to help determine if male winning candidates raise more money than female winning candidates in their subsequent election cycles when they are incumbents.</p>
+<ul>
+<li><code>total.candidate.raised</code>: Amount raised by the winning candidate (i.e., the incumbent) in the subsequent election cycle (time <span class="math inline">\(t+1\)</span>)</li>
+<li><code>log.total.candidate.raised</code>: The log of the total amount raised by the winning candidate (i.e., the incumbent) in the subsequent election cycle (time <span class="math inline">\(t +1\)</span>)
+<ul>
+<li>Because the fundraising data is heavily skewed, researchers used the log of the variable instead of the raw variable. This makes our data look more “normal” in distribution because it compresses the scale</li>
+</ul></li>
+<li><code>log.total.dist.last</code>: The log of the total spending in the district in the previous election cycle (time <span class="math inline">\(t - 1\)</span>)</li>
+</ul>
+<p>Let’s load the data</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="regression-discontinuity.html#cb327-1" aria-hidden="true" tabindex="-1"></a>fund <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;fundsub.csv&quot;</span>)</span></code></pre></div>
+<p>We need to locate <span class="math inline">\(X\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(Y\)</span>, and a variable that determines if we observe a subject’s treated potential outcome <span class="math inline">\(Y_i(1)\)</span> or untreated potential outcome <span class="math inline">\(Y_i(0\)</span>).</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="regression-discontinuity.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="do">## X is the running/forcing variable</span></span>
+<span id="cb328-2"><a href="regression-discontinuity.html#cb328-2" aria-hidden="true" tabindex="-1"></a><span class="do">## X &gt; 50 means a female candidate won</span></span>
+<span id="cb328-3"><a href="regression-discontinuity.html#cb328-3" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(fund<span class="sc">$</span>female.margin[fund<span class="sc">$</span>male.winner <span class="sc">==</span><span class="dv">0</span>])</span></code></pre></div>
+<pre><code>## [1] 50.00000 99.11157</code></pre>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="regression-discontinuity.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="do">## X &lt; 50 means a male candidate won</span></span>
+<span id="cb330-2"><a href="regression-discontinuity.html#cb330-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(fund<span class="sc">$</span>female.margin[fund<span class="sc">$</span>male.winner <span class="sc">==</span><span class="dv">1</span>])</span></code></pre></div>
+<pre><code>## [1]  1.245026 49.992115</code></pre>
+<p>To make our regression easier to interpret, we should also center our forcing variable on 50, such that when this variable is 0, that is our threshold of winning.</p>
+<ul>
+<li>We will create a new variable called <code>forcing.variable</code> that does this. In addition, to match the authors, we actually want the variable to be in a direction where positive values mean that the male candidates were winners (and negative, female winners).</li>
+</ul>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="regression-discontinuity.html#cb332-1" aria-hidden="true" tabindex="-1"></a>fund<span class="sc">$</span>forcing.variable <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>(fund<span class="sc">$</span>female.margin <span class="sc">-</span> <span class="dv">50</span>)</span></code></pre></div>
+<p>We are going to compare the amount of money raised among incumbents who are male vs. incumbents who are female using a regression discontinuity design. Let’s replicate the first column of Table 1 in their paper.</p>
+<p><img src="images/barber1.png" style="width:40.0%" /></p>
+<ul>
+<li>Following the researchers, we are going to restrict our analysis to compare candidates who won races that were competitive: within +/- 2 percentage points in vote share. We also want to remove ties, cases where the female margin is 50.</li>
+</ul>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="regression-discontinuity.html#cb333-1" aria-hidden="true" tabindex="-1"></a>rsub <span class="ot">&lt;-</span> <span class="fu">subset</span>(fund, female.margin <span class="sc">&gt;</span> <span class="dv">48</span> <span class="sc">&amp;</span> </span>
+<span id="cb333-2"><a href="regression-discontinuity.html#cb333-2" aria-hidden="true" tabindex="-1"></a>                 female.margin <span class="sc">&lt;</span> <span class="dv">52</span> <span class="sc">&amp;</span></span>
+<span id="cb333-3"><a href="regression-discontinuity.html#cb333-3" aria-hidden="true" tabindex="-1"></a>                 female.margin <span class="sc">!=</span><span class="dv">50</span>)</span></code></pre></div>
+<p>There are many different ways to estimate a regression discontunity local average treatment effect that range from simple to complex.</p>
+<ul>
+<li>What bandwidth to choose? How do you choose it?</li>
+<li>Allow slopes to differ on either side of discontinuity?</li>
+<li>Should you account for potential non-linearities, in what way?</li>
+<li>Should you weight observations differently, according to proximity to threshold?</li>
+<li>Should you include covariates? Which covariates?</li>
+</ul>
+<p>Most simple: Treat observations on a particular side of discontinuity as exchangeable and calculate a simple difference-in-means.</p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="regression-discontinuity.html#cb334-1" aria-hidden="true" tabindex="-1"></a>uniform <span class="ot">&lt;-</span> <span class="fu">lm</span>(log.total.raised.candidate <span class="sc">~</span> male.winner, </span>
+<span id="cb334-2"><a href="regression-discontinuity.html#cb334-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> rsub)</span>
+<span id="cb334-3"><a href="regression-discontinuity.html#cb334-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb334-4"><a href="regression-discontinuity.html#cb334-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(uniform)[<span class="st">&quot;male.winner&quot;</span>]</span></code></pre></div>
+<pre><code>## male.winner 
+##   0.3333058</code></pre>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="regression-discontinuity.html#cb336-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This is equivalent to</span></span>
+<span id="cb336-2"><a href="regression-discontinuity.html#cb336-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(rsub<span class="sc">$</span>log.total.raised.candidate[rsub<span class="sc">$</span>male.winner <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span></span>
+<span id="cb336-3"><a href="regression-discontinuity.html#cb336-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(rsub<span class="sc">$</span>log.total.raised.candidate[rsub<span class="sc">$</span>male.winner <span class="sc">==</span> <span class="dv">0</span>])</span></code></pre></div>
+<pre><code>## [1] 0.3333058</code></pre>
+<ul>
+<li>We find that male legislators who barely win election against
+a female candidate go on to raise more money overall in the next election cycle than female candidates who barely win against male candidates.</li>
+</ul>
+<p>Allow the vote margin to have a linear slope on either side of the discontinuity that can influence the outcome.</p>
+<ul>
+<li>Use an interaction term.</li>
+<li>Estimate the effect of a male (vs. female) winning the election when the forcing variable is zero.</li>
+</ul>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="regression-discontinuity.html#cb338-1" aria-hidden="true" tabindex="-1"></a>linear <span class="ot">&lt;-</span> <span class="fu">lm</span>(log.total.raised.candidate <span class="sc">~</span> male.winner<span class="sc">*</span>forcing.variable, </span>
+<span id="cb338-2"><a href="regression-discontinuity.html#cb338-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> rsub)</span>
+<span id="cb338-3"><a href="regression-discontinuity.html#cb338-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb338-4"><a href="regression-discontinuity.html#cb338-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(linear)[<span class="st">&quot;male.winner&quot;</span>]</span></code></pre></div>
+<pre><code>## male.winner 
+##   0.8137722</code></pre>
+<p>Allow an algorithm to choose the bandwidth instead of relatively arbitrarily choosing +/- 2. To do this, we will use the <code>rdrobust</code> package in R.</p>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="regression-discontinuity.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rdrobust&quot;</span>, <span class="at">dependencies =</span> T)</span></code></pre></div>
+<p>Open the package</p>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="regression-discontinuity.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdrobust)</span>
+<span id="cb341-2"><a href="regression-discontinuity.html#cb341-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb341-3"><a href="regression-discontinuity.html#cb341-3" aria-hidden="true" tabindex="-1"></a><span class="do">## remove ties</span></span>
+<span id="cb341-4"><a href="regression-discontinuity.html#cb341-4" aria-hidden="true" tabindex="-1"></a>rdprep <span class="ot">&lt;-</span> <span class="fu">subset</span>(fund, female.margin <span class="sc">!=</span><span class="dv">50</span>)</span>
+<span id="cb341-5"><a href="regression-discontinuity.html#cb341-5" aria-hidden="true" tabindex="-1"></a>rdb <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(<span class="at">y=</span>rdprep<span class="sc">$</span>log.total.raised.candidate,</span>
+<span id="cb341-6"><a href="regression-discontinuity.html#cb341-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">x=</span>rdprep<span class="sc">$</span>forcing.variable, </span>
+<span id="cb341-7"><a href="regression-discontinuity.html#cb341-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel =</span> <span class="st">&quot;uniform&quot;</span>, </span>
+<span id="cb341-8"><a href="regression-discontinuity.html#cb341-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">p=</span><span class="dv">1</span>, </span>
+<span id="cb341-9"><a href="regression-discontinuity.html#cb341-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">bwselect =</span> <span class="st">&quot;mserd&quot;</span>)</span>
+<span id="cb341-10"><a href="regression-discontinuity.html#cb341-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdb)</span></code></pre></div>
+<pre><code>## Call: rdrobust
+## 
+## Number of Obs.                 2863
+## BW type                       mserd
+## Kernel                      Uniform
+## VCE method                       NN
+## 
+## Number of Obs.                 1439         1424
+## Eff. Number of Obs.             516          527
+## Order est. (p)                    1            1
+## Order bias  (q)                   2            2
+## BW est. (h)                   7.185        7.185
+## BW bias (b)                  13.478       13.478
+## rho (h/b)                     0.533        0.533
+## Unique Obs.                    1438         1424
+## 
+## =============================================================================
+##         Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+## =============================================================================
+##   Conventional     0.296     0.179     1.659     0.097    [-0.054 , 0.646]     
+##         Robust         -         -     1.717     0.086    [-0.050 , 0.761]     
+## =============================================================================</code></pre>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="regression-discontinuity.html#cb343-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd effect</span></span>
+<span id="cb343-2"><a href="regression-discontinuity.html#cb343-2" aria-hidden="true" tabindex="-1"></a>rdb<span class="sc">$</span>coef[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 0.2962745</code></pre>
+Note: we could use <code>rdrobust</code> to recover the estimate we already calculated by setting a specific bandwidth <code>h=2</code> to reflect the +/- 2.
+<details>
+<summary>
+Expand for the answer.
+</summary>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="regression-discontinuity.html#cb345-1" aria-hidden="true" tabindex="-1"></a>rdbold <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(<span class="at">y=</span>rdprep<span class="sc">$</span>log.total.raised.candidate,</span>
+<span id="cb345-2"><a href="regression-discontinuity.html#cb345-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">x=</span>rdprep<span class="sc">$</span>forcing.variable, </span>
+<span id="cb345-3"><a href="regression-discontinuity.html#cb345-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel =</span> <span class="st">&quot;uniform&quot;</span>, </span>
+<span id="cb345-4"><a href="regression-discontinuity.html#cb345-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">p=</span><span class="dv">1</span>, </span>
+<span id="cb345-5"><a href="regression-discontinuity.html#cb345-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">h=</span><span class="dv">2</span>)</span>
+<span id="cb345-6"><a href="regression-discontinuity.html#cb345-6" aria-hidden="true" tabindex="-1"></a>rdbold<span class="sc">$</span>coef[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 0.8137722</code></pre>
+</details>
+<p>We can also adjust the weighting of observations to weight observations closer to the discontinuity more heavily than those far away. In addition, instead of assuming a linear slope on either side, we could allow the slope to be non-linear, such as quadratic.</p>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="regression-discontinuity.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="do">## remove ties</span></span>
+<span id="cb347-2"><a href="regression-discontinuity.html#cb347-2" aria-hidden="true" tabindex="-1"></a>rdb2 <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(<span class="at">y=</span>rdprep<span class="sc">$</span>log.total.raised.candidate,</span>
+<span id="cb347-3"><a href="regression-discontinuity.html#cb347-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">x=</span>rdprep<span class="sc">$</span>forcing.variable, </span>
+<span id="cb347-4"><a href="regression-discontinuity.html#cb347-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">kernel =</span> <span class="st">&quot;triangular&quot;</span>, <span class="co"># implements a type of weighting </span></span>
+<span id="cb347-5"><a href="regression-discontinuity.html#cb347-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">p=</span><span class="dv">2</span>, <span class="co"># shifts to quadratic </span></span>
+<span id="cb347-6"><a href="regression-discontinuity.html#cb347-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">bwselect =</span> <span class="st">&quot;mserd&quot;</span>)</span>
+<span id="cb347-7"><a href="regression-discontinuity.html#cb347-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdb2)</span></code></pre></div>
+<pre><code>## Call: rdrobust
+## 
+## Number of Obs.                 2863
+## BW type                       mserd
+## Kernel                   Triangular
+## VCE method                       NN
+## 
+## Number of Obs.                 1439         1424
+## Eff. Number of Obs.             885          923
+## Order est. (p)                    2            2
+## Order bias  (q)                   3            3
+## BW est. (h)                  12.894       12.894
+## BW bias (b)                  18.107       18.107
+## rho (h/b)                     0.712        0.712
+## Unique Obs.                    1438         1424
+## 
+## =============================================================================
+##         Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+## =============================================================================
+##   Conventional     0.450     0.222     2.030     0.042     [0.015 , 0.884]     
+##         Robust         -         -     1.971     0.049     [0.003 , 0.990]     
+## =============================================================================</code></pre>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="regression-discontinuity.html#cb349-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd effect</span></span>
+<span id="cb349-2"><a href="regression-discontinuity.html#cb349-2" aria-hidden="true" tabindex="-1"></a>rdb2<span class="sc">$</span>coef[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 0.4496329</code></pre>
+<p>We see a positive local average treatment effect of male winners on fundraising in each specification, but whether this is significant depends on the specification. The choice should consider tradeoffs in bias created by expanding the bandwidth vs. variance, which may be affected by changing the sample size.</p>
+<p><img src="experiments_files/figure-html/unnamed-chunk-199-1.svg" width="672" /></p>
+</div>
+<div id="considerations-in-rd-design" class="section level3" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Considerations in RD Design</h3>
+<p>Remember: This is a local average treatment effect only</p>
+<ul>
+<li>Potentially poor generalizability</li>
+<li>Should incorporate placebo and design tests to help justify assumptions
+<ul>
+<li>E.g., The discontinuity should influence what you hypothesize it to influence and should NOT influence something you do not hypothesize it to influence</li>
+<li>E.g., Check for sorting around the threshold</li>
+</ul></li>
+<li>Recommend you review documentation for <code>rdrobust</code> before using it in your own work <a href="https://rdpackages.github.io/rdrobust/">here</a></li>
+<li>May also be interested in <a href="https://www.cambridge.org/core/books/practical-introduction-to-regression-discontinuity-designs/F04907129D5C1B823E3DB19C31CAB905"><em>A Practical Introduction to Regression Discontinuity Designs</em></a> by Cattaneo, Idrobo, and Titiunik</li>
+</ul>
+<p><strong><em>Example: Placebo Analysis</em></strong></p>
+<p>We assume that treatment assignment is “as-if” random around the cutpoint (discontinuity).</p>
+<ul>
+<li>This means that any pre-treatment covariates should be continuous at the cutpoint, just as pre-treatment covariates should be balanced across conditions in an experiment.</li>
+<li>Any evidence that there is a significant discontinuity effect on a pre-treatment covariate would be evidence that perhaps we do not have an as-if random design.</li>
+</ul>
+<p>Let’s do one test of this. Let’s repeat our original RDD model of a +/-2 bandwidth, but now let’s have the outcome be the total spending in the district in a previous election in t-1. Run the model and interpret the results in light of the design assumptions.</p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="regression-discontinuity.html#cb351-1" aria-hidden="true" tabindex="-1"></a>fit.sorting <span class="ot">&lt;-</span> <span class="fu">lm</span>(log.total.dist.last <span class="sc">~</span> male.winner<span class="sc">*</span>forcing.variable,</span>
+<span id="cb351-2"><a href="regression-discontinuity.html#cb351-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>rsub)</span>
+<span id="cb351-3"><a href="regression-discontinuity.html#cb351-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit.sorting)</span></code></pre></div>
+<p>We see a null effect here, which helps lend support that this “pre-treatment” covariate is balanced around the discontinuity. If, instead, it were significant, that might call into question that a male vs. female winner is “as-if” random in close elections.</p>
+</div>
+<div id="rd-visualizations" class="section level3" number="8.3.4">
+<h3><span class="header-section-number">8.3.4</span> RD Visualizations</h3>
+<p>One benefit of the <code>rdrobust</code> package is that it makes it fairly easy to implement common visualizations of the RDD.</p>
+<ul>
+<li>A few examples with different specifications</li>
+</ul>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="regression-discontinuity.html#cb352-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rdplot</span>(<span class="at">y=</span> rdprep<span class="sc">$</span>log.total.raised.candidate,</span>
+<span id="cb352-2"><a href="regression-discontinuity.html#cb352-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">x=</span>rdprep<span class="sc">$</span>female.margin,</span>
+<span id="cb352-3"><a href="regression-discontinuity.html#cb352-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">kernel=</span><span class="st">&quot;uniform&quot;</span>,  <span class="at">p=</span><span class="dv">1</span>, <span class="at">c=</span><span class="dv">50</span>, </span>
+<span id="cb352-4"><a href="regression-discontinuity.html#cb352-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">title=</span><span class="st">&quot;RD Plot: Candidate Fundraising&quot;</span>,</span>
+<span id="cb352-5"><a href="regression-discontinuity.html#cb352-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">y.label=</span><span class="st">&quot;Fundraising at time t+1&quot;</span>, </span>
+<span id="cb352-6"><a href="regression-discontinuity.html#cb352-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x.label=</span><span class="st">&quot;Female Vote Share in Election at time t&quot;</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-201-1.svg" width="672" /></p>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="regression-discontinuity.html#cb353-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rdplot</span>(<span class="at">y=</span> rdprep<span class="sc">$</span>log.total.raised.candidate,</span>
+<span id="cb353-2"><a href="regression-discontinuity.html#cb353-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">x=</span>rdprep<span class="sc">$</span>female.margin,</span>
+<span id="cb353-3"><a href="regression-discontinuity.html#cb353-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">kernel=</span><span class="st">&quot;triangular&quot;</span>,  <span class="at">p=</span><span class="dv">2</span>, <span class="at">c=</span><span class="dv">50</span>,</span>
+<span id="cb353-4"><a href="regression-discontinuity.html#cb353-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">title=</span><span class="st">&quot;RD Plot: Candidate Fundraising&quot;</span>,</span>
+<span id="cb353-5"><a href="regression-discontinuity.html#cb353-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">y.label=</span><span class="st">&quot;Fundraising at time t+1&quot;</span>, </span>
+<span id="cb353-6"><a href="regression-discontinuity.html#cb353-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x.label=</span><span class="st">&quot;Female Vote Share in Election at time t&quot;</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-202-1.svg" width="672" /></p>
+
+</div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exploiting-exogenous-policy-changes-and-events.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
