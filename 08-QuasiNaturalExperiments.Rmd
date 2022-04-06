@@ -163,7 +163,7 @@ In RD designs, similar to common experimental analyses, we will estimate an aver
 In a fuzzy regression design, the rule/threshold only influences the *probability* of treatment status and does not determine it.
 
   - You can think of this as similar to the encouragement designs from last section
-  - We estimate the local average treatment effects in fuzzy regression discontinuity using the same two-stage regression model with instrumental variables regression that we did there. Here, we will focus on sharp RD.
+  - We estimate the local average treatment effects in fuzzy regression discontinuity using the same two-stage regression model with instrumental variables regression that we did there. In class we will primarily focus on sharp RD.
 
 ### Application in R
 
@@ -413,3 +413,108 @@ rdplot(y= rdprep$log.total.raised.candidate,
       y.label="Fundraising at time t+1", 
       x.label="Female Vote Share in Election at time t")
 ```
+
+
+### Fuzzy RD Application
+
+We will adapt the example from [Andrew Heiss](https://evalf20.classes.andrewheiss.com/example/rdd-fuzzy/), which evaluates the effectiveness of a tutoring program on performance on a school's exit exam.
+
+  - Here, students become eligible for the tutoring program if they score 70 or below on an exam at the beginning of the school year.
+  - However, students are not forced to take this program, and some students may still be able to enroll in tutoring even if they scored above 70. In short we have a ***compliance*** issue, just as we discussed compliance issues in encouragement designs for field experiments.
+      + Compliers are those that enroll in the tutoring program if and only if they scored 70 or below.
+  - Our goal with a fuzzy regression design is to estimate the LATE, the complier average causal effect for those in the neighborhood of the cutoff.
+      + In this way, we combine the "local" aspect of sharp RD by estimating effects at a threshold, and the "local" nature of complier effects in that the effect is only applicable for people who are compliers.
+      
+
+Let's load the data, which can be found linked through his website [here](https://evalf20.classes.andrewheiss.com/data/tutoring_program_fuzzy.csv).
+
+```{r, echo=F}
+tutor <- read.csv("data/tutoring_program_fuzzy.csv")
+```
+```{r, eval=F}
+tutor <- read.csv("tutoring_program_fuzzy.csv")
+```
+
+
+We can see the distribution of scores for those in vs. not in the tutoring program. Most people who scored below 70 are in the program (TRUE), but there are also some people who scored above 70 in the program. Likewise, most people who scored above 70 are not in the program, but some that scored below 70 are also not in the program.
+
+  - Entrance exam score is ***predictive*** of tutoring program uptake but not deterministically so.
+      + Being below vs. above the cutoff is like the "encouragement" for whether someone takes vs. does not take the tutoring program, which is the "treatment."
+
+```{r}
+library(ggplot2)
+ggplot(tutor, aes(x=entrance_exam, group=tutoring, color=tutoring))+
+  geom_density()+
+  geom_vline(xintercept=70)
+
+```
+
+
+We will now combine our two frameworks 1) Sharp RD and 2) Encouragement Designs to estimate our local average treatment effect for compliers.
+
+Getting our data ready for the RD framework.
+
+  - We will center the entrance exam score on the cutoff of 70 so that we can interpret the variable as distance from the threshold.
+  - We will create our "instrument" variable by creating a variable that indicates if someone was below the cutoff ( = 1) vs. above the cutoff (= 0)
+ 
+```{r}
+tutor$forcing  <- tutor$entrance_exam - 70
+
+tutor$below <- NA # initialize variable
+tutor$below[tutor$entrance_exam <= 70] <- 1
+tutor$below[tutor$entrance_exam > 70] <- 0
+```
+  
+  - We will select a bandwidth of observations near the cutoff score. We will follow the Heiss example and use +/- 10
+  
+```{r}
+tutor.narrow <- subset(tutor, forcing >= -10 &
+                         forcing <= 10)
+```
+ 
+ 
+Implementing our CACE two-stage framework.
+
+  - Recall that the we use the indicator of being above vs. below the cutoff as an encouragement/instrument for our treatment of being enrolled vs. not enrolled in the tutoring program.
+  
+```{r, warning=F, message=F}
+library(AER)
+fit2stage <- ivreg(exit_exam ~ forcing*tutoring |
+                     forcing*below, data = tutor.narrow)
+```
+
+In addition to `AER` the `estimatr` package also have a two-stage function. They only differ in the default way of calculating standard errors. This function will have slightly more conservative standard errors.
+
+```{r, warning=F, message=F}
+library(estimatr)
+fit2stage2 <- iv_robust(exit_exam ~ forcing*tutoring |
+                     forcing*below, data = tutor.narrow)
+summary(fit2stage2)
+```
+
+We can interpret 9.64 as the causal effect of the tutoring program on exit exam scores for compliers at the score threshold.
+
+We can also implement the two-stage framework in the `rdrobust` package, which allows us to let an algorithm set the bandwidth for us and more easily integrate different choices for weighting.
+
+```{r}
+library(rdrobust)
+fit2rdrob <- rdrobust(y=tutor$exit_exam, x=tutor$forcing,
+                      fuzzy = tutor$tutoring,
+                      kernel = "triangular")
+summary(fit2rdrob)
+```
+
+Here, the bandwidth selected was closer to 13. With this alternate bandwidth and a triangular weight, we still get a result of 9.68, similar to the other specification.
+
+
+Assumptions we made to identify this as a causal effect at the cutoff for compliers:
+
+  - That our instrument is relevant. I.e., that the entrance exam cutoff of 70 was indeed predictive of program uptake. 
+  - Exclusion restriction-- that our instrument (the cutoff score) only influences the final exam score through the tutoring program. If that cutoff were used for multiple decisions about a student, this may cast doubt on the viability of the assumption.
+  - Exogeneity- we assume that the cutoff is quasi-random and rule out other possible confounders.
+  
+
+
+
+
+

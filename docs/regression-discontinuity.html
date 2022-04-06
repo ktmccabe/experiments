@@ -294,6 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.2" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#application-in-r-1"><i class="fa fa-check"></i><b>8.3.2</b> Application in R</a></li>
 <li class="chapter" data-level="8.3.3" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#considerations-in-rd-design"><i class="fa fa-check"></i><b>8.3.3</b> Considerations in RD Design</a></li>
 <li class="chapter" data-level="8.3.4" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#rd-visualizations"><i class="fa fa-check"></i><b>8.3.4</b> RD Visualizations</a></li>
+<li class="chapter" data-level="8.3.5" data-path="regression-discontinuity.html"><a href="regression-discontinuity.html#fuzzy-rd-application"><i class="fa fa-check"></i><b>8.3.5</b> Fuzzy RD Application</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -342,7 +343,7 @@ where <span class="math inline">\(c\)</span> is a threshold/point of discontinui
 <p>In a fuzzy regression design, the rule/threshold only influences the <em>probability</em> of treatment status and does not determine it.</p>
 <ul>
 <li>You can think of this as similar to the encouragement designs from last section</li>
-<li>We estimate the local average treatment effects in fuzzy regression discontinuity using the same two-stage regression model with instrumental variables regression that we did there. Here, we will focus on sharp RD.</li>
+<li>We estimate the local average treatment effects in fuzzy regression discontinuity using the same two-stage regression model with instrumental variables regression that we did there. In class we will primarily focus on sharp RD.</li>
 </ul>
 </div>
 </div>
@@ -579,6 +580,120 @@ Expand for the answer.
 <span id="cb353-5"><a href="regression-discontinuity.html#cb353-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">y.label=</span><span class="st">&quot;Fundraising at time t+1&quot;</span>, </span>
 <span id="cb353-6"><a href="regression-discontinuity.html#cb353-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x.label=</span><span class="st">&quot;Female Vote Share in Election at time t&quot;</span>)</span></code></pre></div>
 <p><img src="experiments_files/figure-html/unnamed-chunk-202-1.svg" width="672" /></p>
+</div>
+<div id="fuzzy-rd-application" class="section level3" number="8.3.5">
+<h3><span class="header-section-number">8.3.5</span> Fuzzy RD Application</h3>
+<p>We will adapt the example from <a href="https://evalf20.classes.andrewheiss.com/example/rdd-fuzzy/">Andrew Heiss</a>, which evaluates the effectiveness of a tutoring program on performance on a school’s exit exam.</p>
+<ul>
+<li>Here, students become eligible for the tutoring program if they score 70 or below on an exam at the beginning of the school year.</li>
+<li>However, students are not forced to take this program, and some students may still be able to enroll in tutoring even if they scored above 70. In short we have a <strong><em>compliance</em></strong> issue, just as we discussed compliance issues in encouragement designs for field experiments.
+<ul>
+<li>Compliers are those that enroll in the tutoring program if and only if they scored 70 or below.</li>
+</ul></li>
+<li>Our goal with a fuzzy regression design is to estimate the LATE, the complier average causal effect for those in the neighborhood of the cutoff.
+<ul>
+<li>In this way, we combine the “local” aspect of sharp RD by estimating effects at a threshold, and the “local” nature of complier effects in that the effect is only applicable for people who are compliers.</li>
+</ul></li>
+</ul>
+<p>Let’s load the data, which can be found linked through his website <a href="https://evalf20.classes.andrewheiss.com/data/tutoring_program_fuzzy.csv">here</a>.</p>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="regression-discontinuity.html#cb354-1" aria-hidden="true" tabindex="-1"></a>tutor <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;tutoring_program_fuzzy.csv&quot;</span>)</span></code></pre></div>
+<p>We can see the distribution of scores for those in vs. not in the tutoring program. Most people who scored below 70 are in the program (TRUE), but there are also some people who scored above 70 in the program. Likewise, most people who scored above 70 are not in the program, but some that scored below 70 are also not in the program.</p>
+<ul>
+<li>Entrance exam score is <strong><em>predictive</em></strong> of tutoring program uptake but not deterministically so.
+<ul>
+<li>Being below vs. above the cutoff is like the “encouragement” for whether someone takes vs. does not take the tutoring program, which is the “treatment.”</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="regression-discontinuity.html#cb355-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb355-2"><a href="regression-discontinuity.html#cb355-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tutor, <span class="fu">aes</span>(<span class="at">x=</span>entrance_exam, <span class="at">group=</span>tutoring, <span class="at">color=</span>tutoring))<span class="sc">+</span></span>
+<span id="cb355-3"><a href="regression-discontinuity.html#cb355-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb355-4"><a href="regression-discontinuity.html#cb355-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">70</span>)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-205-1.svg" width="672" /></p>
+<p>We will now combine our two frameworks 1) Sharp RD and 2) Encouragement Designs to estimate our local average treatment effect for compliers.</p>
+<p>Getting our data ready for the RD framework.</p>
+<ul>
+<li>We will center the entrance exam score on the cutoff of 70 so that we can interpret the variable as distance from the threshold.</li>
+<li>We will create our “instrument” variable by creating a variable that indicates if someone was below the cutoff ( = 1) vs. above the cutoff (= 0)</li>
+</ul>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="regression-discontinuity.html#cb356-1" aria-hidden="true" tabindex="-1"></a>tutor<span class="sc">$</span>forcing  <span class="ot">&lt;-</span> tutor<span class="sc">$</span>entrance_exam <span class="sc">-</span> <span class="dv">70</span></span>
+<span id="cb356-2"><a href="regression-discontinuity.html#cb356-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb356-3"><a href="regression-discontinuity.html#cb356-3" aria-hidden="true" tabindex="-1"></a>tutor<span class="sc">$</span>below <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># initialize variable</span></span>
+<span id="cb356-4"><a href="regression-discontinuity.html#cb356-4" aria-hidden="true" tabindex="-1"></a>tutor<span class="sc">$</span>below[tutor<span class="sc">$</span>entrance_exam <span class="sc">&lt;=</span> <span class="dv">70</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb356-5"><a href="regression-discontinuity.html#cb356-5" aria-hidden="true" tabindex="-1"></a>tutor<span class="sc">$</span>below[tutor<span class="sc">$</span>entrance_exam <span class="sc">&gt;</span> <span class="dv">70</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span></code></pre></div>
+<ul>
+<li>We will select a bandwidth of observations near the cutoff score. We will follow the Heiss example and use +/- 10</li>
+</ul>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="regression-discontinuity.html#cb357-1" aria-hidden="true" tabindex="-1"></a>tutor.narrow <span class="ot">&lt;-</span> <span class="fu">subset</span>(tutor, forcing <span class="sc">&gt;=</span> <span class="sc">-</span><span class="dv">10</span> <span class="sc">&amp;</span></span>
+<span id="cb357-2"><a href="regression-discontinuity.html#cb357-2" aria-hidden="true" tabindex="-1"></a>                         forcing <span class="sc">&lt;=</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>Implementing our CACE two-stage framework.</p>
+<ul>
+<li>Recall that the we use the indicator of being above vs. below the cutoff as an encouragement/instrument for our treatment of being enrolled vs. not enrolled in the tutoring program.</li>
+</ul>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="regression-discontinuity.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
+<span id="cb358-2"><a href="regression-discontinuity.html#cb358-2" aria-hidden="true" tabindex="-1"></a>fit2stage <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(exit_exam <span class="sc">~</span> forcing<span class="sc">*</span>tutoring <span class="sc">|</span></span>
+<span id="cb358-3"><a href="regression-discontinuity.html#cb358-3" aria-hidden="true" tabindex="-1"></a>                     forcing<span class="sc">*</span>below, <span class="at">data =</span> tutor.narrow)</span></code></pre></div>
+<p>In addition to <code>AER</code> the <code>estimatr</code> package also have a two-stage function. They only differ in the default way of calculating standard errors. This function will have slightly more conservative standard errors.</p>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="regression-discontinuity.html#cb359-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(estimatr)</span>
+<span id="cb359-2"><a href="regression-discontinuity.html#cb359-2" aria-hidden="true" tabindex="-1"></a>fit2stage2 <span class="ot">&lt;-</span> <span class="fu">iv_robust</span>(exit_exam <span class="sc">~</span> forcing<span class="sc">*</span>tutoring <span class="sc">|</span></span>
+<span id="cb359-3"><a href="regression-discontinuity.html#cb359-3" aria-hidden="true" tabindex="-1"></a>                     forcing<span class="sc">*</span>below, <span class="at">data =</span> tutor.narrow)</span>
+<span id="cb359-4"><a href="regression-discontinuity.html#cb359-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2stage2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## iv_robust(formula = exit_exam ~ forcing * tutoring | forcing * 
+##     below, data = tutor.narrow)
+## 
+## Standard error type:  HC2 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value   Pr(&gt;|t|) CI Lower CI Upper
+## (Intercept)           59.9303     1.1714 51.1593 2.352e-177 57.62734  62.2333
+## forcing                0.5192     0.2383  2.1785  2.995e-02  0.05066   0.9877
+## tutoringTRUE           9.6369     1.9323  4.9873  9.151e-07  5.83820  13.4356
+## forcing:tutoringTRUE  -0.1906     0.4953 -0.3849  7.005e-01 -1.16440   0.7831
+##                       DF
+## (Intercept)          399
+## forcing              399
+## tutoringTRUE         399
+## forcing:tutoringTRUE 399
+## 
+## Multiple R-squared:  0.3619 ,    Adjusted R-squared:  0.3571 
+## F-statistic: 8.722 on 3 and 399 DF,  p-value: 1.289e-05</code></pre>
+<p>We can interpret 9.64 as the causal effect of the tutoring program on exit exam scores for compliers at the score threshold.</p>
+<p>We can also implement the two-stage framework in the <code>rdrobust</code> package, which allows us to let an algorithm set the bandwidth for us and more easily integrate different choices for weighting.</p>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="regression-discontinuity.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdrobust)</span>
+<span id="cb361-2"><a href="regression-discontinuity.html#cb361-2" aria-hidden="true" tabindex="-1"></a>fit2rdrob <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(<span class="at">y=</span>tutor<span class="sc">$</span>exit_exam, <span class="at">x=</span>tutor<span class="sc">$</span>forcing,</span>
+<span id="cb361-3"><a href="regression-discontinuity.html#cb361-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fuzzy =</span> tutor<span class="sc">$</span>tutoring,</span>
+<span id="cb361-4"><a href="regression-discontinuity.html#cb361-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">kernel =</span> <span class="st">&quot;triangular&quot;</span>)</span>
+<span id="cb361-5"><a href="regression-discontinuity.html#cb361-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2rdrob)</span></code></pre></div>
+<pre><code>## Call: rdrobust
+## 
+## Number of Obs.                 1000
+## BW type                       mserd
+## Kernel                   Triangular
+## VCE method                       NN
+## 
+## Number of Obs.                  238          762
+## Eff. Number of Obs.             170          347
+## Order est. (p)                    1            1
+## Order bias  (q)                   2            2
+## BW est. (h)                  12.985       12.985
+## BW bias (b)                  19.733       19.733
+## rho (h/b)                     0.658        0.658
+## Unique Obs.                     238          762
+## 
+## =============================================================================
+##         Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+## =============================================================================
+##   Conventional     9.683     1.893     5.116     0.000     [5.973 , 13.393]    
+##         Robust         -         -     4.258     0.000     [5.210 , 14.095]    
+## =============================================================================</code></pre>
+<p>Here, the bandwidth selected was closer to 13. With this alternate bandwidth and a triangular weight, we still get a result of 9.68, similar to the other specification.</p>
+<p>Assumptions we made to identify this as a causal effect at the cutoff for compliers:</p>
+<ul>
+<li>That our instrument is relevant. I.e., that the entrance exam cutoff of 70 was indeed predictive of program uptake.</li>
+<li>Exclusion restriction– that our instrument (the cutoff score) only influences the final exam score through the tutoring program. If that cutoff were used for multiple decisions about a student, this may cast doubt on the viability of the assumption.</li>
+<li>Exogeneity- we assume that the cutoff is quasi-random and rule out other possible confounders.</li>
+</ul>
 
 </div>
 </div>

@@ -110,3 +110,4 @@ sharp-vs.-fuzzy
 application-in-r-1
 considerations-in-rd-design
 rd-visualizations
+fuzzy-rd-application
