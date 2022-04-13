@@ -111,3 +111,15 @@ application-in-r-1
 considerations-in-rd-design
 rd-visualizations
 fuzzy-rd-application
+mediation
+mediation-overview
+distinguishing-mediators-vs.-moderators
+implementing-a-mediation-analysis
+baron-kenny-approach
+problems-with-mediation
+causal-mediation-framework
+acme-assumptions
+acme-application-in-r
+mediation-r-implementation
+sensitivity-analyses
+mediation-alternatives
