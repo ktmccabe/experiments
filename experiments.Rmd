@@ -5046,7 +5046,7 @@ Mediation is hard. So, what can we do instead?
       + For example, to examine the (average) "controlled direct effect as the effect of treatment for a fixed value of the mediator" (Acharya et al.)
       + Or examine Average causal effect of the mediator: "How manipulating a secondary, possibly intermediate variable can change the magnitude and direction of a causal effect"
   - For more designs (See Imai et al. 2010 and R mediation documentation)
-      + For analyses with multiple mechanisms, see [Imai and Yammamoto (2013)](https://imai.princeton.edu/research/files/medsens.pdf). For applications to observational data, see also [Blackwell](https://www.mattblackwell.org/files/papers/direct-effects.pdf)
+      + For analyses with multiple mechanisms, see [Imai and Yammamoto (2013)](https://imai.princeton.edu/research/files/medsens.pdf). For applications to observational data, see also [Acharya, Blackwell, Sen (2016)](https://www.mattblackwell.org/files/papers/direct-effects.pdf)
 
 
 ***Example: Extension of Tomz and Weeks (2013)***
@@ -5127,7 +5127,7 @@ Within this design, we could still recover an average treatment effect based on 
 fit <- lm(favor_binary ~ dem_dummy*threat_dummy, data = tw)
 ```
 
-For the average treatment effect, we want the effect of the treatment under natural mediation settings. This is 
+For the ***average treatment effect***, we want the effect of the treatment under natural mediation settings. This is 
 ```{r}
 ate <- coef(fit)["dem_dummy"] + coef(fit)["dem_dummy:threat_dummy"]
 ate
@@ -5141,7 +5141,7 @@ predict(fit, data.frame(dem_dummy = 1, threat_dummy = 1)) -
 ```
 
 
-Eliminated Effect
+***Eliminated Effect***
 
 A final effect we could recover is the eliminated effect. The eliminated effect is the difference between the ATE - ACDE: "The nature of a causal mechanism is about how much of a treatment effect is explained by a particular mediator."
 
@@ -5153,9 +5153,7 @@ aee <- coef(fit)["dem_dummy:threat_dummy"]
 Well, in this example, the interaction term represents how much our effect varies as we move between values of the `threat_dummy` variable. BINGO!
 
   - "Thus, we can interpret the eliminated effect as the portion of the ATE that can be explained by $M_i$, either through indirect effects or interactions."
-\end{frame}
 
-Example: Tomz and Weeks Extension
 
 Plot all three. The authors use bootstrapping and robust standard errors. These are standard OLS confidence bands.
 
