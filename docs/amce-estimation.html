@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science</title>
-  <meta name="description" content="8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science" />
+  <title>10.3 AMCE estimation | Experimental Methods in Political Science</title>
+  <meta name="description" content="10.3 AMCE estimation | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science" />
+  <meta property="og:title" content="10.3 AMCE estimation | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="10.3 AMCE estimation | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="what-makes-an-experiment-not-an-experiment.html"/>
-<link rel="next" href="regression-discontinuity.html"/>
+<link rel="prev" href="amce-effects.html"/>
+<link rel="next" href="conjoint-application-in-r.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -348,65 +348,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exploiting-exogenous-policy-changes-and-events" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Exploiting Exogenous Policy Changes and Events</h2>
-<p>We will use the application from “The Curious Case of Theresa May and the Public That Did Not Rally: Gendered Reactions to Terrorist Attacks Can Cause Slumps Not Bumps” by Mirya Holman, Jennifer Merolla, and Elizabeth Zechmeister published in 2021 in the <em>American Political Science Review.</em> doi: 10.1017/S0003055421000861</p>
-<p>Research Question: How does leader gender influence the rally around the flag effect? Do people rally around the flag for women leaders?</p>
+<div id="amce-estimation" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> AMCE estimation</h2>
+<p>A common way to analyze conjoint designs in political science is to follow the Hainmueller, Hopkins, Yamamoto (2014) <a href="https://www.cambridge.org/core/journals/political-analysis/article/causal-inference-in-conjoint-analysis-understanding-multidimensional-choices-via-stated-preference-experiments/414DA03BAA2ACE060FFE005F53EFF8C8">recommendations</a> and use linear regression with clustered standard errors. Once you have organized your data in the right way, this ends up being very similar to the analysis of standard experimental designs.</p>
+<p>Let’s take a toy example.</p>
+<p>Imagine that we had a sample of</p>
 <ul>
-<li>Application: They look at the impact of a terrorist attack on support for Theresa May.
+<li>3 respondents who each completed 2 tasks where they evaluated 2 profiles.
 <ul>
-<li>The May 22, 2017 Manchester Bombing occurred during the fielding of the 2017 British Election Study</li>
-<li>As the authors note on pg. 252, the treatment (the terrorist attack) occurred “as if” random with respect to the timing of individuals’ survey responses about the likeability of May and preference for prime minister.
-<ul>
-<li>Note that similar to a regression discontinuity design, they restrict the “bandwidth” around the attack to include survey responses close to the attack.</li>
+<li>This gives us 3 <span class="math inline">\(\times\)</span> 2 <span class="math inline">\(\times\)</span> 2 profile evaluations</li>
 </ul></li>
+<li>We want to organize our data so that each row represents a respondent-profile evaluation.
+<ul>
+<li>This means each respondent is represented 4 times in the data, 1 for each profile they evaluated. We have 12 observations overall.</li>
+</ul></li>
+<li>Let’s suppose each profile had three attributes- Gender, Country, and Language
+<ul>
+<li>These will be the columns associated with each profile evaluation</li>
+</ul></li>
+<li>We will also have a column for the outcome– whether a given profile was chosen – 1 if yes, 0 if no.</li>
+</ul>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="amce-estimation.html#cb390-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;conjointtoy.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="amce-estimation.html#cb391-1" aria-hidden="true" tabindex="-1"></a>conjointtoy</span></code></pre></div>
+<pre><code>##    Respondent Task Chosen Gender Country       Language
+## 1           1    1      1 Female   China Fluent English
+## 2           1    1      0   Male   China Fluent English
+## 3           1    2      0 Female  Mexico     No English
+## 4           1    2      1   Male   China     No English
+## 5           2    1      0 Female   China Fluent English
+## 6           2    1      1   Male   Sudan Fluent English
+## 7           2    2      0 Female  Mexico Broken English
+## 8           2    2      1 Female  Mexico Broken English
+## 9           3    1      1   Male   China     No English
+## 10          3    1      0 Female   Sudan Broken English
+## 11          3    2      1   Male  Mexico Broken English
+## 12          3    2      0 Female   China Fluent English</code></pre>
+<p>So, in the first row, in task 1, respondent 1 evaluated a profile of a female immigrant from China who speaks fluent English. Based on the Chosen column, this profile was chosen for admission.</p>
+<p>In the sixth row, respondent 2 in task 1 evaluated a profile of a male immigrant from Sudan who spoke fluent English. This profile was chosen for priority admission.</p>
+<p>In estimating the AMCE, we want to know how the probability an immigrant was chosen varies as the attribute values vary.</p>
+<ul>
+<li>Let’s calculate the AMCE of going from Fluent English vs. No English in our toy (read: randomly generated) dataset.
+<ul>
+<li>We simply estimate the proportion of times an immigrant with Fluent English was chosen vs. the proportion of times an immigrant with No English was chosen. This does not necessarily equate to the proportion of people who prefer Fluent to No English immigrants, however, see the interpretations to follow.</li>
 </ul></li>
 </ul>
-<div id="unexpected-event-design" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Unexpected Event Design</h3>
-<p>The authors use the following justification for an unexpected event during survey design.</p>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="amce-estimation.html#cb393-1" aria-hidden="true" tabindex="-1"></a>prob.fluent <span class="ot">&lt;-</span> <span class="fu">mean</span>(conjointtoy<span class="sc">$</span>Chosen[conjointtoy<span class="sc">$</span>Language <span class="sc">==</span> <span class="st">&quot;Fluent English&quot;</span>])</span>
+<span id="cb393-2"><a href="amce-estimation.html#cb393-2" aria-hidden="true" tabindex="-1"></a>prob.no <span class="ot">&lt;-</span> <span class="fu">mean</span>(conjointtoy<span class="sc">$</span>Chosen[conjointtoy<span class="sc">$</span>Language <span class="sc">==</span> <span class="st">&quot;No English&quot;</span>])</span>
+<span id="cb393-3"><a href="amce-estimation.html#cb393-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb393-4"><a href="amce-estimation.html#cb393-4" aria-hidden="true" tabindex="-1"></a>prob.fluent <span class="sc">-</span> prob.no</span></code></pre></div>
+<pre><code>## [1] -0.2666667</code></pre>
+<p>This is equivalent to running a regression. Note that because respondents are represented multiple times in our data, we are going to use clustered standard errors.</p>
+<p>We first make sure that “No English” is the reference category.</p>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="amce-estimation.html#cb395-1" aria-hidden="true" tabindex="-1"></a>conjointtoy<span class="sc">$</span>Language <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(conjointtoy<span class="sc">$</span>Language)</span>
+<span id="cb395-2"><a href="amce-estimation.html#cb395-2" aria-hidden="true" tabindex="-1"></a>conjointtoy<span class="sc">$</span>Language <span class="ot">&lt;-</span> <span class="fu">relevel</span>(conjointtoy<span class="sc">$</span>Language, <span class="at">ref=</span><span class="st">&quot;No English&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="amce-estimation.html#cb396-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(estimatr)</span>
+<span id="cb396-2"><a href="amce-estimation.html#cb396-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(Chosen <span class="sc">~</span> Language, <span class="at">data =</span> conjointtoy,</span>
+<span id="cb396-3"><a href="amce-estimation.html#cb396-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">se_type=</span><span class="st">&quot;stata&quot;</span>, <span class="at">clusters=</span>Respondent)</span>
+<span id="cb396-4"><a href="amce-estimation.html#cb396-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm_robust(formula = Chosen ~ Language, data = conjointtoy, clusters = Respondent, 
+##     se_type = &quot;stata&quot;)
+## 
+## Standard error type:  stata 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&gt;|t|) CI Lower CI Upper
+## (Intercept)              0.6667     0.2128  3.1334  0.08853  -0.2488   1.5821
+## LanguageBroken English  -0.1667     0.2128 -0.7833  0.51546  -1.0821   0.7488
+## LanguageFluent English  -0.2667     0.3343 -0.7977  0.50871  -1.7050   1.1717
+##                        DF
+## (Intercept)             2
+## LanguageBroken English  2
+## LanguageFluent English  2
+## 
+## Multiple R-squared:  0.04444 ,   Adjusted R-squared:  -0.1679 
+## F-statistic: 0.3182 on 2 and 2 DF,  p-value: 0.7586</code></pre>
+<p>Note that we get the same estimate from each process. We estimate a -.27 difference in the likelihood an immigrant was given priority when counterfactually varying the immigrant’s language skills from “fluent English” to “No English”, averaging across respondents and the distribution of combinations of the other immigrant attributes.</p>
+<p>The counterfactual we imagine, for example, is taking the potential outcome of first row profile: a profile of a female immigrant from China who speaks fluent English, and counterfactually imagining the potential outcome of that same profile of a female immigrant from China who speaks <strong><em>No English</em></strong>, both against a randomly generated profile. Then, we imagine another possible combination, for example, a profile of a female immigrant from Mexico who speaks fluent English vs. imagining the potential outcome of the profile of a female immigrant from Mexico who speaks <strong><em>No English</em></strong>, and we continue so on and so forth, imagining the average difference in potential outcomes that arises across all possible combinations of immigrant attributes from the profile being evaluated and the “opponent.”</p>
+<p>That is, in paired-choice designs, we imagine that all attribute combinations of their opponent profiles are also varying. Here, AMCE compares the probability of an immigrant profile with fluent English chosen against another randomly generated profile (with fluent English or another Language skills level) to the probability of an immigrant profile with no English skills being chosen for priority against a similarly randomly generated immigrant profile.The AMCE asks “how much better or worse a randomly selected [immigrant profile] would fare” in this competition if Language skills vary from fluent to no English.</p>
+<p>See <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3588941">Bansak et al. 2022</a> for a detailed discussion of these AMCE interpretations. In general terms, for a paired-choice design, they recommend the interpretation:</p>
 <ul>
-<li>“The event was unanticipated by all except the attacker and their confidants and there is an exogenous assignment of the treatment and control groups from random survey rollout.”</li>
-<li>“We can thus compare responses of individuals in the control group (i.e., those who took the survey before the Manchester Bombing) and the
-treatment group (i.e., those who took that same survey after the Manchester Bombing).</li>
+<li>“The AMCE can be described as the effect on the probability of choosing a profile when an attribute changes values for that profile. So one might say:”Changing the age of the candidate from young to old increases the probability of choosing the candidate profile by <span class="math inline">\(X\)</span> percentage points” (21) (on average against an opponent randomly drawn from the attributes’ randomization distribution).</li>
+<li>The AMCE incoporates both preference directionality and preference intensity in the estimates and averages both over respondents and the distribution of attribute combinations. Even if most people prefer a female to male immigrant, it is possible that in a multi-attribute setting, that immigrant gender has little effect due to other attributes taking priority. Therefore, the AMCE will not necessarily correspond to the fraction of voters preferring an attribute <span class="math inline">\(A = a\)</span> over <span class="math inline">\(A = -a\)</span>. Alternatively, if a small number of respondents greatly prefer female to male immigrants, they may drive up the AMCE.</li>
 </ul>
-<p>This represents a between-subjects version of a before-after design.</p>
-<p>Key Assumptions</p>
-<ul>
-<li>Treatment assignment as-if random. While this assumption is not fully testable, we can partially examine it by comparing the treatment and control groups on a number of variables that should not differ between the groups (e.g., demographics). See pg. 253</li>
-<li>No other events/changes influence before-after trend. What if it was an economic decline? Or effects of Brexit? See pgs. 257-258.</li>
-</ul>
-<p><strong><em>Analysis and Results</em></strong></p>
-<p>The authors run a regression analysis to compare the favorability of May among those surveyed after the attack (<span class="math inline">\(Y_i(1) | d_i =\)</span> surveyed after) to the favorability of May among those surveyed before the attack (<span class="math inline">\(Y_i(0) | d_i =\)</span> surveyed before).</p>
-<p><img src="images/holman1.png" style="width:50.0%" /></p>
-<p>How can we interpret the -.332 result in the first column?</p>
-</div>
-<div id="differences-in-differences" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Differences in Differences</h3>
-<p>The authors also place their framework into a differences-in-differences design. The British Election Study is a panel survey with multiple waves with the attack ocurring in Wave 12. The previous analysis used only the 12th wave. In this analysis, we compare the <strong><em>trends</em></strong> in support for May among those who were eventually treated with the terror attack in the 12th wave to those who went untreated in the 12th wave.</p>
-<p>Below is a stylized way to think about difference-in-difference designs.</p>
-<div class="figure">
-<img src="images/didplot.png" style="width:60.0%" alt="" />
-<p class="caption"><em>Matt Blackwell, Harvard University</em></p>
-</div>
-<p>The authors interact the treatment variable (whether respondents were exposed to the terrorist attack in Wave 12) with a time variable indicating in the favorability of May was measured prior to or in Wave 12.</p>
-<ul>
-<li>This interaction represents the causal effect of the terrorist attack on May’s favorability by comparing the trend in opinion among the treatment and control group.</li>
-</ul>
-<p><img src="images/holman2.png" style="width:50.0%" /></p>
-<p>Key Assumption of Differences in Differences</p>
-<ul>
-<li>Parallel Trends: In the absence of treatment, the trend/slope of the control group and treatment group would be the same.</li>
-</ul>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="what-makes-an-experiment-not-an-experiment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="regression-discontinuity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="amce-effects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conjoint-application-in-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

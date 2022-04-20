@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science</title>
-  <meta name="description" content="8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science" />
+  <title>10.4 Conjoint Application in R | Experimental Methods in Political Science</title>
+  <meta name="description" content="10.4 Conjoint Application in R | Experimental Methods in Political Science" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science" />
+  <meta property="og:title" content="10.4 Conjoint Application in R | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.2 Exploiting Exogenous Policy Changes and Events | Experimental Methods in Political Science" />
+  <meta name="twitter:title" content="10.4 Conjoint Application in R | Experimental Methods in Political Science" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="what-makes-an-experiment-not-an-experiment.html"/>
-<link rel="next" href="regression-discontinuity.html"/>
+<link rel="prev" href="amce-estimation.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -348,65 +348,172 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exploiting-exogenous-policy-changes-and-events" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Exploiting Exogenous Policy Changes and Events</h2>
-<p>We will use the application from “The Curious Case of Theresa May and the Public That Did Not Rally: Gendered Reactions to Terrorist Attacks Can Cause Slumps Not Bumps” by Mirya Holman, Jennifer Merolla, and Elizabeth Zechmeister published in 2021 in the <em>American Political Science Review.</em> doi: 10.1017/S0003055421000861</p>
-<p>Research Question: How does leader gender influence the rally around the flag effect? Do people rally around the flag for women leaders?</p>
-<ul>
-<li>Application: They look at the impact of a terrorist attack on support for Theresa May.
-<ul>
-<li>The May 22, 2017 Manchester Bombing occurred during the fielding of the 2017 British Election Study</li>
-<li>As the authors note on pg. 252, the treatment (the terrorist attack) occurred “as if” random with respect to the timing of individuals’ survey responses about the likeability of May and preference for prime minister.
-<ul>
-<li>Note that similar to a regression discontinuity design, they restrict the “bandwidth” around the attack to include survey responses close to the attack.</li>
-</ul></li>
-</ul></li>
-</ul>
-<div id="unexpected-event-design" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Unexpected Event Design</h3>
-<p>The authors use the following justification for an unexpected event during survey design.</p>
-<ul>
-<li>“The event was unanticipated by all except the attacker and their confidants and there is an exogenous assignment of the treatment and control groups from random survey rollout.”</li>
-<li>“We can thus compare responses of individuals in the control group (i.e., those who took the survey before the Manchester Bombing) and the
-treatment group (i.e., those who took that same survey after the Manchester Bombing).</li>
-</ul>
-<p>This represents a between-subjects version of a before-after design.</p>
-<p>Key Assumptions</p>
-<ul>
-<li>Treatment assignment as-if random. While this assumption is not fully testable, we can partially examine it by comparing the treatment and control groups on a number of variables that should not differ between the groups (e.g., demographics). See pg. 253</li>
-<li>No other events/changes influence before-after trend. What if it was an economic decline? Or effects of Brexit? See pgs. 257-258.</li>
-</ul>
-<p><strong><em>Analysis and Results</em></strong></p>
-<p>The authors run a regression analysis to compare the favorability of May among those surveyed after the attack (<span class="math inline">\(Y_i(1) | d_i =\)</span> surveyed after) to the favorability of May among those surveyed before the attack (<span class="math inline">\(Y_i(0) | d_i =\)</span> surveyed before).</p>
-<p><img src="images/holman1.png" style="width:50.0%" /></p>
-<p>How can we interpret the -.332 result in the first column?</p>
+<div id="conjoint-application-in-r" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Conjoint Application in R</h2>
+<p>Let’s look at a more elaborate example from Hainmueller and Hopkins using replication data they provide.</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="conjoint-application-in-r.html#cb398-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb398-2"><a href="conjoint-application-in-r.html#cb398-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb398-3"><a href="conjoint-application-in-r.html#cb398-3" aria-hidden="true" tabindex="-1"></a>conj <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">&quot;conjoint.dta&quot;</span>)</span></code></pre></div>
+<p>We can familiarize ourselves with the data structure.</p>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="conjoint-application-in-r.html#cb399-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(conj)</span></code></pre></div>
+<pre><code>##   CaseID contest_no          FeatEd             FeatJob
+## 1      4          1     high school               Nurse
+## 2      4          1       no formal Child care provider
+## 3      4          2 graduate degree            Gardener
+## 4      4          2       4th grade Construction worker
+## 5      4          3     high school               Nurse
+## 6      4          3  college degree Child care provider
+##                   FeatLang Chosen_Immigrant
+## 1 tried English but unable              Yes
+## 2         used interpreter               No
+## 3           fluent English               No
+## 4           fluent English              Yes
+## 5           broken English              Yes
+## 6           fluent English               No</code></pre>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="conjoint-application-in-r.html#cb401-1" aria-hidden="true" tabindex="-1"></a><span class="do">## How many observations?</span></span>
+<span id="cb401-2"><a href="conjoint-application-in-r.html#cb401-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(conj)</span></code></pre></div>
+<pre><code>## [1] 13960</code></pre>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="conjoint-application-in-r.html#cb403-1" aria-hidden="true" tabindex="-1"></a><span class="do">## How many unique participants?</span></span>
+<span id="cb403-2"><a href="conjoint-application-in-r.html#cb403-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(conj<span class="sc">$</span>CaseID)) <span class="co"># 1396 </span></span></code></pre></div>
+<pre><code>## [1] 1396</code></pre>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="conjoint-application-in-r.html#cb405-1" aria-hidden="true" tabindex="-1"></a><span class="do">## How many contests? (tasks)</span></span>
+<span id="cb405-2"><a href="conjoint-application-in-r.html#cb405-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>contest_no) <span class="co"># 5</span></span></code></pre></div>
+<pre><code>## 
+##    1    2    3    4    5 
+## 2792 2792 2792 2792 2792</code></pre>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="conjoint-application-in-r.html#cb407-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Education features</span></span>
+<span id="cb407-2"><a href="conjoint-application-in-r.html#cb407-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>FeatEd)</span></code></pre></div>
+<pre><code>## 
+##        no formal        4th grade        8th grade      high school 
+##             1964             2018             1998             1994 
+## two-year college   college degree  graduate degree 
+##             2005             1963             2018</code></pre>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="conjoint-application-in-r.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Job features</span></span>
+<span id="cb409-2"><a href="conjoint-application-in-r.html#cb409-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>FeatJob)</span></code></pre></div>
+<pre><code>## 
+##             Janitor              Waiter Child care provider            Gardener 
+##                1633                1722                1756                1652 
+##   Financial analyst Construction worker             Teacher Computer programmer 
+##                 487                1658                1689                 542 
+##               Nurse  Research scientist              Doctor 
+##                1731                 540                 550</code></pre>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="conjoint-application-in-r.html#cb411-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Lang features</span></span>
+<span id="cb411-2"><a href="conjoint-application-in-r.html#cb411-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>FeatLang)</span></code></pre></div>
+<pre><code>## 
+##           fluent English           broken English tried English but unable 
+##                     3576                     3440                     3501 
+##         used interpreter 
+##                     3443</code></pre>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="conjoint-application-in-r.html#cb413-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Outcome: Choice Task </span></span>
+<span id="cb413-2"><a href="conjoint-application-in-r.html#cb413-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>Chosen_Immigrant)</span></code></pre></div>
+<pre><code>## 
+##   No  Yes 
+## 6980 6980</code></pre>
+<p>Let’s look at the AMCE for language.</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="conjoint-application-in-r.html#cb415-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make outcome numeric</span></span>
+<span id="cb415-2"><a href="conjoint-application-in-r.html#cb415-2" aria-hidden="true" tabindex="-1"></a>conj<span class="sc">$</span>Chosen_Immigrant <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(conj<span class="sc">$</span>Chosen_Immigrant <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb415-3"><a href="conjoint-application-in-r.html#cb415-3" aria-hidden="true" tabindex="-1"></a>fit.lang <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(Chosen_Immigrant <span class="sc">~</span> FeatLang, </span>
+<span id="cb415-4"><a href="conjoint-application-in-r.html#cb415-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">data =</span> conj, <span class="at">se_type=</span><span class="st">&quot;stata&quot;</span>,</span>
+<span id="cb415-5"><a href="conjoint-application-in-r.html#cb415-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">clusters=</span>CaseID)</span>
+<span id="cb415-6"><a href="conjoint-application-in-r.html#cb415-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit.lang)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm_robust(formula = Chosen_Immigrant ~ FeatLang, data = conj, 
+##     clusters = CaseID, se_type = &quot;stata&quot;)
+## 
+## Standard error type:  stata 
+## 
+## Coefficients:
+##                                  Estimate Std. Error t value  Pr(&gt;|t|) CI Lower
+## (Intercept)                       0.58753   0.007306  80.414 0.000e+00  0.57320
+## FeatLangbroken English           -0.06137   0.012036  -5.099 3.890e-07 -0.08497
+## FeatLangtried English but unable -0.12823   0.012043 -10.648 1.654e-25 -0.15186
+## FeatLangused interpreter         -0.16319   0.012205 -13.371 1.874e-38 -0.18713
+##                                  CI Upper   DF
+## (Intercept)                       0.60186 1395
+## FeatLangbroken English           -0.03776 1395
+## FeatLangtried English but unable -0.10461 1395
+## FeatLangused interpreter         -0.13925 1395
+## 
+## Multiple R-squared:  0.01583 ,   Adjusted R-squared:  0.01562 
+## F-statistic:  70.4 on 3 and 1395 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>How should we interpret these results? Note that the left-out category is “fluent English.”</p>
+<div id="a-wrinkle--restricted-combinations" class="section level3" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> A wrinkle- restricted combinations</h3>
+<p>Sometimes in conjoints we restrict which attributes can appear with other features to avoid nonsensical combinations. For example, education and occupation were restricted in this application. A profile assigned as a computer programmer had to have at least a two-year college degree.</p>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="conjoint-application-in-r.html#cb417-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>FeatJob,conj<span class="sc">$</span>FeatEd)</span></code></pre></div>
+<pre><code>##                      
+##                       no formal 4th grade 8th grade high school
+##   Janitor                   290       270       299         240
+##   Waiter                    275       282       301         283
+##   Child care provider       288       324       286         315
+##   Gardener                  257       275       284         284
+##   Financial analyst           0         0         0           0
+##   Construction worker       281       283       250         289
+##   Teacher                   275       288       282         287
+##   Computer programmer         0         0         0           0
+##   Nurse                     298       296       296         296
+##   Research scientist          0         0         0           0
+##   Doctor                      0         0         0           0
+##                      
+##                       two-year college college degree graduate degree
+##   Janitor                          182            190             162
+##   Waiter                           171            202             208
+##   Child care provider              200            172             171
+##   Gardener                         172            189             191
+##   Financial analyst                171            154             162
+##   Construction worker              181            183             191
+##   Teacher                          201            168             188
+##   Computer programmer              169            196             177
+##   Nurse                            197            178             170
+##   Research scientist               176            169             195
+##   Doctor                           185            162             203</code></pre>
+<p>If you incorporate this into your design, you must also incorporate this into the analysis. We can do so by interacting the restricted attributes. We would then need to calculate the average effect of college vs. no formal education among just those job strata that were available for both.
+`</p>
 </div>
-<div id="differences-in-differences" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Differences in Differences</h3>
-<p>The authors also place their framework into a differences-in-differences design. The British Election Study is a panel survey with multiple waves with the attack ocurring in Wave 12. The previous analysis used only the 12th wave. In this analysis, we compare the <strong><em>trends</em></strong> in support for May among those who were eventually treated with the terror attack in the 12th wave to those who went untreated in the 12th wave.</p>
-<p>Below is a stylized way to think about difference-in-difference designs.</p>
-<div class="figure">
-<img src="images/didplot.png" style="width:60.0%" alt="" />
-<p class="caption"><em>Matt Blackwell, Harvard University</em></p>
+<div id="visualizing-the-amce-with-a-package" class="section level3" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Visualizing the AMCE with a package</h3>
+<p>Some R packages have also incorporated the ability to estimate AMCEs and account for restricted randomizations relatively easily when estimating the AMCE. You can see Leeper’s package <code>cregg</code> <a href="https://cran.r-project.org/web/packages/cregg/vignettes/Introduction.html">here</a> for an example.</p>
+<p>Below is an example without restrictions. The <code>cregg</code>package can be nice because it has a plotting tool built into the function. However, you should be careful to understand what it is plotting, and you may want to create your own plots so that you can customize which attributes are plotted and how they appear.</p>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="conjoint-application-in-r.html#cb419-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cregg)</span>
+<span id="cb419-2"><a href="conjoint-application-in-r.html#cb419-2" aria-hidden="true" tabindex="-1"></a>fit.cregg <span class="ot">&lt;-</span> <span class="fu">amce</span>(Chosen_Immigrant <span class="sc">~</span> FeatLang,<span class="at">data=</span> conj, <span class="at">id=</span><span class="sc">~</span>CaseID)</span>
+<span id="cb419-3"><a href="conjoint-application-in-r.html#cb419-3" aria-hidden="true" tabindex="-1"></a>fit.cregg</span></code></pre></div>
+<pre><code>##            outcome statistic  feature                    level    estimate
+## 1 Chosen_Immigrant      amce FeatLang           fluent English  0.00000000
+## 2 Chosen_Immigrant      amce FeatLang           broken English -0.06136517
+## 3 Chosen_Immigrant      amce FeatLang tried English but unable -0.12823062
+## 4 Chosen_Immigrant      amce FeatLang         used interpreter -0.16318873
+##    std.error          z            p       lower       upper
+## 1         NA         NA           NA          NA          NA
+## 2 0.01203423  -5.099221 3.410542e-07 -0.08495182 -0.03777853
+## 3 0.01204176 -10.648827 1.765759e-26 -0.15183204 -0.10462920
+## 4 0.01220370 -13.372069 8.805749e-41 -0.18710754 -0.13926991</code></pre>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="conjoint-application-in-r.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit.cregg)</span></code></pre></div>
+<p><img src="experiments_files/figure-html/unnamed-chunk-243-1.svg" width="672" /></p>
 </div>
-<p>The authors interact the treatment variable (whether respondents were exposed to the terrorist attack in Wave 12) with a time variable indicating in the favorability of May was measured prior to or in Wave 12.</p>
-<ul>
-<li>This interaction represents the causal effect of the terrorist attack on May’s favorability by comparing the trend in opinion among the treatment and control group.</li>
-</ul>
-<p><img src="images/holman2.png" style="width:50.0%" /></p>
-<p>Key Assumption of Differences in Differences</p>
-<ul>
-<li>Parallel Trends: In the absence of treatment, the trend/slope of the control group and treatment group would be the same.</li>
-</ul>
+<div id="subgroup-analysis" class="section level3" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Subgroup analysis</h3>
+<p>It is perfectly possible to see how the AMCEs differ across different respondent characteristics or combinations of profile characteristics.</p>
+<p>When evaluating the difference in AMCEs for different respondent subgroups, <a href="https://www.cambridge.org/core/journals/political-analysis/article/abs/measuring-subgroup-preferences-in-conjoint-experiments/4F2C21AC02753F1FFF2F5EA0F943C1B2">Leeper et al. 2020</a> recommend displaying the marginal means from each group (e.g., the probability the immigrant profile was chosen for Democratic vs. Republican respondents) instead of the AMCEs. This is because displaying the AMCEs may obscure very big differences in the preferences of the respondent subgroups among the reference category. The <code>cregg</code> package also talks about this <a href="https://cran.r-project.org/web/packages/cregg/vignettes/Introduction.html">here</a> with tips for visualization.</p>
+<p>For example, perhaps Republicans are very opposed to immigrants with no formal education, while Democrats are very supportive. All of the AMCEs within each group are calculated relative to that baseline preference. Even if the AMCEs comparing “college degree” to “no formal education” are similar across partisan subgroups, this would not necessarily mean their overall preferences are similar.</p>
+
 </div>
 </div>
+<!-- </div> -->
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="what-makes-an-experiment-not-an-experiment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="regression-discontinuity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="amce-estimation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

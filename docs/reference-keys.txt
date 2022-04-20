@@ -123,3 +123,11 @@ acme-application-in-r
 mediation-r-implementation
 sensitivity-analyses
 mediation-alternatives
+conjoints
+conjoint-overview
+amce-effects
+amce-estimation
+conjoint-application-in-r
+a-wrinkle--restricted-combinations
+visualizing-the-amce-with-a-package
+subgroup-analysis
