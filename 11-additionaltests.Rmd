@@ -1,0 +1,312 @@
+# Additional Tests {#additional}
+
+
+In this section, we briefly look at some additional tests you may encounter or may want to run when testing experimental effects.
+
+## t-tests and its friends
+
+We have primarily been using the t-test to study experimental results. The t-test compares the mean outcomes of two groups.
+
+Specifically, we have been running t-tests with "two independent samples" given that the treatment and control groups are independently assigned.
+
+We have also used linear regression to calculate the difference in means. The coefficient on the treatment variable represents the average treatment effect in this case (the average difference in the outcome when moving from the control group to the treatment group). Under the hood of the regression, it also runs a t-test to assess if that mean difference is significantly different from zero.
+
+
+While t-tests are very useful, there may be cases when you want to consider other types of tests. Here are some special cases.
+
+  - t-tests are generally meant for outcomes that are numeric and continuous.
+  - t-tests work better when the data are normally distributed (this matters more in small samples)
+  - By default in R, when using the `t.test` function, we typically allow the variances in each group to be unequal, though we can toggle this using the `var.equal` argument. In the regression test, we make an additional assumption of homogenous variance and used a pooled variance estimator, which is equivalent to the `t.test` when `var.equal = T` in the case of two groups. See [section 4.8](https://ktmccabe.github.io/experiments/comparing-different-types-of-tests.html) for the slight differences in how the variance is calculated in each case.
+
+
+***What if our outcome is binary?***
+
+If our outcome is binary, we may want to use a slightly different calculation for the uncertainty than that used in a standard t-test.
+
+For example, let's use the `resume` dataset from section 2. This was an audit experiment studying employment discrimination.
+
+  - Research Question: Does race influence hiring decisions?
+  - What is the approach? Audit study: "send fictitious resumes to help-wanted ads in Boston and Chicago newspapers. 
+      + Treatment: Manipulate perceived race: resumes randomly assigned African-American- or White-sounding names.
+      + Outcomes: Does the resume get a callback?
+
+Let's load the data. 
+```{r}
+resume <- read.csv("https://raw.githubusercontent.com/ktmccabe/teachingdata/main/resume.csv")
+```
+
+Variables and Description
+  
+  - `firstname`: first name of the fictitious job applicant 
+  - `sex`: sex of applicant (female or male) 
+  - `race`:  race of applicant (black or white) 
+  - `call`: whether a callback was made (1 = yes, 0 = no) 
+  
+
+Our key outcome is `call`, which is a 0 vs. 1 binary variable.
+
+```{r}
+table(resume$call)
+```
+
+We want to know the different in callback rates for applicants randomly assigned as Black vs. white. We could calculate the difference in means using the t-test function:
+```{r}
+t.example <- t.test(resume$call[resume$race == "black"],
+       resume$call[resume$race == "white"])
+```
+
+
+<details> <summary>Below, note its equivalence to regression.</summary>
+
+```{r}
+## In this case setting var.equal to T/F won't matter. In other cases, it might
+t.example.ve <- t.test(resume$call[resume$race == "black"],
+       resume$call[resume$race == "white"], var.equal = T)
+
+t.example.ve$estimate[2]-t.example.ve$estimate[1]
+t.example.ve$stderr
+
+reg.example <- lm(call ~ race, data=resume)
+summary(reg.example)$coefficients
+```
+The coefficient estimate is equivalent to the difference in means, and the standard errors are the same.
+
+</details>
+
+
+This would give us the proportion called back among Black applicants (0.064) vs. white applicants (0.097).
+
+## Proportion tests
+
+However, let's move to an uncertainty calculation that may be more approriate for dichotomous variables:
+
+  - Here, we can use the `prop.test` function.
+  - Like `t.test` it has an argument we can toggle `correct=TRUE/FALSE`, which says whether we want to make a Yates continuity correction. By default this is true. This adjusts our test statistic downward. Some have argued that this correction "overcorrects" the result, so you may consider setting `correct = FALSE`.
+  - We get the X-squared (chi-squared) statistic and p-value
+
+```{r}
+## Use prop.test: NOTE THE DIFFERENT SYNTAX FROM t.test
+## x is the "number of successes" i.e., number of 1's for each group
+## n is sample size for each group
+table(resume$race, resume$call)
+p.test <- prop.test(x = c(157,235), 
+                n = c(157+2278, 235+2200),
+                correct=F)
+
+p.test
+```
+
+Note that the proportion called back in each group is identical to the t-test results. Both simply just calculate the means of each group. What differs just so slightly is the uncertainty calculation.
+
+```{r}
+t.example$conf.int
+p.test$conf.int
+```
+
+
+Note that in a case where we have just two groups, this is also equivalent to running the `chisq.test` the Chi-squared test.
+
+```{r}
+chi.test <- chisq.test(table(resume$race,resume$call),
+                       correct = F)
+chi.test$statistic
+chi.test$p.value
+```
+
+
+<details> <summary>Below, note the uncertainty calculation for a difference in proportions.</summary>
+
+
+In a test of proportions, the calculation for the standard error is based on the formula (the continuity correction modifies this slightly):
+
+$SE = \sqrt{\frac{p_n*(1-p_n)}{m} + \frac{p_n*(1-p_n)}{N-m}}$
+
+or 
+
+$SE = \sqrt{p_n*(1-p_n)(\frac{1}{m} + \frac{1}{N-m})}$
+
+We can calculate that now along with the test statistic:
+
+```{r}
+p.n <- mean(resume$call)
+n.black <- 157+2278
+n.white <-2200+235
+
+se.race <- sqrt(p.n*(1-p.n) * (1/n.black + 1/n.white))
+p.stat <- (0.09650924 -0.06447639) /se.race 
+X2 <- p.stat^2
+X2
+```
+
+The test statistic score is equivalent to the square root of X-squared statistic. When we conduct the `prop.test` without the additional continuity correction, our results are identical.
+
+```{r}
+p.test.c <- prop.test(x = c(157,235), 
+                n = c(157+2278, 235+2200),
+                correct = F)
+
+p.test.c$statistic
+```
+
+
+</details>
+
+
+Another alternative you can consider with a dichotmoous outcome would be to run a logistic regression. However, some may recommend this, as the coefficients cannot be directly interpreted as the average treatment effects. Robin Gomila has a recent paper discussing the tradeoffs in using linear regression (preferred by the paper) vs. logistic regression in these situations. See paper [here](https://www.robingomila.com/files/publications_pdfs/Gomila_2020_Logistic_vs_Linear.pdf).
+
+
+
+
+## Comparing multiple groups
+
+Sometimes our experiments have several conditions that we want to compare. One approach for this is just to conduct multiple pairwise t-tests.
+
+Let's look at an example using the resume dataset.
+
+```{r}
+resume$racegender <- NA
+resume$racegender[resume$race=="white" & resume$sex == "male"] <- "White Male"
+resume$racegender[resume$race=="white" & resume$sex == "female"] <- "White Female"
+resume$racegender[resume$race=="black" & resume$sex == "male"] <- "Black Male"
+resume$racegender[resume$race=="black" & resume$sex == "female"] <- "Black Female"
+
+## make it a factor variable
+resume$racegender <- as.factor(resume$racegender)
+resume$racegender <- relevel(resume$racegender, ref="White Male")
+```
+
+We could conduct a t-test fo any comparison. For example:
+
+```{r}
+t.males <- t.test(resume$call[resume$racegender=="White Male"],
+                 resume$call[resume$racegender=="Black Male"])
+```
+
+Alternatively, we can put this into a regression and get the contrasts with White Male all at once. The differences in means will be the same, though the uncertainty may be slightly different, as the regression assumes homogenous variance.
+
+```{r}
+reg.all <- lm(call ~ racegender, data=resume)
+summary(reg.all)$coefficients
+```
+
+Many times in these settings, researchers might also run an ANOVA analysis. In the case of two groups, an ANOVA, regression, and t-test will generate equivalent results. In the case of more than two groups, an ANOVA conducts a "joint test of significance" assessing if there is at least one significant difference in the means between groups. See [here](https://rpubs.com/aaronsc32/anova-compare-more-than-two-groups) for an example.
+
+The code for an ANOVA using `aov` mirrors the code for regression using `lm`.
+```{r}
+aov.all <- aov(call~ racegender, data=resume)
+summary(aov.all)
+```
+
+
+<details> <summary>Below, we can calcualte this by hand.</summary>
+
+Let's gather some useful statistics:
+```{r}
+## get overall mean
+overall.mean <- mean(resume$call)
+
+## get means for each group
+group.means <- tapply(resume$call, resume$racegender, mean)
+group.means
+
+## get sd for each group
+group.sd <- tapply(resume$call, resume$racegender, sd)
+group.sd
+
+## get N for each group
+group.n <- tapply(resume$call, resume$racegender, length)
+group.n
+```
+
+In ANOVA, we compare each group mean's deviation from the overall mean and calculate the sum of these squared deviations multiplied by the group size (Sum of Squares). 
+
+```{r}
+## sum the deviations of y_i from the overall mean
+sum.sqtot <- sum((resume$call - overall.mean)^2)
+
+## look at the group standard deviations
+error.ss <- sum(((group.n -1) * group.sd^2))
+
+## subtract these group errors from the total squared errors
+group.ss <- sum.sqtot - error.ss  
+## alternative:
+group.ss2 <- sum(group.n *(group.means - overall.mean)^2)
+
+ 
+## degrees of freedom 
+Total_df <- nrow(resume) - 1
+Error_df <- nrow(resume) - length(group.n)
+Group_df <- Total_df - Error_df
+
+## find means
+MS_Error <- error.ss/Error_df
+MS_Group <- group.ss/Group_df
+
+## calculate F
+F_value <- MS_Group / MS_Error
+F_value
+
+## compare to ANOVA
+summary(aov.all)
+```
+
+</details>
+
+
+This is equivalent to the F-test reported in a regression. In a regression the F-test assesses if the addition of one or more of the predictors improves the model fit relative to a model that only has the intercept and no predictors, where the prediction ends up just being the mean. The null hypothesis is that all of the slopes: $H_o: \beta_1 = \beta_2 = \beta_3 = 0$. 
+
+```{r}
+summary(reg.all)$fstatistic
+```
+
+These tests do not tell you where the significant difference is, just that there is a significant difference.
+
+A benefit of ANOVA, is that you can run post-hoc pairwise comparisons that adjust for multiple testing. One such test is the Tukey test. See [here](https://rpubs.com/aaronsc32/post-hoc-analysis-tukey) for details.
+
+```{r}
+TukeyHSD(aov.all)
+```
+
+Now just as we did before, we may want to run versions of these tests that account for the dichotomous nature of our outcomes.
+
+For a comparison of multiple groups and a dichotomous outcome, we can continue to run the `chisq.test`:
+
+```{r}
+chi.all <- chisq.test(table(resume$racegender, resume$call))
+chi.all
+```
+
+Like with ANOVA, this tells us there is a significant difference-- but not where that significant difference is. Over the years, there have been different implementations of post-hoc pairwise comparison tests for the Chi-squared tests. Like before, you can also run your own individual pairwise prop.tests in R. If you have several comparisons, however, you may want to adjust the p-values manually, too. See this EGAP [resource](https://egap.org/resource/10-things-to-know-about-multiple-comparisons/) and the `p.adjust` function discussed in Section 7.2.1 of our [notes](https://ktmccabe.github.io/experiments/clustering-standard-errors.html).
+
+
+## Even more tests
+
+The tests we have talked about so far (t-test, Chi-squared test) make assumptions about the shape of the distribution. You might also consider using a nonparametric test.
+
+We have already encountered some tests that do not require a distributional assumption. For example, we used randomization inference, which avoided the need to compare our output to the student's t-distribution.
+
+When comparing two group means, we can also consider using the Wilcox test.
+
+```{r}
+wil.test  <- wilcox.test(resume$call[resume$race=="black"],
+                         resume$call[resume$race=="white"])
+wil.test
+```
+
+This test essentially compares equality of the two medians. You wouldn't want to use this with dichotomous outcomes, but the code above gives an example of the syntax, which is similar to the t-test.
+
+
+### Paired tests
+
+Sometimes we do not have data from two independent samples. Instead, perhaps we conduct a pre-test vs. post-test design, and we want to see if there is a change in the outcome within respondents.
+
+Here, our two groups (respondents before) vs. (respondents after) are "dependent."
+
+The nice thing is that all we have to do is adjust the way we calculate uncertainty to account for this dependency. The `t.test` function in R can do this very easily by setting `paired = TRUE` as one of the arguments.
+
+See [here](http://www.sthda.com/english/wiki/paired-samples-t-test-in-r) for details.
+
+
+
+
+

@@ -131,3 +131,9 @@ conjoint-application-in-r
 a-wrinkle--restricted-combinations
 visualizing-the-amce-with-a-package
 subgroup-analysis
+additional
+t-tests-and-its-friends
+proportion-tests
+comparing-multiple-groups
+even-more-tests
+paired-tests
