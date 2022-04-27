@@ -5739,7 +5739,7 @@ Here, our two groups (respondents before) vs. (respondents after) are "dependent
 
 The nice thing is that all we have to do is adjust the way we calculate uncertainty to account for this dependency. The `t.test` function in R can do this very easily by setting `paired = TRUE` as one of the arguments.
 
-See [here](http://www.sthda.com/english/wiki/paired-samples-t-test-in-r) for details.
+See [here](http://www.sthda.com/english/wiki/paired-samples-t-test-in-r) for details. See also Gerber and Green Chapter 4.1 and 8.4 for possible designs. 
 
 
 
