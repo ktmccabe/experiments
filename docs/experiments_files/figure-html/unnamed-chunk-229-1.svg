@@ -1,55 +1,61 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 504.00 360.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
 <defs>
   <style type='text/css'><![CDATA[
-    line, polyline, polygon, path, rect, circle {
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
       fill: none;
       stroke: #000000;
       stroke-linecap: round;
       stroke-linejoin: round;
       stroke-miterlimit: 10.00;
     }
+    .svglite text {
+      white-space: pre;
+    }
   ]]></style>
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0'>
-    <rect x='1.44' y='30.24' width='501.12' height='270.72' />
-  </clipPath>
-</defs>
-<circle cx='199.73' cy='228.27' r='1.80' style='stroke-width: 0.75; fill: #000000;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
-<circle cx='104.00' cy='165.60' r='1.80' style='stroke-width: 0.75; fill: #000000;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
-<circle cx='347.73' cy='102.93' r='1.80' style='stroke-width: 0.75; fill: #000000;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
-<defs>
-  <clipPath id='cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA='>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA='>
     <rect x='0.00' y='0.00' width='504.00' height='360.00' />
   </clipPath>
 </defs>
-<line x1='66.40' y1='300.96' x2='437.60' y2='300.96' style='stroke-width: 0.75;' clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)' />
-<line x1='66.40' y1='300.96' x2='66.40' y2='308.16' style='stroke-width: 0.75;' clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)' />
-<line x1='159.20' y1='300.96' x2='159.20' y2='308.16' style='stroke-width: 0.75;' clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)' />
-<line x1='252.00' y1='300.96' x2='252.00' y2='308.16' style='stroke-width: 0.75;' clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)' />
-<line x1='344.80' y1='300.96' x2='344.80' y2='308.16' style='stroke-width: 0.75;' clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)' />
-<line x1='437.60' y1='300.96' x2='437.60' y2='308.16' style='stroke-width: 0.75;' clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)' />
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='56.06' y='326.88' style='font-size: 12.00px; font-family: Arial;' textLength='20.68px' lengthAdjust='spacingAndGlyphs'>-0.2</text></g>
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='148.86' y='326.88' style='font-size: 12.00px; font-family: Arial;' textLength='20.68px' lengthAdjust='spacingAndGlyphs'>-0.1</text></g>
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='243.66' y='326.88' style='font-size: 12.00px; font-family: Arial;' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>0.0</text></g>
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='336.46' y='326.88' style='font-size: 12.00px; font-family: Arial;' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>0.1</text></g>
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='429.26' y='326.88' style='font-size: 12.00px; font-family: Arial;' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>0.2</text></g>
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='157.18' y='20.27' style='font-size: 14.40px; font-weight: bold; font-family: Arial;' textLength='189.64px' lengthAdjust='spacingAndGlyphs'>Tomz and Weeks Extension</text></g>
-<g clip-path='url(#cpMC4wMHw1MDQuMDB8MzYwLjAwfDAuMDA=)'><text x='148.61' y='355.68' style='font-size: 12.00px; font-family: Arial;' textLength='206.77px' lengthAdjust='spacingAndGlyphs'>Effect on Supporting Preemptive Strike</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
+</g>
 <defs>
-  <clipPath id='cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0'>
+  <clipPath id='cpMS40NHw1MDIuNTZ8MzAuMjR8MzAwLjk2'>
     <rect x='1.44' y='30.24' width='501.12' height='270.72' />
   </clipPath>
 </defs>
-<line x1='252.00' y1='300.96' x2='252.00' y2='30.24' style='stroke-width: 0.75; stroke: #7F7F7F; stroke-dasharray: 4.00,4.00;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
-<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)'><text x='64.46' y='105.80' style='font-size: 12.00px; font-family: Arial;' textLength='171.06px' lengthAdjust='spacingAndGlyphs'>Eliminated Effect = ATE - ACDE</text></g>
-<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)'><text x='335.52' y='162.69' style='font-size: 12.00px; font-family: Arial;' textLength='111.37px' lengthAdjust='spacingAndGlyphs'>Effect of Democracy </text></g>
-<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)'><text x='332.19' y='177.09' style='font-size: 12.00px; font-family: Arial;' textLength='118.03px' lengthAdjust='spacingAndGlyphs'> Fixing Threat (ACDE)</text></g>
-<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)'><text x='335.52' y='225.36' style='font-size: 12.00px; font-family: Arial;' textLength='111.37px' lengthAdjust='spacingAndGlyphs'>Effect of Democracy </text></g>
-<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)'><text x='316.51' y='239.76' style='font-size: 12.00px; font-family: Arial;' textLength='149.38px' lengthAdjust='spacingAndGlyphs'> without Fixing Threat (ATE)</text></g>
-<polyline points='36.01,165.60 172.00,165.60 ' style='stroke-width: 0.75;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
-<polyline points='251.58,102.93 443.88,102.93 ' style='stroke-width: 0.75;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
-<polyline points='131.82,228.27 267.65,228.27 ' style='stroke-width: 0.75;' clip-path='url(#cpMS40NHw1MDIuNTZ8MzAwLjk2fDMwLjI0)' />
+<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAuMjR8MzAwLjk2)'>
+<circle cx='199.73' cy='228.27' r='1.80' style='stroke-width: 0.75; fill: #000000;' />
+<circle cx='104.00' cy='165.60' r='1.80' style='stroke-width: 0.75; fill: #000000;' />
+<circle cx='347.73' cy='102.93' r='1.80' style='stroke-width: 0.75; fill: #000000;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
+<line x1='66.40' y1='300.96' x2='437.60' y2='300.96' style='stroke-width: 0.75;' />
+<line x1='66.40' y1='300.96' x2='66.40' y2='308.16' style='stroke-width: 0.75;' />
+<line x1='159.20' y1='300.96' x2='159.20' y2='308.16' style='stroke-width: 0.75;' />
+<line x1='252.00' y1='300.96' x2='252.00' y2='308.16' style='stroke-width: 0.75;' />
+<line x1='344.80' y1='300.96' x2='344.80' y2='308.16' style='stroke-width: 0.75;' />
+<line x1='437.60' y1='300.96' x2='437.60' y2='308.16' style='stroke-width: 0.75;' />
+<text x='66.40' y='326.88' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='20.68px' lengthAdjust='spacingAndGlyphs'>-0.2</text>
+<text x='159.20' y='326.88' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='20.68px' lengthAdjust='spacingAndGlyphs'>-0.1</text>
+<text x='252.00' y='326.88' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='344.80' y='326.88' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>0.1</text>
+<text x='437.60' y='326.88' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>0.2</text>
+<text x='252.00' y='20.30' text-anchor='middle' style='font-size: 14.40px; font-weight: bold; font-family: "Arial";' textLength='189.53px' lengthAdjust='spacingAndGlyphs'>Tomz and Weeks Extension</text>
+<text x='252.00' y='355.68' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='206.77px' lengthAdjust='spacingAndGlyphs'>Effect on Supporting Preemptive Strike</text>
+</g>
+<g clip-path='url(#cpMS40NHw1MDIuNTZ8MzAuMjR8MzAwLjk2)'>
+<line x1='252.00' y1='300.96' x2='252.00' y2='30.24' style='stroke-width: 0.75; stroke: #7F7F7F; stroke-dasharray: 4.00,4.00;' />
+<text x='235.52' y='105.80' text-anchor='end' style='font-size: 12.00px; font-family: "Arial";' textLength='171.06px' lengthAdjust='spacingAndGlyphs'>Eliminated Effect = ATE - ACDE</text>
+<text x='391.20' y='162.71' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='111.36px' lengthAdjust='spacingAndGlyphs'>Effect of Democracy </text>
+<text x='391.20' y='177.11' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='118.03px' lengthAdjust='spacingAndGlyphs'> Fixing Threat (ACDE)</text>
+<text x='391.20' y='225.37' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='111.36px' lengthAdjust='spacingAndGlyphs'>Effect of Democracy </text>
+<text x='391.20' y='239.77' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='149.38px' lengthAdjust='spacingAndGlyphs'> without Fixing Threat (ATE)</text>
+<polyline points='36.01,165.60 172.00,165.60 ' style='stroke-width: 0.75;' />
+<polyline points='251.58,102.93 443.88,102.93 ' style='stroke-width: 0.75;' />
+<polyline points='131.82,228.27 267.65,228.27 ' style='stroke-width: 0.75;' />
+</g>
 </svg>

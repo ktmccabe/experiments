@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.2 Using Qualtrics | Experimental Methods in Political Science</title>
   <meta name="description" content="3.2 Using Qualtrics | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.2 Using Qualtrics | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="designing-an-experiment.html"/>
 <link rel="next" href="uncertainty.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="using-qualtrics" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Using Qualtrics</h2>
+<div id="using-qualtrics" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Using Qualtrics<a href="using-qualtrics.html#using-qualtrics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Everyone at Rutgers gets a free Qualtrics account. Qualtrics provides a user-friendly interface for designing online surveys and survey experiments.</p>
 <p>We will walk through how to design a simple survey experiment on the platform.</p>
 <ol style="list-style-type: decimal">
@@ -387,8 +386,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you have a very large number of conditions or need to adjust the randomization in a more complex way (e.g., control the specific probabilities that certain conditions appear), you may need to integrate JavaScript code to help with randomization.</li>
 </ul></li>
 </ul>
-<div id="experimental-design-with-vignette-experiment" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Experimental Design with Vignette Experiment</h3>
+<div id="experimental-design-with-vignette-experiment" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Experimental Design with Vignette Experiment<a href="using-qualtrics.html#experimental-design-with-vignette-experiment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For this example, we will use the experimental design from “Public Opinion and Foreign Electoral Intervention” by Michael Tomz and Jessica Weeks, published in the <em>American Political Science Review</em> in 2020. The article is <a href="https://www.cambridge.org/core/journals/american-political-science-review/article/abs/public-opinion-and-foreign-electoral-intervention/AC34B6090EACF336D08713AF69BF7904">here</a>.</p>
 <p>They “hypothesize that American tolerance of foreign intervention should depend on the type of intervention and the intended beneficiary. We distinguish three modes of interference: verbal endorsements, threats, and operations.”</p>
 <ul>
@@ -405,8 +404,8 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 </ul>
 <p>Table 1 in the paper displays the experimental design used to test the hypotheses. We will program the primary manipulation, which varies the endorsement, threat, operation, or stay out conditions. For now, we will fix the country to be China, the candidate to be the Democratic candidate, and the operation to be donating money and 100% certainty it was China.</p>
 </div>
-<div id="unique-blocks-per-experimental-condition" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Unique blocks per experimental condition</h3>
+<div id="unique-blocks-per-experimental-condition" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Unique blocks per experimental condition<a href="using-qualtrics.html#unique-blocks-per-experimental-condition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this approach, we will create a separate block for each unique experimental vignette. In our case, we will create a block with a Text/Graphic question type. We paste in our experimental text and give the block and question informative labels. The question name will be the name of the variable for the question when you eventually load the data.</p>
 <ul>
 <li>For each condition, create a new block.</li>
@@ -421,8 +420,8 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 <p>Your survey flow should look something like this. We are now ready to add randomization so that each respondent only sees one of our experimental blocks, randomly assigned.</p>
 <p><img src="images/surveyflow.png" style="width:70.0%" /></p>
 </div>
-<div id="adding-a-randomizer-in-the-survey-flow" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Adding a randomizer in the survey flow</h3>
+<div id="adding-a-randomizer-in-the-survey-flow" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Adding a randomizer in the survey flow<a href="using-qualtrics.html#adding-a-randomizer-in-the-survey-flow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Within the survey flow, add a randomizer underneath the consent form.</p>
 <ul>
 <li>Under the randomizer, add an embedded data field with an informative label for your treatment (e.g., “treat”)
@@ -446,8 +445,8 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 <p><img src="images/endofsurv.png" style="width:60.0%" /></p>
 <p>You are now ready to “Preview” your survey!</p>
 </div>
-<div id="using-piped-text-in-randomization" class="section level3" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> Using Piped Text in Randomization</h3>
+<div id="using-piped-text-in-randomization" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Using Piped Text in Randomization<a href="using-qualtrics.html#using-piped-text-in-randomization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We could complicate the randomization more so than we have done so far. For example, in Tomz and Weeks (2020), they do not fix the country to be China. Instead, they randomly vary this to be China, Pakistan, or Turkey for each respondent. We could build this added treatment arm into our design through “piped text.”</p>
 <ul>
 <li>Go back into your survey data flow. Create a second randomizer towards the top of the survey. Create a new embedded data field with an informative label, like country. Create unique fields for each of our country names. Hit apply.</li>
@@ -464,8 +463,8 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 <p><img src="images/piped2.png" style="width:70.0%" /></p>
 <p>We could complicate our design even further by adding additional piped text randomization to vary whether it is the Democratic vs. Republican candidate, the percent certainty about the country involved, and the type of operation. This would all involve adding additional randomizers and/or branching in the survey flow, along with piped text in the experimental blocks.</p>
 </div>
-<div id="data-and-analysis" class="section level3" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> Data and Analysis</h3>
+<div id="data-and-analysis" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Data and Analysis<a href="using-qualtrics.html#data-and-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once you have a draft of your survey programmed, you will want to “preview” the survey from the perspective of a respondent by clicking “preview” in the survey landing page.</p>
 <p><img src="images/surveypreview.png" style="width:70.0%" /></p>
 <p>Repeat this a few times to see if things seem to be working properly. After that, you can do a few more steps to test your survey.</p>
@@ -529,8 +528,8 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 <p>Once you are done testing in Qualtrics, back in the Data and Analysis page, you can delete all responses using Tools -&gt; Delete data.</p>
 <p>Once you are done testing and revising the survey, you are now ready to integrate it with your preferred survey firm/recruiting platform. The specific steps from here going forward vary across platforms.</p>
 </div>
-<div id="additional-bells-and-whistles" class="section level3" number="3.2.6">
-<h3><span class="header-section-number">3.2.6</span> Additional Bells and Whistles</h3>
+<div id="additional-bells-and-whistles" class="section level3 hasAnchor" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Additional Bells and Whistles<a href="using-qualtrics.html#additional-bells-and-whistles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Qualtrics has a number of other features you can use, including different question types, the ability to randomize the order of response options, features to require/request responses.You can continue to explore these as you develop your own surveys.</p>
 <ul>
 <li>Their help pages are pretty useful. Here is one on <a href="https://www.qualtrics.com/support/survey-platform/survey-module/editing-questions/question-types-guide/question-types-overview/">question types</a>.</li>
@@ -538,11 +537,32 @@ as legitimate and harmless expressions of opinion that do not intrude on America
 <p>For those familiar with “conjoint experiments” that have a lot of randomization, Anton Strezhnev has developed a tool for programming these in Qualtrics. See information <a href="https://github.com/astrezhnev/conjointsdt">here</a>.</p>
 <p>It is also possible to download data from Qualtrics directly into R using an R package <a href="https://github.com/ropensci/qualtRics">here</a>.</p>
 </div>
-<div id="adding-a-gif-to-qualtrics" class="section level3" number="3.2.7">
-<h3><span class="header-section-number">3.2.7</span> Adding a gif to Qualtrics</h3>
+<div id="adding-a-gif-to-qualtrics" class="section level3 hasAnchor" number="3.2.7">
+<h3><span class="header-section-number">3.2.7</span> Adding a gif to Qualtrics<a href="using-qualtrics.html#adding-a-gif-to-qualtrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="images/map_it.png" style="width:40.0%" /></p>
 <p><img src="images/map_bounded_identity.png" style="width:40.0%" /></p>
 <p><img src="images/map_violated_final.gif" style="width:40.0%" /></p>
+<p>New examples</p>
+<div class="figure">
+<img src="images/map_salience.png" style="width:40.0%" alt="" />
+<p class="caption">map_salience.png</p>
+</div>
+<div class="figure">
+<img src="images/map_erosion_final.gif" style="width:40.0%" alt="" />
+<p class="caption">map_erosion_final.gif</p>
+</div>
+<p><img src="images/map_distance_salience_USMX.png" style="width:40.0%" alt="map_distance_salience_USMX.png" />
+<img src="images/map_distance_salience_USMX.png" style="width:40.0%" alt="map_distance_salience_USMX.png" />
+<img src="images/map_distance_salience_USCA.png" style="width:40.0%" alt="map_distance_salience_USCA.png" />
+<img src="images/map_distance_erosion_USMX_final.gif" style="width:40.0%" alt="map_distance_erosion_USMX_final.gif" />
+<img src="images/map_distance_erosion_USCA_final.gif" style="width:40.0%" alt="map_distance_erosion_USCA_final.gif" />
+<img src="images/map_distance_blank_control_USMX.png" style="width:40.0%" alt="map_distance_blank_control_USMX.png" />
+<img src="images/map_distance_blank_control_USCA.png" style="width:40.0%" alt="map_distance_blank_control_USCA.png" />
+<img src="images/map_blank_control.png" style="width:40.0%" alt="map_blank_control.png" /></p>
+<div class="figure">
+<img src="images/map_attention.png" style="width:40.0%" alt="" />
+<p class="caption">map_attention.png</p>
+</div>
 
 </div>
 </div>
@@ -613,7 +633,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

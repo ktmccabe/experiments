@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.3 Hypothesis Tests | Experimental Methods in Political Science</title>
   <meta name="description" content="4.3 Hypothesis Tests | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.3 Hypothesis Tests | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="confidence-intervals.html"/>
 <link rel="next" href="empirical-application.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hypothesis-tests" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Hypothesis Tests</h2>
+<div id="hypothesis-tests" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Hypothesis Tests<a href="hypothesis-tests.html#hypothesis-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Generally, we want to actually test hypotheses. We will use the null hypothesis testing framework. In this framework, we collect evidence to reject or fail to reject a naive starting assumption: the null hypothesis.</p>
 <p>Typical setup for two-sample test.</p>
 <ul>
@@ -373,8 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Wait, what’s a p-value? How should we interpret this p-value? (pg. 64, Gerber and Green)</li>
 </ul>
-<div id="t-tests" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> t-tests</h3>
+<div id="t-tests" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> t-tests<a href="hypothesis-tests.html#t-tests" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A common implementation of hypothesis tests for comparing averages of two groups is the t-test.</p>
 <p>Single population
 <span class="math display">\[\begin{align*}
@@ -386,8 +385,8 @@ t &amp;= \frac{(\bar{X_1} - \bar{X_0})- (\mu_1 - \mu_0)}{\widehat{SE}_{d-i-m}}\\
 \end{align*}\]</span></p>
 <p>In each case, we standardize our estimates according to the student’s t-distribution. We look to see just how extreme our t statistic is. t is our test statistic, a ratio between the size of the difference in means over the variability in the underlying data, represented by the standard error. <a href="https://blog.minitab.com/en/adventures-in-statistics-2/understanding-t-tests-t-values-and-t-distributions">Here</a> is a relatively accessible summary of t values.</p>
 </div>
-<div id="p-values" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> p-values</h3>
+<div id="p-values" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> p-values<a href="hypothesis-tests.html#p-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="images/tdist.png" style="width:70.0%" /></p>
 <p>The p-value asks: What is the probability of getting a result this extreme or more extreme “by chance”/“if the null were true”? In a world where the null is true, we still might not get a t=0 in every sample. The t-distribution represents the range of t-values we might expect to see with some probability under the assumption the null is true. We need to quantify how likely it would be to get our t-statistic in this world where the null is true.</p>
 <ul>
@@ -468,7 +467,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

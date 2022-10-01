@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.4 Empirical Application | Experimental Methods in Political Science</title>
   <meta name="description" content="4.4 Empirical Application | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.4 Empirical Application | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="hypothesis-tests.html"/>
 <link rel="next" href="randomization-inference.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="empirical-application" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Empirical Application</h2>
+<div id="empirical-application" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Empirical Application<a href="empirical-application.html#empirical-application" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will use data from the following experiment: “Social Exclusion and Political Identity: The Case of Asian American Partisanship” by Alexander Kuo, Neil Malhotra, and Cecilia Mo (2016). The data set based on authors’ replication file <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GMWOY6">here</a></p>
 <ul>
 <li>Research Question: Do feelings of social exclusion lead Asians to develop more negative feelings toward the Republican Party?
@@ -378,8 +377,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>What is the <span class="math inline">\(\tau_i\)</span> we are interested in?</li>
 <li>How are we going to estimate it?</li>
 </ul>
-<div id="treatment" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Treatment</h3>
+<div id="treatment" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Treatment<a href="empirical-application.html#treatment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For those in the treatment group, a white female assistant to the research team says, “I’m sorry; I forgot that this study is only for US citizens. Are you a US citizen? I cannot tell.” If the subject was a US citizen, the assistant was instructed to say “OK, go ahead” and have the respondent start the survey; if the subject was not a US citizen, the assistant was instructed to pause and then say “it’s OK, go ahead.” Subjects then completed an online survey of their political attitudes.</p>
 <style>
 p.comment {
@@ -397,8 +396,8 @@ font-style: italic;
 Your ideas …
 </p>
 </div>
-<div id="analysis" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Analysis</h3>
+<div id="analysis" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Analysis<a href="empirical-application.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s load the data.</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="empirical-application.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
 <span id="cb181-2"><a href="empirical-application.html#cb181-2" aria-hidden="true" tabindex="-1"></a>exclusion <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">&quot;data/exclusion.dta&quot;</span>)</span>
@@ -481,8 +480,8 @@ Your ideas …
 <span id="cb187-8"><a href="empirical-application.html#cb187-8" aria-hidden="true" tabindex="-1"></a>                   whites<span class="sc">$</span>study2_avg[whites<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">0</span>])</span></code></pre></div>
 <p>What are our conclusions about the hypothesis tests?</p>
 </div>
-<div id="heterogeneous-treatment-effects" class="section level3" number="4.4.3">
-<h3><span class="header-section-number">4.4.3</span> Heterogeneous Treatment Effects</h3>
+<div id="heterogeneous-treatment-effects" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Heterogeneous Treatment Effects<a href="empirical-application.html#heterogeneous-treatment-effects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The researchers believe that the size of the treatment effects will be different depending on the race/ethnicity of the participant.</p>
 <ul>
 <li>Should we compare the treatment effects among Asians vs. whites?
@@ -551,8 +550,8 @@ Try on your own, then expand for the answer.
 <div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="empirical-application.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="do">## How do we interpret each coefficient?</span></span></code></pre></div>
 <p>We now have a t-test for the interaction term, specifically. Be mindful that when you include an interaction term in a regression model, it changes the way we interpret the two other “main effects.”</p>
 </div>
-<div id="difference-in-proportions" class="section level3" number="4.4.4">
-<h3><span class="header-section-number">4.4.4</span> Difference in Proportions</h3>
+<div id="difference-in-proportions" class="section level3 hasAnchor" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> Difference in Proportions<a href="empirical-application.html#difference-in-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If we have a proportion as an average outcome instead of a mean, we may wish to adjust how we calculate uncertainty to better reflect the nature of a dichotomous outcome variable.</p>
 <p>When we are comparing two proportions, we can use the <code>prop.test</code> function in R, which will adjust this calculation for us.</p>
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="empirical-application.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a proportion variable where 1=dem, 0=rep</span></span>
@@ -662,7 +661,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

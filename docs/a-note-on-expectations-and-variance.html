@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.6 A Note on Expectations and Variance | Experimental Methods in Political Science</title>
   <meta name="description" content="4.6 A Note on Expectations and Variance | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.6 A Note on Expectations and Variance | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="randomization-inference.html"/>
 <link rel="next" href="equivalence-of-t-test-and-anova.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-note-on-expectations-and-variance" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> A Note on Expectations and Variance</h2>
+<div id="a-note-on-expectations-and-variance" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> A Note on Expectations and Variance<a href="a-note-on-expectations-and-variance.html#a-note-on-expectations-and-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section includes definitions of expectation and variance and walks through more deliberately how we derive what the variance of a mean is (which we need for standard errors!).</p>
 <ul>
 <li>This <a href="https://www.youtube.com/watch?v=7mYDHbrLEQo">video</a> walks you through the steps in the slides from Week 3 Uncertainty with very similar notation. Below, we go through a more elongated version of the derivation that starts from the basic definition of the variance of a random variable.</li>
@@ -383,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>OK: The variance of a random variable is defined as the expected squared deviation from the expected value. Let’s do this for a random variable <span class="math inline">\(X_i\)</span> (i.e., from <span class="math inline">\(E(X_i)\)</span> or <span class="math inline">\(\mu\)</span>):</p>
 <p><span class="math display">\[\begin{align*}
-Var(X_i) &amp;= E[(X_i - \mu)^2] 
+Var(X_i) &amp;= E[(X_i - \mu)^2]
 %\\
 %&amp;= E[X_i^2 - 2 X_i \mu + \mu^2]&amp;&amp; \text{ 1) foil the squared difference}\\
 %&amp;=E(X_i^2) - 2* E(X_i)*E(X_i) + [E(X_i)]^2 &amp;&amp; \text{ 2) Move expectation inside, rewrite $\mu$ as $E%(X_i)$}\\
@@ -411,7 +410,7 @@ Var(\bar{X}) &amp;= E[(\bar{X} - E(\bar{X}))^2]\\
 &amp;=  \frac{1}{N^2}\sum_{i=1}^N Var(X_i) &amp;&amp; \text{Apply rule on variance of sum}\\
 &amp;=  \frac{1}{N^2}*(Var(X_1) + Var(X_2) +...+ Var(X_N)) &amp;&amp; \text{Write out the sum}\\
 &amp;=  \frac{1}{N^2}*N* \sigma^2 &amp;&amp; \text{Substitute our known $\sigma^2$ from above}\\
-&amp;= \frac{\sigma^2}{N} 
+&amp;= \frac{\sigma^2}{N}
 \end{align*}\]</span></p>
 <p>Note: the square root of this is our standard deviation aka our standard error: <span class="math inline">\(\frac{\sigma}{\sqrt{N}}\)</span>. We cannot observe <span class="math inline">\(\sigma\)</span>, so we estimate this using the sample standard deviation <span class="math inline">\(s\)</span>. This will be useful, for example, if we want a standard error for the mean outcome in our treatment group.</p>
 <p><strong><em>Variance of our Difference in Means</em></strong></p>
@@ -516,7 +515,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

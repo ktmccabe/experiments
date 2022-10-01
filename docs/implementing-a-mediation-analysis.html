@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9.2 Implementing a Mediation Analysis | Experimental Methods in Political Science</title>
   <meta name="description" content="9.2 Implementing a Mediation Analysis | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9.2 Implementing a Mediation Analysis | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="mediation-overview.html"/>
 <link rel="next" href="causal-mediation-framework.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,11 +357,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="implementing-a-mediation-analysis" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> Implementing a Mediation Analysis</h2>
+<div id="implementing-a-mediation-analysis" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Implementing a Mediation Analysis<a href="implementing-a-mediation-analysis.html#implementing-a-mediation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will cover two approaches for estimating mediation effects.</p>
-<div id="baron-kenny-approach" class="section level3" number="9.2.1">
-<h3><span class="header-section-number">9.2.1</span> Baron-Kenny Approach</h3>
+<div id="baron-kenny-approach" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Baron-Kenny Approach<a href="implementing-a-mediation-analysis.html#baron-kenny-approach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Traditional mediation analysis (Baron and Kenny 1986)</p>
 <p>Conduct three regressions where <span class="math inline">\(M_i\)</span> is the mediator, <span class="math inline">\(Y_i\)</span> is the outcome and <span class="math inline">\(Z_i\)</span> is the experimental assignment.</p>
 <p><span class="math display">\[\begin{align*}
@@ -387,11 +386,11 @@ Y_i &amp;= \alpha_3 + (d + ab)Z_i + b(\alpha_1 + \epsilon_{1i}) + \epsilon_{3i}
 <p>The total effect of <span class="math inline">\(Z_i\)</span> on <span class="math inline">\(Y_i\)</span> is <span class="math inline">\(c = d + ab\)</span>. The direct effect of <span class="math inline">\(Z_i\)</span> is <span class="math inline">\(d\)</span>. The indirect effect is <span class="math inline">\(ab\)</span>.</p>
 <p><strong><em>Criticism of Approach</em></strong>: “But increasing use of the Baron- Kenny method is not a good thing. Like related methods that do not require manipulation of mediators, it is biased, and in turn it leads researchers to biased conclusions about mediation” (Bullock and Ha, 509)</p>
 </div>
-<div id="problems-with-mediation" class="section level3" number="9.2.2">
-<h3><span class="header-section-number">9.2.2</span> Problems with Mediation</h3>
+<div id="problems-with-mediation" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Problems with Mediation<a href="implementing-a-mediation-analysis.html#problems-with-mediation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s recall how we came to understand an unbiased estimate of the ATE in experiments.</p>
 <p><span class="math display">\[\begin{align*}
-E[\hat{ATE}] 
+E[\hat{ATE}]
 &amp;= \frac{1}{m}\sum_1^m E(Y_i) - \frac{1}{N-m}\sum_{m+1}^{N} E(Y_i )]\\
 &amp;= E[Y_i(1) | Z_i = 1] - E[Y_i(0) | Z_i = 0]\\
 &amp;=E[Y_i(1) - Y_i(0)] \\
@@ -481,7 +480,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

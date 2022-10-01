@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.1 Plotting Average Treatment Effects | Experimental Methods in Political Science</title>
   <meta name="description" content="5.1 Plotting Average Treatment Effects | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.1 Plotting Average Treatment Effects | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="visualize.html"/>
 <link rel="next" href="heterogeneous-treatment-effects-1.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="plotting-average-treatment-effects" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Plotting Average Treatment Effects</h2>
+<div id="plotting-average-treatment-effects" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Plotting Average Treatment Effects<a href="plotting-average-treatment-effects.html#plotting-average-treatment-effects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The example we will use is from <a href="https://link.springer.com/article/10.1007/s11109-018-9477-1">“Black Politics: How Anger Infuences the Political Actions
 Blacks Pursue to Reduce Racial Inequality”</a> by Antoine J. Banks, Ismail K. White, and Brian D. McKenzie, published in <em>Political Behavior</em> in 2019.</p>
 <p>We will replicate the results from Study 2, which is a survey experiment. The sample includes 444 Black treated Black respondents recruited by Qualtrics. The excerpt below shows the experimental manipulation.</p>
@@ -367,7 +366,7 @@ Blacks Pursue to Reduce Racial Inequality”</a> by Antoine J. Banks, Ismail K. 
 <p>Here is a short video walking through the code to plot the ATEs using <code>plot</code> and <code>ggplot</code>. (Via youtube, you can speed up the playback to 1.5 or 2x speed.)</p>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/_RniJm-hmHE" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/_RniJm-hmHE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>Let’s load the data. Note: This file is in a .dta format, but if you try to use <code>read.dta</code> to load it, you may receive an error because it is too new of a Stata format. As an alternative, we can use the <code>rio</code> package to open the file. Install the package, open the package with <code>library</code> an load the data. The <code>rio</code> packages uses a single <code>import</code> function to load data.</p>
@@ -437,8 +436,8 @@ Expand for a randomization inference example.
 <p>We can compare this to the p-value through the t-test where we assume a t distribution and calculate the area at the extremes as larger or larger than our t-statistic.</p>
 <p><img src="experiments_files/figure-html/unnamed-chunk-130-1.svg" width="672" /></p>
 </details>
-<div id="ate-using-plot" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> ATE using <code>plot</code></h3>
+<div id="ate-using-plot" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> ATE using <code>plot</code><a href="plotting-average-treatment-effects.html#ate-using-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When we want to visualize results in R, generally we plot the main Quantity of Interest</p>
 <ul>
 <li>Usually the estimated average treatment effect and/or average outcome from each condition condition
@@ -520,8 +519,8 @@ Expand for a randomization inference example.
 <span id="cb250-15"><a href="plotting-average-treatment-effects.html#cb250-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), ci2)</span></code></pre></div>
 <p><img src="experiments_files/figure-html/unnamed-chunk-135-1.svg" width="672" /></p>
 </div>
-<div id="ate-with-ggplot" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> ATE with <code>ggplot</code></h3>
+<div id="ate-with-ggplot" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> ATE with <code>ggplot</code><a href="plotting-average-treatment-effects.html#ate-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The package <code>ggplot2</code> also offers a system of plotting in R. The “gg” in ggplot2 stands for the “Grammar of Graphics.” This program provides another framework for creating figures in R. According to Hadley Wickham, “ggplot2 provides beautiful, hassle-free plots that take care of fiddly details like drawing legends.”</p>
 <p>Practically speaking, <code>ggplot()</code> is another tool to plot the same types of figures we have been making in class. Some people prefer <code>ggplot2</code> because they find the logic of building figures more intuitive using this framework and/or more aesthetically pleasing. However, both <code>ggplot()</code> and the plots we have been making in class can accomplish the same ultimate goals of data visualization– to communicate information transparently, quickly, accurately, simply, and beautifully. Which types of plots you may prefer is up to your own taste.</p>
 <p>The syntax for this is different. One of the primary differences is that the <code>ggplot</code> function generally requires that you start from a <code>data.frame</code> object. This means that we will have to organize the set of results we want to plot into a rectangular data.frame.</p>
@@ -634,7 +633,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

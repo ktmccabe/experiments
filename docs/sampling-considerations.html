@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.3 Sampling Considerations | Experimental Methods in Political Science</title>
   <meta name="description" content="6.3 Sampling Considerations | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.3 Sampling Considerations | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="research-integrity-reproducibility-and-transparency.html"/>
 <link rel="next" href="fieldexp.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sampling-considerations" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Sampling Considerations</h2>
+<div id="sampling-considerations" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Sampling Considerations<a href="sampling-considerations.html#sampling-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <style>
 p.comment {
 background-color: #DBDBDB;
@@ -388,8 +387,8 @@ Your ideas …
 <p class="comment">
 Your ideas …
 </p>
-<div id="power-analysis" class="section level3" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Power Analysis</h3>
+<div id="power-analysis" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Power Analysis<a href="sampling-considerations.html#power-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are often concerned about guarding against false positives. We do this by setting a conservative threshold for judging significance in hypothesis testing.</p>
 <ul>
 <li>Type I error: “false positive”: the error of rejecting a null hypothesis when it is actually true
@@ -410,9 +409,9 @@ Your ideas …
 </ul>
 <p><span class="math display">\[\begin{align*}
 1 - Pr(\text{Type II error}) &amp;= 1 - \beta\\
- &amp;=  \underbrace{\Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \Phi^{-1}(1 - \frac{\alpha}{2}))}_{\text{A common formula}} \\
- &amp;=  \Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \underbrace{ 1.96}_{\text{At conventional levels}})\\
- &amp;= \text{Prob test stat exceeds threshold for rejecting null}
+&amp;=  \underbrace{\Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \Phi^{-1}(1 - \frac{\alpha}{2}))}_{\text{A common formula}} \\
+&amp;=  \Phi (\frac{| \mu_t -\mu_c|\sqrt{N}}{2\sigma} - \underbrace{ 1.96}_{\text{At conventional levels}})\\
+&amp;= \text{Prob test stat exceeds threshold for rejecting null}
 \end{align*}\]</span></p>
 <p>Terms</p>
 <ul>
@@ -429,8 +428,8 @@ Your ideas …
 <p>We want to know the probability that our test statistic will fall in this rejection region.
 <img src="experiments_files/figure-html/unnamed-chunk-171-1.svg" width="672" /></p>
 </div>
-<div id="power-in-r" class="section level3" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Power in R</h3>
+<div id="power-in-r" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Power in R<a href="sampling-considerations.html#power-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To conduct a power analysis</p>
 <p>We need all but one of:</p>
 <ul>
@@ -493,8 +492,8 @@ Your ideas …
 ##     alternative = two.sided
 ## 
 ## NOTE: n is number in *each* group</code></pre>
-<div id="additional-resources-for-power-in-r" class="section level4" number="6.3.2.1">
-<h4><span class="header-section-number">6.3.2.1</span> Additional Resources for Power in R</h4>
+<div id="additional-resources-for-power-in-r" class="section level4 hasAnchor" number="6.3.2.1">
+<h4><span class="header-section-number">6.3.2.1</span> Additional Resources for Power in R<a href="sampling-considerations.html#additional-resources-for-power-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Power analysis in Conjoint Experiments by Martin Lukac: <a href="https://mblukac.github.io/posts/2020/08/cj_poweranalysis/">tool</a></p>
 <p>R resource: Additional functions from <a href="https://www.statmethods.net/stats/power.html">Statmethods</a></p>
 <p>For proportions, The command <code>power.prop.test(n, p1, p2, sig.level, power, alternative)</code> may be used to calculate the power. Note that this command may only be used to calculate power for a two-sample test.</p>
@@ -522,8 +521,8 @@ Your ideas …
 ## NOTE: n is number in *each* group</code></pre>
 </div>
 </div>
-<div id="relationship-between-error-rates-and-multiple-testing" class="section level3" number="6.3.3">
-<h3><span class="header-section-number">6.3.3</span> Relationship between Error Rates and Multiple Testing</h3>
+<div id="relationship-between-error-rates-and-multiple-testing" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Relationship between Error Rates and Multiple Testing<a href="sampling-considerations.html#relationship-between-error-rates-and-multiple-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\begin{align*}
 Pr(\text{at least one significant result}) &amp;= 1 - Pr(\text{no significant result})\\
 &amp;= 1 - (1 - 0.05)^{\text{number of tests}}
@@ -602,7 +601,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

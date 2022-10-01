@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8.3 Regression Discontinuity | Experimental Methods in Political Science</title>
   <meta name="description" content="8.3 Regression Discontinuity | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8.3 Regression Discontinuity | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="exploiting-exogenous-policy-changes-and-events.html"/>
 <link rel="next" href="mediation.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,16 +357,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="regression-discontinuity" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Regression Discontinuity</h2>
+<div id="regression-discontinuity" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Regression Discontinuity<a href="regression-discontinuity.html#regression-discontinuity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Strategy for causal inference in observational studies</p>
 <ul>
 <li>Exploits a point of discontinuity that can be attributed to an <strong><em>exogenous treatment</em></strong> (influenced/determined by an outside force– think physical boundaries, rules, policy inclusion/exclusion thresholds)</li>
 <li>Compare units “close to” discontinuity, assuming similar except on either side of threshold</li>
 <li>Strong internal validity, low generalizability away from discontinuity</li>
 </ul>
-<div id="sharp-rd" class="section level3" number="8.3.1">
-<h3><span class="header-section-number">8.3.1</span> Sharp RD</h3>
+<div id="sharp-rd" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Sharp RD<a href="regression-discontinuity.html#sharp-rd" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We observe the treated potential outcome if a unit is above some threshold <span class="math inline">\(c\)</span> along the “running/forcing” variable <span class="math inline">\(X\)</span>. Otherwise, we observe the untreated potential outcome.</p>
 <p><span class="math display">\[\begin{equation*}
   Y_i =(1 - d_i)Y_i(0) + d_iY_i(1)=\begin{cases}
@@ -382,8 +381,8 @@ where <span class="math inline">\(c\)</span> is a threshold/point of discontinui
 <li>However, we only look at units close to the discontinuity. It is here where we think treatment assignment is plausibly exogenous. Why?</li>
 <li>This then influences our interpretation of the average effect. It is no longer the average effect of all units. Instead it is a “local average treatment effect” for units at the point of discontinuity.</li>
 </ul>
-<div id="sharp-vs.-fuzzy" class="section level4" number="8.3.1.1">
-<h4><span class="header-section-number">8.3.1.1</span> Sharp vs. Fuzzy</h4>
+<div id="sharp-vs.-fuzzy" class="section level4 hasAnchor" number="8.3.1.1">
+<h4><span class="header-section-number">8.3.1.1</span> Sharp vs. Fuzzy<a href="regression-discontinuity.html#sharp-vs.-fuzzy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In a fuzzy regression design, the rule/threshold only influences the <em>probability</em> of treatment status and does not determine it.</p>
 <ul>
 <li>You can think of this as similar to the encouragement designs from last section</li>
@@ -391,8 +390,8 @@ where <span class="math inline">\(c\)</span> is a threshold/point of discontinui
 </ul>
 </div>
 </div>
-<div id="application-in-r-1" class="section level3" number="8.3.2">
-<h3><span class="header-section-number">8.3.2</span> Application in R</h3>
+<div id="application-in-r-1" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Application in R<a href="regression-discontinuity.html#application-in-r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will use a regression discontinuity design to estimate whether female state legislative incumbents have more trouble fundraising than do male
 legislative incumbents. Observations consist of information on all U.S.
 state legislative races in which a male and female candidate ran
@@ -505,7 +504,7 @@ a female candidate go on to raise more money overall in the next election cycle 
 <span id="cb341-8"><a href="regression-discontinuity.html#cb341-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">p=</span><span class="dv">1</span>, </span>
 <span id="cb341-9"><a href="regression-discontinuity.html#cb341-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">bwselect =</span> <span class="st">&quot;mserd&quot;</span>)</span>
 <span id="cb341-10"><a href="regression-discontinuity.html#cb341-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdb)</span></code></pre></div>
-<pre><code>## Call: rdrobust
+<pre><code>## Sharp RD estimates using local polynomial regression.
 ## 
 ## Number of Obs.                 2863
 ## BW type                       mserd
@@ -551,7 +550,7 @@ Expand for the answer.
 <span id="cb347-5"><a href="regression-discontinuity.html#cb347-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">p=</span><span class="dv">2</span>, <span class="co"># shifts to quadratic </span></span>
 <span id="cb347-6"><a href="regression-discontinuity.html#cb347-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">bwselect =</span> <span class="st">&quot;mserd&quot;</span>)</span>
 <span id="cb347-7"><a href="regression-discontinuity.html#cb347-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdb2)</span></code></pre></div>
-<pre><code>## Call: rdrobust
+<pre><code>## Sharp RD estimates using local polynomial regression.
 ## 
 ## Number of Obs.                 2863
 ## BW type                       mserd
@@ -579,8 +578,8 @@ Expand for the answer.
 <p>We see a positive local average treatment effect of male winners on fundraising in each specification, but whether this is significant depends on the specification. The choice should consider tradeoffs in bias created by expanding the bandwidth vs. variance, which may be affected by changing the sample size.</p>
 <p><img src="experiments_files/figure-html/unnamed-chunk-199-1.svg" width="672" /></p>
 </div>
-<div id="considerations-in-rd-design" class="section level3" number="8.3.3">
-<h3><span class="header-section-number">8.3.3</span> Considerations in RD Design</h3>
+<div id="considerations-in-rd-design" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Considerations in RD Design<a href="regression-discontinuity.html#considerations-in-rd-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Remember: This is a local average treatment effect only</p>
 <ul>
 <li>Potentially poor generalizability</li>
@@ -604,8 +603,8 @@ Expand for the answer.
 <span id="cb351-3"><a href="regression-discontinuity.html#cb351-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit.sorting)</span></code></pre></div>
 <p>We see a null effect here, which helps lend support that this “pre-treatment” covariate is balanced around the discontinuity. If, instead, it were significant, that might call into question that a male vs. female winner is “as-if” random in close elections.</p>
 </div>
-<div id="rd-visualizations" class="section level3" number="8.3.4">
-<h3><span class="header-section-number">8.3.4</span> RD Visualizations</h3>
+<div id="rd-visualizations" class="section level3 hasAnchor" number="8.3.4">
+<h3><span class="header-section-number">8.3.4</span> RD Visualizations<a href="regression-discontinuity.html#rd-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One benefit of the <code>rdrobust</code> package is that it makes it fairly easy to implement common visualizations of the RDD.</p>
 <ul>
 <li>A few examples with different specifications</li>
@@ -625,8 +624,8 @@ Expand for the answer.
 <span id="cb353-6"><a href="regression-discontinuity.html#cb353-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x.label=</span><span class="st">&quot;Female Vote Share in Election at time t&quot;</span>)</span></code></pre></div>
 <p><img src="experiments_files/figure-html/unnamed-chunk-202-1.svg" width="672" /></p>
 </div>
-<div id="fuzzy-rd-application" class="section level3" number="8.3.5">
-<h3><span class="header-section-number">8.3.5</span> Fuzzy RD Application</h3>
+<div id="fuzzy-rd-application" class="section level3 hasAnchor" number="8.3.5">
+<h3><span class="header-section-number">8.3.5</span> Fuzzy RD Application<a href="regression-discontinuity.html#fuzzy-rd-application" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will adapt the example from <a href="https://evalf20.classes.andrewheiss.com/example/rdd-fuzzy/">Andrew Heiss</a>, which evaluates the effectiveness of a tutoring program on performance on a school’s exit exam.</p>
 <ul>
 <li>Here, students become eligible for the tutoring program if they score 70 or below on an exam at the beginning of the school year.</li>
@@ -709,7 +708,7 @@ Expand for the answer.
 <span id="cb361-3"><a href="regression-discontinuity.html#cb361-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fuzzy =</span> tutor<span class="sc">$</span>tutoring,</span>
 <span id="cb361-4"><a href="regression-discontinuity.html#cb361-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">kernel =</span> <span class="st">&quot;triangular&quot;</span>)</span>
 <span id="cb361-5"><a href="regression-discontinuity.html#cb361-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2rdrob)</span></code></pre></div>
-<pre><code>## Call: rdrobust
+<pre><code>## Fuzzy RD estimates using local polynomial regression.
 ## 
 ## Number of Obs.                 1000
 ## BW type                       mserd
@@ -724,6 +723,17 @@ Expand for the answer.
 ## BW bias (b)                  19.733       19.733
 ## rho (h/b)                     0.658        0.658
 ## Unique Obs.                     238          762
+## 
+## First-stage estimates.
+## 
+## =============================================================================
+##         Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+## =============================================================================
+##   Conventional    -0.708     0.073    -9.751     0.000    [-0.850 , -0.565]    
+##         Robust         -         -    -8.424     0.000    [-0.907 , -0.565]    
+## =============================================================================
+## 
+## Treatment effect estimates.
 ## 
 ## =============================================================================
 ##         Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
@@ -808,7 +818,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

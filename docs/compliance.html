@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7.3 Compliance | Experimental Methods in Political Science</title>
   <meta name="description" content="7.3 Compliance | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7.3 Compliance | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="clustering-standard-errors.html"/>
 <link rel="next" href="quasi.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="compliance" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Compliance</h2>
+<div id="compliance" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Compliance<a href="compliance.html#compliance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An issue with all experimental designs, but particularly field experiments, is compliance, which refers to whether respondents received the treatment as assigned.</p>
 <p>Do subjects assigned to treatment receive treatment?</p>
 <ul>
@@ -374,8 +373,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>In the Karpowitz et al. article, what might cause issues with compliance?</p>
-<div id="notation-for-compliance" class="section level3" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Notation for Compliance</h3>
+<div id="notation-for-compliance" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Notation for Compliance<a href="compliance.html#notation-for-compliance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(d_i(z)\)</span> be the actual treatment status of unit i where <span class="math inline">\(z\)</span> is the experimental assignment.</p>
 <ul>
 <li>Practice: what does <span class="math inline">\(d_i(1) = 0\)</span> mean, in words?</li>
@@ -390,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \mbox{Never takers: } &amp;d_i(1)=0; d_i(0)=0 \\
 &amp;\implies Y_i(d_i(1)) - Y_i(d_i(0)) = Y_i(0) - Y_i(0) \\  
 \mbox{Defiers: } &amp;d_i(1)=0; d_i(0)=1 \\
-&amp;\implies Y_i(d_i(1)) - Y_i(d_i(0)) = Y_i(0) - Y_i(1) 
+&amp;\implies Y_i(d_i(1)) - Y_i(d_i(0)) = Y_i(0) - Y_i(1)
 \end{align*}\]</span></p>
 <p>What does <span class="math inline">\(ATE|d_i(1) &gt; d_i(0)\)</span> mean, in words?</p>
 <p>With full compliance ATE = ITT. With non-compliance, our standard estimation of the treatment effect is now the ITT.</p>
@@ -402,8 +401,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>With assumptions, we may be able to identify and estimate the Complier Average Causal Effect, the average treatment effect just among compliers.</li>
 </ul>
 </div>
-<div id="complier-average-causal-effect" class="section level3" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Complier Average Causal Effect</h3>
+<div id="complier-average-causal-effect" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Complier Average Causal Effect<a href="compliance.html#complier-average-causal-effect" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(CACE = E[Y_i(d = 1) - Y_i(d = 0) | d_i(1) &gt; d_i(0)]\)</span></p>
 <p>While it may be incredibly tempting, to estimate this by just subsetting on receipt of treatment instead of experimental assignment, we cannot simply subset our treatment group to only include those who received the treatment. Why not?</p>
 <p>CACE Additional Identification Assumptions</p>
@@ -476,8 +475,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Caution: is compliance data accurate? is compliance rate low or high?</li>
 </ul>
 </div>
-<div id="design-based-approach-to-help-measure-compliance" class="section level3" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> Design-based approach to help measure compliance</h3>
+<div id="design-based-approach-to-help-measure-compliance" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Design-based approach to help measure compliance<a href="compliance.html#design-based-approach-to-help-measure-compliance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use a placebo treatment (e.g., Broockman and Kalla), which may allow you to observe compliance in both the treatment and control conditions.</p>
 <p><img src="images/bkflow.png" style="width:70.0%" /></p>
 <p>Note that Broockman and Kalla report Complier Average Causal Effects comparing those in the assigned treatment and placebo conditions.</p>
@@ -562,7 +561,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

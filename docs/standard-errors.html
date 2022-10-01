@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.1 Standard Errors | Experimental Methods in Political Science</title>
   <meta name="description" content="4.1 Standard Errors | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.1 Standard Errors | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="uncertainty.html"/>
 <link rel="next" href="confidence-intervals.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="standard-errors" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Standard Errors</h2>
+<div id="standard-errors" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Standard Errors<a href="standard-errors.html#standard-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Standard errors represent the standard deviation of a sampling distribution.</p>
 <p><strong><em>What is the standard deviation?</em></strong></p>
 <p>Measure of spread: typical deviation of an observation from the mean.</p>
@@ -369,15 +368,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Take a squared deviation from the mean for a unit <span class="math inline">\(i\)</span>.
 <span class="math display">\[\begin{align*}
-&amp;= (y_i -  \bar{y})^2 
+&amp;= (y_i -  \bar{y})^2
 \end{align*}\]</span></li>
 <li>Do this for each unit <span class="math inline">\(i\)</span> out of a sample. Take the sum.
 <span class="math display">\[\begin{align*}
-&amp;= \sum_{i=1}^{N} (y_i -  \bar{y})^2 
+&amp;= \sum_{i=1}^{N} (y_i -  \bar{y})^2
 \end{align*}\]</span></li>
 <li>Divide over the total sample. When we are dealing with a sample from a population whose mean is unknown (usually the case), we have to take N-1 instead of N.
 <span class="math display">\[\begin{align*}
-&amp;= \frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 
+&amp;= \frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2
 \end{align*}\]</span></li>
 <li>Take the square root
 <span class="math display">\[\begin{align*}
@@ -414,8 +413,8 @@ Remember: standard deviation is the square root of the variance!</li>
 <li>Why is this good news? Going to help us estimate uncertainty.</li>
 </ul></li>
 </ul>
-<div id="standard-error-of-the-mean" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Standard Error of the Mean</h3>
+<div id="standard-error-of-the-mean" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Standard Error of the Mean<a href="standard-errors.html#standard-error-of-the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The population mean and variance are <span class="math inline">\(\mu_y\)</span> and <span class="math inline">\(\sigma^2_y\)</span> for some variable <span class="math inline">\(Y\)</span> and <span class="math inline">\(\sigma_y\)</span> is the standard deviation. We want to know the variability of our sample mean <span class="math inline">\(\bar{Y}\)</span>.</p>
 <p>Well we already know the mean of our sample mean (<span class="math inline">\(\bar{Y}\)</span>) is the population mean <span class="math inline">\((\mu_y)\)</span>:</p>
 <p><span class="math display">\[\begin{align*}
@@ -472,8 +471,8 @@ s &amp;= \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (y_i -  \bar{y})^2 }\\
 <span id="cb175-2"><a href="standard-errors.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(fts)</span></code></pre></div>
 <pre><code>## [1] 67.8</code></pre>
 </div>
-<div id="standard-error-for-a-difference-in-means" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Standard error for a difference in means</h3>
+<div id="standard-error-for-a-difference-in-means" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Standard error for a difference in means<a href="standard-errors.html#standard-error-for-a-difference-in-means" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>So we have an estimate for the standard error of our sample mean: But often we want the standard error of a <strong>difference</strong> in means, correspondig to the uncertainty of <span class="math inline">\(\widehat{ATE}\)</span>.</p>
 <p>When we take the difference in variances from two independent samples, we add their variances:</p>
 <p><span class="math display">\[\begin{align*}
@@ -551,7 +550,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -1825,6 +1825,30 @@ It is also possible to download data from Qualtrics directly into R using an R p
 
 ![](images/map_violated_final.gif){width=40%}
 
+New examples
+
+![map_salience.png](images/map_salience.png){width=40%}
+
+![map_erosion_final.gif](images/map_erosion_final.gif){width=40%}
+
+![map_distance_salience_USMX.png](images/map_distance_salience_USMX.png){width=40%}
+![map_distance_salience_USMX.png](images/map_distance_salience_USMX.png){width=40%}
+![map_distance_salience_USCA.png](images/map_distance_salience_USCA.png){width=40%}
+![map_distance_erosion_USMX_final.gif](images/map_distance_erosion_USMX_final.gif){width=40%}
+![map_distance_erosion_USCA_final.gif](images/map_distance_erosion_USCA_final.gif){width=40%}
+![map_distance_blank_control_USMX.png](images/map_distance_blank_control_USMX.png){width=40%}
+![map_distance_blank_control_USCA.png](images/map_distance_blank_control_USCA.png){width=40%}
+![map_blank_control.png](images/map_blank_control.png){width=40%}
+
+
+![map_attention.png](images/map_attention.png){width=40%}
+
+
+
+
+
+
+
 
 
   

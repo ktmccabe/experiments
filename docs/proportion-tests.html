@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11.2 Proportion tests | Experimental Methods in Political Science</title>
   <meta name="description" content="11.2 Proportion tests | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11.2 Proportion tests | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="t-tests-and-its-friends.html"/>
 <link rel="next" href="comparing-multiple-groups.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="proportion-tests" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Proportion tests</h2>
+<div id="proportion-tests" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Proportion tests<a href="proportion-tests.html#proportion-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>However, let’s move to an uncertainty calculation that may be more approriate for dichotomous variables:</p>
 <ul>
 <li>Here, we can use the <code>prop.test</code> function.</li>
@@ -380,8 +379,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb434-4"><a href="proportion-tests.html#cb434-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb434-5"><a href="proportion-tests.html#cb434-5" aria-hidden="true" tabindex="-1"></a>p.test</span></code></pre></div>
 <pre><code>## 
-##  2-sample test for equality of proportions without continuity
-##  correction
+##  2-sample test for equality of proportions without continuity correction
 ## 
 ## data:  c(157, 235) out of c(157 + 2278, 235 + 2200)
 ## X-squared = 16.879, df = 1, p-value = 3.984e-05
@@ -503,7 +501,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

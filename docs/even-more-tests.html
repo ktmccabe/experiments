@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11.4 Even more tests | Experimental Methods in Political Science</title>
   <meta name="description" content="11.4 Even more tests | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11.4 Even more tests | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="comparing-multiple-groups.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="even-more-tests" class="section level2" number="11.4">
-<h2><span class="header-section-number">11.4</span> Even more tests</h2>
+<div id="even-more-tests" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Even more tests<a href="even-more-tests.html#even-more-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The tests we have talked about so far (t-test, Chi-squared test) make assumptions about the shape of the distribution. You might also consider using a nonparametric test.</p>
 <p>We have already encountered some tests that do not require a distributional assumption. For example, we used randomization inference, which avoided the need to compare our output to the student’s t-distribution.</p>
 <p>When comparing two group means, we can also consider using the Wilcox test.</p>
@@ -373,8 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## W = 2869648, p-value = 3.992e-05
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <p>This test essentially compares equality of the two medians. You wouldn’t want to use this with dichotomous outcomes, but the code above gives an example of the syntax, which is similar to the t-test.</p>
-<div id="paired-tests" class="section level3" number="11.4.1">
-<h3><span class="header-section-number">11.4.1</span> Paired tests</h3>
+<div id="paired-tests" class="section level3 hasAnchor" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> Paired tests<a href="even-more-tests.html#paired-tests" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes we do not have data from two independent samples. Instead, perhaps we conduct a pre-test vs. post-test design, and we want to see if there is a change in the outcome within respondents.</p>
 <p>Here, our two groups (respondents before) vs. (respondents after) are “dependent.”</p>
 <p>The nice thing is that all we have to do is adjust the way we calculate uncertainty to account for this dependency. The <code>t.test</code> function in R can do this very easily by setting <code>paired = TRUE</code> as one of the arguments.</p>
@@ -456,7 +455,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

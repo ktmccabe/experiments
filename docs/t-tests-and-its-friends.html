@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11.1 t-tests and its friends | Experimental Methods in Political Science</title>
   <meta name="description" content="11.1 t-tests and its friends | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11.1 t-tests and its friends | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="additional.html"/>
 <link rel="next" href="proportion-tests.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="t-tests-and-its-friends" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> t-tests and its friends</h2>
+<div id="t-tests-and-its-friends" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> t-tests and its friends<a href="t-tests-and-its-friends.html#t-tests-and-its-friends" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We have primarily been using the t-test to study experimental results. The t-test compares the mean outcomes of two groups.</p>
 <p>Specifically, we have been running t-tests with “two independent samples” given that the treatment and control groups are independently assigned.</p>
 <p>We have also used linear regression to calculate the difference in means. The coefficient on the treatment variable represents the average treatment effect in this case (the average difference in the outcome when moving from the control group to the treatment group). Under the hood of the regression, it also runs a t-test to assess if that mean difference is significantly different from zero.</p>
@@ -485,7 +484,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

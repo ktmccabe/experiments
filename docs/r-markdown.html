@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.3 R Markdown | Experimental Methods in Political Science</title>
   <meta name="description" content="1.3 R Markdown | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.3 R Markdown | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="first-time-working-in-r-and-rstudio.html"/>
 <link rel="next" href="what-are-experiments.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r-markdown" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> R Markdown</h2>
+<div id="r-markdown" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> R Markdown<a href="r-markdown.html#r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An R Markdown document, which you can create in RStudio, allows you to weave together regular text, R code, and the output of R code in the same document. This can be very convenient when conducting data analysis because it allows you more space to explain what you are doing in each step. It can also be an effective platform for writing a report on a data analysis, similar to what you do when you write up a problem set. It can also be useful for organizing replication files to post after you publish a paper.</p>
 <p>R Markdown documents can be “compiled” into html, pdf, or docx documents. Below is an example of what a compiled html file looks like.</p>
 <ul>
@@ -370,8 +369,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </center>
 <p>We say this is a “compiled” RMarkdown document because it differs from the raw version of the file, which is a .Rmd file format. Below is an example of what the raw .Rmd version looks like, compared to the compiled html version.</p>
 <p><img src="images/rmarkdownraw.png" style="width:45.0%" /> <img src="images/rmarkdownscreenshot.png" style="width:40.0%" /></p>
-<div id="how-to-get-setup-in-rmarkdown" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> How to get setup in RMarkdown</h3>
+<div id="how-to-get-setup-in-rmarkdown" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> How to get setup in RMarkdown<a href="r-markdown.html#how-to-get-setup-in-rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Just like with a regular R script, to work in RMarkdown, you will open up RStudio.</p>
 <p>The <strong>first time</strong> you will be working in RMarkdown, you will want to install two packages: <code>rmarkdown</code> and <code>knitr</code>. You can do this in the Console window in RStudio.</p>
 <p>Type the following into the Console window and hit enter/return.</p>
@@ -425,8 +424,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 </div>
-<div id="additional-rmarkdown-resources" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Additional RMarkdown resources</h3>
+<div id="additional-rmarkdown-resources" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Additional RMarkdown resources<a href="r-markdown.html#additional-rmarkdown-resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here are a few additional resources for working with RMarkdown.</p>
 <ul>
 <li>This <a href="https://monashbioinformaticsplatform.github.io/2017-11-16-open-science-training/topics/rmarkdown.html">website</a> provides some basic syntax for the Markdown language, such as how to display bulleted lists and how to bold or italicize text.</li>
@@ -434,8 +433,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>This <a href="https://rmarkdown.rstudio.com/articles_intro.html">page</a> talks more about compiling aka rendering aka knitting Rmd documents into different formats, such as html, pdf, or Word doc files.</li>
 </ul>
 </div>
-<div id="practice-with-r-markdown" class="section level3" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Practice with R Markdown</h3>
+<div id="practice-with-r-markdown" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Practice with R Markdown<a href="r-markdown.html#practice-with-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Below is an exercise that will demonstrate you are able to use R as a calculator and compile RMarkdown documents.</p>
 <ol style="list-style-type: decimal">
 <li>Create an Rmd file saved as “LastnameSetup1.Rmd” (use your last name). Provide an informative title for the document.</li>
@@ -513,7 +512,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

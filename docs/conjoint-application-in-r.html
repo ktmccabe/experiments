@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10.4 Conjoint Application in R | Experimental Methods in Political Science</title>
   <meta name="description" content="10.4 Conjoint Application in R | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10.4 Conjoint Application in R | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="amce-estimation.html"/>
 <link rel="next" href="additional.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conjoint-application-in-r" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Conjoint Application in R</h2>
+<div id="conjoint-application-in-r" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Conjoint Application in R<a href="conjoint-application-in-r.html#conjoint-application-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s look at a more elaborate example from Hainmueller and Hopkins using replication data they provide.</p>
 <div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="conjoint-application-in-r.html#cb398-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
 <span id="cb398-2"><a href="conjoint-application-in-r.html#cb398-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -448,8 +447,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.01583 ,   Adjusted R-squared:  0.01562 
 ## F-statistic:  70.4 on 3 and 1395 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>How should we interpret these results? Note that the left-out category is “fluent English.”</p>
-<div id="a-wrinkle--restricted-combinations" class="section level3" number="10.4.1">
-<h3><span class="header-section-number">10.4.1</span> A wrinkle- restricted combinations</h3>
+<div id="a-wrinkle--restricted-combinations" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> A wrinkle- restricted combinations<a href="conjoint-application-in-r.html#a-wrinkle--restricted-combinations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes in conjoints we restrict which attributes can appear with other features to avoid nonsensical combinations. For example, education and occupation were restricted in this application. A profile assigned as a computer programmer had to have at least a two-year college degree.</p>
 <div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="conjoint-application-in-r.html#cb417-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(conj<span class="sc">$</span>FeatJob,conj<span class="sc">$</span>FeatEd)</span></code></pre></div>
 <pre><code>##                      
@@ -481,8 +480,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you incorporate this into your design, you must also incorporate this into the analysis. We can do so by interacting the restricted attributes. We would then need to calculate the average effect of college vs. no formal education among just those job strata that were available for both.
 `</p>
 </div>
-<div id="visualizing-the-amce-with-a-package" class="section level3" number="10.4.2">
-<h3><span class="header-section-number">10.4.2</span> Visualizing the AMCE with a package</h3>
+<div id="visualizing-the-amce-with-a-package" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Visualizing the AMCE with a package<a href="conjoint-application-in-r.html#visualizing-the-amce-with-a-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Some R packages have also incorporated the ability to estimate AMCEs and account for restricted randomizations relatively easily when estimating the AMCE. You can see Leeper’s package <code>cregg</code> <a href="https://cran.r-project.org/web/packages/cregg/vignettes/Introduction.html">here</a> for an example.</p>
 <p>Below is an example without restrictions. The <code>cregg</code>package can be nice because it has a plotting tool built into the function. However, you should be careful to understand what it is plotting, and you may want to create your own plots so that you can customize which attributes are plotted and how they appear.</p>
 <div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="conjoint-application-in-r.html#cb419-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cregg)</span>
@@ -501,8 +500,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="conjoint-application-in-r.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit.cregg)</span></code></pre></div>
 <p><img src="experiments_files/figure-html/unnamed-chunk-243-1.svg" width="672" /></p>
 </div>
-<div id="subgroup-analysis" class="section level3" number="10.4.3">
-<h3><span class="header-section-number">10.4.3</span> Subgroup analysis</h3>
+<div id="subgroup-analysis" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Subgroup analysis<a href="conjoint-application-in-r.html#subgroup-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It is perfectly possible to see how the AMCEs differ across different respondent characteristics or combinations of profile characteristics.</p>
 <p>When evaluating the difference in AMCEs for different respondent subgroups, <a href="https://www.cambridge.org/core/journals/political-analysis/article/abs/measuring-subgroup-preferences-in-conjoint-experiments/4F2C21AC02753F1FFF2F5EA0F943C1B2">Leeper et al. 2020</a> recommend displaying the marginal means from each group (e.g., the probability the immigrant profile was chosen for Democratic vs. Republican respondents) instead of the AMCEs. This is because displaying the AMCEs may obscure very big differences in the preferences of the respondent subgroups among the reference category. The <code>cregg</code> package also talks about this <a href="https://cran.r-project.org/web/packages/cregg/vignettes/Introduction.html">here</a> with tips for visualization.</p>
 <p>For example, perhaps Republicans are very opposed to immigrants with no formal education, while Democrats are very supportive. All of the AMCEs within each group are calculated relative to that baseline preference. Even if the AMCEs comparing “college degree” to “no formal education” are similar across partisan subgroups, this would not necessarily mean their overall preferences are similar.</p>
@@ -576,7 +575,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

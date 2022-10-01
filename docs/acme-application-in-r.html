@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9.4 ACME Application in R | Experimental Methods in Political Science</title>
   <meta name="description" content="9.4 ACME Application in R | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9.4 ACME Application in R | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="causal-mediation-framework.html"/>
 <link rel="next" href="mediation-alternatives.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="acme-application-in-r" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> ACME Application in R</h2>
+<div id="acme-application-in-r" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> ACME Application in R<a href="acme-application-in-r.html#acme-application-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We are going to replicate a portion of the analysis from “The gag reflex: Disgust rhetoric and gay rights in American politics” by Shana Kushner Gadarian and Eric Van der Vort published in <em>Political Behavior</em> in 2018.</p>
 <ul>
 <li>Amazon’s Mechanical Turk study of 636 respondents</li>
@@ -371,8 +370,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(Y_i(z,M_i(z))\)</span>: Support for LGBT issues</li>
 </ul>
 <p>Approach the authors take: Run mediation model for disgust, also controlling on anger as a covariate since the treatment might influence anger (See Table 5).</p>
-<div id="mediation-r-implementation" class="section level3" number="9.4.1">
-<h3><span class="header-section-number">9.4.1</span> Mediation R Implementation</h3>
+<div id="mediation-r-implementation" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Mediation R Implementation<a href="acme-application-in-r.html#mediation-r-implementation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are going to fit the Imai et al. ACME framework</p>
 <ol style="list-style-type: decimal">
 <li>Fit a “mediator” model with <span class="math inline">\(M_i\)</span> as the dependent variable, with the treatment <span class="math inline">\(Z_i\)</span> and other pre-treatment covariates <span class="math inline">\(X_i\)</span> as the covariates.</li>
@@ -454,8 +453,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="experiments_files/figure-html/unnamed-chunk-217-1.svg" width="672" /></p>
 <p>How should we interpret the results?</p>
 </div>
-<div id="sensitivity-analyses" class="section level3" number="9.4.2">
-<h3><span class="header-section-number">9.4.2</span> Sensitivity Analyses</h3>
+<div id="sensitivity-analyses" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Sensitivity Analyses<a href="acme-application-in-r.html#sensitivity-analyses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sensitivity to violations of sequential ignorability, where the parameter <span class="math inline">\(\rho\)</span> represents the correlation between unexplained pre-treatment factors related to <span class="math inline">\(Y\)</span> and <span class="math inline">\(M\)</span>. See Imai et al. (2010).</p>
 <div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="acme-application-in-r.html#cb371-1" aria-hidden="true" tabindex="-1"></a>sens.out <span class="ot">&lt;-</span> <span class="fu">medsens</span>(medfit, <span class="at">rho.by =</span> <span class="fl">0.1</span>, </span>
 <span id="cb371-2"><a href="acme-application-in-r.html#cb371-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">effect.type =</span> <span class="st">&quot;indirect&quot;</span>, <span class="at">sims =</span> <span class="dv">100</span>)</span></code></pre></div>
@@ -529,7 +528,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

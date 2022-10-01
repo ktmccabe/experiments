@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.2 First Time Working in R and RStudio | Experimental Methods in Political Science</title>
   <meta name="description" content="1.2 First Time Working in R and RStudio | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.2 First Time Working in R and RStudio | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="rsetup.html"/>
 <link rel="next" href="r-markdown.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,16 +357,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="first-time-working-in-r-and-rstudio" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> First Time Working in R and RStudio</h2>
+<div id="first-time-working-in-r-and-rstudio" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> First Time Working in R and RStudio<a href="first-time-working-in-r-and-rstudio.html#first-time-working-in-r-and-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This next section provides a few notes on using R and RStudio now that you have installed it. In this section, we cover the following materials:</p>
 <ul>
 <li>Using R as a calculator and assigning objects using <code>&lt;-</code></li>
 <li>Setting your working directory and the <code>setwd()</code> function.</li>
 <li>Creating and saving an R script</li>
 </ul>
-<div id="open-rstudio" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Open RStudio</h3>
+<div id="open-rstudio" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Open RStudio<a href="first-time-working-in-r-and-rstudio.html#open-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>RStudio is an open-source and free program that greatly facilitates the use of R, especially for users new to programming. Once you have downloaded and installed R and RStudio, to work in R, all you need to do now is <strong><em>open RStudio</em></strong> (it will open R). It should look like this, though your version numbers will be different:</p>
 <p><img src="images/rconsole1.png" /></p>
 <p><strong>Note:</strong> The first time you open RStudio, you likely only have the three windows above. We will want to create a fourth window by <strong>opening an R script</strong> to create the fourth window.</p>
@@ -386,8 +385,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The lower-right window will enable us to view plots and search help files, among other things.</li>
 </ul>
 </div>
-<div id="using-r-as-a-calculator" class="section level3" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Using R as a Calculator</h3>
+<div id="using-r-as-a-calculator" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Using R as a Calculator<a href="first-time-working-in-r-and-rstudio.html#using-r-as-a-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <em>bottom left</em> window in your RStudio is the Console. You can type in this window to use R as a calculator or to try out commands. It will show the raw output of any commands you type. For example, we can try to use R as a calculator. Type the following in the Console (the bottom left window) and hit “enter” or “return” on your keyboard:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="first-time-working-in-r-and-rstudio.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
@@ -403,8 +402,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 16</code></pre>
 <p>In the other RStudio windows, the upper right will show a history of commands that you have sent from the text editor to the R console, along with other items. The lower right will show graphs, help documents and other features. These will be useful later in the course.</p>
 </div>
-<div id="working-in-an-r-script" class="section level3" number="1.2.3">
-<h3><span class="header-section-number">1.2.3</span> Working in an R Script</h3>
+<div id="working-in-an-r-script" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Working in an R Script<a href="first-time-working-in-r-and-rstudio.html#working-in-an-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Earlier, I asked you to open an R script in the upper left window by doing File, then New File, then R Script. Let’s go back to working in that window.</p>
 <p><strong>Set your working directory <code>setwd()</code></strong></p>
 <p>(Almost) every time you work in RStudio, the first thing you will do is set your working directory. This is a designated folder in your computer where you will save your R scripts and datasets.</p>
@@ -424,8 +423,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s now save our R script to our working directory and give it an informative name. To do so, go to File, then Save As, make sure you are in the same folder on your computer as the folder you chose for your working directory.</p>
 <p>Give the file an informative name, such as: “McCabeWeek1.R”. Note: all of your R scripts will have the .R extension.</p>
 </div>
-<div id="preparing-your-r-script" class="section level3" number="1.2.4">
-<h3><span class="header-section-number">1.2.4</span> Preparing your R script</h3>
+<div id="preparing-your-r-script" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Preparing your R script<a href="first-time-working-in-r-and-rstudio.html#preparing-your-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now that we have saved our R script, let’s work inside of it. Remember, we are in the top-left RStudio window now.</p>
 <ul>
 <li>Just like the beginning of a paper, you will want to title your R script. In R, any line that you start with a # will not be treated as a programming command. You can use this to your advantage to write titles/comments. Below is a screenshot example of a template R script.</li>
@@ -437,8 +436,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Think of the R script as where you write the final draft of your paper. In the Console (the bottom-left window), you can mess around and try different things, like you might when you are taking notes or outlining an essay. Then, write the final programming steps that lead you to your answer in the R script. For example, if I wanted to add 5 + 3, I might try different ways of typing it in the Console, and then when I found out <code>5 + 3</code> is the right approach, I would type that into my script.</li>
 </ul>
 </div>
-<div id="executing-commands-in-your-r-script" class="section level3" number="1.2.5">
-<h3><span class="header-section-number">1.2.5</span> Executing Commands in your R script</h3>
+<div id="executing-commands-in-your-r-script" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Executing Commands in your R script<a href="first-time-working-in-r-and-rstudio.html#executing-commands-in-your-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The last thing we will note in this initial handout is how to execute commands in your R script.</p>
 <p>To run / execute a command in your R script (the upper left window), you can</p>
 <ol style="list-style-type: decimal">
@@ -456,8 +455,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="first-time-working-in-r-and-rstudio.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Example</span></span>
 <span id="cb17-2"><a href="first-time-working-in-r-and-rstudio.html#cb17-2" aria-hidden="true" tabindex="-1"></a>sum53 <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span> <span class="co"># example of assigning an addition calculation</span></span></code></pre></div>
 </div>
-<div id="objects" class="section level3" number="1.2.6">
-<h3><span class="header-section-number">1.2.6</span> Objects</h3>
+<div id="objects" class="section level3 hasAnchor" number="1.2.6">
+<h3><span class="header-section-number">1.2.6</span> Objects<a href="first-time-working-in-r-and-rstudio.html#objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes we will want to store our calculations as “objects” in R. We use <code>&lt;-</code> to assign objects by placing it <a href="https://www.youtube.com/watch?v=vLZA67L7gIo&amp;ab_channel=BeyonceSasha1">to the left</a> of what we want to store. For example, let’s store the calculation <code>5 + 3</code> as an object named <code>sum53</code>:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="first-time-working-in-r-and-rstudio.html#cb18-1" aria-hidden="true" tabindex="-1"></a>sum53 <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span></span></code></pre></div>
 <p>After we execute this code, <code>sum53 now stores the calculation. This means, that if we execute a line of code that just has</code>sum53`, it will output 8. Try it:</p>
@@ -498,8 +497,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A big part of learning to use R will be learning how to troubleshoot and detect typos in your code that generate error messages.</p>
 <p><img src="images/punctuation.png" style="width:80.0%" /></p>
 </div>
-<div id="practice-with-r-scripts" class="section level3" number="1.2.7">
-<h3><span class="header-section-number">1.2.7</span> Practice with R Scripts</h3>
+<div id="practice-with-r-scripts" class="section level3 hasAnchor" number="1.2.7">
+<h3><span class="header-section-number">1.2.7</span> Practice with R Scripts<a href="first-time-working-in-r-and-rstudio.html#practice-with-r-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Below is an exercise that will demonstrate you are able to use R as a calculator and create R scripts.</p>
 <ol style="list-style-type: decimal">
 <li>Create an R script saved as ``LastnameSetup1.R” (use your last name). Within the R script, follow the example from this handout and title the script.</li>
@@ -509,8 +508,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Add these two calculations together. Note: do this by adding together the objects you created, not the underlying raw calculations. Report the answer.</li>
 </ol>
 </div>
-<div id="loading-data-into-r" class="section level3" number="1.2.8">
-<h3><span class="header-section-number">1.2.8</span> Loading data into R</h3>
+<div id="loading-data-into-r" class="section level3 hasAnchor" number="1.2.8">
+<h3><span class="header-section-number">1.2.8</span> Loading data into R<a href="first-time-working-in-r-and-rstudio.html#loading-data-into-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Often the variables we care about are stored inside of rectangular datasets, like the dataset on turnout below from QSS Chapter 1.</p>
 <p><img src="images/turnoutframe.png" style="width:80.0%" /></p>
 <ul>
@@ -631,7 +630,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

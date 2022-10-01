@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.5 Creating Tables from R | Experimental Methods in Political Science</title>
   <meta name="description" content="5.5 Creating Tables from R | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.5 Creating Tables from R | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="examples-of-arguments-in-plot.html"/>
 <link rel="next" href="ethics.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="creating-tables-from-r" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Creating Tables from R</h2>
+<div id="creating-tables-from-r" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Creating Tables from R<a href="creating-tables-from-r.html#creating-tables-from-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong><em>Formatting and Exporting R Results</em></strong></p>
 <p>R has a number of tools, including the packages <code>texreg</code>, <code>xtable</code>, and <code>stargazer</code>, which can be used to export tables made in R to nicely formatted LaTex or html output.</p>
 <p>Here is a link to the <code>texreg</code> package <a href="https://rpubs.com/YaRrr/SweaveIntro">documentation</a>. Section 5 has examples of the <code>texreg</code> and <code>htmlreg</code> functions within the texreg package. These can be integrated into R Markdown and Sweave documents, and their output can be pasted into LaTex or Microsoft Word.</p>
@@ -448,7 +447,7 @@ Num. obs.
 <tfoot>
 <tr>
 <td style="font-size: 0.8em;" colspan="2">
-<sup><em><strong></sup>p &lt; 0.001; <sup></strong></sup>p &lt; 0.01; <sup></em></sup>p &lt; 0.05
+<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
 </td>
 </tr>
 </tfoot>
@@ -581,13 +580,13 @@ Num. obs.
 <tfoot>
 <tr>
 <td style="font-size: 0.8em;" colspan="3">
-<sup><em><strong></sup>p &lt; 0.001; <sup></strong></sup>p &lt; 0.01; <sup></em></sup>p &lt; 0.05
+<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
 </td>
 </tr>
 </tfoot>
 </table>
-<div id="additional-formatting-examples" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Additional formatting examples</h3>
+<div id="additional-formatting-examples" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Additional formatting examples<a href="creating-tables-from-r.html#additional-formatting-examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here are some additional examples with different formats. You can run them on your own computer to see what the output looks like.</p>
 <p>The package <code>texreg</code> has three primary formats</p>
 <ul>
@@ -648,8 +647,8 @@ Num. obs.
 <span id="cb279-8"><a href="creating-tables-from-r.html#cb279-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sex- Male&quot;</span>,</span>
 <span id="cb279-9"><a href="creating-tables-from-r.html#cb279-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Intercept&quot;</span>))</span></code></pre></div>
 </div>
-<div id="additional-table-types" class="section level3" number="5.5.2">
-<h3><span class="header-section-number">5.5.2</span> Additional Table Types</h3>
+<div id="additional-table-types" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Additional Table Types<a href="creating-tables-from-r.html#additional-table-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sometimes you might want to create tables that are not from regression models, such as tables for descriptive statistics. R has other packages for tables of this type.</p>
 <p>For example <code>xtable</code> can create simple html and latex tables. You just have to supply the function with a table object or matrix.</p>
 <p>Here is a first example making a formated table using crosstabs of two variables.</p>
@@ -658,8 +657,8 @@ Num. obs.
 <span id="cb280-3"><a href="creating-tables-from-r.html#cb280-3" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">race =</span> mydata<span class="sc">$</span>race, <span class="at">sex =</span> mydata<span class="sc">$</span>sex)</span></code></pre></div>
 <div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="creating-tables-from-r.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="do">## RMarkdown html</span></span>
 <span id="cb281-2"><a href="creating-tables-from-r.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(table1), <span class="at">type=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
-<!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
-<!-- Wed Apr 27 08:59:55 2022 -->
+<!-- html table generated in R 4.2.0 by xtable 1.8-4 package -->
+<!-- Sat Oct  1 14:53:29 2022 -->
 <table border="1">
 <tr>
 <th>
@@ -719,8 +718,8 @@ white
 <div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="creating-tables-from-r.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
 <span id="cb285-2"><a href="creating-tables-from-r.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Rmarkdown html</span></span>
 <span id="cb285-3"><a href="creating-tables-from-r.html#cb285-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xtable</span>(results), <span class="at">type=</span><span class="st">&quot;html&quot;</span>, <span class="at">include.rownames =</span> F)</span></code></pre></div>
-<!-- html table generated in R 4.0.1 by xtable 1.8-4 package -->
-<!-- Wed Apr 27 08:59:55 2022 -->
+<!-- html table generated in R 4.2.0 by xtable 1.8-4 package -->
+<!-- Sat Oct  1 14:53:30 2022 -->
 <table border="1">
 <tr>
 <th>
@@ -833,7 +832,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.7 Equivalence of t-test and ANOVA | Experimental Methods in Political Science</title>
   <meta name="description" content="4.7 Equivalence of t-test and ANOVA | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.7 Equivalence of t-test and ANOVA | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="a-note-on-expectations-and-variance.html"/>
 <link rel="next" href="comparing-different-types-of-tests.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="equivalence-of-t-test-and-anova" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> Equivalence of t-test and ANOVA</h2>
+<div id="equivalence-of-t-test-and-anova" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Equivalence of t-test and ANOVA<a href="equivalence-of-t-test-and-anova.html#equivalence-of-t-test-and-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You may be familiar with ANOVA as a way to test for group differences. When you have two groups, the t-test and ANOVA are actually equivalent. Let’s convince ourselves of this.</p>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="equivalence-of-t-test-and-anova.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 1) t-test where variances are assumed to be equal (often we leave this unequal, which adjusts for unequal variances)</span></span>
 <span id="cb211-2"><a href="equivalence-of-t-test-and-anova.html#cb211-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(asians<span class="sc">$</span>study2_avg[asians<span class="sc">$</span>treatment_cit <span class="sc">==</span> <span class="dv">1</span>],</span>
@@ -477,7 +476,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

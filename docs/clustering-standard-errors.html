@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7.2 Clustering standard errors | Experimental Methods in Political Science</title>
   <meta name="description" content="7.2 Clustering standard errors | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7.2 Clustering standard errors | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="field-experiment-application.html"/>
 <link rel="next" href="compliance.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="clustering-standard-errors" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Clustering standard errors</h2>
+<div id="clustering-standard-errors" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Clustering standard errors<a href="clustering-standard-errors.html#clustering-standard-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Often, we draw a sample of independent observations where randomization occurs at the level of the individual unit. But, sometimes we have multiple observations per unit (e.g., multiple observations of a particular individual, multiple individuals in a household)</p>
 <ul>
 <li>Example: In Karpowitz et al., precincts are nested within counties. As footnote 15 notes, “The state party relies heavily on county-level party officials to organize and run the neighborhood caucus meetings.”</li>
@@ -387,8 +386,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## conditionDemand        28
 ## conditionSupply+Demand 28</code></pre>
 <p>Note how the coefficient estimates remain unchanged, but the size of the standard errors, and therefore, the corresponding t-values and p-values also change.</p>
-<div id="adjusting-p-values" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Adjusting p-values</h3>
+<div id="adjusting-p-values" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Adjusting p-values<a href="clustering-standard-errors.html#adjusting-p-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another thing we might note about this test is that we are conducting three hypothesis tests simultaneously. This might bring up issue related to multiple comparisons problems. Some of the figures that the authors present include a “Bonferroni” adjustment to the conventional significance levels. When we have multiple hypothesis tests, this can rapidly increase the possibility that we observe at least one significant result, particularly if we assume the tests are independent:</p>
 <p><span class="math display">\[\begin{align*}
 Pr(\text{at least one significant result}) &amp;= 1 - Pr(\text{no significant result})\\
@@ -435,8 +434,8 @@ The manual approach.
 </details>
 <p>As you read papers, take note of whether authors make these types of adjustments. There are different philosophies about when one must account for multiple comparisons.</p>
 </div>
-<div id="additional-complex-sampling-designs" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Additional complex sampling designs</h3>
+<div id="additional-complex-sampling-designs" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Additional complex sampling designs<a href="clustering-standard-errors.html#additional-complex-sampling-designs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong><em>Clustered random assignment</em></strong></p>
 <p>Sometimes we go so far as to assign treatment by cluster (e.g., by household, village, school)</p>
 <ul>
@@ -538,7 +537,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

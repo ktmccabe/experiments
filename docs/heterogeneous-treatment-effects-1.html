@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.2 Heterogeneous Treatment Effects | Experimental Methods in Political Science</title>
   <meta name="description" content="5.2 Heterogeneous Treatment Effects | Experimental Methods in Political Science" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.2 Heterogeneous Treatment Effects | Experimental Methods in Political Science" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="plotting-average-treatment-effects.html"/>
 <link rel="next" href="some-additional-plotting-options.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,9 +48,10 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="libs/vembedr-0.1.4/css/vembedr.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -358,12 +357,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="heterogeneous-treatment-effects-1" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Heterogeneous Treatment Effects</h2>
+<div id="heterogeneous-treatment-effects-1" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Heterogeneous Treatment Effects<a href="heterogeneous-treatment-effects-1.html#heterogeneous-treatment-effects-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here is a short video walking through the code to plot the ATEs using <code>plot</code> and <code>ggplot</code>. (Via youtube, you can speed up the playback to 1.5 or 2x speed.)</p>
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/wflFvDQlC4k" width="533" height="300" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/wflFvDQlC4k" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 <p>Let’s replicate Figure 4 of the paper to study heterogeneous treatment effects. The authors compute these using a regression analysis. We will focus on the Anger vs. Control condition.</p>
@@ -537,7 +536,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
